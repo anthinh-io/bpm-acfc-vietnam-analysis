@@ -18,6 +18,10 @@
 - [ ] Mỗi activity nằm trong lane của người, bộ phận hoặc hệ thống thực hiện, không để activity nằm ngoài lane.
 - [ ] Thuật ngữ về vai trò phải nhất quán giữa các sơ đồ, ví dụ chỉ dùng một tên là "Nhân viên kho".
 
+![Quy tắc về pool, lane và message flow](images/bpmn-pool-lane.png)
+
+*Nguồn: slide/chap03.pdf, trang 54.*
+
 ## 3. Activity và subprocess
 
 - [ ] Activity dùng hình chữ nhật bo góc.
@@ -28,7 +32,15 @@
 - [ ] Với subprocess đóng, luồng chỉ nối vào khung subprocess.
 - [ ] Với subprocess mở rộng, activity bên trong không nối trực tiếp ra process cha.
 
+![Ví dụ thiết kế BPMN và cách đặt tên activity](images/bpmn-vi-du.png)
+
+*Nguồn: slide/chap03.pdf, trang 30.*
+
 ## 4. Event
+
+![Ký hiệu start, intermediate và end event](images/bpmn-event-types.png)
+
+*Nguồn: hình người dùng cung cấp.*
 
 - [ ] Start event là hình tròn nét đơn; sơ đồ đơn giản chỉ dùng một start event.
 - [ ] Intermediate event là hình tròn nét đôi; dùng timer event khi có bước chờ hoặc lặp theo thời hạn.
@@ -38,15 +50,30 @@
 - [ ] Message event dùng đúng ký hiệu phong bì: rỗng là nhận, tô đen là gửi.
 - [ ] Không đặt end event giữa quy trình nếu luồng nghiệp vụ thực tế vẫn tiếp tục.
 
+![Các dạng event BPMN](images/bpmn-event.png)
+
+*Nguồn: slide/chap03.pdf, trang 59.*
+
 ## 5. Gateway
+
+![Các loại gateway BPMN](images/bpmn-gateway-types.png)
+
+*Nguồn: hình người dùng cung cấp.*
 
 - [ ] Dùng **XOR** khi chỉ đúng một nhánh được chọn.
 - [ ] Dùng **AND** khi tất cả nhánh chạy song song và chỉ tiếp tục sau khi mọi nhánh hoàn tất.
 - [ ] Dùng **OR** khi một hoặc nhiều nhánh có thể được chọn.
+- [ ] Dùng **event-based gateway** khi nhánh tiếp theo phụ thuộc vào sự kiện xảy ra, không dùng để kiểm tra điều kiện dữ liệu.
+- [ ] Dùng **parallel event-based gateway** khi phải chờ các sự kiện quy định cùng xảy ra trước khi tiếp tục.
+- [ ] Chỉ dùng **complex gateway** cho điều kiện đồng bộ đặc biệt không biểu diễn được bằng XOR, AND hoặc OR; phải ghi rõ quy tắc kích hoạt.
 - [ ] Mỗi nhánh ra từ XOR hoặc OR đều có nhãn điều kiện.
 - [ ] Split phải có join tương ứng cùng loại, trừ nhánh kết thúc ngay sau split.
 - [ ] Không split bằng OR rồi join bằng AND hoặc ghép sai loại gateway.
 - [ ] Có nhánh tích cực và tiêu cực khi quy trình có cả hai outcome.
+
+![So sánh gateway XOR, AND và OR](images/bpmn-gateway.png)
+
+*Nguồn: slide/chap03.pdf, trang 44.*
 
 ## 6. Luồng kết nối
 
@@ -63,6 +90,10 @@
 - [ ] Mỗi đối tượng dữ liệu có data association nối với ít nhất một activity.
 - [ ] Association được dùng để nối dữ liệu hoặc annotation, không thay cho sequence flow.
 - [ ] Hướng dữ liệu nhất quán: mũi tên rỗng là input, mũi tên đặc là output.
+
+![Ví dụ data object và data store](images/bpmn-du-lieu.png)
+
+*Nguồn: slide/chap03.pdf, trang 56.*
 
 ## 8. Rà soát trước khi nộp
 
