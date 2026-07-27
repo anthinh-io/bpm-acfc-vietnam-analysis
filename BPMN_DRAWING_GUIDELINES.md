@@ -18,7 +18,7 @@
 - [ ] Mỗi activity nằm trong lane của người, bộ phận hoặc hệ thống thực hiện, không để activity nằm ngoài lane.
 - [ ] Thuật ngữ về vai trò phải nhất quán giữa các sơ đồ, ví dụ chỉ dùng một tên là "Nhân viên kho".
 
-![Quy tắc về pool, lane và message flow](images/bpmn-pool-lane.png)
+![Quy tắc về pool, lane và message flow](diagrams/images/bpmn-pool-lane.png)
 
 *Nguồn: slide/chap03.pdf, trang 54.*
 
@@ -32,13 +32,13 @@
 - [ ] Với subprocess đóng, luồng chỉ nối vào khung subprocess.
 - [ ] Với subprocess mở rộng, activity bên trong không nối trực tiếp ra process cha.
 
-![Ví dụ thiết kế BPMN và cách đặt tên activity](images/bpmn-vi-du.png)
+![Ví dụ thiết kế BPMN và cách đặt tên activity](diagrams/images/bpmn-vi-du.png)
 
 *Nguồn: slide/chap03.pdf, trang 30.*
 
 ## 4. Event
 
-![Ký hiệu start, intermediate và end event](images/bpmn-event-types.png)
+![Ký hiệu start, intermediate và end event](diagrams/images/bpmn-event-types.png)
 
 *Nguồn: hình người dùng cung cấp.*
 
@@ -50,13 +50,13 @@
 - [ ] Message event dùng đúng ký hiệu phong bì: rỗng là nhận, tô đen là gửi.
 - [ ] Không đặt end event giữa quy trình nếu luồng nghiệp vụ thực tế vẫn tiếp tục.
 
-![Các dạng event BPMN](images/bpmn-event.png)
+![Các dạng event BPMN](diagrams/images/bpmn-event.png)
 
 *Nguồn: slide/chap03.pdf, trang 59.*
 
 ## 5. Gateway
 
-![Các loại gateway BPMN](images/bpmn-gateway-types.png)
+![Các loại gateway BPMN](diagrams/images/bpmn-gateway-types.png)
 
 *Nguồn: hình người dùng cung cấp.*
 
@@ -71,7 +71,7 @@
 - [ ] Không split bằng OR rồi join bằng AND hoặc ghép sai loại gateway.
 - [ ] Có nhánh tích cực và tiêu cực khi quy trình có cả hai outcome.
 
-![So sánh gateway XOR, AND và OR](images/bpmn-gateway.png)
+![So sánh gateway XOR, AND và OR](diagrams/images/bpmn-gateway.png)
 
 *Nguồn: slide/chap03.pdf, trang 44.*
 
@@ -91,7 +91,7 @@
 - [ ] Association được dùng để nối dữ liệu hoặc annotation, không thay cho sequence flow.
 - [ ] Hướng dữ liệu nhất quán: mũi tên rỗng là input, mũi tên đặc là output.
 
-![Ví dụ data object và data store](images/bpmn-du-lieu.png)
+![Ví dụ data object và data store](diagrams/images/bpmn-du-lieu.png)
 
 *Nguồn: slide/chap03.pdf, trang 56.*
 
