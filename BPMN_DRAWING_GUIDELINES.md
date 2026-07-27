@@ -20,8 +20,6 @@
 
 ![Quy tắc về pool, lane và message flow](diagrams/images/bpmn-pool-lane.png)
 
-*Nguồn: slide/chap03.pdf, trang 54.*
-
 ## 3. Activity và subprocess
 
 - [ ] Activity dùng hình chữ nhật bo góc.
@@ -34,13 +32,9 @@
 
 ![Ví dụ thiết kế BPMN và cách đặt tên activity](diagrams/images/bpmn-vi-du.png)
 
-*Nguồn: slide/chap03.pdf, trang 30.*
-
 ## 4. Event
 
 ![Ký hiệu start, intermediate và end event](diagrams/images/bpmn-event-types.png)
-
-*Nguồn: hình người dùng cung cấp.*
 
 - [ ] Start event là hình tròn nét đơn; sơ đồ đơn giản chỉ dùng một start event.
 - [ ] Intermediate event là hình tròn nét đôi; dùng timer event khi có bước chờ hoặc lặp theo thời hạn.
@@ -52,13 +46,9 @@
 
 ![Các dạng event BPMN](diagrams/images/bpmn-event.png)
 
-*Nguồn: slide/chap03.pdf, trang 59.*
-
 ## 5. Gateway
 
 ![Các loại gateway BPMN](diagrams/images/bpmn-gateway-types.png)
-
-*Nguồn: hình người dùng cung cấp.*
 
 - [ ] Dùng **XOR** khi chỉ đúng một nhánh được chọn.
 - [ ] Dùng **AND** khi tất cả nhánh chạy song song và chỉ tiếp tục sau khi mọi nhánh hoàn tất.
@@ -72,8 +62,6 @@
 - [ ] Có nhánh tích cực và tiêu cực khi quy trình có cả hai outcome.
 
 ![So sánh gateway XOR, AND và OR](diagrams/images/bpmn-gateway.png)
-
-*Nguồn: slide/chap03.pdf, trang 44.*
 
 ## 6. Luồng kết nối
 
@@ -92,8 +80,6 @@
 - [ ] Hướng dữ liệu nhất quán: mũi tên rỗng là input, mũi tên đặc là output.
 
 ![Ví dụ data object và data store](diagrams/images/bpmn-du-lieu.png)
-
-*Nguồn: slide/chap03.pdf, trang 56.*
 
 ## 8. Rà soát trước khi nộp
 
