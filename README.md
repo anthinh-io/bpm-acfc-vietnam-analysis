@@ -1,10 +1,10 @@
-# BPM Nike Vietnam Analysis
+# BPM ACFC Vietnam Analysis
 
-Đồ án môn học **Hệ thống quản trị quy trình nghiệp vụ (Business Process Management Systems)** phân tích, mô hình hóa và đề xuất cải tiến các quy trình nghiệp vụ thực tế của Nike tại Vietnam.
+Đồ án môn học **Hệ thống quản trị quy trình nghiệp vụ (Business Process Management Systems)** phân tích, mô hình hóa và đề xuất cải tiến các quy trình nghiệp vụ thực tế của ACFC tại Việt Nam.
 
 ## 1. Giới thiệu
 
-Nike là tập đoàn đa quốc gia hoạt động trong lĩnh vực thiết kế, sản xuất, tiếp thị và phân phối các sản phẩm thể thao. Đồ án này tập trung vào ba mục tiêu cốt lõi:
+ACFC (thành viên Tập đoàn Liên Thái Bình Dương – IPPG, thành lập năm 2009) là nhà phân phối và bán lẻ chính hãng hàng đầu Việt Nam cho hơn 25 thương hiệu thời trang quốc tế như Nike, Levi's, Tommy Hilfiger, Calvin Klein, Polo Ralph Lauren, Mango, Swarovski..., vận hành mạng lưới hơn 250 cửa hàng trên toàn quốc song song với kênh thương mại điện tử. Đồ án này tập trung vào ba mục tiêu cốt lõi:
 
 - **Phân tích (Analysis):** khảo sát, mô tả và làm rõ cách các quy trình nghiệp vụ hiện đang vận hành.
 - **Mô hình hóa (Modeling):** trực quan hóa quy trình bằng chuẩn BPMN (Business Process Model and Notation).
@@ -27,7 +27,7 @@ Báo cáo được tổ chức theo 5 nội dung, bám sát rubric đánh giá c
 
 ### 1 — Giới thiệu công ty & Kiến trúc quy trình
 
-- Tổng quan về Nike: lịch sử, lĩnh vực kinh doanh, thành tựu nổi bật
+- Tổng quan về ACFC: lịch sử, lĩnh vực kinh doanh, thành tựu nổi bật
 - Sơ đồ cơ cấu tổ chức
 - Kiến trúc quy trình tổng thể: danh sách các quy trình dự kiến phân tích theo 3 cấp
 
