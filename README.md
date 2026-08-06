@@ -65,12 +65,15 @@ Báo cáo được tổ chức theo 5 nội dung, bám sát rubric đánh giá c
 ## 5. Cấu trúc thư mục
 
 ```
-├── docs/           # Tài liệu báo cáo, biểu mẫu khảo sát, bảng câu hỏi
-├── diagrams/       # Sơ đồ BPMN, kiến trúc quy trình
-├── reports/        # Bản Word/PDF hoàn chỉnh, slide thuyết trình
-├── ROADMAP.md      # Lộ trình thực hiện theo tuần, đối chiếu rubric giảng viên
-└── CONTRIBUTING.md # Quy tắc đóng góp, phân công nhiệm vụ nhóm
-├── README.md
+├── docs/                       # Tài liệu báo cáo, biểu mẫu khảo sát, bảng câu hỏi
+│   ├── lectures/               # Tóm tắt lý thuyết BPMN dùng làm tài liệu tham khảo
+│   └── workspaces/             # Không gian làm việc riêng của từng thành viên
+├── diagrams/                   # Sơ đồ BPMN, hình minh họa quy tắc vẽ
+├── reports/                    # Bản Word/PDF hoàn chỉnh, slide thuyết trình
+├── BPMN_DRAWING_GUIDELINES.md  # Quy tắc vẽ và rà soát sơ đồ BPMN
+├── ROADMAP.md                  # Lộ trình thực hiện theo tuần, đối chiếu rubric giảng viên
+├── CONTRIBUTING.md             # Quy tắc đóng góp, phân công nhiệm vụ nhóm
+└── README.md
 ```
 
 ## 6. Thành viên nhóm
