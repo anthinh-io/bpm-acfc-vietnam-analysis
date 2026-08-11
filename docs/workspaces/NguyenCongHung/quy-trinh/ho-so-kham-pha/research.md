@@ -6,7 +6,7 @@
 
 ## 1. Mục tiêu nghiên cứu
 
-Xác định cách ACFC lập kế hoạch hàng hóa, nhận lô, phân bổ/điều chuyển hàng đến cửa hàng và kiểm soát chênh lệch tồn. Phạm vi không bao gồm truyền thông, tiếp thị, xử lý đơn trực tuyến đến khách hàng, đổi hàng, dữ liệu cá nhân, sản xuất Nike hoặc xuất khẩu Nike.
+Xác định cách ACFC lập kế hoạch hàng hóa và kiểm soát chênh lệch tồn (M3, S3). Phạm vi không bao gồm truyền thông, tiếp thị, xử lý đơn trực tuyến đến khách hàng, đổi hàng, dữ liệu cá nhân, sản xuất Nike, xuất khẩu Nike hoặc các bước nhận lô/điều chuyển nội bộ nằm ngoài phạm vi tuần này.
 
 ## 2. Nhật ký bằng chứng
 
@@ -26,17 +26,13 @@ Xác định cách ACFC lập kế hoạch hàng hóa, nhận lô, phân bổ/đ
 | Quy trình | Bằng chứng chính | Khoảng trống cần xác thực |
 |---|---|---|
 | M3 | EV02, EV04, EV07 | Cấp duyệt, công thức dự báo/số tháng tồn kho, ngưỡng biên lợi nhuận, chu kỳ lập lại. |
-| C3 | EV02, EV03, EV06 | Bộ chứng từ, thời hạn nhận hàng, cất hàng, ngưỡng chênh lệch và phiếu nhập kho. |
-| C4 | EV02, EV03, EV04, EV05 | Nguồn cấp hàng, sức chứa, duyệt điều chuyển, đặt lịch, nhận hàng và xử lý ngoại lệ. |
 | S3 | EV03, EV05, EV08 | Lịch kiểm kê, đếm lại, ngưỡng điều chỉnh, trách nhiệm hao hụt và chuyển cấp. |
 
 ## 4. Giả định phải kiểm chứng
 
 1. M3 nhận dữ liệu M2 nhưng chủ quy trình là Hàng hóa/Phân bổ, không phải Tiếp thị.
-2. C3 kết thúc khi hàng được ghi nhận sẵn sàng trong hệ thống; hàng chưa đối chiếu không được đưa vào phân bổ.
-3. C4 có thể gồm bổ sung định kỳ, điều chuyển cân bằng tồn và thu hồi; nhánh thực tế cần phỏng vấn.
-4. S3 có thể chạy song song tại cửa hàng/kho nhưng chỉ đóng sau khi kiểm kê, đếm lại (nếu có) và phê duyệt điều chỉnh hoàn tất.
-5. Tên hệ thống, ngưỡng phê duyệt, thời hạn và số liệu định lượng chưa được nguồn công khai xác nhận.
+2. S3 có thể chạy song song tại cửa hàng/kho nhưng chỉ đóng sau khi kiểm kê, đếm lại (nếu có) và phê duyệt điều chỉnh hoàn tất.
+3. Tên hệ thống, ngưỡng phê duyệt, thời hạn và số liệu định lượng chưa được nguồn công khai xác nhận.
 
 ## 5. Kế hoạch xác thực
 

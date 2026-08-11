@@ -5,31 +5,26 @@
 
 ## Phạm vi sở hữu
 
-| Mã | Cấp | Quy trình |
-|---|---|---|
-| M3 | Quản lý | Lập kế hoạch mua hàng và phân bổ hàng hóa theo mùa |
-| C3 | Cốt lõi | Tiếp nhận lô hàng mới và nhập kho trung tâm |
-| C4 | Cốt lõi | Phân bổ, điều chuyển và bổ sung hàng hóa cho chuỗi cửa hàng |
-| S3 | Hỗ trợ | Kiểm kê và xử lý chênh lệch tồn kho |
+**Cập nhật 11/08/2026:** yêu cầu chung của nhóm rút gọn còn **1 Quản lý + 1 Hỗ trợ** bắt buộc mỗi thành viên (nhóm đã đủ tối thiểu 6 quy trình BPMN + phân tích). Hưng tập trung hoàn thiện **M3 và S3**; C3/C4 không còn trong phạm vi bài làm tuần này nên đã gỡ khỏi workspace.
 
-## Kết quả rà soát workspace nhóm
+| Mã | Cấp | Quy trình | Trạng thái |
+|---|---|---|---|
+| M3 | Quản lý | Lập kế hoạch mua hàng và phân bổ hàng hóa theo mùa | **Đang hoàn thiện** |
+| S3 | Hỗ trợ | Kiểm kê và xử lý chênh lệch tồn kho | **Đang hoàn thiện** |
 
-Đối chiếu bộ ACFC của Triệu Khang (Part 2/3) và hồ sơ ACFC của Gia Bảo trên các nhánh nhóm hiện có:
-
-- Triệu Khang đã chốt **M1–M2, C1–C2, S1–S2**: vận hành cửa hàng, doanh số/kế hoạch kinh doanh, bán hàng tại cửa hàng, đơn online, đổi/bảo hành/khiếu nại và quyền dữ liệu.
-- Gia Bảo có thêm một Core: **Tổ chức sự kiện truyền thông sản phẩm**.
-- Hưng phụ trách **M3, C3, C4, S3**; cụm này không trùng sáu mã trên nếu giữ đúng ranh giới trong hồ sơ mục tiêu.
-
-Điểm cần nhóm chốt trước khi ghi danh mục cuối: quy trình sự kiện của Gia Bảo **thay cho C1 bán hàng tại cửa hàng** hay là quy trình thứ 11. Vì vậy README này chỉ xác nhận phạm vi của Hưng, chưa gọi tổng nhóm là “10 quy trình”. Luồng cụm Hưng là **M3 → C3 → C4**, còn **S3** phản hồi dữ liệu chênh lệch về M3/C4.
+README này chỉ xác nhận phạm vi cá nhân của Hưng (M3, S3), không thay mặt xác nhận danh mục quy trình chung của cả nhóm.
 
 ## Mốc tiến độ
 
-**06–09/08:** khóa phạm vi/bằng chứng và rà soát C4. **10–13/08:** hoàn thiện M3/C3/S3. **14–16/08:** xác thực, cập nhật gateway và TO-BE.
+**06–09/08:** khóa phạm vi/bằng chứng. **10–13/08:** hoàn thiện M3/S3 (phạm vi bắt buộc mới) + hoàn thành bản nháp báo cáo Word cá nhân. **14–16/08:** xác thực, cập nhật gateway và TO-BE.
+
+**Mục tiêu tuần này (10–16/08):** hoàn thành bản nháp báo cáo Word cho M3/S3 — xem `03. Du thao bao cao ca nhan - M3 va S3.md`. Đây vẫn là bản nháp cấp cá nhân, chưa gộp vào `docs/Phan_2...docx`/Phần 3/Phần 4 dùng chung của nhóm; việc chắt lọc nội dung đưa vào báo cáo chung sẽ thực hiện sau khi nhóm rà soát.
 
 ## Cấu trúc hồ sơ
 
 - `01. Tom tat va muc tieu.md`: bối cảnh, ranh giới và mục tiêu.
 - `02. Thu thap du lieu quy trinh - Hang hoa & ton kho ACFC.md`: bằng chứng, vai trò và bộ câu hỏi.
+- `03. Du thao bao cao ca nhan - M3 va S3.md`: bản nháp gộp discovery + AS-IS + phân tích của M3/S3, chuẩn bị nội dung cho báo cáo Word cá nhân.
 - `quy-trinh/ho-so-kham-pha/`: research log và hồ sơ từng quy trình.
 - `quy-trinh/mo-ta-as-is/`: mô tả hiện trạng bằng lời.
 - `quy-trinh/bpmn/`: mô hình BPMN 2.0 mở và chỉnh sửa được bằng bpmn.io.

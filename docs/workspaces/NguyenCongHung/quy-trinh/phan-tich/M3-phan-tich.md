@@ -44,3 +44,14 @@ Khung ghi nhận: sau phỏng vấn điền ba mốc **thấp nhất – thườ
 ## Đề xuất tương lai (TO-BE) sơ bộ
 
 Chuẩn hóa một bộ dữ liệu bán hàng–tồn kho–dự báo, tự động kiểm tra biên lợi nhuận/số tháng tồn, gắn người phụ trách và thời hạn, lưu một phiên bản kế hoạch và cảnh báo khi cần lập lại.
+
+## Bảng đề xuất khắc phục theo lãng phí
+
+| Loại lãng phí | Vấn đề | Đề xuất khắc phục | Người phụ trách đề xuất | Thời hạn đề xuất |
+|---|---|---|---|---|
+| Di chuyển (Move) | Bản kế hoạch/báo cáo bị chuyển qua nhiều kênh (email, chat, bảng tính rời) | Gộp về một nơi lưu trữ dùng chung và một mã kế hoạch duy nhất theo mùa | Hàng hóa/Phân bổ | Ngắn hạn — áp dụng từ chu kỳ kế hoạch kế tiếp |
+| Chờ (Hold) | Chờ báo cáo, ngân sách hoặc phê duyệt không có hạn xử lý rõ ràng | Đặt SLA cho từng bước duyệt, gắn người phụ trách và cảnh báo tự động khi quá hạn | Quản lý Hàng hóa/Phân bổ | Ngắn hạn — thiết lập SLA trong 1 chu kỳ |
+| Xử lý dư (Over-processing) | Nhập/đối chiếu trùng dữ liệu bán hàng – tồn kho từ nhiều nguồn | Chuẩn hóa một nguồn dữ liệu gốc, tự động hóa bảng theo dõi tỷ lệ bán qua/số tháng tồn | Hàng hóa/Phân bổ phối hợp IT/hệ thống | Trung hạn — 2–3 chu kỳ kế hoạch |
+| Lỗi (Defects) | Dự báo hoặc mã hàng sai khiến phải lập lại kế hoạch | Bắt buộc kiểm tra dữ liệu gốc và khóa phiên bản trước khi trình duyệt | Hàng hóa/Phân bổ | Ngắn hạn — áp dụng ngay từ lần trình kế hoạch tiếp theo |
+
+Ghi chú: người phụ trách và thời hạn ở trên là đề xuất của nhóm dựa trên phân tích lãng phí, chưa phải cam kết chính thức của ACFC; cần xác nhận lại nếu có phỏng vấn/workshop với chủ quy trình.

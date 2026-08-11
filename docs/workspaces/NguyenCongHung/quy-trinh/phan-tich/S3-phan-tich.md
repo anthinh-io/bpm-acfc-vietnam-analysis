@@ -28,7 +28,7 @@
 |---|---|---|
 | Độ chính xác tồn kho giảm | Giao dịch chưa cập nhật hoặc đếm sai | Khóa thời điểm kiểm kê, quét mã và đối chiếu sổ trước điều chỉnh. |
 | Chênh lệch quá hạn | Đếm lại, giải trình hoặc phê duyệt bị chờ | Đặt thời hạn, hàng đợi quá hạn và chuyển cấp theo rủi ro. |
-| Điều chỉnh lặp lại | Chưa phân loại nguyên nhân gốc | Dùng mã nguyên nhân, nhật ký kiểm tra và phản hồi về M3/C4. |
+| Điều chỉnh lặp lại | Chưa phân loại nguyên nhân gốc | Dùng mã nguyên nhân, nhật ký kiểm tra và phản hồi về M3. |
 
 ## KPI định lượng
 
@@ -46,3 +46,14 @@ Khung ghi nhận: sau phỏng vấn điền ba mốc **thấp nhất – thườ
 ## Đề xuất tương lai (TO-BE) sơ bộ
 
 Đặt lịch kiểm kê và phạm vi trên một hệ thống, quét mã khi đếm, tự động tạo đếm lại theo ngưỡng, dùng mã nguyên nhân chuẩn, phê duyệt điều chỉnh theo hạn mức và theo dõi hồ sơ quá hạn.
+
+## Bảng đề xuất khắc phục theo lãng phí
+
+| Loại lãng phí | Vấn đề | Đề xuất khắc phục | Người phụ trách đề xuất | Thời hạn đề xuất |
+|---|---|---|---|---|
+| Di chuyển (Move) | Phiếu kiểm kê/biên bản chuyển qua nhiều đầu mối giấy tờ | Chuyển sang hồ sơ điện tử và một mã vụ việc duy nhất cho mỗi đợt kiểm kê | Kiểm soát tồn kho/Vận hành | Ngắn hạn — áp dụng từ đợt kiểm kê kế tiếp |
+| Chờ (Hold) | Chờ đếm lại, giải trình hoặc duyệt điều chỉnh không có hạn rõ ràng | Đặt thời hạn xử lý, hàng đợi quá hạn và người phụ trách theo từng bước | Quản lý cửa hàng/Kiểm soát tồn kho | Ngắn hạn — thiết lập SLA trong đợt kiểm kê gần nhất |
+| Xử lý dư (Over-processing) | Đếm/nhập/đối chiếu trùng dữ liệu tồn ở nhiều nơi | Kiểm kê theo mức rủi ro (không đếm dàn đều), dùng một hồ sơ điều chỉnh gốc | Kiểm soát tồn kho/Vận hành phối hợp IT | Trung hạn — 2–3 đợt kiểm kê |
+| Lỗi (Defects) | Chênh lệch lặp lại, thiếu bằng chứng bàn giao, sai giao dịch | Quét mã vạch khi đếm, nhật ký kiểm tra và mã nguyên nhân chuẩn hóa | Kiểm soát tồn kho/Vận hành | Trung hạn — triển khai quét mã trong 1–2 quý |
+
+Ghi chú: người phụ trách và thời hạn ở trên là đề xuất của nhóm dựa trên phân tích lãng phí, chưa phải cam kết chính thức của ACFC; cần xác nhận lại nếu có phỏng vấn/workshop với chủ quy trình.

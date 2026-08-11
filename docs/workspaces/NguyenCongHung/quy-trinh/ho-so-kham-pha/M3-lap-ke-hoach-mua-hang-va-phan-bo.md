@@ -8,7 +8,7 @@
 | Kích hoạt | Kỳ kế hoạch mùa hoặc phát hiện lệch tỷ lệ bán qua/số tháng tồn kho |
 | Đầu vào | Báo cáo bán hàng, dự báo, tồn kho, số tháng tồn kho, biên lợi nhuận, kế hoạch thương mại |
 | Đầu ra | Kế hoạch phân bổ hàng, yêu cầu mua/điều chuyển, hồ sơ phê duyệt |
-| Outcome dương | Kế hoạch được duyệt và phát hành cho C3/C4 |
+| Outcome dương | Kế hoạch được duyệt và phát hành |
 | Outcome âm | Kế hoạch bị trả lại, thiếu ngân sách hoặc phải lập lại |
 | Bằng chứng | EV02, EV04, EV07 trong `research.md` |
 
