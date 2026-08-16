@@ -1,0 +1,164 @@
+# S1 – Đổi hàng, bảo hành và xử lý khiếu nại – Phân tích định tính
+
+## 1. Phân tích giá trị gia tăng
+
+> Phân loại sử dụng:
+> - **VA (Value Added):** Hoạt động tạo giá trị trực tiếp cho khách hàng.
+> - **BVA/VBA (Business Value Added):** Hoạt động không tạo giá trị trực tiếp cho khách hàng nhưng cần thiết cho kiểm soát, tuân thủ chính sách hoặc vận hành doanh nghiệp.
+> - **NVA (Non-Value Added):** Hoạt động không tạo giá trị và nên được giảm thiểu hoặc loại bỏ nếu có thể.
+
+| Hoạt động | Phân loại | Nhận xét |
+|---|---|---|
+| Tiếp nhận yêu cầu của khách hàng | **VA** | Là điểm bắt đầu để khách hàng được hỗ trợ sau bán hàng. |
+| Hướng dẫn khách hàng cung cấp thông tin cần thiết | **VA** | Giúp khách hàng hiểu rõ yêu cầu cần bổ sung để tiếp tục xử lý. |
+| Kiểm tra sản phẩm/bằng chứng để xác định phương án xử lý | **BVA/VBA** | Không trực tiếp tạo giá trị cho khách hàng nhưng cần thiết để bảo đảm yêu cầu được xử lý đúng chính sách. |
+| Xác định yêu cầu đủ điều kiện hay không | **BVA/VBA** | Cần để kiểm soát việc đổi hàng, bảo hành hoặc xử lý khiếu nại đúng quy định. |
+| Thực hiện đổi hàng | **VA** | Tạo kết quả trực tiếp cho khách hàng khi yêu cầu đủ điều kiện. |
+| Thực hiện bảo hành hoặc phương án xử lý phù hợp | **VA** | Giải quyết trực tiếp vấn đề sau bán hàng của khách hàng. |
+| Thông báo kết quả xử lý | **VA** | Giúp khách hàng biết trạng thái và kết quả cuối cùng của yêu cầu. |
+| Kiểm tra giao dịch/hóa đơn | **BVA/VBA** | Cần để xác minh yêu cầu và tránh xử lý sai giao dịch. |
+| Kiểm tra thời hạn và điều kiện chính sách | **BVA/VBA** | Cần thiết để bảo đảm yêu cầu phù hợp với chính sách áp dụng. |
+| Kiểm tra sản phẩm thay thế | **BVA/VBA** | Cần để xác định khả năng thực hiện đổi hàng. |
+| Chuyển cấp trường hợp ngoại lệ | **BVA/VBA** | Cần thiết khi trường hợp vượt quyền xử lý thông thường. |
+| Chờ khách hàng bổ sung thông tin | **NVA** | Là thời gian chờ, không tạo thêm giá trị. |
+| Yêu cầu khách hàng cung cấp lại cùng một thông tin nhiều lần | **NVA** | Gây phiền hà cho khách và kéo dài thời gian xử lý nếu xảy ra trong thực tế. |
+| Kiểm tra lại nhiều lần cùng một hồ sơ/bằng chứng | **NVA** | Là hoạt động lặp lại, cần giảm nếu không có lý do kiểm soát rõ ràng. |
+| Chờ đơn vị khác phản hồi khi chuyển cấp | **NVA** | Là thời gian chờ và có thể kéo dài cycle time của yêu cầu. |
+
+## 2. Phân tích lãng phí
+
+### 2.1. Move – Di chuyển không cần thiết
+
+**Biểu hiện có thể phát sinh:**
+- Khách hàng phải mang sản phẩm qua nhiều điểm tiếp nhận/kiểm tra nếu quy trình không có đầu mối rõ ràng.
+- Sản phẩm có thể phải di chuyển giữa cửa hàng, kho hoặc đơn vị xử lý nếu trách nhiệm kiểm tra không được xác định rõ.
+
+**Ảnh hưởng:**
+- Tăng thời gian xử lý.
+- Tăng số lần bàn giao sản phẩm.
+- Tăng nguy cơ thất lạc hoặc nhầm lẫn trạng thái xử lý.
+
+**Hướng cải thiện:**
+- Xác định một đầu mối tiếp nhận rõ ràng.
+- Hạn chế số lần bàn giao sản phẩm.
+- Theo dõi trạng thái yêu cầu và vị trí sản phẩm bằng một mã case thống nhất.
+
+### 2.2. Hold – Chờ đợi
+
+**Biểu hiện có thể phát sinh:**
+- Chờ khách hàng bổ sung hóa đơn, hình ảnh hoặc bằng chứng.
+- Chờ kiểm tra tình trạng sản phẩm.
+- Chờ xác nhận sản phẩm thay thế.
+- Chờ Quản lý/đơn vị có thẩm quyền xử lý ngoại lệ.
+
+**Ảnh hưởng:**
+- Kéo dài thời gian từ lúc tiếp nhận đến khi đóng yêu cầu.
+- Khách hàng có thể phải liên hệ lại nhiều lần.
+- Dễ phát sinh khiếu nại về thời gian phản hồi.
+
+**Hướng cải thiện:**
+- Cung cấp checklist hồ sơ ngay từ lần tiếp nhận đầu tiên.
+- Quy định thời gian xử lý cho từng trạng thái.
+- Thiết lập SLA cho các bước cần chuyển đơn vị khác.
+
+### 2.3. Overdo – Thực hiện quá mức/lặp lại
+
+**Biểu hiện có thể phát sinh:**
+- Nhập lại thông tin giao dịch hoặc thông tin khách hàng ở nhiều nơi.
+- Yêu cầu khách gửi lại ảnh/chứng từ đã cung cấp trước đó.
+- Nhiều đơn vị cùng kiểm tra lại một nội dung mà không có tiêu chí phân quyền rõ ràng.
+
+**Ảnh hưởng:**
+- Tăng cycle time.
+- Tăng nguy cơ sai sót.
+- Làm trải nghiệm khách hàng kém hơn.
+- Tăng khối lượng công việc nội bộ.
+
+**Hướng cải thiện:**
+- Sử dụng một mã case duy nhất.
+- Lưu hồ sơ/bằng chứng tập trung.
+- Quy định rõ đơn vị nào chịu trách nhiệm kiểm tra từng loại điều kiện.
+
+## 3. Các vấn đề định tính nổi bật
+
+### Vấn đề 1 – Hồ sơ không đầy đủ làm kéo dài thời gian xử lý
+
+Nếu khách hàng chưa cung cấp đủ thông tin giao dịch, hóa đơn hoặc bằng chứng cần thiết, yêu cầu phải dừng để bổ sung.
+
+**Hệ quả:**
+- Cycle time tăng.
+- Khách hàng phải liên hệ nhiều lần.
+- Nhân viên phải kiểm tra lại hồ sơ sau mỗi lần bổ sung.
+
+**Cần xác nhận thêm:**
+- Những loại thông tin nào thường bị thiếu nhất.
+- Tỷ lệ case phải bổ sung hồ sơ.
+- Số lần bổ sung trung bình của một case.
+
+### Vấn đề 2 – Trường hợp ngoại lệ phụ thuộc vào việc chuyển cấp
+
+Những yêu cầu không thể xử lý theo quy tắc thông thường phải chuyển cho Quản lý hoặc đơn vị có thẩm quyền.
+
+**Hệ quả:**
+- Phát sinh thời gian chờ.
+- Có thể xảy ra cách xử lý không nhất quán nếu tiêu chí ngoại lệ chưa rõ.
+- Khách hàng khó biết khi nào sẽ có kết quả.
+
+**Cần xác nhận thêm:**
+- Những trường hợp nào được xem là ngoại lệ.
+- Ai có quyền quyết định cuối cùng.
+- SLA phản hồi sau khi chuyển cấp.
+
+### Vấn đề 3 – Nguy cơ khách hàng phải cung cấp lại thông tin nhiều lần
+
+Nếu thông tin yêu cầu được ghi nhận ở nhiều kênh hoặc nhiều đơn vị khác nhau, khách hàng có thể phải lặp lại thông tin đã cung cấp.
+
+**Hệ quả:**
+- Tăng NVA.
+- Làm giảm trải nghiệm khách hàng.
+- Tăng nguy cơ dữ liệu không nhất quán giữa các bên.
+
+**Lưu ý:** Cần phỏng vấn hoặc kiểm tra hệ thống/biểu mẫu thực tế của ACFC trước khi kết luận đây là vấn đề đang xảy ra.
+
+## 4. Phân tích nguyên nhân – Fishbone
+
+### Vấn đề được chọn
+
+**Thời gian xử lý yêu cầu đổi hàng/bảo hành/khiếu nại kéo dài**
+
+### Nhóm nguyên nhân có thể xem xét
+
+| Nhóm nguyên nhân | Nguyên nhân cần kiểm tra |
+|---|---|
+| **Con người (People)** | Nhân viên hướng dẫn chưa đầy đủ; khách hàng thiếu thông tin; chưa rõ người chịu trách nhiệm xử lý; trường hợp ngoại lệ phụ thuộc cá nhân. |
+| **Quy trình (Process)** | Checklist hồ sơ chưa rõ; nhiều bước xác nhận; tiêu chí đủ điều kiện chưa thống nhất; quy tắc chuyển cấp chưa rõ. |
+| **Hệ thống (System)** | Dữ liệu giao dịch và hồ sơ yêu cầu không liên thông; chưa có mã case thống nhất; khó theo dõi trạng thái. |
+| **Dữ liệu/Chứng từ (Data/Documents)** | Thiếu hóa đơn, mã đơn, ảnh hoặc bằng chứng; thông tin giao dịch không đầy đủ. |
+| **Sản phẩm/Hàng hóa (Product/Goods)** | Khó xác định tình trạng sản phẩm; thiếu sản phẩm thay thế; cần chuyển sản phẩm đến nơi khác để kiểm tra. |
+| **Quản lý (Management)** | Chưa có SLA; chưa có ma trận thẩm quyền; chưa theo dõi nguyên nhân chậm xử lý theo nhóm. |
+
+> Các nguyên nhân trên là **giả thuyết phân tích cần kiểm chứng**, không được xem là kết luận thực tế của ACFC nếu chưa có dữ liệu hoặc phỏng vấn xác nhận.
+
+## 5. Hướng cải thiện đề xuất
+
+1. Chuẩn hóa **checklist hồ sơ** ngay từ lần tiếp nhận đầu tiên.
+2. Tạo **mã case duy nhất** cho mỗi yêu cầu sau bán hàng.
+3. Lưu thông tin giao dịch, ảnh/bằng chứng và trạng thái xử lý tại một nơi.
+4. Quy định rõ **tiêu chí đủ điều kiện** cho từng loại yêu cầu.
+5. Xây dựng **ma trận chuyển cấp** cho các trường hợp ngoại lệ.
+6. Quy định **SLA** cho từng giai đoạn xử lý.
+7. Cho phép CSKH/Cửa hàng theo dõi trạng thái để khách hàng không phải liên hệ nhiều lần.
+8. Theo dõi nguyên nhân từ chối và nguyên nhân chậm xử lý để xác định vấn đề lặp lại.
+
+## 6. Nội dung cần xác nhận bằng phỏng vấn/dữ liệu thực tế
+
+- Khách hàng thường gửi yêu cầu qua những kênh nào?
+- Một case hiện tại phải qua bao nhiêu người/bộ phận?
+- Những thông tin nào khách hàng thường phải bổ sung?
+- Có trường hợp khách hàng phải cung cấp lại cùng một thông tin không?
+- Thời gian chờ lâu nhất thường nằm ở bước nào?
+- Ai là người kiểm tra sản phẩm?
+- Trường hợp nào cần chuyển cấp?
+- Có SLA xử lý hay không?
+- Có mã case hoặc hệ thống theo dõi trạng thái hay không?
+- Có thống kê tỷ lệ từ chối, chuyển cấp hoặc xử lý lại không?
