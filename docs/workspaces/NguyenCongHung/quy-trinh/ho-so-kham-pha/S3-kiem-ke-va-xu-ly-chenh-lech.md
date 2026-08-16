@@ -3,7 +3,9 @@
 | Trường | Nội dung |
 |---|---|
 | Cấp | Hỗ trợ |
+| Mục tiêu quy trình | Đảm bảo tồn kho thực tế khớp sổ sách, phát hiện và xử lý kịp thời các chênh lệch/hao hụt, cung cấp dữ liệu tin cậy phản hồi cho M3 để điều chỉnh kế hoạch |
 | Khách hàng | Hàng hóa/Vận hành và Tài chính cần dữ liệu tồn chính xác |
+| Giá trị mang lại | Tăng độ chính xác tồn kho, giảm thất thoát không kiểm soát, hỗ trợ Tài chính đối chiếu sổ sách và hỗ trợ M3 điều chỉnh kế hoạch mua hàng/phân bổ kịp thời |
 | Chủ quy trình dự kiến | Kiểm soát tồn kho/Vận hành; cần xác thực |
 | Kích hoạt | Lịch kiểm kê hoặc cảnh báo tồn thực tế lệch sổ |
 | Đầu vào | Kế hoạch kiểm kê, sổ tồn, danh sách mã hàng/vị trí, chênh lệch trước đó |

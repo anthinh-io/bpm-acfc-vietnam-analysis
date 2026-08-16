@@ -5,35 +5,35 @@
 
 ## Phạm vi sở hữu
 
-**Cập nhật 11/08/2026:** yêu cầu chung của nhóm rút gọn còn **1 Quản lý + 1 Hỗ trợ** bắt buộc mỗi thành viên (nhóm đã đủ tối thiểu 6 quy trình BPMN + phân tích). Hưng tập trung hoàn thiện **M3 và S3**; C3/C4 không còn trong phạm vi bài làm tuần này nên đã gỡ khỏi workspace.
+**Cập nhật 11/08/2026:** yêu cầu chung của nhóm rút gọn còn **1 Quản lý + 1 Hỗ trợ** bắt buộc mỗi thành viên (nhóm đã đủ tối thiểu 6 quy trình BPMN + phân tích). Hưng hoàn thiện **M3 và S3** theo yêu cầu bắt buộc, đồng thời bổ sung thêm **S4** (quy trình Hỗ trợ thứ hai, không trùng mã/nội dung với quy trình của thành viên khác) từ nội dung công khai trên trang chủ ACFC. C3/C4 không còn trong phạm vi bài làm tuần này nên đã gỡ khỏi workspace.
 
-| Mã | Cấp | Quy trình | Trạng thái |
-|---|---|---|---|
-| M3 | Quản lý | Lập kế hoạch mua hàng và phân bổ hàng hóa theo mùa | **Đang hoàn thiện** |
-| S3 | Hỗ trợ | Kiểm kê và xử lý chênh lệch tồn kho | **Đang hoàn thiện** |
+| Mã | Cấp | Quy trình | Sơ đồ BPMN (trong `diagrams/`) | Trạng thái |
+|---|---|---|---|---|
+| M3 | Quản lý | Lập kế hoạch mua hàng và phân bổ hàng hóa theo mùa | `bpmn-hoach-dinh-phan-bo-hang-hoa-m3.svg` | **Xong bản nháp** — AS-IS + BPMN + phân tích định lượng |
+| S3 | Hỗ trợ | Kiểm kê và xử lý chênh lệch tồn kho | `bpmn-kiem-ke-ton-kho-s2.svg` + `fishbone-kiem-ke-kho.svg` | **Xong bản nháp** — AS-IS + BPMN + xương cá + phân tích định lượng |
+| S4 | Hỗ trợ | Đăng ký và kích hoạt tài khoản thành viên | `bpmn-dang-ky-kich-hoat-tai-khoan-s3.svg` + `fishbone-kich-hoat-tai-khoan.svg` | **Xong bản nháp** — AS-IS + BPMN + xương cá + phân tích định lượng |
 
-README này chỉ xác nhận phạm vi cá nhân của Hưng (M3, S3), không thay mặt xác nhận danh mục quy trình chung của cả nhóm.
+> Lưu ý mã: file trong `diagrams/` dùng hậu tố nhóm (`m3`, `s2`, `s3`) khác với mã workspace (M3, S3, S4). Ánh xạ: S3 (kiểm kê) ↔ `...-s2`, S4 (kích hoạt tài khoản) ↔ `...-s3`. Cần thống nhất lại bảng ánh xạ khi gộp vào báo cáo chung.
+
+README này chỉ xác nhận phạm vi cá nhân của Hưng (M3, S3, S4), không thay mặt xác nhận danh mục quy trình chung của cả nhóm.
 
 ## Mốc tiến độ
 
-**06–09/08:** khóa phạm vi/bằng chứng. **10–13/08:** hoàn thiện M3/S3 (phạm vi bắt buộc mới) + hoàn thành bản nháp báo cáo Word cá nhân. **14–16/08:** xác thực, cập nhật gateway và TO-BE.
+**06–09/08:** khóa phạm vi/bằng chứng. **10–13/08:** hoàn thiện M3/S3 (phạm vi bắt buộc mới) + hoàn thành bản nháp báo cáo Word cá nhân. **14–16/08:** xác thực, cập nhật gateway và TO-BE; bổ sung S4 vào bản nháp báo cáo nếu nhóm đồng ý mở rộng phạm vi 3 quy trình.
 
-**Mục tiêu tuần này (10–16/08):** hoàn thành bản nháp báo cáo Word cho M3/S3 — xem `03. Du thao bao cao ca nhan - M3 va S3.md`. Đây vẫn là bản nháp cấp cá nhân, chưa gộp vào `docs/Phan_2...docx`/Phần 3/Phần 4 dùng chung của nhóm; việc chắt lọc nội dung đưa vào báo cáo chung sẽ thực hiện sau khi nhóm rà soát.
+**Mục tiêu tuần này (10–16/08):** hoàn thành bản nháp báo cáo Word cho M3/S3 — xem `03. Du thao bao cao ca nhan - M3 va S3.md`. File này hiện chỉ gộp M3/S3 (phạm vi bắt buộc); S4 đã có đủ discovery/AS-IS/phân tích riêng trong `quy-trinh/` nhưng **chưa gộp** vào bản nháp báo cáo Word — sẽ bổ sung sau nếu nhóm xác nhận mở rộng phạm vi cá nhân lên 3 quy trình. Đây vẫn là bản nháp cấp cá nhân, chưa gộp vào `docs/Phan_2...docx`/Phần 3/Phần 4 dùng chung của nhóm; việc chắt lọc nội dung đưa vào báo cáo chung sẽ thực hiện sau khi nhóm rà soát.
 
 ## Cấu trúc hồ sơ
 
 - `01. Tom tat va muc tieu.md`: bối cảnh, ranh giới và mục tiêu.
-- `02. Thu thap du lieu quy trinh - Hang hoa & ton kho ACFC.md`: bằng chứng, vai trò và bộ câu hỏi.
-- `03. Du thao bao cao ca nhan - M3 va S3.md`: bản nháp gộp discovery + AS-IS + phân tích của M3/S3, chuẩn bị nội dung cho báo cáo Word cá nhân.
+- `02. Thu thap du lieu quy trinh - Hang hoa & ton kho ACFC.md`: bằng chứng, vai trò và bộ câu hỏi (phạm vi M3/S3).
+- `03. Du thao bao cao ca nhan - M3 va S3.md`: bản nháp gộp discovery + AS-IS + phân tích của M3/S3, chuẩn bị nội dung cho báo cáo Word cá nhân. S4 chưa gộp vào file này.
 - `quy-trinh/ho-so-kham-pha/`: research log và hồ sơ từng quy trình.
 - `quy-trinh/mo-ta-as-is/`: mô tả hiện trạng bằng lời.
-- `quy-trinh/bpmn/`: mô hình BPMN 2.0 mở và chỉnh sửa được bằng bpmn.io.
-- `quy-trinh/drawio/`: nguồn diagrams.net native, mỗi khối có tọa độ riêng để giữ bố cục pool/lane và các nhánh ngoại lệ.
-- `quy-trinh/blueprint/`: blueprint pool/lane, event, task, dữ liệu, gateway và luồng thực thi theo prompt BPMN 2.0.
-- `quy-trinh/images/`: bản SVG dùng trong báo cáo/slide.
-- `quy-trinh/phan-tich/`: VA/BVA/NVA, lãng phí, KPI và TO-BE sơ bộ.
+- `quy-trinh/phan-tich/`: VA/BVA/NVA, lãng phí, phân tích định lượng (công thức + ví dụ minh họa) và TO-BE sơ bộ.
+- `../../../diagrams/`: sơ đồ BPMN (`.drawio` nguồn + `.svg` xuất) và sơ đồ xương cá của M3/S3/S4 (đặt ở thư mục `diagrams/` cấp gốc dùng chung cho cả nhóm — xem bảng phạm vi phía trên để biết tên file).
 
-Bốn bộ `.drawio`, `.bpmn` và `.svg` được đồng bộ từ `generate_native_bpmn_diagrams.py`. Bộ sinh không dùng Mermaid/PlantUML và không dàn mọi khối thành một chuỗi trái–phải: luồng chính, nhánh điều kiện, đường quay lại và chuyển lane có tọa độ riêng theo từng quy trình.
+Mỗi quy trình có cặp `.drawio` (nguồn diagrams.net) và `.svg` (bản xuất) trong `diagrams/`. Sơ đồ không dùng Mermaid/PlantUML và không dàn mọi khối thành một chuỗi trái–phải: luồng chính, nhánh điều kiện, đường quay lại và chuyển lane có tọa độ riêng theo từng quy trình.
 
 Bộ sinh kiểm tra trước khi xuất: không cho phép khối/nhãn đè nhau; sequence flow, message flow và data association phải cách khối không liên quan tối thiểu **24 px**, còn nhãn gateway/event có vùng an toàn **12 px**.
 

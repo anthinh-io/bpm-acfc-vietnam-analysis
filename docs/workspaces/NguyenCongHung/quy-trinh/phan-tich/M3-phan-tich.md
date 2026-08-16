@@ -29,17 +29,42 @@
 | Phê duyệt chậm | Thiếu thời hạn và tiêu chí duyệt thống nhất | Thiết lập hạn duyệt, hàng đợi quá hạn và chuyển cấp. |
 | Phân bổ lệch nhu cầu | Số tháng tồn, tỷ lệ bán hoặc sức chứa chưa đồng bộ | Dùng bảng theo dõi chung và quy tắc phân bổ cần xác thực. |
 
-## KPI định lượng
+## Phân tích định lượng (Thời gian – Chất lượng – Chi phí)
 
-Khung ghi nhận: sau phỏng vấn điền ba mốc **thấp nhất – thường gặp – cao nhất** cho từng KPI; hiện chưa có số ACFC.
+Rubric yêu cầu **tính toán** trên ba nhóm chỉ số: Thời gian, Chất lượng, Chi phí. Do chưa tiếp cận được số nội bộ ACFC, phần dưới trình bày **công thức + một ví dụ tính toán minh họa** để thể hiện phương pháp.
 
-| KPI | Công thức/dữ liệu cần lấy | Trạng thái |
-|---|---|---|
-| Độ chính xác dự báo | 1 - abs(dự báo - thực tế) / thực tế | Chưa có số ACFC |
-| Tỷ lệ bán qua | Số bán / số khả dụng | Chưa có số ACFC |
-| Số tháng tồn kho | Tồn cuối kỳ / tốc độ bán bình quân | Chưa có số ACFC |
-| Thời gian phê duyệt | Thời điểm duyệt - thời điểm gửi | Chưa có số ACFC |
-| Tỷ lệ thay đổi phân bổ | Kế hoạch sửa / kế hoạch phát hành | Chưa có số ACFC |
+> ⚠️ **Lưu ý liêm chính học thuật:** mọi con số ở cột "Dữ liệu giả định" và "Kết quả tính" bên dưới là **số nhóm tự đặt để minh họa cách tính — KHÔNG phải số liệu thực của ACFC**. Sau phỏng vấn/workshop sẽ thay bằng ba mốc *thấp nhất – thường gặp – cao nhất* từ dữ liệu thật rồi áp lại đúng công thức ở cột 2.
+
+### a) Nhóm Thời gian (Time)
+
+| KPI | Công thức | Dữ liệu giả định (minh họa) | Kết quả tính |
+|---|---|---|---|
+| Thời gian chu kỳ lập kế hoạch (Cycle time) | Thời điểm phát hành − thời điểm bắt đầu | Bắt đầu 09:00 ngày 1 → phát hành 17:00 ngày 5 (5 ngày làm việc) | **40 giờ** |
+| Thời gian xử lý thực (Processing/VA+BVA) | Σ thời gian các bước tạo/kiểm/duyệt (B1–B10) | ≈ 14 giờ | **14 giờ** |
+| Thời gian chờ (Waiting/NVA) | Cycle − Processing | 40 − 14 | **26 giờ** |
+| Hiệu suất chu kỳ (PCE) | Processing / Cycle time | 14 / 40 | **35%** |
+| Thời gian phê duyệt | Thời điểm duyệt − thời điểm trình | Trình 14:00 ngày 3 → duyệt 10:00 ngày 5 | **≈ 44 giờ** |
+
+*Nhận xét: PCE 35% nghĩa là gần 2/3 thời gian là chờ (NVA) — khớp với lãng phí "Chờ (Hold)" ở trên.*
+
+### b) Nhóm Chất lượng (Quality)
+
+| KPI | Công thức | Dữ liệu giả định (minh họa) | Kết quả tính |
+|---|---|---|---|
+| Độ chính xác dự báo | 1 − abs(dự báo − thực tế) / thực tế | Dự báo 1.000, thực tế 1.200 | **83,3%** |
+| Tỷ lệ bán qua (Sell-through) | Số bán / số khả dụng | 750 / 1.000 | **75%** |
+| Số tháng tồn kho (WoS) | Tồn cuối kỳ / tốc độ bán bình quân tháng | 600 / 250 | **2,4 tháng** |
+| Tỷ lệ thay đổi phân bổ | Kế hoạch sửa / kế hoạch phát hành | 15 / 100 | **15%** |
+
+### c) Nhóm Chi phí (Cost)
+
+| KPI | Công thức | Dữ liệu giả định (minh họa) | Kết quả tính |
+|---|---|---|---|
+| Chi phí lập lại kế hoạch (Defects) | Số lần lập lại × giờ công × đơn giá giờ | 2 lần × 8 giờ × 150.000đ | **2.400.000đ / mùa** |
+| Chi phí đọng vốn tồn dư (Over-stock) | Giá trị tồn dư × chi phí giữ hàng/tháng | 200 sp × 300.000đ × 2% | **1.200.000đ / tháng** |
+| Chi phí chờ phê duyệt (Hold) | Số kế hoạch × giờ chờ × đơn giá giờ | 4 × 26 giờ × 150.000đ | **15.600.000đ / mùa** |
+
+*Đơn giá giờ công 150.000đ là giả định minh họa; thay bằng đơn giá thật khi có dữ liệu nhân sự ACFC.*
 
 ## Đề xuất tương lai (TO-BE) sơ bộ
 

@@ -30,18 +30,41 @@
 | Chênh lệch quá hạn | Đếm lại, giải trình hoặc phê duyệt bị chờ | Đặt thời hạn, hàng đợi quá hạn và chuyển cấp theo rủi ro. |
 | Điều chỉnh lặp lại | Chưa phân loại nguyên nhân gốc | Dùng mã nguyên nhân, nhật ký kiểm tra và phản hồi về M3. |
 
-## KPI định lượng
+## Phân tích định lượng (Thời gian – Chất lượng – Chi phí)
 
-Khung ghi nhận: sau phỏng vấn điền ba mốc **thấp nhất – thường gặp – cao nhất** cho từng KPI; hiện chưa có số ACFC.
+Rubric yêu cầu **tính toán** trên ba nhóm chỉ số: Thời gian, Chất lượng, Chi phí. Do chưa tiếp cận được số nội bộ ACFC, phần dưới trình bày **công thức + một ví dụ tính toán minh họa** để thể hiện phương pháp.
 
-| KPI | Công thức/dữ liệu cần lấy | Trạng thái |
-|---|---|---|
-| Độ chính xác tồn kho | Mã hàng khớp tồn thực tế/sổ / tổng mã hàng | Chưa có số ACFC |
-| Tỷ lệ hao hụt | Giá trị thiếu không giải thích / giá trị tồn | Chưa có số ACFC |
-| Thời gian chu kỳ kiểm kê | Thời điểm đóng kiểm kê - thời điểm bắt đầu | Chưa có số ACFC |
-| Tỷ lệ điều chỉnh | Kiểm kê có điều chỉnh / tổng kiểm kê | Chưa có số ACFC |
-| Tuổi chênh lệch chưa đóng | Ngày hiện tại - ngày mở hồ sơ | Chưa có số ACFC |
-| Tỷ lệ đóng đúng hạn | Hồ sơ đóng đúng hạn / tổng hồ sơ | Chưa có số ACFC |
+> ⚠️ **Lưu ý liêm chính học thuật:** mọi con số ở cột "Dữ liệu giả định" và "Kết quả tính" bên dưới là **số nhóm tự đặt để minh họa cách tính — KHÔNG phải số liệu thực của ACFC**. Sau phỏng vấn/workshop sẽ thay bằng ba mốc *thấp nhất – thường gặp – cao nhất* từ dữ liệu thật rồi áp lại đúng công thức ở cột 2.
+
+### a) Nhóm Thời gian (Time)
+
+| KPI | Công thức | Dữ liệu giả định (minh họa) | Kết quả tính |
+|---|---|---|---|
+| Thời gian chu kỳ kiểm kê (Cycle time) | Thời điểm đóng hồ sơ − thời điểm bắt đầu (freeze) | Freeze 20:00 → đóng hồ sơ 08:00 hôm sau | **12 giờ** |
+| Thời gian đếm thực tế (Processing/VA+BVA) | Σ thời gian đếm + đối chiếu (B5–B6) | ≈ 4 giờ | **4 giờ** |
+| Thời gian chờ (Waiting/NVA) | Chờ duyệt phạm vi + chờ phê duyệt điều chỉnh (B3, B12) | ≈ 6 giờ | **6 giờ** |
+| Hiệu suất chu kỳ (PCE) | Processing / Cycle time | 4 / 12 | **33%** |
+| Tuổi chênh lệch chưa đóng | Ngày hiện tại − ngày mở hồ sơ | Mở 01/08 → xét 06/08 | **5 ngày** |
+
+### b) Nhóm Chất lượng (Quality)
+
+| KPI | Công thức | Dữ liệu giả định (minh họa) | Kết quả tính |
+|---|---|---|---|
+| Độ chính xác tồn kho (IRA) | 1 − Σ abs(chênh lệch) / tổng tồn kho | 1 − 30 / 10.000 | **99,7%** |
+| Tỷ lệ hao hụt (Shrinkage) | Giá trị thiếu không giải thích / giá trị tồn | 3.000.000đ / 2.000.000.000đ | **0,15%** |
+| Tỷ lệ đếm lại | Số mã phải đếm lại / tổng mã đếm | 40 / 500 | **8%** |
+| Tỷ lệ điều chỉnh | Kiểm kê có điều chỉnh / tổng kiểm kê | 3 / 20 | **15%** |
+| Tỷ lệ đóng đúng hạn | Hồ sơ đóng đúng hạn / tổng hồ sơ | 18 / 20 | **90%** |
+
+### c) Nhóm Chi phí (Cost)
+
+| KPI | Công thức | Dữ liệu giả định (minh họa) | Kết quả tính |
+|---|---|---|---|
+| Chi phí mỗi đợt kiểm kê | Số người × số giờ × đơn giá giờ | 5 người × 4 giờ × 120.000đ | **2.400.000đ / đợt** |
+| Chi phí đếm lại (Defects) | Số giờ đếm lại × đơn giá giờ | 6 giờ × 120.000đ | **720.000đ / đợt** |
+| Chi phí hao hụt phải bồi thường/xóa sổ | Giá trị thiếu không thu hồi được | Theo ví dụ trên | **3.000.000đ / đợt** |
+
+*Đơn giá giờ công 120.000đ là giả định minh họa; thay bằng đơn giá thật khi có dữ liệu nhân sự ACFC.*
 
 ## Đề xuất tương lai (TO-BE) sơ bộ
 

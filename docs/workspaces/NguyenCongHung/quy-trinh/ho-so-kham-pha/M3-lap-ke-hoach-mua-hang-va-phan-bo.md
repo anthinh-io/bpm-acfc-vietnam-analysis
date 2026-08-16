@@ -3,7 +3,9 @@
 | Trường | Nội dung |
 |---|---|
 | Cấp | Quản lý |
+| Mục tiêu quy trình | Đảm bảo kế hoạch mua hàng và phân bổ hàng hóa theo mùa được lập, kiểm tra và duyệt kịp thời, giúp cơ cấu hàng tại cửa hàng khớp nhu cầu bán và nằm trong ngân sách/biên lợi nhuận |
 | Khách hàng | Vận hành/cửa hàng nhận đúng cơ cấu hàng; khách hàng cuối hưởng lợi gián tiếp |
+| Giá trị mang lại | Giảm thiếu/dư hàng tại cửa hàng, kiểm soát ngân sách mua hàng, tạo cơ sở ra quyết định phân bổ dựa trên dữ liệu bán hàng và tồn kho thực tế |
 | Chủ quy trình dự kiến | Hàng hóa/Phân bổ; cần xác thực |
 | Kích hoạt | Kỳ kế hoạch mùa hoặc phát hiện lệch tỷ lệ bán qua/số tháng tồn kho |
 | Đầu vào | Báo cáo bán hàng, dự báo, tồn kho, số tháng tồn kho, biên lợi nhuận, kế hoạch thương mại |
