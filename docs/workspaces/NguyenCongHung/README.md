@@ -12,7 +12,7 @@
 | M3 | Quản lý | Lập kế hoạch mua hàng và phân bổ hàng hóa theo mùa | `bpmn-hoach-dinh-phan-bo-hang-hoa-m3.svg` | Xong bản nháp — AS-IS + BPMN + phân tích định lượng |
 | S3 | Hỗ trợ | Kiểm kê và xử lý chênh lệch tồn kho | `bpmn-kiem-ke-ton-kho-s2.svg` | Xong bản nháp — AS-IS + BPMN + phân tích định lượng |
 | S4 | Hỗ trợ | Đăng ký, xác thực OTP & kích hoạt tài khoản thành viên | `bpmn-dang-ky-kich-hoat-tai-khoan-s3.svg` | Xong bản nháp — AS-IS + BPMN (8 cổng XOR, có Split & Join) + phân tích định lượng |
-| S1 | Hỗ trợ | Tuyển dụng & tiếp nhận (onboarding) nhân sự | `bpmn-tuyen-dung-nhan-su-s1.svg` | Có báo cáo chuyên sâu riêng + BPMN |
+| S1 | Hỗ trợ | Tuyển dụng & tiếp nhận (onboarding) nhân sự | `bpmn-tuyen-dung-nhan-su-s1.svg` | Xong bản nháp — AS-IS + BPMN (8 cổng XOR) + phân tích định lượng |
 
 > Lưu ý mã: file BPMN dùng hậu tố khác với mã workspace. Ánh xạ: S3 (kiểm kê) ↔ `...-s2`, S4 (kích hoạt tài khoản) ↔ `...-s3`, S1 (tuyển dụng) ↔ `...-s1`. Cần thống nhất lại bảng ánh xạ khi gộp vào báo cáo chung.
 
@@ -20,11 +20,9 @@ README này chỉ xác nhận phạm vi cá nhân của Hưng (M3, S3, S4, S1), 
 
 ## Cấu trúc hồ sơ
 
-Workspace gồm **một báo cáo tổng M3/S3/S4** kèm **hai báo cáo chuyên sâu riêng** (S4, S1) và thư mục sơ đồ tự chứa:
+Workspace gồm **một báo cáo tổng, tự chứa** bao trùm cả bốn quy trình M3/S3/S4/S1 và thư mục sơ đồ tự chứa (hai báo cáo chuyên sâu S4 và S1 trước đây đã được gộp hẳn vào báo cáo tổng cho gọn):
 
-- `Bao cao ca nhan - M3 S3 S4 (ACFC).md`: **báo cáo tổng, tự chứa** — mục tiêu/phạm vi, đối chiếu rubric, danh mục quy trình, mô tả AS-IS (bảng bước + kịch bản), phương pháp + nhật ký bằng chứng, bộ câu hỏi 10 định tính + 10 định lượng mỗi quy trình, phân tích VA/BVA/NVA + 4 loại lãng phí + nguyên nhân gốc, phân tích định lượng ba nhóm Thời gian/Chất lượng/Chi phí (công thức + ví dụ minh họa) và đề xuất khắc phục + TO-BE cho M3/S3/S4.
-- `Quy trinh dang ky kich hoat tai khoan (S4).md`: báo cáo chuyên sâu S4 (đăng ký, xác thực OTP & kích hoạt tài khoản thành viên) — danh sách 8 cổng và mô tả chi tiết.
-- `Quy trinh tuyen dung nhan su (S1).md`: báo cáo chuyên sâu S1 (tuyển dụng & tiếp nhận nhân sự).
+- `Bao cao ca nhan - M3 S3 S4 S1 (ACFC).md`: **báo cáo tổng, tự chứa** — mục tiêu/phạm vi, đối chiếu rubric, danh mục quy trình, mô tả AS-IS (bảng bước + kịch bản) cho cả M3/S3/S4/S1, phương pháp + nhật ký bằng chứng, bộ câu hỏi 10 định tính + 10 định lượng mỗi quy trình, phân tích VA/BVA/NVA + 4 loại lãng phí + nguyên nhân gốc, phân tích định lượng ba nhóm Thời gian/Chất lượng/Chi phí (công thức + ví dụ minh họa) và đề xuất khắc phục + TO-BE cho cả bốn quy trình. Riêng S4 có mô tả sâu chương trình thành viên (5 hạng thẻ, đủ 8 cổng, PDPA) và S1 có phần tuyển dụng & onboarding chuỗi bán lẻ/kho vận, đều đã nằm trong báo cáo tổng.
 - `diagrams/`: sơ đồ BPMN (`.drawio` nguồn + `.svg` xuất, kèm PNG) của **bốn** quy trình M3/S3/S4/S1 thuộc phạm vi cá nhân.
 - `hinh-anh/`: ảnh PNG xuất từ SVG (bằng skill `export_png.py`) để nhúng Word/PowerPoint.
 - `scripts/`: script Python sinh sơ đồ BPMN 2.0 (thư mục này được `.gitignore` bỏ theo dõi, chỉ giữ trên đĩa).

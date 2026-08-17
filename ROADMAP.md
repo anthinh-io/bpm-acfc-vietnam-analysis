@@ -60,7 +60,7 @@
 
 1. `docs/03-kien-truc-quy-trinh-doanh-nghiep.md`: Danh mục 10 quy trình chuẩn hóa (M1–M3, C1–C4, S1–S3).
 2. `docs/04-quy-trinh-kho-nhap-xuat-kiem-ke.md`: Báo cáo chuyên sâu quy trình Kho, Nhập xuất, Kiểm kê (S2, C1, C2, M3).
-3. `docs/workspaces/NguyenCongHung/Quy trinh dang ky kich hoat tai khoan (S4).md`: Báo cáo chuyên sâu quy trình Đăng ký & Kích hoạt tài khoản Member (S4).
+3. `docs/workspaces/NguyenCongHung/Bao cao ca nhan - M3 S3 S4 S1 (ACFC).md`: Báo cáo cá nhân tổng hợp bốn quy trình M3/S3/S4/S1 (đã gộp phần chuyên sâu Đăng ký & Kích hoạt tài khoản Member S4 và Tuyển dụng & Onboarding S1 vào chung).
 4. `docs/06-quy-trinh-tuyen-dung-nhan-su.md`: Báo cáo chuyên sâu quy trình Tuyển dụng & Onboarding nhân sự (S1).
 5. `docs/07-tong-hop-bao-cao-mon-hoc-chuan-uit.md`: Báo cáo đồ án hoàn chỉnh theo mẫu chuẩn Khóa luận tốt nghiệp UIT.
 6. Thư mục `diagrams/` (cấp gốc, dùng chung): Kiến trúc quy trình và các sơ đồ nhóm/thành viên khác (C1–C4, tổng hợp kho). Sơ đồ 4 quy trình của Nguyễn Công Hưng (M3, S3, S4, S1) đã chuyển vào `docs/workspaces/NguyenCongHung/diagrams/`. Đã bỏ toàn bộ sơ đồ Xương cá (Fishbone).
