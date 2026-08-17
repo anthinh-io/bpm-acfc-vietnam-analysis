@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+  <rect width="1200" height="720" fill="#ffffff"/>
+  <style>
+    text { font-family: "Times New Roman", serif; fill: #111111; }
+    .title { font-size: 28px; font-weight: 700; }
+    .group { font-size: 22px; font-weight: 700; fill: #071522; }
+    .cause { font-size: 18px; }
+    .effect { font-size: 21px; font-weight: 700; }
+    .bone { stroke: #090d13; stroke-width: 5; fill: none; }
+    .subbone { stroke: #7f8fa6; stroke-width: 2.5; fill: none; }
+    .hypothesis { stroke-dasharray: 12 8; }
+    .legend { font-size: 16px; }
+  </style>
+  <!-- <text x="600" y="46" text-anchor="middle" class="title">Sơ đồ xương cá: hồ sơ phải sửa và phê duyệt lại nhiều lượt</text> -->
+  <line x1="90" y1="360" x2="890" y2="360" class="bone"/>
+  <polygon points="920,360 880,340 880,380" fill="#050505"/>
+
+  <ellipse cx="1050" cy="360" rx="125" ry="78" fill="#fafafacc" stroke="#000000" stroke-width="3"/>
+  <text x="1050" y="334" text-anchor="middle" class="effect">
+    <tspan x="1050">Hồ sơ phải sửa</tspan>
+    <tspan x="1050" dy="27">và phê duyệt lại</tspan>
+    <tspan x="1050" dy="27">nhiều lượt</tspan>
+  </text>
+
+  <line x1="335" y1="360" x2="205" y2="165" class="bone hypothesis"/>
+  <text x="190" y="118" text-anchor="middle" class="group">Chuẩn tham chiếu</text>
+  <line x1="245" y1="225" x2="115" y2="225" class="subbone hypothesis"/>
+  <text x="10" y="216" text-anchor="start" class="cause">Chưa có mẫu hợp đồng chuẩn</text>
+  <line x1="285" y1="285" x2="115" y2="285" class="subbone hypothesis"/>
+  <text x="105" y="276" text-anchor="start" class="cause">
+    <tspan x="20">Chưa có danh mục pháp lý</tspan>
+    <tspan x="20" dy="30">dành riêng cho sự kiện</tspan>
+  </text>
+
+  <line x1="720" y1="360" x2="590" y2="165" class="bone"/>
+  <text x="575" y="118" text-anchor="middle" class="group">Yêu cầu pháp lý</text>
+  <line x1="630" y1="225" x2="500" y2="225" class="subbone"/>
+  <text x="490" y="204" text-anchor="start" class="cause">
+    <tspan x="400" y="190">Điều khoản chưa đáp ứng</tspan>
+    <tspan x="400" dy="25">yêu cầu của ACFC</tspan>
+  </text>
+  <line x1="420" y1="360" x2="290" y2="555" class="bone"/>
+  <text x="275" y="620" text-anchor="middle" class="group">Thống nhất điều khoản</text>
+  <line x1="375" y1="428" x2="185" y2="428" class="subbone"/>
+  <text x="175" y="401" text-anchor="start" class="cause">
+    <tspan x="125">Điều khoản giữa ACFC và đơn vị</tspan>
+    <tspan x="125" dy="22">tổ chức sự kiện chưa thống nhất</tspan>
+  </text>
+
+  <line x1="805" y1="360" x2="675" y2="555" class="bone hypothesis"/>
+  <text x="675" y="620" text-anchor="middle" class="group">Tái sử dụng kinh nghiệm</text>
+  <line x1="718" y1="492" x2="535" y2="492" class="subbone hypothesis"/>
+  <text x="500" y="458" text-anchor="start" class="cause">
+    <tspan x="530">Lý do sửa có thể chưa được</tspan>
+    <tspan x="530" dy="22">phân loại theo nhóm</tspan>
+  </text>
+  <line x1="760" y1="428" x2="575" y2="428" class="subbone hypothesis"/>
+  <text x="565" y="386" text-anchor="start" class="cause">
+    <tspan x="555">Kết quả sửa có thể chưa được</tspan>
+    <tspan x="545" dy="22">tái sử dụng cho hợp đồng sau</tspan>
+  </text>
+
+  <line x1="180" y1="680" x2="250" y2="680" class="bone"/>
+  <text x="265" y="686" class="legend">Yếu tố đã xác nhận</text>
+  <line x1="500" y1="680" x2="570" y2="680" class="bone hypothesis"/>
+  <text x="585" y="686" class="legend">Giả thuyết cần kiểm chứng</text>
+</svg>
