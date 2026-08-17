@@ -42,8 +42,8 @@
   <line x1="380" y1="341" x2="317" y2="341" stroke="#c53030" stroke-width="1.6" marker-end="url(#arrowR)"/>
   <!-- G1 Yes -> G2 (down) -->
   <line x1="400" y1="361" x2="400" y2="475" stroke="#2f855a" stroke-width="1.6" marker-end="url(#arrowG)"/>
-  <!-- G2 Co -> End2 (left) -->
-  <line x1="380" y1="495" x2="349" y2="495" stroke="#c53030" stroke-width="1.6" marker-end="url(#arrowR)"/>
+  <!-- G2 Co -> End2 (left): điều hướng đăng nhập là lối đi hợp lệ (không phải lỗi) -> line xanh -->
+  <line x1="380" y1="495" x2="349" y2="495" stroke="#2f855a" stroke-width="1.6" marker-end="url(#arrowG)"/>
   <!-- G2 Chua -> P1 (right) -->
   <line x1="420" y1="495" x2="470" y2="495" stroke="#2f855a" stroke-width="1.6" marker-end="url(#arrowG)"/>
   <!-- P1 -> G3 (down) -->
@@ -58,8 +58,8 @@
   <path d="M 742 684 L 800 684 L 800 667" fill="none" stroke="#2d3748" stroke-width="1.6" marker-end="url(#arrow)"/>
   <!-- J1 -> G4 -->
   <line x1="820" y1="649" x2="870" y2="649" stroke="#2d3748" stroke-width="1.6" marker-end="url(#arrow)"/>
-  <!-- G4 Co (fail) -> CSKH (down) -->
-  <path d="M 890 669 L 890 760" fill="none" stroke="#c53030" stroke-width="1.6" marker-end="url(#arrowR)"/>
+  <!-- G4 Co (fail) -> CSKH (down): chuyển CSKH xác minh thủ công là lối phục hồi hợp lệ -> line xanh -->
+  <path d="M 890 669 L 890 760" fill="none" stroke="#2f855a" stroke-width="1.6" marker-end="url(#arrowG)"/>
   <!-- G4 Khong -> Timer (right) -->
   <line x1="910" y1="649" x2="970" y2="649" stroke="#2d3748" stroke-width="1.6" marker-end="url(#arrow)"/>
   <!-- Timer -> T2 (up, hugs G5's left so the down-line stays clear and the G5 label sits beside the gate) -->
@@ -115,7 +115,7 @@
   <polygon points="400,475 420,495 400,515 380,495" fill="#fefcbf" stroke="#b7791f" stroke-width="1.5"/>
   <text x="400" y="499" font-size="10" font-weight="bold" fill="#744210" text-anchor="middle">X</text>
   <text x="452" y="470" font-size="9" fill="#744210" text-anchor="middle">G2: SĐT đã tồn tại?</text>
-  <text x="365" y="488" font-size="8.5" fill="#c53030" text-anchor="end">Có</text>
+  <text x="365" y="488" font-size="8.5" fill="#2f855a" text-anchor="end">Có</text>
   <text x="444" y="489" font-size="8.5" fill="#2f855a">Chưa</text>
   <!-- End2 -->
   <circle cx="334" cy="495" r="15" fill="#fff5f5" stroke="#c53030" stroke-width="2.5"/>
@@ -152,7 +152,7 @@
   <polygon points="890,629 910,649 890,669 870,649" fill="#fefcbf" stroke="#b7791f" stroke-width="1.5"/>
   <text x="890" y="653" font-size="10" font-weight="bold" fill="#744210" text-anchor="middle">X</text>
   <text x="890" y="611" font-size="9" fill="#744210" text-anchor="middle">G4: Cổng OTP lỗi?</text>
-  <text x="898" y="700" font-size="8.5" fill="#c53030">Có</text>
+  <text x="898" y="700" font-size="8.5" fill="#2f855a">Có</text>
   <text x="925" y="643" font-size="8.5" fill="#2f855a">Không</text>
 
   <!-- CSKH -->

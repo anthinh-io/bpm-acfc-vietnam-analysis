@@ -12,8 +12,7 @@ Tạo lại khi SVG thay đổi (chạy từ repo root):
 
 ```bash
 .venv/bin/python .claude/skills/bpm-quy-trinh-acfc/scripts/export_png.py \
-  docs/workspaces/NguyenCongHung/diagrams/bpmn-hoach-dinh-phan-bo-hang-hoa-m3.svg \
-  docs/workspaces/NguyenCongHung/diagrams/bpmn-kiem-ke-ton-kho-s2.svg \
+  docs/workspaces/NguyenCongHung/diagrams/bpmn-kho-van-hanh-m3-s3.svg \
   docs/workspaces/NguyenCongHung/diagrams/bpmn-dang-ky-kich-hoat-tai-khoan-s3.svg \
   docs/workspaces/NguyenCongHung/diagrams/bpmn-tuyen-dung-nhan-su-s1.svg \
   diagrams/kien-truc-quy-trinh.svg \

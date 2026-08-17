@@ -9,12 +9,12 @@
 
 | Mã | Cấp | Quy trình | Sơ đồ BPMN (trong `diagrams/` của workspace) | Trạng thái |
 |---|---|---|---|---|
-| M3 | Quản lý | Lập kế hoạch mua hàng và phân bổ hàng hóa theo mùa | `bpmn-hoach-dinh-phan-bo-hang-hoa-m3.svg` | Xong bản nháp — AS-IS + BPMN + phân tích định lượng |
-| S3 | Hỗ trợ | Kiểm kê và xử lý chênh lệch tồn kho | `bpmn-kiem-ke-ton-kho-s2.svg` | Xong bản nháp — AS-IS + BPMN + phân tích định lượng |
+| M3 | Quản lý | Lập kế hoạch mua hàng và phân bổ hàng hóa theo mùa | `bpmn-kho-van-hanh-m3-s3.svg` (collaboration M3 ↔ S3, pool trên) | Xong bản nháp — AS-IS + BPMN + phân tích định lượng |
+| S3 | Hỗ trợ | Kiểm kê và xử lý chênh lệch tồn kho | `bpmn-kho-van-hanh-m3-s3.svg` (collaboration M3 ↔ S3, pool dưới) | Xong bản nháp — AS-IS + BPMN + phân tích định lượng |
 | S4 | Hỗ trợ | Đăng ký, xác thực OTP & kích hoạt tài khoản thành viên | `bpmn-dang-ky-kich-hoat-tai-khoan-s3.svg` | Xong bản nháp — AS-IS + BPMN (8 cổng XOR, có Split & Join) + phân tích định lượng |
 | S1 | Hỗ trợ | Tuyển dụng & tiếp nhận (onboarding) nhân sự | `bpmn-tuyen-dung-nhan-su-s1.svg` | Xong bản nháp — AS-IS + BPMN (8 cổng XOR) + phân tích định lượng |
 
-> Lưu ý mã: file BPMN dùng hậu tố khác với mã workspace. Ánh xạ: S3 (kiểm kê) ↔ `...-s2`, S4 (kích hoạt tài khoản) ↔ `...-s3`, S1 (tuyển dụng) ↔ `...-s1`. Cần thống nhất lại bảng ánh xạ khi gộp vào báo cáo chung.
+> Lưu ý mã: file BPMN dùng hậu tố khác với mã workspace. Ánh xạ: **M3 và S3 (kiểm kê) đã gộp chung** vào sơ đồ collaboration `bpmn-kho-van-hanh-m3-s3.svg` (2 pool: M3 pool trên, S3 pool dưới, nối bằng message flow); S4 (kích hoạt tài khoản) ↔ `...-s3`, S1 (tuyển dụng) ↔ `...-s1`. Cần thống nhất lại bảng ánh xạ khi gộp vào báo cáo chung.
 
 README này chỉ xác nhận phạm vi cá nhân của Hưng (M3, S3, S4, S1), không thay mặt xác nhận danh mục quy trình chung của cả nhóm.
 
