@@ -76,8 +76,8 @@
   <path d="M 1922 600 L 2015 600" fill="none" stroke="#2d3748" stroke-width="1.6" marker-end="url(#arrow)"/><text x="1968" y="592" font-size="9" fill="#2d3748" text-anchor="middle">Không</text>
   <circle cx="2210" cy="600" r="18" fill="#fed7d7" stroke="#c53030" stroke-width="3.2"/><text x="2210" y="631" font-size="9" fill="#c53030" text-anchor="middle">Hoàn tất nhập kho</text>
   <path d="M 2165 600 L 2192 600" fill="none" stroke="#2d3748" stroke-width="1.6" marker-end="url(#arrow)"/>
-  <path d="M 2090 622 L 2090 940" fill="none" stroke="#3182ce" stroke-width="1.6" stroke-dasharray="5,4" marker-end="url(#msgArrow)"/>
-  <text x="1795" y="930" font-size="9" font-style="italic" fill="#3182ce">Message: tồn đầu vào → S3/M3</text>
+  <path d="M 2090 622 L 2090 900 L 1900 900 L 1900 940" fill="none" stroke="#3182ce" stroke-width="1.6" stroke-dasharray="5,4" marker-end="url(#msgArrow)"/>
+  <text x="1600" y="928" font-size="9" font-style="italic" fill="#3182ce">Message: tồn đầu vào → S3/M3</text>
   <rect x="1830" y="228" width="140" height="44" rx="7" fill="#ffffff" stroke="#3182ce" stroke-width="1.5" filter="url(#taskShadow)"/><text x="1900" y="247" font-size="10.5" font-weight="bold" fill="#2d3748" text-anchor="middle">Tạo yêu cầu</text><text x="1900" y="263" font-size="10.5" fill="#2d3748" text-anchor="middle">cross-dock</text>
   <path d="M 1900 578 L 1900 272" fill="none" stroke="#38a169" stroke-width="1.6" marker-end="url(#arrowG)"/><text x="1918" y="395" font-size="9" fill="#38a169" text-anchor="middle">Có</text>
   <circle cx="2130" cy="250" r="16" fill="#fed7d7" stroke="#c53030" stroke-width="3.2"/><text x="2130" y="279" font-size="9" fill="#c53030" text-anchor="middle">Chuyển thẳng cửa hàng</text>
