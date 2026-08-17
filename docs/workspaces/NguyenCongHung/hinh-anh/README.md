@@ -15,8 +15,6 @@ Tạo lại khi SVG thay đổi (chạy từ repo root):
   diagrams/bpmn-hoach-dinh-phan-bo-hang-hoa-m3.svg \
   diagrams/bpmn-kiem-ke-ton-kho-s2.svg \
   diagrams/bpmn-dang-ky-kich-hoat-tai-khoan-s3.svg \
-  diagrams/fishbone-kiem-ke-kho.svg \
-  diagrams/fishbone-kich-hoat-tai-khoan.svg \
   diagrams/kien-truc-quy-trinh.svg \
   --out docs/workspaces/NguyenCongHung/hinh-anh/png-nocap --width 2600 --pad 14 --drop-caption
 ```
