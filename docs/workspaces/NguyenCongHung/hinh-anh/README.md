@@ -15,6 +15,9 @@ Tạo lại khi SVG thay đổi (chạy từ repo root):
   docs/workspaces/NguyenCongHung/diagrams/bpmn-kho-van-hanh-m3-s3.svg \
   docs/workspaces/NguyenCongHung/diagrams/bpmn-dang-ky-kich-hoat-tai-khoan-s3.svg \
   docs/workspaces/NguyenCongHung/diagrams/bpmn-tuyen-dung-nhan-su-s1.svg \
+  docs/workspaces/NguyenCongHung/diagrams/bpmn-nhap-kho-qc-k1.svg \
+  docs/workspaces/NguyenCongHung/diagrams/bpmn-xuat-kho-dieu-chuyen-k2.svg \
+  docs/workspaces/NguyenCongHung/diagrams/bpmn-thu-hoi-hang-tra-k3.svg \
   diagrams/kien-truc-quy-trinh.svg \
   --out docs/workspaces/NguyenCongHung/hinh-anh/png-nocap --width 2600 --pad 14 --drop-caption
 ```

@@ -1,4 +1,4 @@
-# BÁO CÁO CÁ NHÂN – QUY TRÌNH M3, S3, S4 & S1 (ACFC)
+# BÁO CÁO CÁ NHÂN – QUY TRÌNH M3, S3, S4, S1 & CỤM KHO VẬN K1/K2/K3 (ACFC)
 
 **Sinh viên:** Nguyễn Công Hưng<br>
 **MSSV:** 24730100<br>
@@ -7,7 +7,7 @@
 **Doanh nghiệp phân tích:** Công ty Cổ phần Thời trang và Mỹ phẩm Âu Châu (ACFC)<br>
 **Ngày cập nhật:** 17/08/2026
 
-> **Mục đích tài liệu:** đây là **báo cáo tổng hợp cấp cá nhân** cho bốn quy trình Hưng phụ trách — **M3 (Quản lý)**, **S3 (Hỗ trợ)**, **S4 (Hỗ trợ)** và **S1 (Hỗ trợ)** — gộp liền mạch discovery, mô tả hiện trạng (AS-IS), bộ câu hỏi thu thập dữ liệu, phân tích định tính/định lượng và đề xuất TO-BE. Tài liệu tự chứa (self-contained): mọi bảng bước, kịch bản, câu hỏi phỏng vấn và bảng KPI đều nằm trong file này để có thể copy/paste và định dạng lại thành báo cáo Word khi nhóm chắt lọc. Số liệu định lượng còn thiếu tuân thủ nguyên tắc **không tự bịa số ACFC** — xem mục 9 và 11.
+> **Mục đích tài liệu:** đây là **báo cáo tổng hợp cấp cá nhân** cho các quy trình Hưng phụ trách — **M3 (Quản lý)**, **S3 (Hỗ trợ)**, **S4 (Hỗ trợ)**, **S1 (Hỗ trợ)** và **cụm ba quy trình kho vận K1/K2/K3 (Hỗ trợ)** — gộp liền mạch discovery, mô tả hiện trạng (AS-IS), bộ câu hỏi thu thập dữ liệu, phân tích định tính/định lượng và đề xuất TO-BE. Bốn quy trình M3/S3/S4/S1 có đầy đủ các mục 4–11; cụm kho K1/K2/K3 (mục 4.5–4.7) hiện có sơ đồ BPMN 2.0 và mô tả AS-IS đầy đủ (bảng bước + kịch bản thành/bại), phần phân tích định tính/định lượng chuyên sâu sẽ bổ sung ở bước hoàn thiện tiếp theo. Tài liệu tự chứa (self-contained): mọi bảng bước, kịch bản, câu hỏi phỏng vấn và bảng KPI đều nằm trong file này để có thể copy/paste và định dạng lại thành báo cáo Word khi nhóm chắt lọc. Số liệu định lượng còn thiếu tuân thủ nguyên tắc **không tự bịa số ACFC** — xem mục 9 và 11.
 
 ---
 
@@ -31,7 +31,7 @@
 
 ### 1.1. Bối cảnh và phạm vi cá nhân
 
-Phạm vi cá nhân của Hưng thuộc mảng **hàng hóa, kho, tồn kho, tài khoản thành viên và tuyển dụng nhân sự ACFC**. Theo yêu cầu rút gọn của nhóm (cập nhật 11/08/2026), mỗi thành viên bắt buộc hoàn thiện **1 quy trình Quản lý + 1 quy trình Hỗ trợ** (nhóm đã đạt tối thiểu 6 quy trình BPMN + phân tích ở cấp chung). Hưng dồn toàn lực hoàn thiện **M3 (Quản lý)** và **S3 (Hỗ trợ)** theo yêu cầu bắt buộc, đồng thời bổ sung hai quy trình Hỗ trợ: **S4** — đăng ký/kích hoạt tài khoản thành viên và **S1** — tuyển dụng & tiếp nhận nhân sự chuỗi bán lẻ/kho vận, cả hai khai thác từ nội dung công khai trên trang chủ và trang tuyển dụng ACFC, đã kiểm tra không trùng mã hoặc nội dung với quy trình của thành viên khác. C3/C4 (2 quy trình Cốt lõi) không còn trong phạm vi bài làm tuần này nên đã gỡ khỏi workspace cá nhân.
+Phạm vi cá nhân của Hưng thuộc mảng **hàng hóa, kho, tồn kho, tài khoản thành viên và tuyển dụng nhân sự ACFC**. Theo yêu cầu rút gọn của nhóm (cập nhật 11/08/2026), mỗi thành viên bắt buộc hoàn thiện **1 quy trình Quản lý + 1 quy trình Hỗ trợ** (nhóm đã đạt tối thiểu 6 quy trình BPMN + phân tích ở cấp chung). Hưng dồn toàn lực hoàn thiện **M3 (Quản lý)** và **S3 (Hỗ trợ)** theo yêu cầu bắt buộc, đồng thời bổ sung hai quy trình Hỗ trợ: **S4** — đăng ký/kích hoạt tài khoản thành viên và **S1** — tuyển dụng & tiếp nhận nhân sự chuỗi bán lẻ/kho vận, cả hai khai thác từ nội dung công khai trên trang chủ và trang tuyển dụng ACFC, đã kiểm tra không trùng mã hoặc nội dung với quy trình của thành viên khác. Ngoài ra, Hưng bổ sung **cụm ba quy trình kho vận K1/K2/K3** (nhận hàng & QC, xuất kho & điều chuyển, thu hồi hàng trả) đào sâu chuỗi vận hành kho mà M3/S3 chỉ chạm ở ranh giới — xem mục 4.5–4.7. C3/C4 (2 quy trình Cốt lõi) không còn trong phạm vi bài làm tuần này nên đã gỡ khỏi workspace cá nhân.
 
 | Mã | Cấp | Quy trình | Ranh giới | Trạng thái |
 |---|---|---|---|---|
@@ -39,6 +39,9 @@ Phạm vi cá nhân của Hưng thuộc mảng **hàng hóa, kho, tồn kho, tà
 | S3 | Hỗ trợ | Kiểm kê và xử lý chênh lệch tồn kho | Kiểm kê/cảnh báo → điều chỉnh hoặc chuyển cấp | Xong bản nháp |
 | S4 | Hỗ trợ | Đăng ký, xác thực OTP & kích hoạt tài khoản thành viên | Truy cập App/Web → tài khoản được tạo/kích hoạt hoặc chuyển CSKH | Xong bản nháp |
 | S1 | Hỗ trợ | Tuyển dụng & tiếp nhận (onboarding) nhân sự chuỗi bán lẻ/kho vận | Yêu cầu tuyển dụng → ký hợp đồng sau probation hoặc thanh lý | Xong bản nháp |
+| K1 | Hỗ trợ | Nhận hàng, QC & nhập kho từ chủ thương hiệu | ASN/hàng cập dock → nhập kệ & cập nhật tồn đầu vào | Xong bản nháp (BPMN + AS-IS) |
+| K2 | Hỗ trợ | Xuất kho & điều chuyển phân bổ tới chuỗi cửa hàng | Lệnh phân bổ (M3) → cửa hàng nhận & cập nhật tồn | Xong bản nháp (BPMN + AS-IS) |
+| K3 | Hỗ trợ | Thu hồi & xử lý hàng trả về/hàng lỗi (reverse logistics) | Yêu cầu trả hàng → đóng RMA & (nếu cần) hoàn tiền | Xong bản nháp (BPMN + AS-IS) |
 
 ### 1.2. Ranh giới với các workspace khác
 
@@ -62,9 +65,9 @@ Mỗi hoạt động, gateway và KPI đều ghi mã nguồn hoặc nhãn `C –
 
 | Tiêu chí rubric | Yêu cầu | Đóng góp của M3/S3/S4/S1 trong báo cáo này |
 |---|---|---|
-| 1. Liệt kê & phân loại quy trình | Tối thiểu 10 quy trình, ≥3 mỗi cấp | M3 (Quản lý), S3, S4, S1 (Hỗ trợ) — góp 4/10 trong phạm vi cá nhân (danh mục 10 quy trình đầy đủ ở cấp nhóm) |
-| 2. Mô tả quy trình | Mô tả bằng lời: bước (Động từ + Danh từ), actor, input/output, gateway, kịch bản thành/bại | Đầy đủ ở mục 4 — bảng bước + actor + ghi chú hệ thống + kịch bản thành công/thất bại cho cả M3, S3, S4, S1 |
-| 3. Mô hình hóa BPMN | Mô hình hóa quy trình bằng BPMN 2.0 (pool/lane, gateway, nhiều End, Split & Join cùng loại) | **Đã vẽ** — M3 & S3 (sơ đồ **collaboration** 2 pool trên 1 canvas, nối bằng message flow): `diagrams/bpmn-kho-van-hanh-m3-s3.svg`; S4: `diagrams/bpmn-dang-ky-kich-hoat-tai-khoan-s3.svg`; S1: `diagrams/bpmn-tuyen-dung-nhan-su-s1.svg`. Cả bốn quy trình đều đạt **8 cổng điều kiện** (M3: 2 cặp XOR split–merge + 1 cặp AND split–join + 2 XOR quyết định; S3: 6 XOR + 1 cặp AND; S4: 8 XOR có Split & Join chọn kênh OTP; S1: 8 XOR theo luồng tuyển dụng), đầy đủ **Split & Join cùng loại**, có `.drawio` nguồn đi kèm — xem mục 3–4 |
+| 1. Liệt kê & phân loại quy trình | Tối thiểu 10 quy trình, ≥3 mỗi cấp | M3 (Quản lý), S3, S4, S1 và cụm kho K1/K2/K3 (Hỗ trợ) — góp **7/10** trong phạm vi cá nhân (danh mục 10 quy trình đầy đủ ở cấp nhóm) |
+| 2. Mô tả quy trình | Mô tả bằng lời: bước (Động từ + Danh từ), actor, input/output, gateway, kịch bản thành/bại | Đầy đủ ở mục 4 — bảng bước + actor + ghi chú hệ thống + kịch bản thành công/thất bại cho cả M3, S3, S4, S1 **và K1/K2/K3** (mục 4.5–4.7) |
+| 3. Mô hình hóa BPMN | Mô hình hóa quy trình bằng BPMN 2.0 (pool/lane, gateway, nhiều End, Split & Join cùng loại) | **Đã vẽ** — M3 & S3 (sơ đồ **collaboration** 2 pool trên 1 canvas, nối bằng message flow): `diagrams/bpmn-kho-van-hanh-m3-s3.svg`; S4: `diagrams/bpmn-dang-ky-kich-hoat-tai-khoan-s3.svg`; S1: `diagrams/bpmn-tuyen-dung-nhan-su-s1.svg`; **cụm kho K1: `diagrams/bpmn-nhap-kho-qc-k1.svg`, K2: `diagrams/bpmn-xuat-kho-dieu-chuyen-k2.svg`, K3: `diagrams/bpmn-thu-hoi-hang-tra-k3.svg`**. M3/S3/S4/S1 đạt **8 cổng điều kiện** (M3: 2 cặp XOR split–merge + 1 cặp AND split–join + 2 XOR quyết định; S3: 6 XOR + 1 cặp AND; S4: 8 XOR có Split & Join chọn kênh OTP; S1: 8 XOR theo luồng tuyển dụng); **K1/K2/K3 mỗi sơ đồ đạt 9 cổng** (7 XOR quyết định/gộp + 1 cặp AND split–join), 1 Pool DC – 4 Lane, nhiều End và message flow nối mạch tồn với S3/M3. Tất cả đều đủ **Split & Join cùng loại** và có `.drawio` nguồn đi kèm — xem mục 3–4 |
 | 4. Phân tích quy trình | ≥20 câu phỏng vấn (10 định tính + 10 định lượng); VA/BVA/NVA; 4 loại lãng phí; phân tích nguyên nhân gốc; định lượng Thời gian/Chất lượng/Chi phí có công thức + tính toán | M3/S3/S4/S1 đều có bộ câu hỏi 10+10 (mục 6), VA/BVA/NVA + 4 lãng phí + bảng vấn đề–nguyên nhân–khắc phục (mục 8) và **phân tích định lượng đầy đủ 3 nhóm chỉ số có công thức + ví dụ tính toán** (mục 9) |
 | 5. Trình bày báo cáo | Theo mẫu khóa luận UIT: mục lục, danh mục hình/bảng, viết tắt, tài liệu tham khảo; không lỗi chính tả | Báo cáo có mục lục và nguồn tham chiếu; danh mục hình/bảng và mục lục tự động sẽ hoàn thiện khi chuyển sang bản Word chính thức |
 
@@ -76,8 +79,11 @@ Mỗi hoạt động, gateway và KPI đều ghi mã nguồn hoặc nhãn `C –
 | S3 | Hỗ trợ | Kiểm kê và xử lý chênh lệch tồn kho | Lịch kiểm kê hoặc cảnh báo tồn thực tế lệch sổ | Kế hoạch kiểm kê, sổ tồn, danh sách mã hàng/vị trí | Phiếu kiểm kê, đề nghị điều chỉnh, báo cáo hao hụt/chuyển cấp |
 | S4 | Hỗ trợ | Đăng ký, xác thực OTP & kích hoạt tài khoản thành viên | Khách hàng đăng ký/đăng nhập trên App/Web hoặc tại Store POS | Số điện thoại, OTP, thông tin định danh | Tài khoản kích hoạt, hồ sơ đồng bộ Salesforce CRM ↔ Magento ↔ Retail Pro Prism |
 | S1 | Hỗ trợ | Tuyển dụng & tiếp nhận nhân sự chuỗi bán lẻ/kho vận | Yêu cầu tuyển dụng, CV ứng viên nộp qua ATS đa kênh | Yêu cầu nhân sự, CV, hồ sơ ứng viên | Hợp đồng lao động (sau probation) hoặc thanh lý, gói onboarding (uniform + tài khoản POS/Retail Pro Prism) |
+| K1 | Hỗ trợ | Nhận hàng, QC & nhập kho từ chủ thương hiệu | ASN & xe hàng cập dock DC | ASN/PO, hàng thực nhận, kết quả QC | Tồn đầu vào cập nhật WMS/ERP (→ S3/M3), hoặc yêu cầu cross-dock (→ K2) |
+| K2 | Hỗ trợ | Xuất kho & điều chuyển phân bổ tới chuỗi cửa hàng | Lệnh phân bổ từ M3 | Lệnh phân bổ, tồn khả dụng (ATP), phiếu xuất DO | Kiện hàng giao cửa hàng, tồn cửa hàng cập nhật (→ S3/M3), hàng lỗi (→ K3) |
+| K3 | Hỗ trợ | Thu hồi & xử lý hàng trả về/hàng lỗi (reverse logistics) | Yêu cầu trả hàng từ K2/cửa hàng | Phiếu RMA, hàng trả, kết quả giám định/phân hạng | Hàng nhập lại/tân trang/scrap, tồn & hao hụt cập nhật (→ S3/M3), đề nghị hoàn tiền (→ C4) |
 
-**Luồng liên hệ giữa các quy trình:** kết quả S3 (chênh lệch, hao hụt, nguyên nhân) được phản hồi trực tiếp cho M3 để hiệu chỉnh kế hoạch mùa và hạn mức tồn ở chu kỳ tiếp theo. S4 vận hành ở tuyến khách hàng/tài khoản thành viên: hồ sơ và hạng thẻ do S4 tạo ra là dữ liệu đầu vào cho các quy trình bán hàng đa kênh, gián tiếp cấp nguồn nhu cầu mà M3 lập kế hoạch phân bổ. S1 cấp nguồn lực con người cho toàn chuỗi: nhân sự cửa hàng/kho do S1 tuyển và onboard chính là actor vận hành các bước đếm tồn (S3), bán hàng và hỗ trợ tài khoản (S4); chất lượng và tỷ lệ nghỉ việc (turnover) của S1 tác động trực tiếp tới năng lực thực thi của M3/S3/S4.
+**Luồng liên hệ giữa các quy trình:** kết quả S3 (chênh lệch, hao hụt, nguyên nhân) được phản hồi trực tiếp cho M3 để hiệu chỉnh kế hoạch mùa và hạn mức tồn ở chu kỳ tiếp theo. S4 vận hành ở tuyến khách hàng/tài khoản thành viên: hồ sơ và hạng thẻ do S4 tạo ra là dữ liệu đầu vào cho các quy trình bán hàng đa kênh, gián tiếp cấp nguồn nhu cầu mà M3 lập kế hoạch phân bổ. S1 cấp nguồn lực con người cho toàn chuỗi: nhân sự cửa hàng/kho do S1 tuyển và onboard chính là actor vận hành các bước đếm tồn (S3), bán hàng và hỗ trợ tài khoản (S4); chất lượng và tỷ lệ nghỉ việc (turnover) của S1 tác động trực tiếp tới năng lực thực thi của M3/S3/S4. **Cụm kho K1/K2/K3** tạo thành một vòng vận hành kho khép kín quanh trục tồn của S3/M3: **K1** nhận hàng từ chủ thương hiệu và cấp **tồn đầu vào** cho S3/M3; **K2** nhận **đầu ra phân bổ của M3** để xuất kho tới cửa hàng và cập nhật tồn cửa hàng; **K3** khép vòng bằng thu hồi hàng giao lỗi (nhận từ K2) hoặc hàng khách trả, rồi cập nhật lại **tồn/hao hụt** về S3/M3 và đề nghị hoàn tiền sang C4. Ba quy trình này biến ranh giới "phát hành kế hoạch → nhận/xuất/thu hồi" mà M3 bỏ ngỏ thành chuỗi BPMN vận hành cụ thể, đồng bộ mạch tồn với S3.
 
 ## 4. Mô tả quy trình hiện tại (AS-IS)
 
@@ -229,6 +235,103 @@ Mỗi hoạt động, gateway và KPI đều ghi mã nguồn hoặc nhãn `C –
 - Không đạt KPI probation (G8) → thanh lý hợp đồng thử việc, Exit interview; nếu turnover cao kéo dài → phản hồi lại khâu tuyển chọn/onboarding. Ngưỡng KPI, thời hạn từng vòng và cấp duyệt cụ thể là `C – cần xác thực`.
 
 **Nguồn/trạng thái:** EV13, EV14; turnover ~25%, ngưỡng KPI probation, số vòng phỏng vấn theo cấp bậc, thời hạn từng bước và tiêu chí background check cụ thể là `C – cần xác thực`.
+
+### 4.5. K1 – Nhận hàng, kiểm tra chất lượng (QC) & nhập kho từ chủ thương hiệu
+
+**Bối cảnh mở rộng:** K1/K2/K3 là **cụm ba quy trình kho vận** đào sâu chuỗi vận hành tại Trung tâm phân phối (DC) mà M3 chỉ chạm tới ở ranh giới (M3 phát hành kế hoạch mua/điều chuyển, không mô tả bước nhận–xuất–thu hồi). K1 đứng ở **đầu chuỗi**: nhận hàng từ chủ thương hiệu và tạo tồn đầu vào; K2 nối tiếp đầu ra phân bổ của M3 để xuất kho tới cửa hàng; K3 khép vòng bằng thu hồi hàng trả/lỗi. Cả ba khớp mạch tồn với S3/M3 qua message flow.
+
+**Actor kích hoạt:** Chủ thương hiệu gửi ASN (Advance Shipping Notice) & lịch giao; xe hàng cập dock DC.
+**Actor hưởng lợi:** S3 (tồn đầu vào chính xác để kiểm kê) và M3 (dữ liệu nguồn hàng khả dụng cho hoạch định) trực tiếp; cửa hàng và khách cuối (có hàng đạt chuẩn) gián tiếp.
+**Ranh giới:** từ khi nhận ASN/hàng cập dock → đến khi hàng lên kệ và cập nhật sổ tồn đầu vào (hoặc tạo yêu cầu cross-dock chuyển thẳng sang K2). Sơ đồ: `diagrams/bpmn-nhap-kho-qc-k1.svg` (1 Pool DC – 4 Lane, 9 cổng, có cặp AND split–join).
+
+| # | Actor (lane) | Bước (Động từ + Danh từ) | Ghi chú/hệ thống |
+|---|---|---|---|
+| 1 | Kho nhận hàng/Dock | Tiếp nhận xe & dỡ hàng tại dock | Start: nhận ASN & lịch giao từ chủ thương hiệu |
+| 2 | Chứng từ & Ngoại lệ | Kiểm tra chứng từ khớp PO/ASN | Cổng G1 |
+| 3 | Kho nhận hàng/Dock | Đếm & đối chiếu số lượng thực nhận | — |
+| 4 | Kho nhận hàng/Dock | Kiểm tra số lượng thực nhận khớp chứng từ | Cổng G2 → Gm gộp |
+| 5 | QC/Kiểm định | Lấy mẫu & kiểm tra chất lượng (QC) | Sau cổng gộp Gm |
+| 6 | QC/Kiểm định | Đánh giá kết quả QC & mức lỗi | Cổng G3 (đạt?) và G4 (mức lỗi: toàn bộ/một phần) |
+| 7 | Thủ kho/WMS | Tách lô, nhập phần đạt QC | Nhánh "một phần" → Gm3 gộp |
+| 8 | Thủ kho/WMS | Dán nhãn SKU & định vị (slotting) | Cổng Ga AND-split (song song với bước 9) |
+| 9 | Thủ kho/WMS | Cập nhật dữ liệu tồn WMS/ERP | Chạy song song bước 8 |
+| 10 | Thủ kho/WMS | Cất hàng lên vị trí (putaway) | Cổng Gj AND-join |
+| 11 | Thủ kho/WMS | Kiểm tra nhu cầu cross-dock tới cửa hàng | Cổng G5 |
+| 12 | Thủ kho/WMS | Cập nhật sổ tồn đầu vào (inbound) | Message tồn đầu vào → S3/M3 (hoặc tạo yêu cầu cross-dock → K2) |
+
+**Kịch bản thành công:** ASN & xe hàng cập dock → chứng từ khớp PO/ASN → số lượng thực nhận khớp → mẫu QC đạt toàn bộ → (song song qua **cặp AND**) dán nhãn/định vị **và** cập nhật tồn WMS/ERP → cất hàng lên kệ (putaway) → không cần cross-dock → cập nhật sổ tồn đầu vào và bắn message tồn sang S3/M3. **Kết quả:** "Lô hàng đạt chuẩn được nhập kho và tồn đầu vào đã cập nhật cho S3/M3."
+
+**Kịch bản thất bại/ngoại lệ:**
+- Chứng từ không khớp PO/ASN (G1) → lập biên bản sai lệch chứng từ → End "Từ chối nhận lô".
+- Số lượng thực nhận thiếu/thừa (G2) → ghi nhận thiếu/thừa & thông báo NCC, sau đó nhập tiếp phần khớp qua cổng gộp Gm.
+- QC không đạt toàn bộ (G3/G4) → End "Trả lại NCC"; nếu chỉ lỗi một phần → tách lô, chỉ nhập phần đạt QC, phần lỗi trả NCC.
+- Có nhu cầu cross-dock (G5) → tạo yêu cầu cross-dock, chuyển thẳng cửa hàng (message sang K2) thay vì lưu kho.
+
+**Nguồn/trạng thái:** quy trình tham chiếu thông lệ inbound logistics ngành bán lẻ thời trang; ngưỡng chấp nhận QC (AQL), tỷ lệ lấy mẫu, chính sách cross-dock và cấp duyệt ngoại lệ cụ thể của ACFC là `C – cần xác thực`.
+
+### 4.6. K2 – Xuất kho & điều chuyển phân bổ tới chuỗi cửa hàng (DC-to-Store Fulfillment)
+
+**Actor kích hoạt:** Điều phối phân bổ nhận **lệnh phân bổ từ M3** (nối tiếp ngay sau đầu ra của quy trình M3).
+**Actor hưởng lợi:** Cửa hàng (nhận đúng cơ cấu hàng đúng hạn) trực tiếp; M3 (đóng vòng thực thi kế hoạch phân bổ) và khách cuối gián tiếp.
+**Ranh giới:** từ khi nhận lệnh phân bổ → đến khi cửa hàng nhận, kiểm đếm khớp và cập nhật tồn cửa hàng. Sơ đồ: `diagrams/bpmn-xuat-kho-dieu-chuyen-k2.svg` (1 Pool DC – 4 Lane, 9 cổng, có cặp AND split–join).
+
+| # | Actor (lane) | Bước (Động từ + Danh từ) | Ghi chú/hệ thống |
+|---|---|---|---|
+| 1 | Điều phối phân bổ | Kiểm tra tồn khả dụng (ATP) | Start: nhận lệnh phân bổ ← M3 |
+| 2 | Điều phối phân bổ | Xác định tồn có đủ cho lệnh phân bổ | Cổng G1; nếu không đủ → G1b (cho giao một phần?) |
+| 3 | Cửa hàng & Ngoại lệ | Giao một phần + backorder | Nhánh G1b "Có" → quay lại Gm1 gộp |
+| 4 | Điều phối phân bổ | Lập phiếu xuất kho (DO) | Sau cổng gộp Gm1 |
+| 5 | Kho xuất – Picking | Soạn hàng (picking) | — |
+| 6 | Kho xuất – Picking | Kiểm tra soạn hàng khớp DO | Cổng G2; không khớp → soạn lại (loop) |
+| 7 | Kho xuất – Packing | Đóng gói & dán nhãn kiện | Cổng Ga AND-split (song song với bước 8) |
+| 8 | Kho xuất – Packing | Lập chứng từ xuất & kế hoạch tuyến | Chạy song song bước 7 → Gj AND-join |
+| 9 | Vận chuyển/3PL | Bàn giao đơn vị vận chuyển 3PL | Sau cổng Gj AND-join |
+| 10 | Vận chuyển/3PL | Vận chuyển tới cửa hàng | — |
+| 11 | Vận chuyển/3PL | Xác nhận giao thành công | Cổng G3 |
+| 12 | Cửa hàng & Ngoại lệ | Cửa hàng nhận & kiểm đếm | Cổng G4 (xác nhận khớp?) → Gm2 gộp |
+| 13 | Cửa hàng & Ngoại lệ | Cập nhật tồn cửa hàng & đóng lệnh | Message tồn cửa hàng → S3/M3 |
+
+**Kịch bản thành công:** nhận lệnh phân bổ → tồn khả dụng (ATP) đủ → lập phiếu xuất (DO) → soạn hàng khớp → (song song qua **cặp AND**) đóng gói/dán nhãn **và** lập chứng từ xuất/kế hoạch tuyến → bàn giao 3PL → giao thành công → cửa hàng nhận, kiểm đếm khớp → cập nhật tồn cửa hàng và bắn message sang S3/M3. **Kết quả:** "Hàng được điều chuyển và cửa hàng đã nhận đủ, tồn cửa hàng cập nhật cho S3/M3."
+
+**Kịch bản thất bại/ngoại lệ:**
+- Tồn không đủ (G1) → hỏi có cho giao một phần (G1b): nếu có → giao một phần + tạo backorder rồi quay lại lập DO; nếu không → End "Hoãn dòng phân bổ" (message hoãn → M3).
+- Soạn hàng không khớp DO (G2) → soạn lại (vòng lặp picking) trước khi đóng gói.
+- Giao không thành công (G3) → trả kiện về DC & lập biên bản → End "Chuyển K3 thu hồi" (message hàng lỗi → K3).
+- Cửa hàng kiểm đếm không khớp (G4) → ghi nhận thiếu/thừa & mở khiếu nại, sau đó vẫn hợp nhất về Gm2 để cập nhật tồn và đóng lệnh.
+
+**Nguồn/trạng thái:** tham chiếu thông lệ DC-to-store fulfillment; chính sách giao một phần/backorder, SLA 3PL, ngưỡng sai lệch kiểm đếm cho phép của ACFC là `C – cần xác thực`.
+
+### 4.7. K3 – Thu hồi & xử lý hàng trả về / hàng lỗi (Reverse Logistics)
+
+**Actor kích hoạt:** Tiếp nhận & Phân loại (RMA) nhận **yêu cầu trả hàng từ K2/cửa hàng** (hàng giao lỗi trả về, hoặc hàng khách trả tại cửa hàng).
+**Actor hưởng lợi:** S3/M3 (tồn & hao hụt được cập nhật đúng), C4/Tài chính (cơ sở hoàn tiền), NCC/chủ thương hiệu (nhận lại hàng bảo hành) trực tiếp; khách cuối (được xử lý trả hàng) gián tiếp.
+**Ranh giới:** từ khi nhận yêu cầu trả hàng → đến khi đóng phiếu RMA và (nếu cần) lập đề nghị hoàn tiền chuyển C4. Sơ đồ: `diagrams/bpmn-thu-hoi-hang-tra-k3.svg` (1 Pool DC – 4 Lane, 9 cổng, có cặp AND split–join).
+
+| # | Actor (lane) | Bước (Động từ + Danh từ) | Ghi chú/hệ thống |
+|---|---|---|---|
+| 1 | Tiếp nhận & RMA | Tiếp nhận & lập phiếu RMA | Start: nhận yêu cầu trả hàng ← K2/cửa hàng |
+| 2 | Tiếp nhận & RMA | Kiểm tra đúng chính sách & thời hạn trả | Cổng G1; không đạt → từ chối & phản hồi khách → End "Đóng (từ chối)" |
+| 3 | Giám định & Phân hạng | Giám định tình trạng hàng | Vào chuỗi phân hạng G2→G3→G4 |
+| 4 | Giám định & Phân hạng | Phân hạng khả năng bán lại nguyên trạng | Cổng G2 (bán lại nguyên trạng?) |
+| 5 | Giám định & Phân hạng | Kiểm tra còn bảo hành NCC | Cổng G3 |
+| 6 | Giám định & Phân hạng | Đánh giá khả năng tân trang | Cổng G4 |
+| 7 | Xử lý (Disposition) | Gửi trả/đổi với NCC | Nhánh G3 "Có" → End "Đã chuyển NCC" (message chuyển NCC) |
+| 8 | Xử lý (Disposition) | Tân trang (refurbish) | Nhánh G4 "Có" → Cổng G4b (đạt sau tân trang?) |
+| 9 | Xử lý (Disposition) | Loại bỏ / hủy (scrap) | Nhánh G4 "Không"/G4b "Không" → End "Ghi nhận hao hụt" (message hao hụt → S3/M3) |
+| 10 | Kế toán & Cập nhật tồn | Cất lên kệ (putaway) | Sau Gm gộp → cổng Ga AND-split (song song với bước 11) |
+| 11 | Kế toán & Cập nhật tồn | Cập nhật tồn kho (S3/M3) | Chạy song song bước 10; message cập nhật tồn → S3/M3 |
+| 12 | Kế toán & Cập nhật tồn | Đóng phiếu RMA | Sau cổng Gj AND-join |
+| 13 | Kế toán & Cập nhật tồn | Lập đề nghị hoàn tiền → C4/Tài chính | Cổng G5 (cần hoàn tiền?); message đề nghị hoàn tiền → C4 |
+
+**Kịch bản thành công:** nhận yêu cầu trả hàng đúng chính sách & thời hạn → giám định → hàng còn bán lại nguyên trạng (hoặc tân trang đạt) → hợp nhất tại Gm → (song song qua **cặp AND**) cất lên kệ **và** cập nhật tồn kho S3/M3 → đóng phiếu RMA → nếu cần thì lập đề nghị hoàn tiền chuyển C4. **Kết quả:** "Hàng trả được nhập lại/tân trang, tồn cập nhật cho S3/M3 và (nếu có) đề nghị hoàn tiền chuyển C4."
+
+**Kịch bản thất bại/ngoại lệ:**
+- Yêu cầu trả sai chính sách/quá thời hạn (G1) → từ chối & phản hồi khách → End "Đóng (từ chối)".
+- Không bán lại nguyên trạng (G2) nhưng còn bảo hành NCC (G3) → gửi trả/đổi với NCC → End "Đã chuyển NCC".
+- Không còn bảo hành và không tân trang được (G4 "Không"), hoặc tân trang không đạt (G4b "Không") → loại bỏ/hủy (scrap) → End "Ghi nhận hao hụt" (message hao hụt → S3/M3).
+- Không cần hoàn tiền (G5 "Không") → đóng phiếu và kết thúc tại End "Hoàn tất xử lý trả hàng".
+
+**Nguồn/trạng thái:** tham chiếu thông lệ reverse logistics & RMA ngành bán lẻ; chính sách/thời hạn đổi trả, tiêu chí phân hạng (bán lại/tân trang/scrap), điều khoản bảo hành NCC và quy trình hoàn tiền C4 cụ thể của ACFC là `C – cần xác thực`.
 
 ## 5. Phương pháp thu thập và xác thực
 
