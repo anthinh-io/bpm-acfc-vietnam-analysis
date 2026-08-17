@@ -10,7 +10,7 @@
   </style>
 
   <text x="600" y="44" text-anchor="middle" class="title">Pareto tác động cycle time ước tính của các vấn đề</text>
-  <text x="600" y="72" text-anchor="middle" class="axis">Kịch bản điển hình, đơn vị: giờ theo lịch trên mỗi hồ sơ</text>
+  <!-- <text x="600" y="72" text-anchor="middle" class="axis">Kịch bản điển hình, đơn vị: giờ theo lịch trên mỗi hồ sơ</text> -->
 
   <line x1="105" y1="100" x2="105" y2="580" stroke="#333333" stroke-width="2"/>
   <line x1="105" y1="580" x2="1095" y2="580" stroke="#333333" stroke-width="2"/>
