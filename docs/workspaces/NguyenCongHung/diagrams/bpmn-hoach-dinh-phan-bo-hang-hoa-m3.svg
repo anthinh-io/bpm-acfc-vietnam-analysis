@@ -1,0 +1,154 @@
+<svg width="1930" height="740" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrowM3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d3748"/>
+    </marker>
+    <marker id="arrowM3g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#38a169"/>
+    </marker>
+    <marker id="arrowM3r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#e53e3e"/>
+    </marker>
+    <filter id="taskShadowM3" x="-5%" y="-5%" width="110%" height="115%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="1" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <rect width="1930" height="740" fill="#ffffff"/>
+  <text x="40" y="40" font-size="20" font-weight="bold" fill="#1a202c">SƠ ĐỒ BPMN 2.0: QUY TRÌNH HOẠCH ĐỊNH HÀNG HÓA &amp; PHÂN BỔ THEO MÙA ACFC (M3)</text>
+  <text x="40" y="66" font-size="13" fill="#718096">Chủ thể: Khối Merchandise &amp; Allocation ACFC | 8 cổng: 2 cặp XOR split–merge, 1 cặp AND split–join, 2 XOR quyết định phát hành; nhiều điểm kết thúc.</text>
+
+  <!-- Main Pool -->
+  <rect x="40" y="90" width="1850" height="560" fill="#ffffff" stroke="#2d3748" stroke-width="2"/>
+  <rect x="40" y="90" width="35" height="560" fill="#3182ce"/>
+  <text x="57" y="370" font-size="13" font-weight="bold" fill="#ffffff" transform="rotate(-90 57 370)" text-anchor="middle">ACFC – KHỐI HOẠCH ĐỊNH &amp; PHÂN BỔ HÀNG HÓA (M3)</text>
+
+  <!-- Lanes -->
+  <line x1="75" y1="290" x2="1890" y2="290" stroke="#cbd5e0" stroke-width="1"/>
+  <line x1="75" y1="470" x2="1890" y2="470" stroke="#cbd5e0" stroke-width="1"/>
+  <rect x="75" y="90" width="30" height="200" fill="#edf2f7"/>
+  <text x="93" y="190" font-size="10" font-weight="bold" fill="#4a5568" transform="rotate(-90 93 190)" text-anchor="middle">Merchandise / Product Planning</text>
+  <rect x="75" y="290" width="30" height="180" fill="#edf2f7"/>
+  <text x="93" y="380" font-size="10" font-weight="bold" fill="#4a5568" transform="rotate(-90 93 380)" text-anchor="middle">Allocation Team / Vận hành</text>
+  <rect x="75" y="470" width="30" height="180" fill="#edf2f7"/>
+  <text x="93" y="560" font-size="10" font-weight="bold" fill="#4a5568" transform="rotate(-90 93 560)" text-anchor="middle">Commercial / Tài chính</text>
+
+  <!-- ELEMENTS (spine y=190) -->
+  <circle cx="120" cy="190" r="18" fill="#c6f6d5" stroke="#22543d" stroke-width="2"/>
+  <text x="120" y="225" font-size="9" fill="#22543d" text-anchor="middle">Khởi động mùa</text>
+
+  <rect x="165" y="165" width="130" height="50" rx="6" fill="#ffffff" stroke="#3182ce" stroke-width="1.5" filter="url(#taskShadowM3)"/>
+  <text x="230" y="186" font-size="10" font-weight="bold" fill="#2d3748" text-anchor="middle">Phân tích Sell-through</text>
+  <text x="230" y="202" font-size="10" fill="#2d3748" text-anchor="middle">và Weeks of Supply</text>
+
+  <polygon points="355,190 375,170 395,190 375,210" fill="#fefcbf" stroke="#b7791f" stroke-width="1.5"/>
+  <text x="375" y="194" font-size="10" font-weight="bold" fill="#744210" text-anchor="middle">X</text>
+  <text x="375" y="160" font-size="9" fill="#744210" text-anchor="middle">G1: Dữ liệu đủ?</text>
+
+  <polygon points="475,190 495,170 515,190 495,210" fill="#fefcbf" stroke="#b7791f" stroke-width="1.5"/>
+  <text x="495" y="194" font-size="10" font-weight="bold" fill="#744210" text-anchor="middle">X</text>
+  <text x="495" y="160" font-size="9" fill="#744210" text-anchor="middle">Gm (XOR-merge)</text>
+
+  <rect x="555" y="165" width="140" height="50" rx="6" fill="#ffffff" stroke="#3182ce" stroke-width="1.5" filter="url(#taskShadowM3)"/>
+  <text x="625" y="186" font-size="10" font-weight="bold" fill="#2d3748" text-anchor="middle">Lập kế hoạch mua</text>
+  <text x="625" y="202" font-size="10" fill="#2d3748" text-anchor="middle">và phân bổ hàng hóa</text>
+
+  <polygon points="740,190 760,170 780,190 760,210" fill="#fefcbf" stroke="#b7791f" stroke-width="1.5"/>
+  <text x="760" y="194" font-size="10" font-weight="bold" fill="#744210" text-anchor="middle">X</text>
+  <text x="760" y="160" font-size="9" fill="#744210" text-anchor="middle">G2: Đủ ngân sách?</text>
+
+  <polygon points="860,190 880,170 900,190 880,210" fill="#fefcbf" stroke="#b7791f" stroke-width="1.5"/>
+  <text x="880" y="194" font-size="10" font-weight="bold" fill="#744210" text-anchor="middle">X</text>
+  <text x="880" y="160" font-size="9" fill="#744210" text-anchor="middle">Gm2 (XOR-merge)</text>
+
+  <polygon points="980,190 1000,170 1020,190 1000,210" fill="#fefcbf" stroke="#b7791f" stroke-width="1.5"/>
+  <text x="1000" y="195" font-size="14" font-weight="bold" fill="#744210" text-anchor="middle">+</text>
+  <text x="1000" y="160" font-size="9" fill="#744210" text-anchor="middle">Ga: tách AND</text>
+
+  <rect x="1035" y="355" width="140" height="50" rx="6" fill="#ffffff" stroke="#3182ce" stroke-width="1.5" filter="url(#taskShadowM3)"/>
+  <text x="1105" y="376" font-size="10" font-weight="bold" fill="#2d3748" text-anchor="middle">Kiểm tra sức chứa</text>
+  <text x="1105" y="392" font-size="10" fill="#2d3748" text-anchor="middle">cửa hàng</text>
+
+  <rect x="1035" y="535" width="140" height="50" rx="6" fill="#ffffff" stroke="#3182ce" stroke-width="1.5" filter="url(#taskShadowM3)"/>
+  <text x="1105" y="556" font-size="10" font-weight="bold" fill="#2d3748" text-anchor="middle">Xác nhận nguồn hàng</text>
+  <text x="1105" y="572" font-size="10" fill="#2d3748" text-anchor="middle">khả dụng</text>
+
+  <polygon points="1220,190 1240,170 1260,190 1240,210" fill="#fefcbf" stroke="#b7791f" stroke-width="1.5"/>
+  <text x="1240" y="195" font-size="14" font-weight="bold" fill="#744210" text-anchor="middle">+</text>
+  <text x="1240" y="160" font-size="9" fill="#744210" text-anchor="middle">Gj: AND-join</text>
+
+  <rect x="1285" y="165" width="140" height="50" rx="6" fill="#ffffff" stroke="#3182ce" stroke-width="1.5" filter="url(#taskShadowM3)"/>
+  <text x="1355" y="186" font-size="10" font-weight="bold" fill="#2d3748" text-anchor="middle">Trình và phê duyệt</text>
+  <text x="1355" y="202" font-size="10" fill="#2d3748" text-anchor="middle">kế hoạch phân bổ</text>
+
+  <polygon points="1470,190 1490,170 1510,190 1490,210" fill="#fefcbf" stroke="#b7791f" stroke-width="1.5"/>
+  <text x="1490" y="194" font-size="10" font-weight="bold" fill="#744210" text-anchor="middle">X</text>
+  <text x="1490" y="160" font-size="9" fill="#744210" text-anchor="middle">G3: Được duyệt?</text>
+
+  <rect x="1560" y="165" width="140" height="50" rx="6" fill="#ffffff" stroke="#3182ce" stroke-width="1.5" filter="url(#taskShadowM3)"/>
+  <text x="1630" y="186" font-size="10" font-weight="bold" fill="#2d3748" text-anchor="middle">Phát hành lệnh mua</text>
+  <text x="1630" y="202" font-size="10" fill="#2d3748" text-anchor="middle">và đồng bộ WMS</text>
+
+  <polygon points="1740,190 1760,170 1780,190 1760,210" fill="#fefcbf" stroke="#b7791f" stroke-width="1.5"/>
+  <text x="1760" y="194" font-size="10" font-weight="bold" fill="#744210" text-anchor="middle">X</text>
+  <text x="1760" y="160" font-size="9" fill="#744210" text-anchor="middle">G4: WMS OK?</text>
+
+  <circle cx="1835" cy="190" r="18" fill="#c6f6d5" stroke="#22543d" stroke-width="3"/>
+  <text x="1835" y="225" font-size="9" font-weight="bold" fill="#22543d" text-anchor="middle">Chuyển kho</text>
+
+  <!-- Rework tasks -->
+  <rect x="425" y="355" width="140" height="50" rx="6" fill="#fffaf0" stroke="#dd6b20" stroke-width="1.5" filter="url(#taskShadowM3)"/>
+  <text x="495" y="376" font-size="10" font-weight="bold" fill="#2d3748" text-anchor="middle">Bổ sung, làm sạch</text>
+  <text x="495" y="392" font-size="10" fill="#2d3748" text-anchor="middle">dữ liệu</text>
+
+  <rect x="810" y="535" width="140" height="50" rx="6" fill="#fffaf0" stroke="#dd6b20" stroke-width="1.5" filter="url(#taskShadowM3)"/>
+  <text x="880" y="556" font-size="10" font-weight="bold" fill="#2d3748" text-anchor="middle">Điều chỉnh</text>
+  <text x="880" y="572" font-size="10" fill="#2d3748" text-anchor="middle">kế hoạch mua</text>
+
+  <!-- Negative end events -->
+  <circle cx="1490" cy="380" r="16" fill="#fed7d7" stroke="#822727" stroke-width="3"/>
+  <text x="1490" y="410" font-size="9" font-weight="bold" fill="#822727" text-anchor="middle">Trả lại điều chỉnh</text>
+  <circle cx="1760" cy="380" r="16" fill="#fed7d7" stroke="#822727" stroke-width="3"/>
+  <text x="1760" y="410" font-size="9" font-weight="bold" fill="#822727" text-anchor="middle">Lỗi tích hợp – retry</text>
+
+  <!-- FLOWS: spine -->
+  <line x1="138" y1="190" x2="165" y2="190" stroke="#2d3748" stroke-width="1.5" marker-end="url(#arrowM3)"/>
+  <line x1="295" y1="190" x2="355" y2="190" stroke="#2d3748" stroke-width="1.5" marker-end="url(#arrowM3)"/>
+  <line x1="395" y1="190" x2="475" y2="190" stroke="#38a169" stroke-width="1.5" marker-end="url(#arrowM3g)"/>
+  <text x="435" y="182" font-size="9" fill="#38a169" text-anchor="middle">Có</text>
+  <line x1="515" y1="190" x2="555" y2="190" stroke="#2d3748" stroke-width="1.5" marker-end="url(#arrowM3)"/>
+  <line x1="695" y1="190" x2="740" y2="190" stroke="#2d3748" stroke-width="1.5" marker-end="url(#arrowM3)"/>
+  <line x1="780" y1="190" x2="860" y2="190" stroke="#38a169" stroke-width="1.5" marker-end="url(#arrowM3g)"/>
+  <text x="820" y="182" font-size="9" fill="#38a169" text-anchor="middle">Có</text>
+  <line x1="900" y1="190" x2="980" y2="190" stroke="#2d3748" stroke-width="1.5" marker-end="url(#arrowM3)"/>
+  <line x1="1260" y1="190" x2="1285" y2="190" stroke="#2d3748" stroke-width="1.5" marker-end="url(#arrowM3)"/>
+  <line x1="1510" y1="190" x2="1560" y2="190" stroke="#38a169" stroke-width="1.5" marker-end="url(#arrowM3g)"/>
+  <text x="1535" y="182" font-size="9" fill="#38a169" text-anchor="middle">Có</text>
+  <line x1="1700" y1="190" x2="1740" y2="190" stroke="#2d3748" stroke-width="1.5" marker-end="url(#arrowM3)"/>
+  <line x1="1780" y1="190" x2="1817" y2="190" stroke="#38a169" stroke-width="1.5" marker-end="url(#arrowM3g)"/>
+  <text x="1798" y="182" font-size="9" fill="#38a169" text-anchor="middle">Có</text>
+
+  <!-- FLOWS: XOR rework G1/Gm -->
+  <path d="M 375 210 L 375 380 L 425 380" fill="none" stroke="#e53e3e" stroke-width="1.5" marker-end="url(#arrowM3r)"/>
+  <text x="360" y="300" font-size="9" fill="#e53e3e" text-anchor="end">Không</text>
+  <path d="M 495 355 L 495 210" fill="none" stroke="#2d3748" stroke-width="1.5" marker-end="url(#arrowM3)"/>
+
+  <!-- FLOWS: XOR rework G2/Gm2 -->
+  <path d="M 760 210 L 760 560 L 810 560" fill="none" stroke="#e53e3e" stroke-width="1.5" marker-end="url(#arrowM3r)"/>
+  <text x="745" y="300" font-size="9" fill="#e53e3e" text-anchor="end">Không</text>
+  <path d="M 880 535 L 880 210" fill="none" stroke="#2d3748" stroke-width="1.5" marker-end="url(#arrowM3)"/>
+
+  <!-- FLOWS: AND split/join -->
+  <path d="M 1000 210 L 1000 380 L 1035 380" fill="none" stroke="#2d3748" stroke-width="1.5" marker-end="url(#arrowM3)"/>
+  <path d="M 1000 210 L 1000 560 L 1035 560" fill="none" stroke="#2d3748" stroke-width="1.5" marker-end="url(#arrowM3)"/>
+  <path d="M 1175 380 L 1240 380 L 1240 210" fill="none" stroke="#2d3748" stroke-width="1.5" marker-end="url(#arrowM3)"/>
+  <path d="M 1175 560 L 1240 560 L 1240 210" fill="none" stroke="#2d3748" stroke-width="1.5" marker-end="url(#arrowM3)"/>
+
+  <!-- FLOWS: negative ends -->
+  <path d="M 1490 210 L 1490 362" fill="none" stroke="#e53e3e" stroke-width="1.5" marker-end="url(#arrowM3r)"/>
+  <text x="1500" y="300" font-size="9" fill="#e53e3e" text-anchor="start">Không</text>
+  <path d="M 1760 210 L 1760 362" fill="none" stroke="#e53e3e" stroke-width="1.5" marker-end="url(#arrowM3r)"/>
+  <text x="1770" y="300" font-size="9" fill="#e53e3e" text-anchor="start">Không</text>
+
+  <text x="950" y="700" font-size="12" font-style="italic" fill="#718096" text-anchor="middle">Hình 3.1: Sơ đồ BPMN 2.0 quy trình Hoạch định hàng hóa và Phân bổ nguồn hàng theo mùa (M3).</text>
+</svg>

@@ -1,0 +1,178 @@
+<svg width="1400" height="800" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d3748"/>
+    </marker>
+    <filter id="taskShadow3" x="-5%" y="-5%" width="110%" height="115%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="1" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="800" fill="#ffffff"/>
+  <text x="30" y="35" font-size="18" font-weight="bold" fill="#1a202c">SƠ ĐỒ BPMN 2.0: QUY TRÌNH TUYỂN DỤNG &amp; TIẾP NHẬN NHÂN SỰ (S1)</text>
+  <text x="30" y="55" font-size="12" fill="#718096">Chủ thể: Khối Bán lẻ Thời trang &amp; Tổng kho ACFC | Độ phức tạp: 8 Cổng điều kiện (Gateways)</text>
+
+  <!-- Pool 1: Ứng viên (Candidate) -->
+  <rect x="30" y="80" width="1340" height="130" fill="#ffffff" stroke="#2d3748" stroke-width="2"/>
+  <rect x="30" y="80" width="30" height="130" fill="#805ad5"/>
+  <text x="45" y="145" font-size="12" font-weight="bold" fill="#ffffff" transform="rotate(-90 45 145)" text-anchor="middle">ỨNG VIÊN (CANDIDATE)</text>
+
+  <!-- Pool 2: ACFC Internal Organization -->
+  <rect x="30" y="230" width="1340" height="520" fill="#ffffff" stroke="#2d3748" stroke-width="2"/>
+  <rect x="30" y="230" width="30" height="520" fill="#2d3748"/>
+  <text x="45" y="490" font-size="12" font-weight="bold" fill="#ffffff" transform="rotate(-90 45 490)" text-anchor="middle">ACFC – QUY TRÌNH TUYỂN DỤNG NỘI BỘ (S1)</text>
+
+  <!-- Lanes -->
+  <!-- Lane 1: Bộ phận Vận hành yêu cầu (Store/Warehouse Manager) -->
+  <line x1="60" y1="360" x2="1370" y2="360" stroke="#cbd5e0" stroke-width="1"/>
+  <rect x="60" y="230" width="25" height="130" fill="#edf2f7"/>
+  <text x="73" y="295" font-size="10" font-weight="bold" fill="#4a5568" transform="rotate(-90 73 295)" text-anchor="middle">Store / Kho Ops</text>
+
+  <!-- Lane 2: Chuyên viên Tuyển dụng (HR Talent Acquisition) -->
+  <line x1="60" y1="500" x2="1370" y2="500" stroke="#cbd5e0" stroke-width="1"/>
+  <rect x="60" y="360" width="25" height="140" fill="#edf2f7"/>
+  <text x="73" y="430" font-size="10" font-weight="bold" fill="#4a5568" transform="rotate(-90 73 430)" text-anchor="middle">HR Tuyển dụng</text>
+
+  <!-- Lane 3: Ban Giám đốc Khối &amp; HRD -->
+  <line x1="60" y1="630" x2="1370" y2="630" stroke="#cbd5e0" stroke-width="1"/>
+  <rect x="60" y="500" width="25" height="130" fill="#edf2f7"/>
+  <text x="73" y="565" font-size="10" font-weight="bold" fill="#4a5568" transform="rotate(-90 73 565)" text-anchor="middle">HRD / Giám đốc</text>
+
+  <!-- Lane 4: IT &amp; Hành chính Onboarding -->
+  <rect x="60" y="630" width="25" height="120" fill="#edf2f7"/>
+  <text x="73" y="690" font-size="10" font-weight="bold" fill="#4a5568" transform="rotate(-90 73 690)" text-anchor="middle">IT &amp; Admin</text>
+
+  <!-- ELEMENTS -->
+  <!-- Start Event -->
+  <circle cx="110" cy="295" r="16" fill="#c6f6d5" stroke="#22543d" stroke-width="2"/>
+  <text x="110" y="325" font-size="9" fill="#22543d" text-anchor="middle">Phát sinh vị trí</text>
+
+  <!-- Task 1: Lập phiếu yêu cầu tuyển dụng (Lane 1) -->
+  <rect x="150" y="270" width="105" height="50" rx="6" fill="#ffffff" stroke="#805ad5" stroke-width="1.5" filter="url(#taskShadow3)"/>
+  <text x="202" y="291" font-size="9" font-weight="bold" fill="#2d3748" text-anchor="middle">Lập phiếu yêu cầu</text>
+  <text x="202" y="305" font-size="9" fill="#2d3748" text-anchor="middle">tuyển dụng &amp; JD</text>
+
+  <!-- G1: Duyệt định biên? (Lane 3) -->
+  <polygon points="275,565 295,545 315,565 295,585" fill="#fefcbf" stroke="#b7791f" stroke-width="1.5"/>
+  <text x="295" y="569" font-size="10" font-weight="bold" fill="#744210" text-anchor="middle">X</text>
+  <text x="295" y="600" font-size="8" fill="#744210" text-anchor="middle">G1: Duyệt định biên?</text>
+
+  <!-- Task 2: Đăng tin tuyển dụng (Lane 2) -->
+  <rect x="335" y="405" width="100" height="50" rx="6" fill="#ffffff" stroke="#805ad5" stroke-width="1.5" filter="url(#taskShadow3)"/>
+  <text x="385" y="426" font-size="9" font-weight="bold" fill="#2d3748" text-anchor="middle">Đăng tin tuyển dụng</text>
+  <text x="385" y="440" font-size="9" fill="#2d3748" text-anchor="middle">Website/TopCV</text>
+
+  <!-- Task 3: Ứng viên nộp CV (Candidate Pool) -->
+  <rect x="335" y="120" width="100" height="50" rx="6" fill="#ffffff" stroke="#805ad5" stroke-width="1.5" filter="url(#taskShadow3)"/>
+  <text x="385" y="141" font-size="9" font-weight="bold" fill="#2d3748" text-anchor="middle">Nộp hồ sơ</text>
+  <text x="385" y="155" font-size="9" fill="#2d3748" text-anchor="middle">ứng tuyển trực tuyến</text>
+
+  <!-- G2: CV đạt chuẩn cứng? (Lane 2) -->
+  <polygon points="460,430 480,410 500,430 480,450" fill="#fefcbf" stroke="#b7791f" stroke-width="1.5"/>
+  <text x="480" y="434" font-size="10" font-weight="bold" fill="#744210" text-anchor="middle">X</text>
+  <text x="480" y="465" font-size="8" fill="#744210" text-anchor="middle">G2: CV đạt?</text>
+
+  <!-- G3: Phone Screening đạt? (Lane 2) -->
+  <polygon points="530,430 550,410 570,430 550,450" fill="#fefcbf" stroke="#b7791f" stroke-width="1.5"/>
+  <text x="550" y="434" font-size="10" font-weight="bold" fill="#744210" text-anchor="middle">X</text>
+  <text x="550" y="465" font-size="8" fill="#744210" text-anchor="middle">G3: Sơ vấn đạt?</text>
+
+  <!-- Task 4: Phỏng vấn V1 chuyên môn (Lane 1) -->
+  <rect x="600" y="270" width="105" height="50" rx="6" fill="#ffffff" stroke="#805ad5" stroke-width="1.5" filter="url(#taskShadow3)"/>
+  <text x="652" y="291" font-size="9" font-weight="bold" fill="#2d3748" text-anchor="middle">Phỏng vấn V1</text>
+  <text x="652" y="305" font-size="9" fill="#2d3748" text-anchor="middle">chuyên môn &amp; thái độ</text>
+
+  <!-- G4: Vòng 1 Đạt? (Lane 1) -->
+  <polygon points="730,295 750,275 770,295 750,315" fill="#fefcbf" stroke="#b7791f" stroke-width="1.5"/>
+  <text x="750" y="299" font-size="10" font-weight="bold" fill="#744210" text-anchor="middle">X</text>
+  <text x="750" y="330" font-size="8" fill="#744210" text-anchor="middle">G4: V1 Đạt?</text>
+
+  <!-- Task 5: Làm bài Test nghiệp vụ (Candidate) -->
+  <rect x="700" y="120" width="100" height="50" rx="6" fill="#ffffff" stroke="#805ad5" stroke-width="1.5" filter="url(#taskShadow3)"/>
+  <text x="750" y="141" font-size="9" font-weight="bold" fill="#2d3748" text-anchor="middle">Làm bài test</text>
+  <text x="750" y="155" font-size="9" fill="#2d3748" text-anchor="middle">tính toán/nghiệp vụ</text>
+
+  <!-- G5: Test >= 70đ? (Lane 2) -->
+  <polygon points="820,430 840,410 860,430 840,450" fill="#fefcbf" stroke="#b7791f" stroke-width="1.5"/>
+  <text x="840" y="434" font-size="10" font-weight="bold" fill="#744210" text-anchor="middle">X</text>
+  <text x="840" y="465" font-size="8" fill="#744210" text-anchor="middle">G5: Test &gt;= 70đ?</text>
+
+  <!-- G6: Vòng 2 Giám đốc Duyệt? (Lane 3) -->
+  <polygon points="900,565 920,545 940,565 920,585" fill="#fefcbf" stroke="#b7791f" stroke-width="1.5"/>
+  <text x="920" y="569" font-size="10" font-weight="bold" fill="#744210" text-anchor="middle">X</text>
+  <text x="920" y="600" font-size="8" fill="#744210" text-anchor="middle">G6: V2 Duyệt?</text>
+
+  <!-- Task 6: Gửi Thư mời nhận việc Offer (Lane 2) -->
+  <rect x="970" y="405" width="105" height="50" rx="6" fill="#ffffff" stroke="#805ad5" stroke-width="1.5" filter="url(#taskShadow3)"/>
+  <text x="1022" y="426" font-size="9" font-weight="bold" fill="#2d3748" text-anchor="middle">Gửi Offer Letter</text>
+  <text x="1022" y="440" font-size="9" fill="#2d3748" text-anchor="middle">&amp; Đãi ngộ</text>
+
+  <!-- G7: Ứng viên chấp nhận Offer? (Candidate) -->
+  <polygon points="1080,145 1100,125 1120,145 1100,165" fill="#fefcbf" stroke="#b7791f" stroke-width="1.5"/>
+  <text x="1100" y="149" font-size="10" font-weight="bold" fill="#744210" text-anchor="middle">X</text>
+  <text x="1100" y="115" font-size="8" fill="#744210" text-anchor="middle">G7: Nhận Offer?</text>
+
+  <!-- G8: Duyệt đàm phán lương? (Lane 3) -->
+  <polygon points="1080,565 1100,545 1120,565 1100,585" fill="#fefcbf" stroke="#b7791f" stroke-width="1.5"/>
+  <text x="1100" y="569" font-size="10" font-weight="bold" fill="#744210" text-anchor="middle">X</text>
+  <text x="1100" y="600" font-size="8" fill="#744210" text-anchor="middle">G8: Duyệt lương?</text>
+
+  <!-- Task 7: Ký HĐ & Cấp phát tài khoản Onboarding (Lane 4) -->
+  <rect x="1150" y="665" width="110" height="50" rx="6" fill="#ffffff" stroke="#38a169" stroke-width="1.5" filter="url(#taskShadow3)"/>
+  <text x="1205" y="686" font-size="9" font-weight="bold" fill="#22543d" text-anchor="middle">Ký Hợp đồng thử việc</text>
+  <text x="1205" y="700" font-size="9" fill="#22543d" text-anchor="middle">&amp; Cấp phát thiết bị</text>
+
+  <!-- End Event -->
+  <circle cx="1310" cy="690" r="16" fill="#c6f6d5" stroke="#22543d" stroke-width="3"/>
+  <text x="1310" y="720" font-size="9" font-weight="bold" fill="#22543d" text-anchor="middle">Onboarding</text>
+
+  <!-- FLOWS -->
+  <line x1="126" y1="295" x2="150" y2="295" stroke="#2d3748" stroke-width="1.5" marker-end="url(#arrow3)"/>
+  <path d="M 202 320 L 202 565 L 275 565" fill="none" stroke="#2d3748" stroke-width="1.5" marker-end="url(#arrow3)"/>
+
+  <!-- G1 [Yes] -> Task 2 -->
+  <path d="M 315 565 L 385 565 L 385 455" fill="none" stroke="#38a169" stroke-width="1.5" marker-end="url(#arrow3)"/>
+  <!-- Task 2 -> Task 3 -->
+  <line x1="385" y1="405" x2="385" y2="170" stroke="#2d3748" stroke-width="1.5" stroke-dasharray="4,4" marker-end="url(#arrow3)"/>
+
+  <!-- Task 3 -> G2 -->
+  <path d="M 435 145 L 480 145 L 480 410" fill="none" stroke="#2d3748" stroke-width="1.5" marker-end="url(#arrow3)"/>
+
+  <!-- G2 -> G3 -->
+  <line x1="500" y1="430" x2="530" y2="430" stroke="#2d3748" stroke-width="1.5" marker-end="url(#arrow3)"/>
+
+  <!-- G3 [Đạt] -> Task 4 -->
+  <path d="M 570 430 L 652 430 L 652 320" fill="none" stroke="#38a169" stroke-width="1.5" marker-end="url(#arrow3)"/>
+
+  <!-- Task 4 -> G4 -->
+  <line x1="705" y1="295" x2="730" y2="295" stroke="#2d3748" stroke-width="1.5" marker-end="url(#arrow3)"/>
+
+  <!-- G4 [Đạt] -> Task 5 (Test) -->
+  <path d="M 750 275 L 750 170" fill="none" stroke="#38a169" stroke-width="1.5" marker-end="url(#arrow3)"/>
+
+  <!-- Task 5 -> G5 -->
+  <path d="M 800 145 L 840 145 L 840 410" fill="none" stroke="#2d3748" stroke-width="1.5" marker-end="url(#arrow3)"/>
+
+  <!-- G5 [Đạt] -> G6 -->
+  <path d="M 860 430 L 920 430 L 920 545" fill="none" stroke="#38a169" stroke-width="1.5" marker-end="url(#arrow3)"/>
+
+  <!-- G6 [Duyệt] -> Task 6 (Offer) -->
+  <path d="M 940 565 L 1022 565 L 1022 455" fill="none" stroke="#38a169" stroke-width="1.5" marker-end="url(#arrow3)"/>
+
+  <!-- Task 6 -> G7 (Candidate) -->
+  <path d="M 1075 430 L 1100 430 L 1100 165" fill="none" stroke="#2d3748" stroke-width="1.5" stroke-dasharray="4,4" marker-end="url(#arrow3)"/>
+
+  <!-- G7 [Nhận] -> Task 7 -->
+  <path d="M 1120 145 L 1205 145 L 1205 665" fill="none" stroke="#38a169" stroke-width="1.5" marker-end="url(#arrow3)"/>
+
+  <!-- G7 [Đàm phán] -> G8 -->
+  <path d="M 1100 165 L 1100 545" fill="none" stroke="#d69e2e" stroke-width="1.5" marker-end="url(#arrow3)"/>
+
+  <!-- G8 [Duyệt lương] -> Task 6 -->
+  <path d="M 1080 565 L 1040 565 L 1040 455" fill="none" stroke="#38a169" stroke-width="1.5" marker-end="url(#arrow3)"/>
+
+  <!-- Task 7 -> End -->
+  <line x1="1260" y1="690" x2="1294" y2="690" stroke="#2d3748" stroke-width="1.5" marker-end="url(#arrow3)"/>
+
+  <text x="700" y="775" font-size="12" font-style="italic" fill="#718096" text-anchor="middle">Hình 6.2: Sơ đồ BPMN 2.0 quy trình Tuyển dụng và Tiếp nhận nhân sự tại ACFC.</text>
+</svg>

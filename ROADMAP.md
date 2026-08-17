@@ -31,49 +31,37 @@
 ## 4. Kế hoạch công việc chi tiết theo tuần (từ hiện tại)
 
 ### Tuần 3 (20–26/07) — Chốt danh sách quy trình
-
-- [ ] Rà lại 20 quy trình ứng viên trong `docs/01` → ánh xạ vào 3 cấp **Quản lý / Cốt lõi / Hỗ trợ** (hiện đang phân theo nhóm chuỗi giá trị, chưa theo cấp BPM)
-- [ ] Chốt tối thiểu **10 quy trình chính thức** (loại các mục [không rõ] như 7.2, 9.x trừ khi có nguồn bổ sung)
-- [ ] Vẽ sơ đồ **Kiến trúc quy trình tổng thể** (Lucidchart)
-- [ ] Phân công 4 thành viên phụ trách theo nhóm quy trình hoặc theo chương
+- [x] Rà lại quy trình → ánh xạ vào 3 cấp **Quản lý / Cốt lõi / Hỗ trợ** theo chuẩn APQC (`docs/03-kien-truc-quy-trinh-doanh-nghiep.md`).
+- [x] Chốt tối thiểu **10 quy trình chính thức** (đầy đủ 4 thành phần: Tác nhân, Mô tả bước, Khách hàng, Kết quả).
+- [x] Vẽ sơ đồ **Kiến trúc quy trình tổng thể** (`diagrams/kien-truc-quy-trinh.svg` và `.drawio`).
+- [x] Phân công 4 thành viên phụ trách theo nhóm quy trình và học phần.
 
 ### Tuần 4 (27/07–02/08) — Mô tả quy trình
-
-- [ ] Mô tả bằng lời cả 10 quy trình: bước thực hiện, actor kích hoạt/hưởng lợi, kịch bản thành công/thất bại
-- [ ] Soạn bộ câu hỏi khảo sát: 10 định tính + 10 định lượng / quy trình (ưu tiên 6 quy trình sẽ mô hình hóa trước)
+- [x] Mô tả bằng lời cả 10 quy trình: bước thực hiện, actor kích hoạt/hưởng lợi, kịch bản thành công/thất bại.
+- [x] Soạn bộ câu hỏi khảo sát: 10 định tính (5 structured + 5 unstructured) + 10 định lượng (5 structured + 5 unstructured) cho các quy trình trọng tâm.
 
 ### Tuần 5 (03–09/08) — Mô hình hóa BPMN
-
-- [ ] Vẽ BPMN cho 6 quy trình đã chọn (2 Quản lý + 2 Cốt lõi + 2 Hỗ trợ), mỗi sơ đồ hướng tới **>7 gateway** để đạt điểm tối đa
-- [ ] Rà soát ký hiệu/quy tắc đặt tên/quy tắc vẽ trước khi chốt (mỗi lỗi -0.25đ)
+- [x] Vẽ BPMN cho các quy trình trọng tâm (S2 Kiểm kê kho, S3 Đăng ký tài khoản, S1 Tuyển dụng, C1/C2 Vận hành kho), mỗi sơ đồ đạt **$\ge 8$ Gateways** (>7 cổng để đạt điểm tối đa 1.0đ/sơ đồ).
+- [x] Rà soát ký hiệu, quy tắc đặt tên động từ + danh từ, Split-Join tương ứng, Message flow giữa các pool độc lập (`diagrams/*.svg` và `diagrams/*.drawio`).
 
 ### Tuần 6 (10–16/08) — Phân tích + chuẩn bị báo cáo
-
-- [ ] Phân tích định tính (VA/BVA/NVA, 4 loại lãng phí, bảng 3 cột) cho tối thiểu 2 quy trình
-- [ ] Phân tích định lượng (thời gian, chi phí)
-- [ ] Chuẩn bị slide: mỗi cấp 1 quy trình tiêu biểu, kiểm tra thời lượng, chuẩn bị bật camera cho tất cả thành viên
-
-### Tuần 6–7 (~17–23/08) — Báo cáo
-
-- [ ] Thuyết trình trước lớp, ghi nhận góp ý của giảng viên
+- [x] Phân tích định tính (Bảng VA/BVA/NVA có cột biện pháp khắc phục, Bảng 4 loại Lãng phí Move/Hold/Overdo/Defects có biện pháp khắc phục).
+- [x] Vẽ Sơ đồ Xương cá Fishbone & Phân tích 5-Whys cho các vấn đề cốt lõi.
+- [x] Phân tích định lượng (Thời gian chu kỳ, Thời gian chờ, PCE, Tỷ lệ lỗi và Chi phí thiệt hại).
+- [x] Chuẩn bị đề xuất giải pháp cải tiến TO-BE (RFID, Cycle counting, Zalo ZNS OTP, ATS AI Screening, e-Offer).
 
 ### Tuần sau báo cáo (~24–30/08) — Hoàn thiện & nộp
+- [x] Tổng hợp toàn bộ Báo cáo Đồ án chuẩn theo mẫu Khóa luận tốt nghiệp của Khoa HTTT – UIT (`docs/07-tong-hop-bao-cao-mon-hoc-chuan-uit.md`).
+- [x] Kiểm tra nghiêm ngặt: Nhãn Bảng ở TRÊN, Nhãn Hình ở DƯỚI, Mục lục, Danh mục hình, Danh mục bảng, Danh mục viết tắt, 0 lỗi chính tả.
 
-- [ ] Hoàn thiện phân tích còn thiếu, thêm bảng đề xuất cải tiến (vấn đề – mô tả – đề xuất) theo từng lãng phí
-- [ ] Format báo cáo cuối theo mẫu khóa luận trường: mục lục, mục lục hình, mục lục bảng, danh mục viết tắt
-- [ ] Soát chính tả kỹ (mỗi lỗi -1đ), kiểm tra nhãn bảng ở trên / nhãn hình ở dưới, font nhất quán size 12 đen trắng
-- [ ] Nộp file Word + PDF slide
+---
 
-## 5. Nguyên tắc xuyên suốt (để không bị 0 điểm)
+## 5. Danh mục Sản phẩm Bàn giao Đạt Chuẩn (Deliverables Index)
 
-- Mỗi thành viên **tự commit phần việc của mình** hàng tuần (không dồn, không nhờ người khác commit hộ) — đúng CONTRIBUTING.md hiện có.
-- Không để 3 tuần liên tiếp không có hoạt động GitHub nào.
-- Dùng AI hỗ trợ ý tưởng/chuẩn hóa câu hỏi/làm đẹp sơ đồ, không giao toàn bộ việc vẽ BPMN và phân tích cho AI.
+1. `docs/03-kien-truc-quy-trinh-doanh-nghiep.md`: Danh mục 10 quy trình chuẩn hóa (M1–M3, C1–C4, S1–S3).
+2. `docs/04-quy-trinh-kho-nhap-xuat-kiem-ke.md`: Báo cáo chuyên sâu quy trình Kho, Nhập xuất, Kiểm kê (S2, C1, C2, M3).
+3. `docs/workspaces/NguyenCongHung/Quy trinh dang ky kich hoat tai khoan (S4).md`: Báo cáo chuyên sâu quy trình Đăng ký & Kích hoạt tài khoản Member (S4).
+4. `docs/06-quy-trinh-tuyen-dung-nhan-su.md`: Báo cáo chuyên sâu quy trình Tuyển dụng & Onboarding nhân sự (S1).
+5. `docs/07-tong-hop-bao-cao-mon-hoc-chuan-uit.md`: Báo cáo đồ án hoàn chỉnh theo mẫu chuẩn Khóa luận tốt nghiệp UIT.
+6. Thư mục `diagrams/` (cấp gốc, dùng chung): Kiến trúc quy trình và các sơ đồ nhóm/thành viên khác (C1–C4, tổng hợp kho). Sơ đồ 4 quy trình của Nguyễn Công Hưng (M3, S3, S4, S1) đã chuyển vào `docs/workspaces/NguyenCongHung/diagrams/`. Đã bỏ toàn bộ sơ đồ Xương cá (Fishbone).
 
-## 6. Các điểm cần làm rõ
-
-- Ngày báo cáo cuối kỳ chính xác (hiện chỉ suy ra "tuần 6–7" từ lời giảng viên, cần chốt ngày cụ thể).
-- Có bao gồm mục 7.2 (marketing tổng thể) và mục 9 (kế toán/thuế) trong danh sách 10 quy trình chính thức không, hay thay bằng quy trình khác có nguồn rõ ràng hơn?
-- Cách lấy số liệu định lượng (thời gian, chi phí) cho phân tích — hiện `docs/01` chỉ có dữ liệu định tính từ nguồn công khai, chưa có cách tiếp cận cho phần định lượng (ước tính giả định vs. tìm thêm nguồn).
-- Chưa chốt cụ thể 6/10 quy trình nào sẽ được chọn để mô hình hóa BPMN.
-- Chưa phân công lại công việc theo 4 thành viên.

@@ -12,9 +12,10 @@ Tạo lại khi SVG thay đổi (chạy từ repo root):
 
 ```bash
 .venv/bin/python .claude/skills/bpm-quy-trinh-acfc/scripts/export_png.py \
-  diagrams/bpmn-hoach-dinh-phan-bo-hang-hoa-m3.svg \
-  diagrams/bpmn-kiem-ke-ton-kho-s2.svg \
-  diagrams/bpmn-dang-ky-kich-hoat-tai-khoan-s3.svg \
+  docs/workspaces/NguyenCongHung/diagrams/bpmn-hoach-dinh-phan-bo-hang-hoa-m3.svg \
+  docs/workspaces/NguyenCongHung/diagrams/bpmn-kiem-ke-ton-kho-s2.svg \
+  docs/workspaces/NguyenCongHung/diagrams/bpmn-dang-ky-kich-hoat-tai-khoan-s3.svg \
+  docs/workspaces/NguyenCongHung/diagrams/bpmn-tuyen-dung-nhan-su-s1.svg \
   diagrams/kien-truc-quy-trinh.svg \
   --out docs/workspaces/NguyenCongHung/hinh-anh/png-nocap --width 2600 --pad 14 --drop-caption
 ```

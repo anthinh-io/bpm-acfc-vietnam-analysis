@@ -177,7 +177,7 @@ Mỗi hoạt động, gateway và KPI đều ghi mã nguồn hoặc nhãn `C –
 - Mật khẩu chưa đạt chuẩn/chưa đồng ý điều khoản (G7) → quay lại điền thông tin.
 - Đồng bộ Magento/Retail Pro thất bại (G8) → đưa vào hàng đợi retry và cảnh báo DevOps.
 
-**Nguồn/trạng thái:** EV09, EV10; thời hạn hiệu lực OTP, kênh gửi mật khẩu tạm, ngưỡng khóa tài khoản, chủ quy trình nội bộ và thời gian xử lý CSKH là `C – cần xác thực`. Danh sách 8 cổng và bản mô tả chuyên sâu S4 ở cấp nhóm: `docs/05-quy-trinh-dang-ky-kich-hoat-tai-khoan.md`.
+**Nguồn/trạng thái:** EV09, EV10; thời hạn hiệu lực OTP, kênh gửi mật khẩu tạm, ngưỡng khóa tài khoản, chủ quy trình nội bộ và thời gian xử lý CSKH là `C – cần xác thực`. Danh sách 8 cổng và bản mô tả chuyên sâu S4: `Quy trinh dang ky kich hoat tai khoan (S4).md` (trong cùng workspace).
 
 ## 5. Phương pháp thu thập và xác thực
 

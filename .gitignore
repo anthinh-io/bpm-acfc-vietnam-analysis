@@ -286,3 +286,13 @@ Icon[]
 
 # Resource forks
 ._*
+
+# BPM skill — render/verify artifacts (không commit)
+diagrams/*-render.png
+diagrams/*-crop.png
+diagrams/*.__crop__.svg
+diagrams/*-example.svg
+docs/workspaces/NguyenCongHung/diagrams/*-render.png
+docs/workspaces/NguyenCongHung/diagrams/*-crop.png
+/.claude
+/docs/workspaces/NguyenCongHung/scripts
