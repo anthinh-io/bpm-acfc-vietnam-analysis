@@ -1,6 +1,6 @@
 # Contributing
 
-Hướng dẫn đóng góp cho đồ án IE203 — BPM Nike Vietnam Analysis.
+Hướng dẫn đóng góp cho đồ án IE203 — BPM ACFC Vietnam Analysis.
 
 ## 1. Nguyên tắc chung
 
