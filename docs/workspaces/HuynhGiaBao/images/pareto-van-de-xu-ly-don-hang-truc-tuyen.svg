@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Pareto số giờ tăng thêm kỳ vọng trên 50 đơn</title>
+  <desc id="desc">Biểu đồ gồm bốn cột giảm dần và đường tỷ lệ tích lũy. Ba vấn đề đầu đạt 80,6 phần trăm.</desc>
+  <rect width="1200" height="720" fill="#ffffff"/>
+  <style>
+    text { font-family: "Segoe UI", Arial, sans-serif; fill: #172033; }
+    .title { font-size: 26px; font-weight: 700; }
+    .subtitle { font-size: 15px; fill: #526078; }
+    .axis { font-size: 13px; fill: #526078; }
+    .label { font-size: 14px; font-weight: 600; }
+    .value { font-size: 14px; font-weight: 700; fill: #174a7c; }
+    .cumulative { font-size: 13px; font-weight: 700; fill: #b64f18; }
+    .grid { stroke: #d9e0e8; stroke-width: 1; }
+    .axis-line { stroke: #65758b; stroke-width: 1.5; }
+  </style>
+
+  <text x="600" y="42" text-anchor="middle" class="title">Pareto tác động thời gian của các vấn đề</text>
+  <!-- <text x="600" y="68" text-anchor="middle" class="subtitle">Kịch bản cơ sở, số giờ tăng thêm kỳ vọng trên 50 đơn</text> -->
+
+  <!-- Grid and left axis: 0-50 hours -->
+  <g aria-label="Lưới và trục">
+    <line x1="110" y1="560" x2="1050" y2="560" class="grid"/>
+    <line x1="110" y1="468" x2="1050" y2="468" class="grid"/>
+    <line x1="110" y1="376" x2="1050" y2="376" class="grid"/>
+    <line x1="110" y1="284" x2="1050" y2="284" class="grid"/>
+    <line x1="110" y1="192" x2="1050" y2="192" class="grid"/>
+    <line x1="110" y1="100" x2="1050" y2="100" class="grid"/>
+
+    <line x1="110" y1="100" x2="110" y2="560" class="axis-line"/>
+    <line x1="1050" y1="100" x2="1050" y2="560" class="axis-line"/>
+    <line x1="110" y1="560" x2="1050" y2="560" class="axis-line"/>
+
+    <text x="96" y="565" text-anchor="end" class="axis">0</text>
+    <text x="96" y="473" text-anchor="end" class="axis">10</text>
+    <text x="96" y="381" text-anchor="end" class="axis">20</text>
+    <text x="96" y="289" text-anchor="end" class="axis">30</text>
+    <text x="96" y="197" text-anchor="end" class="axis">40</text>
+    <text x="96" y="105" text-anchor="end" class="axis">50</text>
+
+    <text x="1064" y="565" class="axis">0%</text>
+    <text x="1064" y="473" class="axis">20%</text>
+    <text x="1064" y="381" class="axis">40%</text>
+    <text x="1064" y="289" class="axis">60%</text>
+    <text x="1064" y="197" class="axis">80%</text>
+    <text x="1064" y="105" class="axis">100%</text>
+
+    <text x="30" y="330" text-anchor="middle" class="axis" transform="rotate(-90 30 330)">Giờ tăng thêm trên 50 đơn</text>
+    <text x="1170" y="330" text-anchor="middle" class="axis" transform="rotate(90 1170 330)">Tỷ lệ tích lũy</text>
+  </g>
+
+  <!-- 80 percent reference -->
+  <line x1="110" y1="192" x2="1050" y2="192" stroke="#c83c3c" stroke-width="2" stroke-dasharray="8 6"/>
+  <text x="1038" y="183" text-anchor="end" font-size="13" font-weight="700" fill="#c83c3c">Ngưỡng 80%</text>
+
+  <!-- Bars -->
+  <g aria-label="Các cột tác động thời gian" fill="#4f86c6">
+    <rect x="180" y="192" width="130" height="368" rx="3"/>
+    <rect x="400" y="202.42" width="130" height="357.58" rx="3"/>
+    <rect x="620" y="210.86" width="130" height="349.14" rx="3"/>
+    <rect x="840" y="300.77" width="130" height="259.23" rx="3"/>
+  </g>
+
+  <g aria-label="Giá trị cột">
+    <text x="245" y="180" text-anchor="middle" class="value">40,0000</text>
+    <text x="465" y="190" text-anchor="middle" class="value">38,8675</text>
+    <text x="685" y="199" text-anchor="middle" class="value">37,9500</text>
+    <text x="905" y="289" text-anchor="middle" class="value">28,1775</text>
+  </g>
+
+  <!-- Cumulative line -->
+  <polyline points="245,433.04 465,309.76 685,189.24 905,100" fill="none" stroke="#d66a2c" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+  <g fill="#ffffff" stroke="#d66a2c" stroke-width="4">
+    <circle cx="245" cy="433.04" r="7"/>
+    <circle cx="465" cy="309.76" r="7"/>
+    <circle cx="685" cy="189.24" r="7"/>
+    <circle cx="905" cy="100" r="7"/>
+  </g>
+  <g aria-label="Tỷ lệ tích lũy">
+    <text x="258" y="421" class="cumulative">27,6%</text>
+    <text x="478" y="298" class="cumulative">54,4%</text>
+    <text x="698" y="177" class="cumulative">80,6%</text>
+    <text x="918" y="90" class="cumulative">100,0%</text>
+  </g>
+
+  <!-- Category labels -->
+  <g class="label">
+    <text x="245" y="590" text-anchor="middle">
+      <tspan x="245" dy="0">Chuyển sang</tspan>
+      <tspan x="245" dy="19">ngày sau</tspan>
+    </text>
+    <text x="465" y="599" text-anchor="middle">Giao lại</text>
+    <text x="685" y="599" text-anchor="middle">Chuyển hoàn</text>
+    <text x="905" y="599" text-anchor="middle">Thiếu hàng</text>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(300 660)">
+    <rect x="0" y="-13" width="24" height="14" rx="2" fill="#4f86c6"/>
+    <text x="34" y="0" class="axis">Giờ tăng thêm</text>
+    <line x1="190" y1="-6" x2="222" y2="-6" stroke="#d66a2c" stroke-width="4"/>
+    <circle cx="206" cy="-6" r="5" fill="#ffffff" stroke="#d66a2c" stroke-width="3"/>
+    <text x="232" y="0" class="axis">Tỷ lệ tích lũy</text>
+    <line x1="390" y1="-6" x2="426" y2="-6" stroke="#c83c3c" stroke-width="2" stroke-dasharray="7 5"/>
+    <text x="436" y="0" class="axis">Ngưỡng 80%</text>
+  </g>
+</svg>
