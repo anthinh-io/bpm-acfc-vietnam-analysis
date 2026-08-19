@@ -1,0 +1,229 @@
+<svg width="1680" height="920" viewBox="0 0 1680 920" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2d3748"/></marker>
+    <marker id="arrowG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2f855a"/></marker>
+    <marker id="arrowR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#c53030"/></marker>
+    <filter id="sh" x="-6%" y="-6%" width="112%" height="118%" filterUnits="userSpaceOnUse"><feDropShadow dx="1" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.12"/></filter>
+  </defs>
+
+  <rect width="1680" height="920" fill="#ffffff"/>
+  <text x="60" y="42" font-size="20" font-weight="bold" fill="#1a202c">SƠ ĐỒ BPMN 2.0: ĐĂNG KÝ, XÁC THỰC OTP &amp; KÍCH HOẠT TÀI KHOẢN MEMBER ACFC (S3)</text>
+  <text x="60" y="66" font-size="13" fill="#718096">Quy trình Hỗ trợ | 1 Pool – 5 Lane | Đủ 8 Gateway (XOR) – có Split &amp; Join (gộp kênh OTP) | 4 End event | Timer OTP 120s</text>
+
+  <!-- POOL -->
+  <rect x="60" y="110" width="1600" height="770" fill="#ffffff" stroke="#2d3748" stroke-width="2"/>
+  <rect x="60" y="110" width="32" height="770" fill="#2d3748"/>
+  <text x="78" y="495" font-size="13" font-weight="bold" fill="#ffffff" transform="rotate(-90 78 495)" text-anchor="middle">HỆ SINH THÁI ACFC MEMBER</text>
+
+  <!-- LANE dividers -->
+  <line x1="92" y1="264" x2="1660" y2="264" stroke="#cbd5e0" stroke-width="1"/>
+  <line x1="92" y1="418" x2="1660" y2="418" stroke="#cbd5e0" stroke-width="1"/>
+  <line x1="92" y1="572" x2="1660" y2="572" stroke="#cbd5e0" stroke-width="1"/>
+  <line x1="92" y1="726" x2="1660" y2="726" stroke="#cbd5e0" stroke-width="1"/>
+
+  <!-- LANE labels -->
+  <rect x="92" y="110" width="30" height="154" fill="#e6fffa"/>
+  <text x="107" y="187" font-size="10.5" font-weight="bold" fill="#234e52" transform="rotate(-90 107 187)" text-anchor="middle">KHÁCH HÀNG</text>
+  <rect x="92" y="264" width="30" height="154" fill="#edf2f7"/>
+  <text x="107" y="341" font-size="10" font-weight="bold" fill="#4a5568" transform="rotate(-90 107 341)" text-anchor="middle">CỔNG ĐK (FRONTEND)</text>
+  <rect x="92" y="418" width="30" height="154" fill="#edf2f7"/>
+  <text x="107" y="495" font-size="10" font-weight="bold" fill="#4a5568" transform="rotate(-90 107 495)" text-anchor="middle">SALESFORCE CRM</text>
+  <rect x="92" y="572" width="30" height="154" fill="#edf2f7"/>
+  <text x="107" y="649" font-size="10" font-weight="bold" fill="#4a5568" transform="rotate(-90 107 649)" text-anchor="middle">OTP GATEWAY (ZNS/SMS)</text>
+  <rect x="92" y="726" width="30" height="154" fill="#edf2f7"/>
+  <text x="107" y="803" font-size="9.5" font-weight="bold" fill="#4a5568" transform="rotate(-90 107 803)" text-anchor="middle">CSKH 1900 &amp; ĐỒNG BỘ</text>
+
+  <!-- ============ SEQUENCE FLOWS (drawn first, under nodes) ============ -->
+  <!-- Start -> T1 -->
+  <line x1="171" y1="187" x2="210" y2="187" stroke="#2d3748" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <!-- T1 -> G1 (down into TOP of gateway, clear of End1) -->
+  <path d="M 269 211 L 269 300 L 400 300 L 400 321" fill="none" stroke="#2d3748" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <!-- G1 No -> End1 (left) -->
+  <line x1="380" y1="341" x2="317" y2="341" stroke="#c53030" stroke-width="1.6" marker-end="url(#arrowR)"/>
+  <!-- G1 Yes -> G2 (down) -->
+  <line x1="400" y1="361" x2="400" y2="475" stroke="#2f855a" stroke-width="1.6" marker-end="url(#arrowG)"/>
+  <!-- G2 Co -> End2 (left): điều hướng đăng nhập là lối đi hợp lệ (không phải lỗi) -> line xanh -->
+  <line x1="380" y1="495" x2="349" y2="495" stroke="#2f855a" stroke-width="1.6" marker-end="url(#arrowG)"/>
+  <!-- G2 Chua -> P1 (right) -->
+  <line x1="420" y1="495" x2="470" y2="495" stroke="#2f855a" stroke-width="1.6" marker-end="url(#arrowG)"/>
+  <!-- P1 -> G3 (down) -->
+  <path d="M 529 519 L 529 649 L 540 649" fill="none" stroke="#2d3748" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <!-- G3 Zalo -> Z (up-right) -->
+  <path d="M 560 629 L 560 610 L 630 610" fill="none" stroke="#2d3748" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <!-- G3 SMS -> Sm (down-right) -->
+  <path d="M 560 669 L 560 684 L 630 684" fill="none" stroke="#2d3748" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <!-- Z -> J1 -->
+  <path d="M 742 610 L 800 610 L 800 631" fill="none" stroke="#2d3748" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <!-- Sm -> J1 -->
+  <path d="M 742 684 L 800 684 L 800 667" fill="none" stroke="#2d3748" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <!-- J1 -> G4 -->
+  <line x1="820" y1="649" x2="870" y2="649" stroke="#2d3748" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <!-- G4 Co (fail) -> CSKH (down): chuyển CSKH xác minh thủ công là lối phục hồi hợp lệ -> line xanh -->
+  <path d="M 890 669 L 890 760" fill="none" stroke="#2f855a" stroke-width="1.6" marker-end="url(#arrowG)"/>
+  <!-- G4 Khong -> Timer (right) -->
+  <line x1="910" y1="649" x2="970" y2="649" stroke="#2d3748" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <!-- Timer -> T2 (up, hugs G5's left so the down-line stays clear and the G5 label sits beside the gate) -->
+  <path d="M 985 634 L 985 615 L 956 615 L 956 211" fill="none" stroke="#2d3748" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <!-- T2 -> G5 (down, own track x=985) -->
+  <line x1="985" y1="211" x2="985" y2="475" stroke="#2d3748" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <!-- G5 Khong -> G6 (right) -->
+  <line x1="1005" y1="495" x2="1075" y2="495" stroke="#c53030" stroke-width="1.6" marker-end="url(#arrowR)"/>
+  <!-- G6 Co -> End3 (down) -->
+  <path d="M 1095 515 L 1095 787" fill="none" stroke="#c53030" stroke-width="1.6" marker-end="url(#arrowR)"/>
+  <!-- G6 Chua -> loop back to T2 (up, track x=1095) -->
+  <path d="M 1095 475 L 1095 145 L 985 145 L 985 163" fill="none" stroke="#dd6b20" stroke-width="1.4" stroke-dasharray="5 3" marker-end="url(#arrow)"/>
+  <!-- G5 Yes -> T3 (down, own track x=1195 – separated from T3->G7 column) -->
+  <path d="M 985 515 L 985 535 L 1195 535 L 1195 211" fill="none" stroke="#2f855a" stroke-width="1.6" marker-end="url(#arrowG)"/>
+  <!-- CSKH success -> T3 left (OTP verified manually) -->
+  <path d="M 960 784 L 1145 784 L 1145 200 L 1160 200" fill="none" stroke="#2f855a" stroke-width="1.4" marker-end="url(#arrowG)"/>
+  <!-- T3 -> G7 (down) -->
+  <line x1="1223" y1="211" x2="1223" y2="475" stroke="#2d3748" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <!-- G7 No -> loop back to T3 (right track x=1290 -> into TOP of T3, clear of green) -->
+  <path d="M 1223 515 L 1223 555 L 1290 555 L 1290 150 L 1223 150 L 1223 163" fill="none" stroke="#dd6b20" stroke-width="1.4" stroke-dasharray="5 3" marker-end="url(#arrow)"/>
+  <!-- G7 Yes -> CreateUser (right) -->
+  <path d="M 1243 495 L 1300 495" fill="none" stroke="#2f855a" stroke-width="1.6" marker-end="url(#arrowG)"/>
+  <!-- CreateUser -> G8 (down) -->
+  <path d="M 1360 519 L 1360 783" fill="none" stroke="#2d3748" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <!-- G8 No -> Retry (left) -->
+  <line x1="1340" y1="803" x2="1262" y2="803" stroke="#c53030" stroke-width="1.6" marker-end="url(#arrowR)"/>
+  <!-- Retry -> back to CreateUser (track x=1245) -->
+  <path d="M 1245 779 L 1245 449 L 1360 449 L 1360 471" fill="none" stroke="#dd6b20" stroke-width="1.4" stroke-dasharray="5 3" marker-end="url(#arrow)"/>
+  <!-- G8 Yes -> End4 (right then up into BOTTOM of End4) -->
+  <path d="M 1380 803 L 1560 803 L 1560 514" fill="none" stroke="#2f855a" stroke-width="1.8" marker-end="url(#arrowG)"/>
+
+  <!-- ============ NODES ============ -->
+  <!-- Start -->
+  <circle cx="155" cy="187" r="16" fill="#c6f6d5" stroke="#22543d" stroke-width="2"/>
+  <text x="155" y="225" font-size="9.5" fill="#22543d" text-anchor="middle">Truy cập App/Web</text>
+
+  <!-- T1 -->
+  <rect x="210" y="163" width="118" height="48" rx="6" fill="#ffffff" stroke="#319795" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="269" y="183" font-size="10" font-weight="bold" fill="#2d3748" text-anchor="middle">Đồng ý PDPA</text>
+  <text x="269" y="198" font-size="10" fill="#2d3748" text-anchor="middle">&amp; Nhập SĐT</text>
+
+  <!-- G1 -->
+  <polygon points="400,321 420,341 400,361 380,341" fill="#fefcbf" stroke="#b7791f" stroke-width="1.5"/>
+  <text x="400" y="345" font-size="10" font-weight="bold" fill="#744210" text-anchor="middle">X</text>
+  <text x="428" y="345" font-size="9" fill="#744210" text-anchor="start">G1: Đồng ý PDPA?</text>
+  <text x="348" y="333" font-size="8.5" fill="#c53030" text-anchor="middle">Không</text>
+  <text x="408" y="374" font-size="8.5" fill="#2f855a">Có</text>
+  <!-- End1 -->
+  <circle cx="300" cy="341" r="15" fill="#fff5f5" stroke="#c53030" stroke-width="2.5"/>
+  <text x="300" y="375" font-size="9" fill="#742a2a" text-anchor="middle">Hủy đăng ký</text>
+
+  <!-- G2 -->
+  <polygon points="400,475 420,495 400,515 380,495" fill="#fefcbf" stroke="#b7791f" stroke-width="1.5"/>
+  <text x="400" y="499" font-size="10" font-weight="bold" fill="#744210" text-anchor="middle">X</text>
+  <text x="452" y="470" font-size="9" fill="#744210" text-anchor="middle">G2: SĐT đã tồn tại?</text>
+  <text x="365" y="488" font-size="8.5" fill="#2f855a" text-anchor="end">Có</text>
+  <text x="444" y="489" font-size="8.5" fill="#2f855a">Chưa</text>
+  <!-- End2 -->
+  <circle cx="334" cy="495" r="15" fill="#fff5f5" stroke="#c53030" stroke-width="2.5"/>
+  <text x="334" y="529" font-size="9" fill="#742a2a" text-anchor="middle">Điều hướng</text>
+  <text x="334" y="541" font-size="9" fill="#742a2a" text-anchor="middle">Đăng nhập</text>
+
+  <!-- P1 -->
+  <rect x="470" y="471" width="118" height="48" rx="6" fill="#ffffff" stroke="#319795" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="529" y="491" font-size="10" font-weight="bold" fill="#2d3748" text-anchor="middle">Khởi tạo</text>
+  <text x="529" y="506" font-size="10" fill="#2d3748" text-anchor="middle">hồ sơ tạm (CRM)</text>
+
+  <!-- G3 (XOR split: chọn kênh OTP) -->
+  <polygon points="560,629 580,649 560,669 540,649" fill="#fefcbf" stroke="#b7791f" stroke-width="1.5"/>
+  <text x="560" y="653" font-size="10" font-weight="bold" fill="#744210" text-anchor="middle">X</text>
+  <text x="505" y="646" font-size="9" fill="#744210" text-anchor="end">G3: Kênh Zalo ZNS?</text>
+  <text x="596" y="605" font-size="8.5" fill="#4a5568">Zalo</text>
+  <text x="596" y="695" font-size="8.5" fill="#4a5568">SMS</text>
+
+  <!-- Z -->
+  <rect x="630" y="588" width="112" height="44" rx="6" fill="#ffffff" stroke="#3182ce" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="686" y="606" font-size="9.5" font-weight="bold" fill="#2d3748" text-anchor="middle">Gửi OTP</text>
+  <text x="686" y="620" font-size="9.5" fill="#2d3748" text-anchor="middle">Zalo ZNS (chính)</text>
+  <!-- Sm -->
+  <rect x="630" y="662" width="112" height="44" rx="6" fill="#ffffff" stroke="#3182ce" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="686" y="680" font-size="9.5" font-weight="bold" fill="#2d3748" text-anchor="middle">Gửi OTP</text>
+  <text x="686" y="694" font-size="9.5" fill="#2d3748" text-anchor="middle">SMS (fallback)</text>
+
+  <!-- J1 (XOR merge – gộp lại 1 kênh OTP đã gửi) -->
+  <polygon points="800,629 820,649 800,669 780,649" fill="#fefcbf" stroke="#b7791f" stroke-width="1.5"/>
+  <text x="800" y="653" font-size="10" font-weight="bold" fill="#744210" text-anchor="middle">X</text>
+  <text x="800" y="600" font-size="8" fill="#718096" text-anchor="middle">Gộp kênh (XOR merge)</text>
+
+  <!-- G4 -->
+  <polygon points="890,629 910,649 890,669 870,649" fill="#fefcbf" stroke="#b7791f" stroke-width="1.5"/>
+  <text x="890" y="653" font-size="10" font-weight="bold" fill="#744210" text-anchor="middle">X</text>
+  <text x="890" y="611" font-size="9" fill="#744210" text-anchor="middle">G4: Cổng OTP lỗi?</text>
+  <text x="898" y="700" font-size="8.5" fill="#2f855a">Có</text>
+  <text x="925" y="643" font-size="8.5" fill="#2f855a">Không</text>
+
+  <!-- CSKH -->
+  <rect x="830" y="760" width="130" height="48" rx="6" fill="#ffffff" stroke="#e53e3e" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="895" y="780" font-size="9.5" font-weight="bold" fill="#742a2a" text-anchor="middle">CSKH 1900 3038</text>
+  <text x="895" y="795" font-size="9.5" fill="#742a2a" text-anchor="middle">xác minh thủ công</text>
+
+  <!-- Timer intermediate event -->
+  <circle cx="985" cy="649" r="15" fill="#ffffff" stroke="#b7791f" stroke-width="1.5"/>
+  <circle cx="985" cy="649" r="11" fill="#ffffff" stroke="#b7791f" stroke-width="1.5"/>
+  <circle cx="985" cy="649" r="6" fill="none" stroke="#744210" stroke-width="1"/>
+  <line x1="985" y1="649" x2="985" y2="645" stroke="#744210" stroke-width="1"/>
+  <line x1="985" y1="649" x2="988" y2="651" stroke="#744210" stroke-width="1"/>
+  <text x="985" y="688" font-size="9" fill="#744210" text-anchor="middle">Chờ OTP ≤120s</text>
+
+  <!-- T2 -->
+  <rect x="926" y="163" width="118" height="48" rx="6" fill="#ffffff" stroke="#319795" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="985" y="191" font-size="10" font-weight="bold" fill="#2d3748" text-anchor="middle">Nhập mã OTP</text>
+
+  <!-- G5 -->
+  <polygon points="985,475 1005,495 985,515 965,495" fill="#fefcbf" stroke="#b7791f" stroke-width="1.5"/>
+  <text x="985" y="499" font-size="10" font-weight="bold" fill="#744210" text-anchor="middle">X</text>
+  <text x="948" y="499" font-size="9" fill="#744210" text-anchor="end">G5: OTP hợp lệ?</text>
+  <text x="1040" y="488" font-size="8.5" fill="#c53030">Không</text>
+  <text x="1000" y="528" font-size="8.5" fill="#2f855a">Có</text>
+
+  <!-- G6 -->
+  <polygon points="1095,475 1115,495 1095,515 1075,495" fill="#fefcbf" stroke="#b7791f" stroke-width="1.5"/>
+  <text x="1095" y="499" font-size="10" font-weight="bold" fill="#744210" text-anchor="middle">X</text>
+  <text x="1095" y="458" font-size="9" fill="#744210" text-anchor="middle">G6: Sai ≥ 3 lần?</text>
+  <text x="1103" y="548" font-size="8.5" fill="#c53030">Có</text>
+  <text x="1040" y="138" font-size="8.5" fill="#dd6b20" text-anchor="middle">Chưa → nhập lại OTP</text>
+
+  <!-- End3 -->
+  <circle cx="1095" cy="803" r="15" fill="#fff5f5" stroke="#c53030" stroke-width="2.5"/>
+  <text x="1095" y="837" font-size="9" fill="#742a2a" text-anchor="middle">Khóa 24h → CSKH</text>
+
+  <!-- T3 -->
+  <rect x="1160" y="163" width="126" height="48" rx="6" fill="#ffffff" stroke="#319795" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="1223" y="183" font-size="10" font-weight="bold" fill="#2d3748" text-anchor="middle">Điền thông tin</text>
+  <text x="1223" y="198" font-size="10" fill="#2d3748" text-anchor="middle">&amp; Tạo mật khẩu</text>
+
+  <!-- G7 -->
+  <polygon points="1223,475 1243,495 1223,515 1203,495" fill="#fefcbf" stroke="#b7791f" stroke-width="1.5"/>
+  <text x="1223" y="499" font-size="10" font-weight="bold" fill="#744210" text-anchor="middle">X</text>
+  <text x="1223" y="440" font-size="9" fill="#744210" text-anchor="middle">G7: MK chuẩn &amp; đồng ý ĐK?</text>
+  <text x="1300" y="548" font-size="8.5" fill="#dd6b20" text-anchor="middle">Không → nhập lại</text>
+  <text x="1255" y="489" font-size="8.5" fill="#2f855a">Có</text>
+
+  <!-- CreateUser -->
+  <rect x="1300" y="471" width="120" height="48" rx="6" fill="#ffffff" stroke="#319795" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="1360" y="491" font-size="10" font-weight="bold" fill="#2d3748" text-anchor="middle">Tạo User &amp;</text>
+  <text x="1360" y="506" font-size="10" fill="#2d3748" text-anchor="middle">cấp Member ID</text>
+
+  <!-- G8 -->
+  <polygon points="1360,783 1380,803 1360,823 1340,803" fill="#fefcbf" stroke="#b7791f" stroke-width="1.5"/>
+  <text x="1360" y="807" font-size="10" font-weight="bold" fill="#744210" text-anchor="middle">X</text>
+  <text x="1388" y="763" font-size="9" fill="#744210" text-anchor="start">G8: Đồng bộ Magento + Retail Pro?</text>
+  <text x="1301" y="796" font-size="8.5" fill="#c53030" text-anchor="middle">Không</text>
+  <text x="1388" y="797" font-size="8.5" fill="#2f855a">Có</text>
+
+  <!-- Retry -->
+  <rect x="1140" y="779" width="120" height="48" rx="6" fill="#ffffff" stroke="#dd6b20" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="1200" y="799" font-size="9.5" font-weight="bold" fill="#7b341e" text-anchor="middle">Hàng đợi retry</text>
+  <text x="1200" y="813" font-size="9.5" fill="#7b341e" text-anchor="middle">&amp; cảnh báo DevOps</text>
+
+  <!-- End4 -->
+  <circle cx="1560" cy="495" r="19" fill="#c6f6d5" stroke="#22543d" stroke-width="3.5"/>
+  <text x="1560" y="430" font-size="9" font-weight="bold" fill="#22543d" text-anchor="middle">Kích hoạt xong:</text>
+  <text x="1560" y="443" font-size="9" fill="#22543d" text-anchor="middle">Auto-login + Voucher 100k</text>
+  <text x="1560" y="456" font-size="9" fill="#22543d" text-anchor="middle">+ Auto tier upgrade</text>
+
+  <text x="840" y="905" font-size="12" font-style="italic" fill="#718096" text-anchor="middle">Hình 5.2: Sơ đồ BPMN 2.0 quy trình Đăng ký, Xác thực OTP và Kích hoạt tài khoản Member ACFC (S3) – 8 Gateway, có Split/Join, Timer &amp; đa End event.</text>
+</svg>

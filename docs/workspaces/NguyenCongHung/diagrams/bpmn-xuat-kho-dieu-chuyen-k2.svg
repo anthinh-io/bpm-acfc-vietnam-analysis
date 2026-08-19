@@ -1,0 +1,94 @@
+<svg width="2820" height="1160" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d3748"/></marker>
+    <marker id="arrowG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#38a169"/></marker>
+    <marker id="arrowR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#e53e3e"/></marker>
+    <marker id="msgArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="none" stroke="#3182ce" stroke-width="1.5"/></marker>
+    <filter id="taskShadow" x="-6%" y="-6%" width="112%" height="118%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="1" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.12"/></filter>
+  </defs>
+  <rect width="2820" height="1160" fill="#ffffff"/>
+  <text x="40" y="40" font-size="19" font-weight="bold" fill="#1a202c">SƠ ĐỒ BPMN 2.0: XUẤT KHO &amp; ĐIỀU CHUYỂN PHÂN BỔ TỚI CHUỖI CỬA HÀNG (K2) – ACFC</text>
+  <text x="40" y="64" font-size="12.5" fill="#718096">1 Pool (DC) – 4 Lane. 9 cổng: G1,G1b,G2,G3,G4,Gm1,Gm2 (XOR) + Ga/Gj (AND split–join). Nối tiếp đầu ra M3; message hàng lỗi sang K3 và cập nhật tồn cửa hàng về S3/M3.</text>
+  <rect x="40" y="90" width="2740" height="840" fill="#ffffff" stroke="#2d3748" stroke-width="2"/><rect x="40" y="90" width="34" height="840" fill="#3182ce"/><text x="57" y="510" font-size="12" font-weight="bold" fill="#ffffff" transform="rotate(-90 57 510)" text-anchor="middle">ACFC – TRUNG TÂM PHÂN PHỐI (DC): XUẤT KHO &amp; ĐIỀU CHUYỂN TỚI CHUỖI CỬA HÀNG (K2)</text>
+  <rect x="74" y="90" width="28" height="205" fill="#edf2f7"/>
+  <text x="88" y="192" font-size="9.5" font-weight="bold" fill="#4a5568" transform="rotate(-90 88 192)" text-anchor="middle">Điều phối phân bổ (Allocation)</text>
+  <line x1="74" y1="295" x2="2778" y2="295" stroke="#cbd5e0" stroke-width="1"/>
+  <rect x="74" y="295" width="28" height="205" fill="#edf2f7"/>
+  <text x="88" y="398" font-size="9.5" font-weight="bold" fill="#4a5568" transform="rotate(-90 88 398)" text-anchor="middle">Kho xuất – Picking &amp; Packing</text>
+  <line x1="74" y1="500" x2="2778" y2="500" stroke="#cbd5e0" stroke-width="1"/>
+  <rect x="74" y="500" width="28" height="205" fill="#edf2f7"/>
+  <text x="88" y="602" font-size="9.5" font-weight="bold" fill="#4a5568" transform="rotate(-90 88 602)" text-anchor="middle">Vận chuyển / 3PL</text>
+  <line x1="74" y1="705" x2="2778" y2="705" stroke="#cbd5e0" stroke-width="1"/>
+  <rect x="74" y="705" width="28" height="225" fill="#edf2f7"/>
+  <text x="88" y="818" font-size="9.5" font-weight="bold" fill="#4a5568" transform="rotate(-90 88 818)" text-anchor="middle">Cửa hàng &amp; Ngoại lệ</text>
+  <rect x="120" y="980" width="440" height="46" fill="#faf5ff" stroke="#805ad5" stroke-width="1.6" stroke-dasharray="2,2"/><rect x="120" y="980" width="28" height="46" fill="#805ad5"/><text x="134" y="1003" font-size="9" font-weight="bold" fill="#ffffff" transform="rotate(-90 134 1003)" text-anchor="middle">POOL</text><text x="340" y="1007" font-size="11" font-weight="bold" fill="#553c9a" text-anchor="middle">M3 – Hoạch định &amp; phân bổ (ERP)</text>
+  <rect x="1740" y="980" width="560" height="46" fill="#faf5ff" stroke="#805ad5" stroke-width="1.6" stroke-dasharray="2,2"/><rect x="1740" y="980" width="28" height="46" fill="#805ad5"/><text x="1754" y="1003" font-size="9" font-weight="bold" fill="#ffffff" transform="rotate(-90 1754 1003)" text-anchor="middle">POOL</text><text x="2020" y="1007" font-size="11" font-weight="bold" fill="#553c9a" text-anchor="middle">K3 – Thu hồi hàng trả về</text>
+  <rect x="2360" y="980" width="400" height="46" fill="#faf5ff" stroke="#805ad5" stroke-width="1.6" stroke-dasharray="2,2"/><rect x="2360" y="980" width="28" height="46" fill="#805ad5"/><text x="2374" y="1003" font-size="9" font-weight="bold" fill="#ffffff" transform="rotate(-90 2374 1003)" text-anchor="middle">POOL</text><text x="2560" y="1007" font-size="11" font-weight="bold" fill="#553c9a" text-anchor="middle">S3/M3 – Cập nhật tồn cửa hàng</text>
+  <circle cx="132" cy="190" r="18" fill="#c6f6d5" stroke="#22543d" stroke-width="2"/><text x="132" y="221" font-size="9" fill="#22543d" text-anchor="middle">Nhận lệnh phân bổ</text>
+  <rect x="205" y="166" width="150" height="48" rx="7" fill="#ffffff" stroke="#3182ce" stroke-width="1.5" filter="url(#taskShadow)"/><text x="280" y="187" font-size="10.5" font-weight="bold" fill="#2d3748" text-anchor="middle">Kiểm tra tồn</text><text x="280" y="203" font-size="10.5" fill="#2d3748" text-anchor="middle">khả dụng (ATP)</text>
+  <polygon points="450,168 472,190 450,212 428,190" fill="#fefcbf" stroke="#b7791f" stroke-width="1.6"/><text x="450" y="195" font-size="15" font-weight="bold" fill="#744210" text-anchor="middle">X</text><text x="450" y="161" font-size="9" fill="#744210" text-anchor="middle">G1: Tồn đủ?</text>
+  <polygon points="610,168 632,190 610,212 588,190" fill="#fefcbf" stroke="#b7791f" stroke-width="1.6"/><text x="610" y="195" font-size="15" font-weight="bold" fill="#744210" text-anchor="middle">X</text><text x="610" y="161" font-size="9" fill="#744210" text-anchor="middle">Gm1 (gộp)</text>
+  <rect x="700" y="166" width="140" height="48" rx="7" fill="#ffffff" stroke="#3182ce" stroke-width="1.5" filter="url(#taskShadow)"/><text x="770" y="187" font-size="10.5" font-weight="bold" fill="#2d3748" text-anchor="middle">Lập phiếu xuất</text><text x="770" y="203" font-size="10.5" fill="#2d3748" text-anchor="middle">kho (DO)</text>
+  <path d="M 150 190 L 205 190" fill="none" stroke="#2d3748" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <path d="M 355 190 L 428 190" fill="none" stroke="#2d3748" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <path d="M 472 190 L 588 190" fill="none" stroke="#38a169" stroke-width="1.6" marker-end="url(#arrowG)"/><text x="530" y="182" font-size="9" fill="#38a169" text-anchor="middle">Có</text>
+  <path d="M 632 190 L 700 190" fill="none" stroke="#2d3748" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <path d="M 770 214 L 770 371" fill="none" stroke="#2d3748" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <path d="M 132 980 L 132 208" fill="none" stroke="#3182ce" stroke-width="1.6" stroke-dasharray="5,4" marker-end="url(#msgArrow)"/>
+  <text x="118" y="640" font-size="9" font-style="italic" fill="#3182ce" transform="rotate(90 118 640)">Message: lệnh phân bổ ← M3</text>
+  <polygon points="450,793 472,815 450,837 428,815" fill="#fefcbf" stroke="#b7791f" stroke-width="1.6"/><text x="450" y="820" font-size="15" font-weight="bold" fill="#744210" text-anchor="middle">X</text><text x="450" y="786" font-size="9" fill="#744210" text-anchor="middle">G1b: Cho giao một phần?</text>
+  <path d="M 450 212 L 450 793" fill="none" stroke="#e53e3e" stroke-width="1.6" marker-end="url(#arrowR)"/><text x="468" y="500" font-size="9" fill="#e53e3e" text-anchor="middle">Không</text>
+  <rect x="535" y="791" width="150" height="48" rx="7" fill="#ffffff" stroke="#3182ce" stroke-width="1.5" filter="url(#taskShadow)"/><text x="610" y="812" font-size="10.5" font-weight="bold" fill="#2d3748" text-anchor="middle">Giao một phần</text><text x="610" y="828" font-size="10.5" fill="#2d3748" text-anchor="middle">+ backorder</text>
+  <path d="M 472 815 L 535 815" fill="none" stroke="#38a169" stroke-width="1.6" marker-end="url(#arrowG)"/><text x="505" y="807" font-size="9" fill="#38a169" text-anchor="middle">Có</text>
+  <path d="M 610 791 L 610 212" fill="none" stroke="#2d3748" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <circle cx="300" cy="815" r="18" fill="#fed7d7" stroke="#c53030" stroke-width="3.2"/><text x="300" y="846" font-size="9" fill="#c53030" text-anchor="middle">Hoãn dòng phân bổ</text>
+  <path d="M 428 815 L 322 815" fill="none" stroke="#e53e3e" stroke-width="1.6" marker-end="url(#arrowR)"/><text x="375" y="807" font-size="9" fill="#e53e3e" text-anchor="middle">Không</text>
+  <path d="M 300 833 L 300 980" fill="none" stroke="#3182ce" stroke-width="1.6" stroke-dasharray="5,4" marker-end="url(#msgArrow)"/>
+  <text x="312" y="900" font-size="9" font-style="italic" fill="#3182ce">Message: hoãn → M3</text>
+  <rect x="700" y="371" width="140" height="48" rx="7" fill="#ffffff" stroke="#3182ce" stroke-width="1.5" filter="url(#taskShadow)"/><text x="770" y="392" font-size="10.5" font-weight="bold" fill="#2d3748" text-anchor="middle">Soạn hàng</text><text x="770" y="408" font-size="10.5" fill="#2d3748" text-anchor="middle">(picking)</text>
+  <polygon points="940,373 962,395 940,417 918,395" fill="#fefcbf" stroke="#b7791f" stroke-width="1.6"/><text x="940" y="400" font-size="15" font-weight="bold" fill="#744210" text-anchor="middle">X</text><text x="940" y="366" font-size="9" fill="#744210" text-anchor="middle">G2: Soạn khớp?</text>
+  <path d="M 840 395 L 918 395" fill="none" stroke="#2d3748" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <path d="M 940 417 L 940 470 L 770 470 L 770 419" fill="none" stroke="#e53e3e" stroke-width="1.6" marker-end="url(#arrowR)"/><text x="858" y="462" font-size="9" fill="#e53e3e" text-anchor="middle">Soạn lại</text>
+  <polygon points="1100,373 1122,395 1100,417 1078,395" fill="#fefcbf" stroke="#b7791f" stroke-width="1.6"/><text x="1100" y="400" font-size="15" font-weight="bold" fill="#744210" text-anchor="middle">+</text><text x="1100" y="366" font-size="9" fill="#744210" text-anchor="middle">Ga: AND-split</text>
+  <path d="M 962 395 L 1078 395" fill="none" stroke="#38a169" stroke-width="1.6" marker-end="url(#arrowG)"/><text x="1020" y="387" font-size="9" fill="#38a169" text-anchor="middle">Có</text>
+  <rect x="1195" y="371" width="150" height="48" rx="7" fill="#ffffff" stroke="#3182ce" stroke-width="1.5" filter="url(#taskShadow)"/><text x="1270" y="392" font-size="10.5" font-weight="bold" fill="#2d3748" text-anchor="middle">Đóng gói &amp;</text><text x="1270" y="408" font-size="10.5" fill="#2d3748" text-anchor="middle">dán nhãn kiện</text>
+  <rect x="1190" y="576" width="160" height="48" rx="7" fill="#ffffff" stroke="#3182ce" stroke-width="1.5" filter="url(#taskShadow)"/><text x="1270" y="597" font-size="10.5" font-weight="bold" fill="#2d3748" text-anchor="middle">Lập chứng từ xuất</text><text x="1270" y="613" font-size="10.5" fill="#2d3748" text-anchor="middle">&amp; kế hoạch tuyến</text>
+  <path d="M 1122 395 L 1195 395" fill="none" stroke="#2d3748" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <path d="M 1100 417 L 1100 600 L 1190 600" fill="none" stroke="#2d3748" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <polygon points="1450,373 1472,395 1450,417 1428,395" fill="#fefcbf" stroke="#b7791f" stroke-width="1.6"/><text x="1450" y="400" font-size="15" font-weight="bold" fill="#744210" text-anchor="middle">+</text><text x="1450" y="366" font-size="9" fill="#744210" text-anchor="middle">Gj: AND-join</text>
+  <path d="M 1345 395 L 1428 395" fill="none" stroke="#2d3748" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <path d="M 1350 600 L 1450 600 L 1450 417" fill="none" stroke="#2d3748" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <rect x="1540" y="576" width="160" height="48" rx="7" fill="#ffffff" stroke="#3182ce" stroke-width="1.5" filter="url(#taskShadow)"/><text x="1620" y="597" font-size="10.5" font-weight="bold" fill="#2d3748" text-anchor="middle">Bàn giao đơn vị</text><text x="1620" y="613" font-size="10.5" fill="#2d3748" text-anchor="middle">vận chuyển 3PL</text>
+  <path d="M 1472 395 L 1520 395 L 1520 600 L 1540 600" fill="none" stroke="#2d3748" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <rect x="1750" y="576" width="140" height="48" rx="7" fill="#ffffff" stroke="#3182ce" stroke-width="1.5" filter="url(#taskShadow)"/><text x="1820" y="597" font-size="10.5" font-weight="bold" fill="#2d3748" text-anchor="middle">Vận chuyển tới</text><text x="1820" y="613" font-size="10.5" fill="#2d3748" text-anchor="middle">cửa hàng</text>
+  <path d="M 1700 600 L 1750 600" fill="none" stroke="#2d3748" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <polygon points="1980,578 2002,600 1980,622 1958,600" fill="#fefcbf" stroke="#b7791f" stroke-width="1.6"/><text x="1980" y="605" font-size="15" font-weight="bold" fill="#744210" text-anchor="middle">X</text><text x="1980" y="571" font-size="9" fill="#744210" text-anchor="middle">G3: Giao thành công?</text>
+  <path d="M 1890 600 L 1958 600" fill="none" stroke="#2d3748" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <path d="M 1980 578 L 1980 190 L 2045 190" fill="none" stroke="#e53e3e" stroke-width="1.6" marker-end="url(#arrowR)"/><text x="1980" y="150" font-size="9" fill="#e53e3e" text-anchor="middle">Không (giao lỗi)</text>
+  <rect x="2045" y="166" width="150" height="48" rx="7" fill="#ffffff" stroke="#3182ce" stroke-width="1.5" filter="url(#taskShadow)"/><text x="2120" y="187" font-size="10.5" font-weight="bold" fill="#2d3748" text-anchor="middle">Trả kiện về DC</text><text x="2120" y="203" font-size="10.5" fill="#2d3748" text-anchor="middle">&amp; lập biên bản</text>
+  <circle cx="2280" cy="190" r="18" fill="#fed7d7" stroke="#c53030" stroke-width="3.2"/><text x="2280" y="221" font-size="9" fill="#c53030" text-anchor="middle">Chuyển K3 thu hồi</text>
+  <path d="M 2195 190 L 2262 190" fill="none" stroke="#2d3748" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <path d="M 2280 208 L 2280 980" fill="none" stroke="#3182ce" stroke-width="1.6" stroke-dasharray="5,4" marker-end="url(#msgArrow)"/>
+  <text x="2292" y="640" font-size="9" font-style="italic" fill="#3182ce" transform="rotate(90 2292 640)">Message: hàng lỗi → K3</text>
+  <rect x="2005" y="791" width="150" height="48" rx="7" fill="#ffffff" stroke="#3182ce" stroke-width="1.5" filter="url(#taskShadow)"/><text x="2080" y="812" font-size="10.5" font-weight="bold" fill="#2d3748" text-anchor="middle">Cửa hàng nhận</text><text x="2080" y="828" font-size="10.5" fill="#2d3748" text-anchor="middle">&amp; kiểm đếm</text>
+  <path d="M 1980 622 L 1980 815 L 2005 815" fill="none" stroke="#38a169" stroke-width="1.6" marker-end="url(#arrowG)"/><text x="1958" y="700" font-size="9" fill="#38a169" text-anchor="middle">Có</text>
+  <polygon points="2200,793 2222,815 2200,837 2178,815" fill="#fefcbf" stroke="#b7791f" stroke-width="1.6"/><text x="2200" y="820" font-size="15" font-weight="bold" fill="#744210" text-anchor="middle">X</text><text x="2200" y="786" font-size="9" fill="#744210" text-anchor="middle">G4: Cửa hàng xác nhận khớp?</text>
+  <path d="M 2155 815 L 2178 815" fill="none" stroke="#2d3748" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <rect x="2120" y="576" width="160" height="48" rx="7" fill="#ffffff" stroke="#3182ce" stroke-width="1.5" filter="url(#taskShadow)"/><text x="2200" y="597" font-size="10.5" font-weight="bold" fill="#2d3748" text-anchor="middle">Ghi nhận thiếu/thừa</text><text x="2200" y="613" font-size="10.5" fill="#2d3748" text-anchor="middle">&amp; mở khiếu nại</text>
+  <path d="M 2200 793 L 2200 624" fill="none" stroke="#e53e3e" stroke-width="1.6" marker-end="url(#arrowR)"/><text x="2218" y="720" font-size="9" fill="#e53e3e" text-anchor="middle">Không</text>
+  <polygon points="2400,793 2422,815 2400,837 2378,815" fill="#fefcbf" stroke="#b7791f" stroke-width="1.6"/><text x="2400" y="820" font-size="15" font-weight="bold" fill="#744210" text-anchor="middle">X</text><text x="2400" y="786" font-size="9" fill="#744210" text-anchor="middle">Gm2 (gộp)</text>
+  <path d="M 2280 600 L 2400 600 L 2400 793" fill="none" stroke="#2d3748" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <path d="M 2222 815 L 2378 815" fill="none" stroke="#38a169" stroke-width="1.6" marker-end="url(#arrowG)"/><text x="2300" y="807" font-size="9" fill="#38a169" text-anchor="middle">Có</text>
+  <rect x="2480" y="791" width="160" height="48" rx="7" fill="#ffffff" stroke="#3182ce" stroke-width="1.5" filter="url(#taskShadow)"/><text x="2560" y="812" font-size="10.5" font-weight="bold" fill="#2d3748" text-anchor="middle">Cập nhật tồn cửa</text><text x="2560" y="828" font-size="10.5" fill="#2d3748" text-anchor="middle">hàng &amp; đóng lệnh</text>
+  <path d="M 2422 815 L 2480 815" fill="none" stroke="#2d3748" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <circle cx="2700" cy="815" r="16" fill="#fed7d7" stroke="#c53030" stroke-width="3.2"/><text x="2700" y="844" font-size="9" fill="#c53030" text-anchor="middle">Hoàn tất điều chuyển</text>
+  <path d="M 2640 815 L 2684 815" fill="none" stroke="#2d3748" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <path d="M 2560 839 L 2560 980" fill="none" stroke="#3182ce" stroke-width="1.6" stroke-dasharray="5,4" marker-end="url(#msgArrow)"/>
+  <text x="2385" y="965" font-size="9" font-style="italic" fill="#3182ce">Message: tồn cửa hàng → S3/M3</text>
+  <text x="1410" y="1138" font-size="12" font-style="italic" fill="#718096" text-anchor="middle">Hình 5.2: Sơ đồ BPMN 2.0 quy trình Xuất kho &amp; điều chuyển phân bổ tới chuỗi cửa hàng (K2) – nối tiếp ngay sau đầu ra của M3.</text>
+</svg>

@@ -1,0 +1,79 @@
+<mxfile host="app.diagrams.net" modified="2026-08-14T11:00:00.000Z" agent="Mozilla/5.0" version="21.0.0" type="device">
+  <diagram id="S1_Recruitment" name="S1 Recruitment Process">
+    <mxGraphModel dx="1400" dy="850" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="850" background="#ffffff">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="pool_cand" value="ỨNG VIÊN (CANDIDATE)" style="swimlane;html=1;startSize=25;fillColor=#faf5ff;strokeColor=#805ad5;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="1320" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="task_nop_cv" value="Nộp hồ sơ&#xa;ứng tuyển trực tuyến" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#805ad5;" vertex="1" parent="pool_cand">
+          <mxGeometry x="300" y="45" width="105" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="task_lam_test" value="Làm bài test&#xa;tính toán/nghiệp vụ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#805ad5;" vertex="1" parent="pool_cand">
+          <mxGeometry x="670" y="45" width="105" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="g7_offer" value="X" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fefcbf;strokeColor=#b7791f;fontStyle=1;" vertex="1" parent="pool_cand">
+          <mxGeometry x="1050" y="50" width="40" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="pool_rec" value="ACFC – QUY TRÌNH TUYỂN DỤNG NỘI BỘ (S1)" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=25;horizontal=0;containerType=tree;fontSize=12;fontStyle=1;fillColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="40" y="200" width="1320" height="560" as="geometry"/>
+        </mxCell>
+        <mxCell id="lane_store_mgr" value="Store/Kho Ops" style="swimlane;html=1;startSize=20;fillColor=#f8f9fa;" vertex="1" parent="pool_rec">
+          <mxGeometry x="20" y="0" width="1300" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="start_s1" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#c6f6d5;strokeColor=#22543d;strokeWidth=2;" vertex="1" parent="lane_store_mgr">
+          <mxGeometry x="40" y="50" width="35" height="35" as="geometry"/>
+        </mxCell>
+        <mxCell id="task_phieu_yc" value="Lập phiếu yêu cầu&#xa;tuyển dụng &amp; JD" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#805ad5;" vertex="1" parent="lane_store_mgr">
+          <mxGeometry x="100" y="43" width="105" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="task_pv_v1" value="Phỏng vấn V1&#xa;chuyên môn &amp; thái độ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#805ad5;" vertex="1" parent="lane_store_mgr">
+          <mxGeometry x="570" y="43" width="105" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="g4_v1" value="X" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fefcbf;strokeColor=#b7791f;fontStyle=1;" vertex="1" parent="lane_store_mgr">
+          <mxGeometry x="700" y="48" width="40" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="lane_hr_ta" value="HR Tuyển dụng" style="swimlane;html=1;startSize=20;fillColor=#ffffff;" vertex="1" parent="pool_rec">
+          <mxGeometry x="20" y="140" width="1300" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="task_dang_tin" value="Đăng tin tuyển dụng&#xa;Website/TopCV" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#805ad5;" vertex="1" parent="lane_hr_ta">
+          <mxGeometry x="300" y="45" width="105" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="g2_cv" value="X" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fefcbf;strokeColor=#b7791f;fontStyle=1;" vertex="1" parent="lane_hr_ta">
+          <mxGeometry x="430" y="50" width="40" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="g3_phone" value="X" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fefcbf;strokeColor=#b7791f;fontStyle=1;" vertex="1" parent="lane_hr_ta">
+          <mxGeometry x="500" y="50" width="40" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="g5_test" value="X" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fefcbf;strokeColor=#b7791f;fontStyle=1;" vertex="1" parent="lane_hr_ta">
+          <mxGeometry x="790" y="50" width="40" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="task_gui_offer" value="Gửi Offer Letter&#xa;&amp; Đãi ngộ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#805ad5;" vertex="1" parent="lane_hr_ta">
+          <mxGeometry x="940" y="45" width="105" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="lane_hrd" value="HRD / Giám đốc" style="swimlane;html=1;startSize=20;fillColor=#f8f9fa;" vertex="1" parent="pool_rec">
+          <mxGeometry x="20" y="280" width="1300" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="g1_budget" value="X" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fefcbf;strokeColor=#b7791f;fontStyle=1;" vertex="1" parent="lane_hrd">
+          <mxGeometry x="240" y="50" width="40" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="g6_v2" value="X" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fefcbf;strokeColor=#b7791f;fontStyle=1;" vertex="1" parent="lane_hrd">
+          <mxGeometry x="870" y="50" width="40" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="g8_salary" value="X" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fefcbf;strokeColor=#b7791f;fontStyle=1;" vertex="1" parent="lane_hrd">
+          <mxGeometry x="1050" y="50" width="40" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="lane_admin" value="IT &amp; Admin" style="swimlane;html=1;startSize=20;fillColor=#ffffff;" vertex="1" parent="pool_rec">
+          <mxGeometry x="20" y="420" width="1300" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="task_onboarding" value="Ký Hợp đồng thử việc&#xa;&amp; Cấp phát thiết bị" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#38a169;" vertex="1" parent="lane_admin">
+          <mxGeometry x="1120" y="45" width="115" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="end_s1" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#c6f6d5;strokeColor=#22543d;strokeWidth=3;" vertex="1" parent="lane_admin">
+          <mxGeometry x="1260" y="53" width="35" height="35" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
