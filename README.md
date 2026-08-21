@@ -23,35 +23,43 @@ ACFC (thành viên Tập đoàn Liên Thái Bình Dương – IPPG, thành lập
 
 ## 3. Phương pháp luận
 
-Báo cáo được tổ chức theo 5 nội dung, bám sát rubric đánh giá của giảng viên:
+Báo cáo được tổ chức theo đúng cấu trúc mà báo cáo mẫu FUTA Bus Lines tự công bố ở phần "Giới thiệu & Tóm tắt" của họ: phần mở đầu (Giới thiệu & Tóm tắt nội dung) + 4 chương nội dung + Tài liệu tham khảo. Bốn chương nội dung, bám sát rubric đánh giá của giảng viên:
 
-### 1 — Giới thiệu công ty & Kiến trúc quy trình
+### Giới thiệu & Tóm tắt nội dung
 
-- Tổng quan về ACFC: lịch sử, lĩnh vực kinh doanh, thành tựu nổi bật
-- Sơ đồ cơ cấu tổ chức
+- Bối cảnh ngành và lý do chọn ACFC làm đối tượng phân tích
+- Tổng quan về ACFC: lịch sử hình thành, đối thủ cạnh tranh, quy mô/lĩnh vực kinh doanh, thành tựu nổi bật, cơ cấu tổ chức, hoạt động kinh doanh
+- Thách thức vận hành, mục tiêu và phạm vi báo cáo, cấu trúc báo cáo
+
+### Chương 1. Liệt kê quy trình nghiệp vụ
+
+- Phân loại quy trình theo 3 cấp Quản lý/Cốt lõi/Hỗ trợ, kèm sơ đồ kiến trúc quy trình tổng quát
 - Kiến trúc quy trình tổng thể: danh sách các quy trình dự kiến phân tích theo 3 cấp
 
-### 2 — Khám phá & Mô tả quy trình
+### Chương 2. Mô hình hóa quy trình nghiệp vụ
+
+**Khám phá & mô tả quy trình (đầu vào cho mô hình hóa):**
 
 - Phương pháp thu thập dữ liệu: dựa trên tài liệu/biểu mẫu có sẵn hoặc quan sát thực tế
 - Xác định các tác nhân (actor): ai kích hoạt quy trình, ai là người hưởng lợi
 - Mô tả quy trình bằng lời: từ bước khởi tạo đến kết quả (thành công/thất bại)
 - Bộ câu hỏi workshop/phỏng vấn: 10 câu định tính (cảm xúc, ý kiến) + 10 câu định lượng (thời gian, chi phí) cho mỗi quy trình
 
-### 3 — Mô hình hóa quy trình bằng BPMN
+**Mô hình hóa bằng BPMN:**
 
 - Sơ đồ trực quan cho từng quy trình đã chọn, tuân thủ đúng ký hiệu, quy tắc đặt tên và luồng BPMN
 - Phân rõ pool, lane, tác nhân tham gia
 
-### 4 — Phân tích quy trình
+### Chương 3. Phân tích quy trình
 
 - **Định tính:** phân loại hoạt động theo VA (Value-Added) / BVA (Business Value-Added) / NVA (Non-Value-Added); phân tích 4 nguyên nhân lãng phí — Move, Hold, Over-processing, Defects
 - **Định lượng:** đo lường thời gian và chi phí thực hiện
-
-### 5 — Đề xuất cải tiến & Kết luận
-
 - Bảng đề xuất khắc phục (vấn đề – mô tả – đề xuất) cho từng điểm lãng phí đã phát hiện
-- Tổng kết giá trị mang lại 
+- Tổng kết giá trị mang lại
+
+### Chương 4. Đánh giá & Kết luận
+
+- Tổng kết giá trị mang lại
 
 ## 4. Công cụ sử dụng
 
