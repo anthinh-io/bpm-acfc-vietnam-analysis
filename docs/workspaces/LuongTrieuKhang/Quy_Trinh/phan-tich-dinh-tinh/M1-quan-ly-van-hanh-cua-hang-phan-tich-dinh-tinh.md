@@ -76,6 +76,36 @@
 - Giảm nhập liệu lặp lại.
 - Chuẩn hóa nguyên tắc kiểm tra và ngưỡng chuyển cấp.
 
+## 2.4. Defects – Sai lỗi
+
+### Biểu hiện
+
+Các sai lỗi có thể phát sinh trong quy trình quản lý vận hành cửa hàng gồm:
+
+- Chênh lệch tiền, phương thức thanh toán hoặc hóa đơn khi đối soát cuối ca.
+- Sai lệch giữa hàng hóa thực tế và dữ liệu hàng hóa/tồn kho.
+- Thông tin vận hành được ghi nhận thiếu hoặc chưa chính xác.
+- Báo cáo cuối ca thiếu dữ liệu hoặc phải điều chỉnh lại.
+- Ghi nhận sự cố hoặc kết quả xử lý chưa đầy đủ.
+- Sai sót trong quá trình kiểm tra, tổng hợp hoặc bàn giao thông tin giữa các actor.
+
+### Ảnh hưởng
+
+- Phát sinh hoạt động kiểm tra và xử lý lại (rework).
+- Kéo dài thời gian đóng ca.
+- Tăng thời gian của Quản lý cửa hàng, Thu ngân và nhân sự phụ trách hàng hóa.
+- Có thể làm phát sinh việc chuyển cấp cho Retail Operations.
+- Làm giảm độ tin cậy của dữ liệu vận hành và báo cáo.
+
+### Hướng cải thiện
+
+- Chuẩn hóa checklist mở ca và đóng ca.
+- Xác định rõ dữ liệu nào do từng actor chịu trách nhiệm kiểm tra.
+- Thực hiện kiểm tra chênh lệch sớm thay vì chỉ phát hiện vào cuối ca.
+- Giảm nhập liệu lặp lại giữa các biểu mẫu/hệ thống.
+- Theo dõi nguyên nhân sai lỗi theo nhóm để phát hiện lỗi lặp lại.
+- Quy định rõ trách nhiệm xử lý và chuyển cấp khi phát hiện sai lệch.
+
 ## 3. Các vấn đề định tính nổi bật
 
 ### Vấn đề 1 – Chênh lệch cuối ca làm phát sinh rework
@@ -136,7 +166,50 @@ Nếu các thông tin về bán hàng, tiền/hóa đơn và hàng hóa nằm �
 
 > Các nguyên nhân trên là **giả thuyết phân tích cần kiểm chứng**, không được xem là kết luận thực tế của ACFC nếu chưa có dữ liệu hoặc phỏng vấn xác nhận.
 
-## 5. Hướng cải thiện đề xuất
+## 5. Phân tích Pareto
+
+> **Lưu ý:** Dữ liệu trong phân tích Pareto dưới đây là dữ liệu giả lập nhằm minh họa phương pháp phân tích. Đây không phải số liệu vận hành thực tế của ACFC.
+
+Để xác định các nhóm nguyên nhân cần ưu tiên cải thiện, nhóm giả lập 50 vấn đề phát sinh trong quá trình vận hành cửa hàng.
+
+| Thứ tự | Nhóm nguyên nhân | Số lần | Tỷ lệ | Tỷ lệ tích lũy |
+|---:|---|---:|---:|---:|
+| 1 | Chênh lệch tiền / thanh toán / hóa đơn | 15 | 30% | 30% |
+| 2 | Sai lệch hàng hóa / tồn kho | 12 | 24% | 54% |
+| 3 | Thiếu hoặc chậm cập nhật thông tin | 8 | 16% | 70% |
+| 4 | Sự cố hệ thống / POS | 6 | 12% | 82% |
+| 5 | Thiếu nhân sự / phân công chưa phù hợp | 5 | 10% | 92% |
+| 6 | Nguyên nhân khác | 4 | 8% | 100% |
+| **Tổng** |  | **50** | **100%** |  |
+
+### Biểu đồ Pareto
+
+![Biểu đồ Pareto M1](../../image/patero-M1-quan-ly-van-hanh-cua-hang-phan-tich-dinh-tinh.svg)
+
+### Nhận xét
+
+Biểu đồ Pareto giả lập cho thấy bốn nhóm nguyên nhân đầu tiên chiếm khoảng **82% tổng số vấn đề**, gồm:
+
+1. Chênh lệch tiền / thanh toán / hóa đơn.
+2. Sai lệch hàng hóa / tồn kho.
+3. Thiếu hoặc chậm cập nhật thông tin.
+4. Sự cố hệ thống / POS.
+
+Theo nguyên tắc Pareto, đây là các nhóm nguyên nhân nên được ưu tiên xem xét trước khi thực hiện cải tiến.
+
+Trong đó, hai nhóm có tỷ trọng cao nhất là **chênh lệch tiền/thanh toán/hóa đơn (30%)** và **sai lệch hàng hóa/tồn kho (24%)**, tổng cộng chiếm **54%** số vấn đề giả lập.
+
+Do đó, các hoạt động đối soát cuối ca, kiểm soát hàng hóa và chất lượng dữ liệu là những khu vực cần được ưu tiên theo dõi.
+
+### Hướng cải thiện từ kết quả Pareto
+
+- Chuẩn hóa hoạt động đối soát tiền, thanh toán và hóa đơn cuối ca.
+- Tăng kiểm soát dữ liệu hàng hóa và cập nhật tồn kho kịp thời.
+- Chuẩn hóa thông tin cần có trước và trong ca vận hành.
+- Theo dõi lỗi hệ thống/POS và thời gian xử lý sự cố.
+- Thu thập dữ liệu thực tế theo từng nhóm nguyên nhân để thay thế dữ liệu giả lập trong các lần phân tích sau.
+
+## 6. Hướng cải thiện đề xuất
 
 1. Chuẩn hóa **checklist mở ca và đóng ca**.
 2. Xác định rõ **người chịu trách nhiệm** cho từng nhóm kiểm tra.
@@ -146,13 +219,3 @@ Nếu các thông tin về bán hàng, tiền/hóa đơn và hàng hóa nằm �
 6. Thiết lập cảnh báo sớm cho các chênh lệch có thể phát hiện trước cuối ca.
 7. Theo dõi nguyên nhân chênh lệch theo nhóm để xác định vấn đề lặp lại.
 
-## 6. Nội dung cần xác nhận bằng phỏng vấn/dữ liệu thực tế
-
-- Những hoạt động nào hiện đang gây mất thời gian nhất trong đầu ca và cuối ca?
-- Có nhập lại cùng một dữ liệu ở nhiều biểu mẫu/hệ thống hay không?
-- Những loại chênh lệch nào thường xảy ra?
-- Vấn đề nào thường phải chuyển cấp?
-- Thời gian chờ phản hồi trung bình là bao lâu?
-- Có checklist mở ca/đóng ca chính thức hay không?
-- Có SLA hoặc quy định thời gian xử lý sự cố hay không?
-- Có thống kê nguyên nhân chênh lệch theo thời gian hay không?
