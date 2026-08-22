@@ -4,27 +4,36 @@ Quy trình bắt đầu khi Khách hàng phát sinh nhu cầu đổi hàng, bả
 
 CSKH hoặc Nhân viên cửa hàng tiếp nhận yêu cầu và ghi nhận các thông tin ban đầu như mã đơn hàng, hóa đơn, sản phẩm liên quan và lý do yêu cầu.
 
-Nếu chưa xác định được giao dịch hoặc thông tin ban đầu chưa đầy đủ, Khách hàng được hướng dẫn bổ sung thông tin trước khi yêu cầu được tiếp tục xử lý.
+Nếu chưa xác định được giao dịch hoặc thông tin ban đầu chưa đầy đủ, Khách hàng được hướng dẫn bổ sung thông tin. Sau khi thông tin được bổ sung đầy đủ và giao dịch đã được xác định, yêu cầu tiếp tục được xử lý.
 
-Khi đã xác định được giao dịch, CSKH hoặc Nhân viên cửa hàng kiểm tra các điều kiện áp dụng của yêu cầu, bao gồm thời hạn, chứng từ mua hàng, nhóm sản phẩm và các điều kiện liên quan theo chính sách đổi hàng/bảo hành.
+CSKH hoặc Nhân viên cửa hàng kiểm tra hồ sơ và các điều kiện áp dụng của yêu cầu, bao gồm thời hạn, chứng từ mua hàng, nhóm sản phẩm và các điều kiện liên quan theo chính sách đổi hàng/bảo hành.
 
-Nếu hồ sơ hoặc bằng chứng chưa đầy đủ, Khách hàng được yêu cầu bổ sung. Tùy trường hợp, bằng chứng có thể gồm ảnh hoặc video về tình trạng sản phẩm.
+Nếu hồ sơ hoặc bằng chứng chưa đầy đủ, Khách hàng được yêu cầu bổ sung. Tùy từng trường hợp, bằng chứng có thể bao gồm ảnh hoặc video thể hiện tình trạng sản phẩm. Sau khi hồ sơ được bổ sung đầy đủ, quy trình tiếp tục sang bước kiểm tra sản phẩm.
 
-Sau khi hồ sơ đầy đủ, sản phẩm và các bằng chứng liên quan được kiểm tra để xác định yêu cầu có đáp ứng điều kiện hỗ trợ hay không.
+Đơn vị kiểm tra/xử lý sản phẩm thực hiện kiểm tra sản phẩm và các bằng chứng liên quan để xác định yêu cầu có đáp ứng điều kiện hỗ trợ hay không. Tên đơn vị thực tế thực hiện bước kiểm tra này cần được xác nhận.
 
-Nếu yêu cầu không đáp ứng điều kiện, CSKH hoặc Nhân viên cửa hàng thông báo từ chối và nêu lý do cho Khách hàng.
+Nếu yêu cầu không đáp ứng điều kiện hỗ trợ, CSKH hoặc Nhân viên cửa hàng thông báo từ chối và nêu rõ lý do cho Khách hàng. Quy trình kết thúc với kết quả **Yêu cầu bị từ chối**.
 
-Nếu yêu cầu đáp ứng điều kiện, đơn vị xử lý xác định phương án phù hợp. Phương án có thể là đổi sản phẩm, bảo hành hoặc hình thức xử lý khác tùy theo trường hợp và chính sách áp dụng.
+Nếu yêu cầu đáp ứng điều kiện hỗ trợ, đơn vị xử lý xác định phương án phù hợp. Phương án có thể là đổi sản phẩm, bảo hành hoặc hình thức xử lý khác tùy theo trường hợp và chính sách áp dụng.
 
-Trong trường hợp đổi hàng, đơn vị liên quan kiểm tra khả năng có sản phẩm thay thế phù hợp.
+Nếu phương án là đổi hàng, đơn vị liên quan kiểm tra khả năng có sản phẩm thay thế phù hợp.
 
-Nếu có sản phẩm thay thế, việc đổi được thực hiện. Trường hợp sản phẩm thay thế có giá trị cao hơn, phần chênh lệch được xử lý theo chính sách áp dụng.
+Nếu có sản phẩm thay thế, việc đổi hàng được thực hiện. Trường hợp sản phẩm thay thế có giá trị cao hơn, phần chênh lệch được xử lý theo chính sách áp dụng.
 
-Nếu không có sản phẩm thay thế hoặc trường hợp không thể xử lý theo quy tắc thông thường, yêu cầu được chuyển sang phương án khác hoặc chuyển cho Quản lý/đơn vị có thẩm quyền xem xét.
+Nếu không có sản phẩm thay thế, yêu cầu được xem xét để áp dụng phương án hỗ trợ khác theo chính sách.
 
-Sau khi phương án xử lý được thực hiện, CSKH hoặc Nhân viên cửa hàng cập nhật trạng thái và thông báo kết quả cuối cùng cho Khách hàng.
+Nếu phương án không phải đổi hàng, yêu cầu được chuyển sang bảo hành hoặc phương án xử lý khác phù hợp.
 
-Quy trình kết thúc khi Khách hàng nhận được kết quả xử lý như đổi hàng, bảo hành, phương án xử lý khác hoặc thông báo từ chối có lý do.
+Trong trường hợp yêu cầu không thể xử lý theo quy tắc thông thường hoặc cần phê duyệt ngoại lệ, yêu cầu được chuyển cho Quản lý hoặc đơn vị có thẩm quyền xem xét và quyết định phương án xử lý.
+
+Sau khi phương án xử lý được thực hiện, CSKH hoặc Nhân viên cửa hàng cập nhật trạng thái yêu cầu và thông báo kết quả cuối cùng cho Khách hàng.
+
+Quy trình có hai kết quả chính:
+
+- **Yêu cầu được xử lý:** Khách hàng nhận được kết quả đổi hàng, bảo hành hoặc phương án hỗ trợ khác.
+- **Yêu cầu bị từ chối:** Khách hàng được thông báo lý do yêu cầu không đáp ứng điều kiện hỗ trợ.
+
+Quy trình kết thúc khi kết quả đã được thông báo cho Khách hàng và trạng thái yêu cầu đã được cập nhật.
 
 ## Luồng chính
 
@@ -59,13 +68,17 @@ Quy trình kết thúc khi Khách hàng nhận được kết quả xử lý nh�
 - Sản phẩm thay thế có giá trị cao hơn không?
 - Trường hợp có thể xử lý theo quy tắc thông thường hay cần chuyển cấp?
 
-## Điểm cần xác nhận trước khi chốt BPMN
+## Nội dung cần xác nhận
 
-- Kênh tiếp nhận chính thức của yêu cầu là CSKH, cửa hàng hay cả hai.
-- Ai là người trực tiếp kiểm tra tình trạng sản phẩm.
-- Có bộ phận kiểm tra sản phẩm riêng hay do cửa hàng/kho thực hiện.
-- Trường hợp nào bắt buộc cần ảnh/video.
-- Khi không có sản phẩm thay thế, phương án ưu tiên là bảo hành, phương án khác hay chuyển cấp.
-- Trường hợp nào bắt buộc phải có Quản lý/đơn vị có thẩm quyền phê duyệt.
-- Có bước hoàn tiền trong S1 hay không; nếu có thì nằm ở nhánh nào và do đơn vị nào thực hiện.
-- Hệ thống/biểu mẫu dùng để ghi nhận và theo dõi yêu cầu.
+- Process Owner chính thức của S1.
+- Các kênh tiếp nhận yêu cầu thực tế.
+- Đơn vị thực hiện kiểm tra sản phẩm/bằng chứng.
+- SLA cho bước yêu cầu khách hàng bổ sung thông tin/hồ sơ.
+- SLA cho bước kiểm tra sản phẩm.
+- SLA cho trường hợp chuyển cấp hoặc phê duyệt ngoại lệ.
+- Các điều kiện cụ thể để đổi hàng, bảo hành hoặc từ chối.
+- Phương án xử lý khi không có sản phẩm thay thế.
+- Cấp có thẩm quyền phê duyệt trường hợp ngoại lệ.
+- Hệ thống hoặc biểu mẫu sử dụng để tạo và theo dõi case.
+- Việc xử lý chênh lệch giá khi đổi sản phẩm.
+- Có hay không trường hợp hoàn tiền trong phạm vi S1.
