@@ -53,6 +53,13 @@ Hoạt động và quy tắc công khai được lấy từ trang chủ, trang h
 
 Nguồn công khai chính: [trang chủ ACFC](https://www.acfc.com.vn/home); [hướng dẫn tạo tài khoản](https://www.acfc.com.vn/huong-dan-tao-tai-khoan) và [hướng dẫn kích hoạt tài khoản](https://www.acfc.com.vn/huong-dan-kich-hoat-tai-khoan-thanh-vien) (cho quy trình Kích hoạt tài khoản thành viên); [trang tuyển dụng ACFC](https://tuyendung.acfc.com.vn) cùng các mô tả công việc Product Manager, Operations Executive, Store Manager, District Supervisor (cho các quy trình Lập kế hoạch, Kiểm kê tồn kho, Tuyển dụng).
 
+**Đơn giá tham khảo mặt bằng thị trường (2025).** Để phần chi phí sát thực tế, ưu tiên dùng mức lương ACFC công bố (nếu có); khi chưa có thì lấy theo mặt bằng lương phổ biến tại Việt Nam năm 2025, tính thẳng **lương gross tháng ÷ 208 giờ** (26 ngày × 8 giờ) và **không cộng thêm hệ số để tránh thổi cao**; riêng *sản lượng, tỷ lệ và giá trị nội bộ ACFC* vẫn giữ nhãn `[giả định]`:
+
+- **Đơn giá giờ công:** nhân viên **kho / chăm sóc khách hàng ≈ 40.000đ/giờ** (lương ~8 triệu đồng/tháng, không vượt trần ~9 triệu của vị trí này); **chuyên viên nhân sự / tuyển dụng ≈ 55.000đ/giờ** (~11 triệu); **chuyên viên kế hoạch / merchandising ≈ 90.000đ/giờ** (~18–19 triệu). Neo dưới: lương tối thiểu vùng I năm 2025 là 4,96 triệu đồng/tháng.
+- **Đơn giá gửi OTP:** theo bảng giá nhà cung cấp — **ZNS OTP (Zalo) ~300đ/tin** (chưa VAT, kênh chính) và **SMS Brandname OTP ~750đ/tin** (đã VAT, kênh dự phòng khi không gửi được ZNS). Giả định **80% ZNS + 20% SMS** → đơn giá bình quân ≈ **400đ/lượt**.
+
+Các đơn giá trên là *tham chiếu để minh họa cách tính*, không phải hợp đồng/bảng lương thực tế của ACFC; khi phỏng vấn được sẽ thay bằng đơn giá NCC và bảng lương thật.
+
 ---
 
 ## 2. Lập kế hoạch mua hàng và phân bổ theo mùa
@@ -150,9 +157,9 @@ PCE ≈ 35% nghĩa là gần hai phần ba thời gian là chờ (NVA), khớp v
 
 | Chỉ số | Công thức | Số minh họa `[giả định]` | Kết quả |
 |---|---|---|---|
-| Chi phí chờ phê duyệt | Số kế hoạch × giờ chờ × đơn giá giờ | 4 × 26 giờ × 150.000đ | 15.600.000đ / mùa |
+| Chi phí chờ phê duyệt | Số kế hoạch × giờ chờ × đơn giá giờ | 4 × 26 giờ × 90.000đ | 9.360.000đ / mùa |
 | Chi phí đọng vốn tồn dư | Giá trị tồn dư × chi phí giữ hàng/tháng × số tháng | 200 sp × 300.000đ × 2% × 4 | 4.800.000đ / mùa |
-| Chi phí lập lại kế hoạch | Số lần lập lại × giờ công × đơn giá giờ | 2 × 8 giờ × 150.000đ | 2.400.000đ / mùa |
+| Chi phí lập lại kế hoạch | Số lần lập lại × giờ công × đơn giá giờ | 2 × 8 giờ × 90.000đ | 1.440.000đ / mùa |
 
 ### 2.4. Phân tích nguyên nhân gốc
 
@@ -162,12 +169,12 @@ Ba vấn đề ở mục 2.2.d được quy về **cùng đơn vị** — chi ph
 
 | Vấn đề | Chi phí kỳ vọng (nghìn đồng) `[giả định]` | Tỷ trọng | Lũy kế |
 |---|---|---|---|
-| Chờ phê duyệt kéo dài | 15.600 | 68,4% | 68,4% |
-| Phân bổ lệch nhu cầu (đọng vốn tồn dư) | 4.800 | 21,1% | 89,5% |
-| Phải lập lại kế hoạch | 2.400 | 10,5% | 100,0% |
-| **Tổng** | **22.800** | 100% | — |
+| Chờ phê duyệt kéo dài | 9.360 | 60,0% | 60,0% |
+| Phân bổ lệch nhu cầu (đọng vốn tồn dư) | 4.800 | 30,8% | 90,8% |
+| Phải lập lại kế hoạch | 1.440 | 9,2% | 100,0% |
+| **Tổng** | **15.600** | 100% | — |
 
-Theo nguyên tắc 80/20, hai vấn đề đầu chiếm 89,5% tổng thiệt hại kỳ vọng — là nhóm "số ít quan trọng" cần ưu tiên; riêng **chờ phê duyệt** đã chiếm 68,4% nên xử lý trước.
+Theo nguyên tắc 80/20, hai vấn đề đầu chiếm 90,8% tổng thiệt hại kỳ vọng — là nhóm "số ít quan trọng" cần ưu tiên; riêng **chờ phê duyệt** đã chiếm 60,0% nên xử lý trước.
 
 #### Phân tích 5 Why (cho vấn đề ưu tiên: chờ phê duyệt kéo dài)
 
@@ -183,7 +190,7 @@ Theo nguyên tắc 80/20, hai vấn đề đầu chiếm 89,5% tổng thiệt h�
 
 1. Độ chính xác dự báo và tỷ lệ bán qua thực tế theo mùa là bao nhiêu?
 2. Số tháng tồn kho bình quân mục tiêu và thực tế là bao nhiêu?
-3. Thời gian lập kế hoạch và thời gian phê duyệt trung bình là bao lâu (thay số minh họa 40 giờ / 44 giờ)?
+3. Thời gian lập kế hoạch và thời gian phê duyệt trung bình là bao lâu?
 4. Cấp nào phê duyệt kế hoạch và điều kiện/thời hạn duyệt là gì?
 5. Đơn giá giờ công lập kế hoạch và chi phí giữ hàng/tháng thực tế là bao nhiêu?
 
@@ -292,8 +299,8 @@ Cấu trúc: **Nguyên nhân** (xác định bằng 5 Why ở mục 3.4) → **T
 | Chỉ số | Công thức | Số minh họa `[giả định]` | Kết quả |
 |---|---|---|---|
 | Chi phí hao hụt phải xóa sổ/bồi thường | Giá trị thiếu không thu hồi được | Theo đợt kiểm kê | 3.000.000đ / đợt |
-| Chi phí chờ & chênh lệch quá hạn | Số hồ sơ quá hạn × giờ chờ × đơn giá giờ | 2 × 6 giờ × 120.000đ | 1.440.000đ / đợt |
-| Chi phí đếm lại | Số giờ đếm lại × đơn giá giờ | 6 giờ × 120.000đ | 720.000đ / đợt |
+| Chi phí chờ & chênh lệch quá hạn | Số hồ sơ quá hạn × giờ chờ × đơn giá giờ | 2 × 6 giờ × 40.000đ | 480.000đ / đợt |
+| Chi phí đếm lại | Số giờ đếm lại × đơn giá giờ | 6 giờ × 40.000đ | 240.000đ / đợt |
 
 ### 3.4. Phân tích nguyên nhân gốc
 
@@ -303,12 +310,12 @@ Ba vấn đề ở mục 3.2.d được quy về **cùng đơn vị** — chi ph
 
 | Vấn đề | Chi phí kỳ vọng (nghìn đồng) `[giả định]` | Tỷ trọng | Lũy kế |
 |---|---|---|---|
-| Hao hụt không giải thích được | 3.000 | 58,1% | 58,1% |
-| Chênh lệch quá hạn (chi phí chờ) | 1.440 | 27,9% | 86,0% |
-| Điều chỉnh lặp lại (chi phí đếm lại) | 720 | 14,0% | 100,0% |
-| **Tổng** | **5.160** | 100% | — |
+| Hao hụt không giải thích được | 3.000 | 80,6% | 80,6% |
+| Chênh lệch quá hạn (chi phí chờ) | 480 | 12,9% | 93,5% |
+| Điều chỉnh lặp lại (chi phí đếm lại) | 240 | 6,5% | 100,0% |
+| **Tổng** | **3.720** | 100% | — |
 
-Theo nguyên tắc 80/20, hai vấn đề đầu chiếm 86,0% tổng thiệt hại kỳ vọng; riêng **hao hụt** chiếm 58,1% nên ưu tiên trước.
+Theo nguyên tắc 80/20, riêng **hao hụt** đã chiếm 80,6% tổng thiệt hại kỳ vọng — tự nó vượt ngưỡng 80% nên là vấn đề phải ưu tiên xử lý trước; hai vấn đề đầu chiếm 93,5%.
 
 #### Phân tích 5 Why (cho vấn đề ưu tiên: hao hụt không giải thích được)
 
@@ -323,10 +330,10 @@ Theo nguyên tắc 80/20, hai vấn đề đầu chiếm 86,0% tổng thiệt h�
 ### 3.5. Phỏng vấn bổ sung
 
 1. Độ chính xác tồn kho và tỷ lệ hao hụt thực tế mỗi đợt là bao nhiêu?
-2. Tỷ lệ đếm lại và tỷ lệ điều chỉnh thực tế là bao nhiêu (thay số minh họa 8% / 15%)?
+2. Tỷ lệ đếm lại và tỷ lệ điều chỉnh thực tế là bao nhiêu?
 3. Ngưỡng điều chỉnh tồn và cấp phê duyệt tương ứng là gì?
 4. Thời gian kiểm kê trung bình và tỷ lệ đóng hồ sơ đúng hạn là bao nhiêu?
-5. Đơn giá giờ công kiểm kê thực tế là bao nhiêu (thay số minh họa 120.000đ/giờ)?
+5. Đơn giá giờ công kiểm kê thực tế là bao nhiêu?
 
 ### 3.6. Đề xuất cải tiến (TO-BE)
 
@@ -443,9 +450,11 @@ Cấu trúc: **Nguyên nhân** (xác định bằng 5 Why ở mục 4.4, khác v
 
 | Chỉ số | Công thức | Số minh họa `[giả định]` | Kết quả |
 |---|---|---|---|
-| Chi phí gửi OTP | Tổng lượt gửi × đơn giá SMS/ZNS | 1.000 × 300đ | 300.000đ / 1.000 lượt |
-| Chi phí xử lý chăm sóc khách hàng | Số lượt × thời gian trung bình × đơn giá giờ công | 60 × 0,25 giờ × 100.000đ | 1.500.000đ |
+| Chi phí gửi OTP | Tổng lượt gửi × đơn giá bình quân ZNS/SMS | 1.000 × 400đ | 400.000đ / 1.000 lượt |
+| Chi phí xử lý chăm sóc khách hàng | Số lượt × thời gian trung bình × đơn giá giờ công | 60 × 0,25 giờ × 40.000đ | 600.000đ |
 | Doanh thu cơ hội mất do bỏ dở đăng ký | Số lượt bỏ dở × giá trị đơn bình quân × tỷ lệ chuyển đổi kỳ vọng | 180 × 500.000đ × 10% | 9.000.000đ |
+
+> **Đơn giá gửi OTP (tham khảo NCC 2025):** ZNS OTP (Zalo) ~300đ/tin (chưa VAT, kênh chính); SMS Brandname OTP ~750đ/tin (đã VAT, kênh dự phòng khi không gửi được ZNS). Giả định 80% ZNS + 20% SMS → đơn giá bình quân ≈ **400đ/lượt** (xem §1.3). Số *lượt gửi* (1.000) là `[giả định]` sản lượng của ACFC.
 
 ### 4.4. Phân tích nguyên nhân gốc
 
@@ -455,12 +464,12 @@ Ba vấn đề ở mục 4.2.d được quy về **cùng đơn vị** — chi ph
 
 | Vấn đề | Chi phí kỳ vọng (nghìn đồng) `[giả định]` | Tỷ trọng | Lũy kế |
 |---|---|---|---|
-| Bỏ dở đăng ký (doanh thu cơ hội mất) | 9.000 | 78,3% | 78,3% |
-| Yêu cầu chăm sóc khách hàng tăng (chi phí nhân công) | 1.500 | 13,0% | 91,3% |
-| Lỗi đăng nhập khách không tự xử lý (gửi lại OTP + thao tác dư) | 1.000 | 8,7% | 100,0% |
-| **Tổng** | **11.500** | 100% | — |
+| Bỏ dở đăng ký (doanh thu cơ hội mất) | 9.000 | 90,0% | 90,0% |
+| Yêu cầu chăm sóc khách hàng tăng (chi phí nhân công) | 600 | 6,0% | 96,0% |
+| Lỗi đăng nhập khách không tự xử lý (gửi lại OTP + thao tác dư) | 400 | 4,0% | 100,0% |
+| **Tổng** | **10.000** | 100% | — |
 
-Theo nguyên tắc 80/20, riêng **"bỏ dở đăng ký"** đã chiếm 78,3% tổng thiệt hại kỳ vọng — gần chạm ngưỡng 80% — nên là vấn đề phải ưu tiên xử lý trước; cộng thêm "yêu cầu chăm sóc khách hàng tăng" thì hai vấn đề đầu chiếm 91,3%. Đây là nhóm "số ít quan trọng" cần tập trung nguồn lực.
+Theo nguyên tắc 80/20, riêng **"bỏ dở đăng ký"** đã chiếm 90,0% tổng thiệt hại kỳ vọng — vượt xa ngưỡng 80% — nên là vấn đề phải ưu tiên xử lý trước; cộng thêm "yêu cầu chăm sóc khách hàng tăng" thì hai vấn đề đầu chiếm 96,0%. Đây là nhóm "số ít quan trọng" cần tập trung nguồn lực. (Hai dòng nhân công CSKH và lỗi đăng nhập tính lại theo đơn giá giờ 40.000đ và đơn giá OTP 400đ ở §1.3.)
 
 #### Phân tích 5 Why (cho vấn đề ưu tiên: bỏ dở đăng ký)
 
@@ -474,10 +483,10 @@ Theo nguyên tắc 80/20, riêng **"bỏ dở đăng ký"** đã chiếm 78,3% t
 
 ### 4.5. Phỏng vấn bổ sung
 
-1. Tỷ lệ đăng ký thành công và tỷ lệ bỏ dở thực tế là bao nhiêu (thay số minh họa 82% / 18%)?
-2. Tỷ lệ OTP xác nhận đúng ngay lần đầu và tỷ lệ khách cần hỗ trợ thực tế là bao nhiêu (thay số minh họa 88% / 6%)?
-3. Thời gian hoàn tất đăng ký và thời gian chờ OTP trung bình thực tế là bao lâu (thay số minh họa 90 giây / 20 giây)?
-4. Đơn giá SMS/ZNS và đơn giá giờ công chăm sóc khách hàng thực tế là bao nhiêu (thay đơn giá minh họa 300đ/lượt, 100.000đ/giờ)?
+1. Tỷ lệ đăng ký thành công và tỷ lệ bỏ dở thực tế là bao nhiêu?
+2. Tỷ lệ OTP xác nhận đúng ngay lần đầu và tỷ lệ khách cần hỗ trợ thực tế là bao nhiêu?
+3. Thời gian hoàn tất đăng ký và thời gian chờ OTP trung bình thực tế là bao lâu?
+4. Đơn giá SMS/ZNS và đơn giá giờ công chăm sóc khách hàng thực tế là bao nhiêu? Tỷ lệ gửi qua ZNS so với SMS thực tế khoảng bao nhiêu?
 5. Ngoài 5 bên đã nêu ở mục 4.2.c, còn bộ phận nào (Marketing chương trình thành viên, kỹ thuật vận hành hệ thống…) có mối quan tâm hoặc bị ảnh hưởng bởi quy trình này?
 
 ### 4.6. Đề xuất cải tiến (TO-BE)
@@ -579,10 +588,12 @@ Cấu trúc: **Nguyên nhân** (xác định bằng 5 Why ở mục 5.4) → **T
 
 | Chỉ số | Công thức | Số minh họa `[giả định]` | Kết quả |
 |---|---|---|---|
-| Thời gian tuyển (từ đăng tin đến nhận thư mời) | Ngày nhận thư mời − ngày mở tin | 01/08 → 21/08 | 20 ngày |
-| Thời gian lấp đầy vị trí | Ngày nhân sự đi làm − ngày phát sinh nhu cầu | 28/07 → 04/09 | 38 ngày |
+| Thời gian tuyển (từ đăng tin đến nhận thư mời) | Ngày nhận thư mời − ngày mở tin | 05/08 → 25/08 | 20 ngày |
+| Thời gian lấp đầy vị trí (từ phát sinh nhu cầu đến khi đi làm) | Ngày nhân sự đi làm − ngày phát sinh nhu cầu | 01/08 → 08/09 | 38 ngày |
 | Thời gian chờ giữa các vòng | Tổng thời gian chờ phản hồi các vòng | ≈ 9 ngày | 9 ngày |
 | Hiệu suất chu kỳ (PCE) | (Thời gian tuyển − thời gian chờ) / thời gian tuyển | (20 − 9) / 20 | 55% |
+
+Mốc thời gian minh họa (cùng một đợt tuyển): **phát sinh nhu cầu 01/08 → mở tin 05/08 → nhận thư mời 25/08 → nhân sự đi làm 08/09**. "Thời gian tuyển" (20 ngày) đo từ *mở tin* đến *nhận thư mời*; "thời gian lấp đầy" (38 ngày) đo từ *phát sinh nhu cầu* đến *đi làm* — bao trọn cả khâu chờ mở tin đầu kỳ và tiếp nhận cuối kỳ, nên dài hơn.
 
 #### b. Phân tích chi phí
 
@@ -591,7 +602,7 @@ Cấu trúc: **Nguyên nhân** (xác định bằng 5 Why ở mục 5.4) → **T
 | Chi phí trên mỗi tuyển dụng | Tổng chi phí tuyển / số nhân sự tuyển được | 40.000.000đ / 20 | 2.000.000đ / người |
 | Chi phí tuyển lại do nghỉ sớm | Số nghỉ sớm × chi phí trên mỗi tuyển dụng | 5 × 2.000.000đ | 10.000.000đ |
 | Chi phí năng suất mất do vị trí trống kéo dài | Số vị trí × số ngày trống vượt chuẩn × chi phí cơ hội/ngày | 4 × 10 × 100.000đ | 4.000.000đ |
-| Chi phí phỏng vấn lại do ứng viên từ chối thư mời | Số lượt từ chối × giờ phỏng vấn lại × đơn giá giờ | 5 × 3 giờ × 100.000đ | 1.500.000đ |
+| Chi phí phỏng vấn lại do ứng viên từ chối thư mời | Số lượt từ chối × giờ phỏng vấn lại × đơn giá giờ | 5 × 3 giờ × 55.000đ | 825.000đ |
 
 ### 5.4. Phân tích nguyên nhân gốc
 
@@ -601,12 +612,12 @@ Ba vấn đề ở mục 5.2.d được quy về **cùng đơn vị** — chi ph
 
 | Vấn đề | Chi phí kỳ vọng (nghìn đồng) `[giả định]` | Tỷ trọng | Lũy kế |
 |---|---|---|---|
-| Nghỉ việc sớm (tuyển lại) | 10.000 | 64,5% | 64,5% |
-| Thời gian tuyển kéo dài (vị trí trống) | 4.000 | 25,8% | 90,3% |
-| Ứng viên từ chối thư mời (phỏng vấn lại) | 1.500 | 9,7% | 100,0% |
-| **Tổng** | **15.500** | 100% | — |
+| Nghỉ việc sớm (tuyển lại) | 10.000 | 67,5% | 67,5% |
+| Thời gian tuyển kéo dài (vị trí trống) | 4.000 | 27,0% | 94,5% |
+| Ứng viên từ chối thư mời (phỏng vấn lại) | 825 | 5,5% | 100,0% |
+| **Tổng** | **14.825** | 100% | — |
 
-Theo nguyên tắc 80/20, hai vấn đề đầu chiếm 90,3% tổng thiệt hại kỳ vọng; riêng **nghỉ việc sớm** chiếm 64,5% nên ưu tiên trước.
+Theo nguyên tắc 80/20, hai vấn đề đầu chiếm 94,5% tổng thiệt hại kỳ vọng; riêng **nghỉ việc sớm** chiếm 67,5% nên ưu tiên trước.
 
 #### Phân tích 5 Why (cho vấn đề ưu tiên: nghỉ việc sớm)
 
@@ -620,9 +631,9 @@ Theo nguyên tắc 80/20, hai vấn đề đầu chiếm 90,3% tổng thiệt h�
 
 ### 5.5. Phỏng vấn bổ sung
 
-1. Thời gian tuyển và thời gian lấp đầy vị trí trung bình thực tế là bao nhiêu (thay số minh họa 20 / 38 ngày)?
+1. Thời gian tuyển và thời gian lấp đầy vị trí trung bình thực tế là bao nhiêu?
 2. Tỷ lệ hồ sơ qua sàng lọc, tỷ lệ đạt từng vòng và tỷ lệ chấp nhận thư mời thực tế là bao nhiêu?
-3. Tỷ lệ nghỉ việc sớm của nhân viên cửa hàng và văn phòng/kho là bao nhiêu (thay số minh họa 25%)?
+3. Tỷ lệ nghỉ việc sớm của nhân viên cửa hàng và văn phòng/kho là bao nhiêu?
 4. Chi phí trên mỗi tuyển dụng và chi phí đăng tin theo kênh thực tế là bao nhiêu?
 5. Chỉ tiêu đánh giá thử việc, số vòng phỏng vấn theo vị trí và cấp duyệt thư mời được quy định thế nào?
 
@@ -730,8 +741,8 @@ Cấu trúc: **Nguyên nhân** (xác định bằng 5 Why ở mục 6.4) → **T
 | Chỉ số | Công thức | Số minh họa `[giả định]` | Kết quả |
 |---|---|---|---|
 | Chi phí xử lý lô hàng lỗi | Giá trị lô lỗi × tỷ lệ lỗi + chi phí trả hàng | 100.000.000đ × 5% + 1.000.000đ | 6.000.000đ / kỳ |
-| Chi phí xử lý sai lệch chứng từ/số lượng | Số lô sai lệch × giờ xử lý × đơn giá giờ | 20 × 1 giờ × 100.000đ | 2.000.000đ / kỳ |
-| Chi phí chờ kiểm định & cất kho | Số lô chờ × giờ chờ × đơn giá giờ | 10 × 1 giờ × 100.000đ | 1.000.000đ / kỳ |
+| Chi phí xử lý sai lệch chứng từ/số lượng | Số lô sai lệch × giờ xử lý × đơn giá giờ | 20 × 1 giờ × 40.000đ | 800.000đ / kỳ |
+| Chi phí chờ kiểm định & cất kho | Số lô chờ × giờ chờ × đơn giá giờ | 10 × 1 giờ × 40.000đ | 400.000đ / kỳ |
 
 ### 6.4. Phân tích nguyên nhân gốc
 
@@ -741,12 +752,12 @@ Ba vấn đề ở mục 6.2.d được quy về **cùng đơn vị** — chi ph
 
 | Vấn đề | Chi phí kỳ vọng (nghìn đồng) `[giả định]` | Tỷ trọng | Lũy kế |
 |---|---|---|---|
-| Hàng lỗi phải trả nhà cung cấp | 6.000 | 66,7% | 66,7% |
-| Sai lệch chứng từ/số lượng | 2.000 | 22,2% | 88,9% |
-| Chờ kiểm định và cất kho | 1.000 | 11,1% | 100,0% |
-| **Tổng** | **9.000** | 100% | — |
+| Hàng lỗi phải trả nhà cung cấp | 6.000 | 83,3% | 83,3% |
+| Sai lệch chứng từ/số lượng | 800 | 11,1% | 94,4% |
+| Chờ kiểm định và cất kho | 400 | 5,6% | 100,0% |
+| **Tổng** | **7.200** | 100% | — |
 
-Theo nguyên tắc 80/20, hai vấn đề đầu chiếm 88,9%; riêng **hàng lỗi** chiếm 66,7% nên ưu tiên trước.
+Theo nguyên tắc 80/20, riêng **hàng lỗi** đã chiếm 83,3% tổng thiệt hại kỳ vọng — tự nó vượt ngưỡng 80% nên ưu tiên trước; hai vấn đề đầu chiếm 94,4%.
 
 #### Phân tích 5 Why (cho vấn đề ưu tiên: hàng lỗi phải trả nhà cung cấp)
 
@@ -762,7 +773,7 @@ Theo nguyên tắc 80/20, hai vấn đề đầu chiếm 88,9%; riêng **hàng l
 
 1. Tỷ lệ lô đạt/không đạt kiểm tra chất lượng và ngưỡng chấp nhận thực tế là bao nhiêu?
 2. Tỷ lệ sai lệch chứng từ/số lượng khi nhận hàng là bao nhiêu?
-3. Thời gian chu kỳ nhập kho một lô trung bình thực tế là bao lâu (thay số minh họa 6 giờ)?
+3. Thời gian chu kỳ nhập kho một lô trung bình thực tế là bao lâu?
 4. Chính sách trung chuyển thẳng được áp dụng trong trường hợp nào?
 5. Kết quả kiểm tra chất lượng có được tổng hợp theo nhà cung cấp/lô để phản hồi không?
 
@@ -871,7 +882,7 @@ Cấu trúc: **Nguyên nhân** (xác định bằng 5 Why ở mục 7.4) → **T
 |---|---|---|---|
 | Chi phí thu hồi do giao lỗi | Số lệnh giao lỗi × chi phí thu hồi/lệnh | 10 × 500.000đ | 5.000.000đ / kỳ |
 | Chi phí cơ hội do hoãn/giao thiếu | Số lệnh hoãn × giá trị đơn × tỷ lệ mất doanh thu | 10 × 5.000.000đ × 5% | 2.500.000đ / kỳ |
-| Chi phí soạn lại do sai phiếu | Số lần soạn lại × giờ × đơn giá giờ | 10 × 1 giờ × 100.000đ | 1.000.000đ / kỳ |
+| Chi phí soạn lại do sai phiếu | Số lần soạn lại × giờ × đơn giá giờ | 10 × 1 giờ × 40.000đ | 400.000đ / kỳ |
 
 ### 7.4. Phân tích nguyên nhân gốc
 
@@ -881,12 +892,12 @@ Ba vấn đề ở mục 7.2.d được quy về **cùng đơn vị** — chi ph
 
 | Vấn đề | Chi phí kỳ vọng (nghìn đồng) `[giả định]` | Tỷ trọng | Lũy kế |
 |---|---|---|---|
-| Giao không thành công phải thu hồi | 5.000 | 58,8% | 58,8% |
-| Thiếu tồn phải hoãn/giao một phần | 2.500 | 29,4% | 88,2% |
-| Soạn hàng không khớp phiếu | 1.000 | 11,8% | 100,0% |
-| **Tổng** | **8.500** | 100% | — |
+| Giao không thành công phải thu hồi | 5.000 | 63,3% | 63,3% |
+| Thiếu tồn phải hoãn/giao một phần | 2.500 | 31,6% | 94,9% |
+| Soạn hàng không khớp phiếu | 400 | 5,1% | 100,0% |
+| **Tổng** | **7.900** | 100% | — |
 
-Theo nguyên tắc 80/20, hai vấn đề đầu chiếm 88,2%; riêng **giao không thành công** chiếm 58,8% nên ưu tiên trước.
+Theo nguyên tắc 80/20, hai vấn đề đầu chiếm 94,9%; riêng **giao không thành công** chiếm 63,3% nên ưu tiên trước.
 
 #### Phân tích 5 Why (cho vấn đề ưu tiên: giao không thành công phải thu hồi)
 
@@ -902,7 +913,7 @@ Theo nguyên tắc 80/20, hai vấn đề đầu chiếm 88,2%; riêng **giao kh
 
 1. Tỷ lệ giao thành công và tỷ lệ thu hồi do giao lỗi thực tế là bao nhiêu?
 2. Tỷ lệ lệnh phân bổ phải hoãn/giao một phần do thiếu tồn là bao nhiêu?
-3. Thời gian chu kỳ xuất – giao một lệnh trung bình thực tế là bao lâu (thay số minh họa 32 giờ)?
+3. Thời gian chu kỳ xuất – giao một lệnh trung bình thực tế là bao lâu?
 4. Chính sách giao một phần/đơn chờ hàng và cam kết dịch vụ với đơn vị vận chuyển là gì?
 5. Tồn khả dụng có được đồng bộ theo thời gian thực với Lập kế hoạch mua & phân bổ khi lập lệnh phân bổ không?
 
@@ -1013,7 +1024,7 @@ Cấu trúc: **Nguyên nhân** (xác định bằng 5 Why ở mục 8.4) → **T
 |---|---|---|---|
 | Chi phí hao hụt do hủy hàng | Số hàng hủy × giá trị bình quân | 40 × 100.000đ | 4.000.000đ / kỳ |
 | Chi phí đọng vốn hàng trả chờ xử lý | Giá trị hàng trả tồn đọng × chi phí vốn × thời gian | 200.000.000đ × 1% × 1 tháng | 2.000.000đ / kỳ |
-| Chi phí tân trang lại | Số lần tân trang lại × giờ × đơn giá giờ | 10 × 1 giờ × 100.000đ | 1.000.000đ / kỳ |
+| Chi phí tân trang lại | Số lần tân trang lại × giờ × đơn giá giờ | 10 × 1 giờ × 40.000đ | 400.000đ / kỳ |
 
 ### 8.4. Phân tích nguyên nhân gốc
 
@@ -1023,12 +1034,12 @@ Ba vấn đề ở mục 8.2.d được quy về **cùng đơn vị** — chi ph
 
 | Vấn đề | Chi phí kỳ vọng (nghìn đồng) `[giả định]` | Tỷ trọng | Lũy kế |
 |---|---|---|---|
-| Hàng phải hủy (hao hụt) | 4.000 | 57,1% | 57,1% |
-| Chờ giám định và xử lý kéo dài | 2.000 | 28,6% | 85,7% |
-| Tân trang không đạt phải làm lại | 1.000 | 14,3% | 100,0% |
-| **Tổng** | **7.000** | 100% | — |
+| Hàng phải hủy (hao hụt) | 4.000 | 62,5% | 62,5% |
+| Chờ giám định và xử lý kéo dài | 2.000 | 31,2% | 93,7% |
+| Tân trang không đạt phải làm lại | 400 | 6,3% | 100,0% |
+| **Tổng** | **6.400** | 100% | — |
 
-Theo nguyên tắc 80/20, hai vấn đề đầu chiếm 85,7%; riêng **hàng phải hủy** chiếm 57,1% nên ưu tiên trước.
+Theo nguyên tắc 80/20, hai vấn đề đầu chiếm 93,7%; riêng **hàng phải hủy** chiếm 62,5% nên ưu tiên trước.
 
 #### Phân tích 5 Why (cho vấn đề ưu tiên: hàng phải hủy)
 
@@ -1043,7 +1054,7 @@ Theo nguyên tắc 80/20, hai vấn đề đầu chiếm 85,7%; riêng **hàng p
 ### 8.5. Phỏng vấn bổ sung
 
 1. Tỷ lệ hàng trả được bán lại/tân trang/hủy thực tế là bao nhiêu?
-2. Thời gian xử lý một hồ sơ trả hàng trung bình thực tế là bao lâu (thay số minh họa 3 ngày)?
+2. Thời gian xử lý một hồ sơ trả hàng trung bình thực tế là bao lâu?
 3. Chính sách và thời hạn đổi trả áp dụng cho từng nhóm hàng là gì?
 4. Tiêu chí phân hạng (bán lại/tân trang/hủy) và điều khoản bảo hành nhà cung cấp được quy định thế nào?
 5. Quy trình và thời hạn hoàn tiền phối hợp với Tài chính ra sao?
