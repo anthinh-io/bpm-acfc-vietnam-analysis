@@ -1,647 +1,1068 @@
-# BÁO CÁO CÁ NHÂN – QUY TRÌNH M3, S3, S4, S1 & CỤM KHO VẬN K1/K2/K3 (ACFC)
+# BÁO CÁO CÁ NHÂN – PHÂN TÍCH QUY TRÌNH NGHIỆP VỤ ACFC
 
-**Sinh viên:** Nguyễn Công Hưng<br>
-**MSSV:** 24730100<br>
-**Môn:** IE203.F31.CN1.CNTT – Hệ thống quản trị qui trình nghiệp vụ<br>
-**GVHD:** ThS. Hà Lê Hoài Trung<br>
-**Doanh nghiệp phân tích:** Công ty Cổ phần Thời trang và Mỹ phẩm Âu Châu (ACFC)<br>
-**Ngày cập nhật:** 17/08/2026
-
-> **Mục đích tài liệu:** đây là **báo cáo tổng hợp cấp cá nhân** cho các quy trình Hưng phụ trách — **M3 (Quản lý)**, **S3 (Hỗ trợ)**, **S4 (Hỗ trợ)**, **S1 (Hỗ trợ)** và **cụm ba quy trình kho vận K1/K2/K3 (Hỗ trợ)** — gộp liền mạch discovery, mô tả hiện trạng (AS-IS), bộ câu hỏi thu thập dữ liệu, phân tích định tính/định lượng và đề xuất TO-BE. Bốn quy trình M3/S3/S4/S1 có đầy đủ các mục 4–11; cụm kho K1/K2/K3 (mục 4.5–4.7) hiện có sơ đồ BPMN 2.0 và mô tả AS-IS đầy đủ (bảng bước + kịch bản thành/bại), phần phân tích định tính/định lượng chuyên sâu sẽ bổ sung ở bước hoàn thiện tiếp theo. Tài liệu tự chứa (self-contained): mọi bảng bước, kịch bản, câu hỏi phỏng vấn và bảng KPI đều nằm trong file này để có thể copy/paste và định dạng lại thành báo cáo Word khi nhóm chắt lọc. Số liệu định lượng còn thiếu tuân thủ nguyên tắc **không tự bịa số ACFC** — xem mục 9 và 11.
+> Báo cáo trình bày **theo từng quy trình**: mỗi quy trình gồm mô tả hiện trạng (AS-IS), phân tích định tính, phân tích định lượng, phân tích nguyên nhân gốc (Pareto + 5 Why), câu hỏi phỏng vấn bổ sung và đề xuất cải tiến (TO-BE). Phạm vi cá nhân gồm bảy quy trình: **Lập kế hoạch mua hàng và phân bổ theo mùa** (cấp Quản lý); **Kiểm kê tồn kho**, **Kích hoạt tài khoản thành viên**, **Tuyển dụng và tiếp nhận nhân sự** cùng **cụm ba quy trình kho vận (Nhận hàng, Xuất kho, Thu hồi hàng trả)** (cấp Hỗ trợ). Mọi con số định lượng chưa phỏng vấn được là **số minh họa cách tính**, gắn nhãn `[giả định]` và sẽ thay bằng số vận hành thật sau phỏng vấn.
 
 ---
 
 ## Mục lục
 
-1. [Mục tiêu, phạm vi và nguyên tắc](#1-mục-tiêu-phạm-vi-và-nguyên-tắc)
-2. [Đối chiếu rubric](#2-đối-chiếu-rubric)
-3. [Danh mục quy trình phụ trách](#3-danh-mục-quy-trình-phụ-trách)
-4. [Mô tả quy trình hiện tại (AS-IS)](#4-mô-tả-quy-trình-hiện-tại-as-is)
-5. [Phương pháp thu thập và xác thực](#5-phương-pháp-thu-thập-và-xác-thực)
-6. [Bộ câu hỏi thu thập dữ liệu (10 định tính + 10 định lượng mỗi quy trình)](#6-bộ-câu-hỏi-thu-thập-dữ-liệu)
-7. [Kế hoạch làm việc (mốc cá nhân)](#7-kế-hoạch-làm-việc-mốc-cá-nhân)
-8. [Phân tích định tính](#8-phân-tích-định-tính)
-9. [Phân tích định lượng (Thời gian – Chất lượng – Chi phí)](#9-phân-tích-định-lượng-thời-gian--chất-lượng--chi-phí)
-10. [Đề xuất khắc phục theo lãng phí và TO-BE](#10-đề-xuất-khắc-phục-theo-lãng-phí-và-to-be)
-11. [Kết luận và nội dung cần xác thực](#11-kết-luận-và-nội-dung-cần-xác-thực)
+1. [Tổng quan phạm vi và danh mục quy trình](#1-tổng-quan-phạm-vi-và-danh-mục-quy-trình)
+2. [Lập kế hoạch mua hàng và phân bổ theo mùa](#2-lập-kế-hoạch-mua-hàng-và-phân-bổ-theo-mùa)
+3. [Kiểm kê và xử lý chênh lệch tồn kho](#3-kiểm-kê-và-xử-lý-chênh-lệch-tồn-kho)
+4. [Đăng ký, xác thực OTP và kích hoạt tài khoản thành viên](#4-đăng-ký-xác-thực-otp-và-kích-hoạt-tài-khoản-thành-viên)
+5. [Tuyển dụng và tiếp nhận nhân sự chuỗi bán lẻ/kho vận](#5-tuyển-dụng-và-tiếp-nhận-nhân-sự-chuỗi-bán-lẻkho-vận)
+6. [Nhận hàng, kiểm tra chất lượng và nhập kho](#6-nhận-hàng-kiểm-tra-chất-lượng-và-nhập-kho)
+7. [Xuất kho và điều chuyển phân bổ tới chuỗi cửa hàng](#7-xuất-kho-và-điều-chuyển-phân-bổ-tới-chuỗi-cửa-hàng)
+8. [Thu hồi và xử lý hàng trả về / hàng lỗi](#8-thu-hồi-và-xử-lý-hàng-trả-về--hàng-lỗi)
 
 ---
 
-## 1. Mục tiêu, phạm vi và nguyên tắc
+## 1. Tổng quan phạm vi và danh mục quy trình
 
-### 1.1. Bối cảnh và phạm vi cá nhân
+### 1.1. Phạm vi và ranh giới
 
-Phạm vi cá nhân của Hưng thuộc mảng **hàng hóa, kho, tồn kho, tài khoản thành viên và tuyển dụng nhân sự ACFC**. Theo yêu cầu rút gọn của nhóm (cập nhật 11/08/2026), mỗi thành viên bắt buộc hoàn thiện **1 quy trình Quản lý + 1 quy trình Hỗ trợ** (nhóm đã đạt tối thiểu 6 quy trình BPMN + phân tích ở cấp chung). Hưng dồn toàn lực hoàn thiện **M3 (Quản lý)** và **S3 (Hỗ trợ)** theo yêu cầu bắt buộc, đồng thời bổ sung hai quy trình Hỗ trợ: **S4** — đăng ký/kích hoạt tài khoản thành viên và **S1** — tuyển dụng & tiếp nhận nhân sự chuỗi bán lẻ/kho vận, cả hai khai thác từ nội dung công khai trên trang chủ và trang tuyển dụng ACFC, đã kiểm tra không trùng mã hoặc nội dung với quy trình của thành viên khác. Ngoài ra, Hưng bổ sung **cụm ba quy trình kho vận K1/K2/K3** (nhận hàng & QC, xuất kho & điều chuyển, thu hồi hàng trả) đào sâu chuỗi vận hành kho mà M3/S3 chỉ chạm ở ranh giới — xem mục 4.5–4.7. C3/C4 (2 quy trình Cốt lõi) không còn trong phạm vi bài làm tuần này nên đã gỡ khỏi workspace cá nhân.
+Phạm vi cá nhân thuộc mảng **hàng hóa, kho, tồn kho, tài khoản thành viên và tuyển dụng nhân sự** của ACFC, gồm bảy quy trình:
 
-| Mã | Cấp | Quy trình | Ranh giới | Trạng thái |
-|---|---|---|---|---|
-| M3 | Quản lý | Lập kế hoạch mua hàng và phân bổ theo mùa | Dữ liệu bán hàng/tồn → kế hoạch được duyệt | Xong bản nháp |
-| S3 | Hỗ trợ | Kiểm kê và xử lý chênh lệch tồn kho | Kiểm kê/cảnh báo → điều chỉnh hoặc chuyển cấp | Xong bản nháp |
-| S4 | Hỗ trợ | Đăng ký, xác thực OTP & kích hoạt tài khoản thành viên | Truy cập App/Web → tài khoản được tạo/kích hoạt hoặc chuyển CSKH | Xong bản nháp |
-| S1 | Hỗ trợ | Tuyển dụng & tiếp nhận (onboarding) nhân sự chuỗi bán lẻ/kho vận | Yêu cầu tuyển dụng → ký hợp đồng sau probation hoặc thanh lý | Xong bản nháp |
-| K1 | Hỗ trợ | Nhận hàng, QC & nhập kho từ chủ thương hiệu | ASN/hàng cập dock → nhập kệ & cập nhật tồn đầu vào | Xong bản nháp (BPMN + AS-IS) |
-| K2 | Hỗ trợ | Xuất kho & điều chuyển phân bổ tới chuỗi cửa hàng | Lệnh phân bổ (M3) → cửa hàng nhận & cập nhật tồn | Xong bản nháp (BPMN + AS-IS) |
-| K3 | Hỗ trợ | Thu hồi & xử lý hàng trả về/hàng lỗi (reverse logistics) | Yêu cầu trả hàng → đóng RMA & (nếu cần) hoàn tiền | Xong bản nháp (BPMN + AS-IS) |
-
-### 1.2. Ranh giới với các workspace khác
-
-- Phạm vi tuần này gồm M3, S3, S4 và S1; không mô tả các quy trình Quản lý/Cốt lõi/Hỗ trợ khác đã thuộc phạm vi phụ trách của thành viên khác trong nhóm.
-- M3 nhận doanh số/KPI/kế hoạch thương mại từ M2 nhưng **chỉ sở hữu bước mua hàng và phân bổ**; M3 phát hành kế hoạch mua/yêu cầu điều chuyển làm đầu ra bàn giao, không mô tả sâu các bước nhận hàng/điều chuyển nội bộ.
-- M1 thực hiện vận hành/đếm thường lệ; **S3 xử lý kiểm soát, đếm lại, điều chỉnh và chuyển cấp chênh lệch**. Kết quả S3 được phản hồi cho M3 để điều chỉnh kế hoạch, hạn mức tồn và nguyên nhân thất thoát.
-- **S4** (đăng ký/kích hoạt tài khoản thành viên) khác với quy trình xử lý yêu cầu quyền dữ liệu cá nhân đã thuộc phạm vi thành viên khác: S4 chỉ dừng ở tạo/kích hoạt tài khoản, không xử lý yêu cầu truy cập/xóa/chỉnh sửa dữ liệu cá nhân theo quyền của chủ thể dữ liệu.
-- **S1** (tuyển dụng & tiếp nhận nhân sự) chỉ mô tả luồng từ yêu cầu tuyển dụng đến ký hợp đồng sau thử việc; **không** bao gồm quản trị lương thưởng, đào tạo dài hạn hay đánh giá hiệu suất định kỳ sau khi đã ký hợp đồng chính thức — các mảng này (nếu có) thuộc quy trình nhân sự khác.
-
-### 1.3. Nguyên tắc học thuật xuyên suốt
-
-Hoạt động có nguồn công khai hỗ trợ được đánh dấu mức **A/B**; bước nối, ngưỡng, thời hạn hoặc số liệu nội bộ chưa có bằng chứng được đánh dấu **`C – cần xác thực`** và không trình bày như số liệu/quy trình chính thức đã được ACFC xác nhận.
-
-- **A** – Chính sách, hướng dẫn hoặc trang chính thức ACFC → dùng để xác định quy tắc công khai và kết quả đầu ra cho khách hàng.
-- **B** – Mô tả công việc/tin tuyển dụng chính thức của ACFC → dùng để nhận diện vai trò và hoạt động; luồng nối vẫn cần xác thực.
-- **C** – Suy luận ngành hoặc giả định của nhóm → chỉ dùng làm câu hỏi/nhánh dự kiến, **không** gọi là quy trình chính thức.
-
-Mỗi hoạt động, gateway và KPI đều ghi mã nguồn hoặc nhãn `C – cần xác thực`; **không điền số ACFC nếu chưa có nguồn hoặc người có thẩm quyền xác nhận**.
-
-## 2. Đối chiếu rubric
-
-| Tiêu chí rubric | Yêu cầu | Đóng góp của M3/S3/S4/S1 trong báo cáo này |
-|---|---|---|
-| 1. Liệt kê & phân loại quy trình | Tối thiểu 10 quy trình, ≥3 mỗi cấp | M3 (Quản lý), S3, S4, S1 và cụm kho K1/K2/K3 (Hỗ trợ) — góp **7/10** trong phạm vi cá nhân (danh mục 10 quy trình đầy đủ ở cấp nhóm) |
-| 2. Mô tả quy trình | Mô tả bằng lời: bước (Động từ + Danh từ), actor, input/output, gateway, kịch bản thành/bại | Đầy đủ ở mục 4 — bảng bước + actor + ghi chú hệ thống + kịch bản thành công/thất bại cho cả M3, S3, S4, S1 **và K1/K2/K3** (mục 4.5–4.7) |
-| 3. Mô hình hóa BPMN | Mô hình hóa quy trình bằng BPMN 2.0 (pool/lane, gateway, nhiều End, Split & Join cùng loại) | **Đã vẽ** — M3 & S3 (sơ đồ **collaboration** 2 pool trên 1 canvas, nối bằng message flow): `diagrams/bpmn-kho-van-hanh-m3-s3.svg`; S4: `diagrams/bpmn-dang-ky-kich-hoat-tai-khoan-s3.svg`; S1: `diagrams/bpmn-tuyen-dung-nhan-su-s1.svg`; **cụm kho K1: `diagrams/bpmn-nhap-kho-qc-k1.svg`, K2: `diagrams/bpmn-xuat-kho-dieu-chuyen-k2.svg`, K3: `diagrams/bpmn-thu-hoi-hang-tra-k3.svg`**. M3/S3/S4/S1 đạt **8 cổng điều kiện** (M3: 2 cặp XOR split–merge + 1 cặp AND split–join + 2 XOR quyết định; S3: 6 XOR + 1 cặp AND; S4: 8 XOR có Split & Join chọn kênh OTP; S1: 8 XOR theo luồng tuyển dụng); **K1/K2/K3 mỗi sơ đồ đạt 9 cổng** (7 XOR quyết định/gộp + 1 cặp AND split–join), 1 Pool DC – 4 Lane, nhiều End và message flow nối mạch tồn với S3/M3. Tất cả đều đủ **Split & Join cùng loại** và có `.drawio` nguồn đi kèm — xem mục 3–4 |
-| 4. Phân tích quy trình | ≥20 câu phỏng vấn (10 định tính + 10 định lượng); VA/BVA/NVA; 4 loại lãng phí; phân tích nguyên nhân gốc; định lượng Thời gian/Chất lượng/Chi phí có công thức + tính toán | M3/S3/S4/S1 đều có bộ câu hỏi 10+10 (mục 6), VA/BVA/NVA + 4 lãng phí + bảng vấn đề–nguyên nhân–khắc phục (mục 8) và **phân tích định lượng đầy đủ 3 nhóm chỉ số có công thức + ví dụ tính toán** (mục 9) |
-| 5. Trình bày báo cáo | Theo mẫu khóa luận UIT: mục lục, danh mục hình/bảng, viết tắt, tài liệu tham khảo; không lỗi chính tả | Báo cáo có mục lục và nguồn tham chiếu; danh mục hình/bảng và mục lục tự động sẽ hoàn thiện khi chuyển sang bản Word chính thức |
-
-## 3. Danh mục quy trình phụ trách
-
-| Mã | Cấp | Quy trình | Kích hoạt | Đầu vào chính | Đầu ra chính |
-|---|---|---|---|---|---|
-| M3 | Quản lý | Lập kế hoạch mua hàng và phân bổ hàng hóa theo mùa | Kỳ kế hoạch mùa hoặc cảnh báo lệch tỷ lệ bán qua/số tháng tồn kho | Báo cáo bán hàng, tồn kho, dự báo, biên lợi nhuận, kế hoạch thương mại | Kế hoạch phân bổ được duyệt, yêu cầu mua/điều chuyển |
-| S3 | Hỗ trợ | Kiểm kê và xử lý chênh lệch tồn kho | Lịch kiểm kê hoặc cảnh báo tồn thực tế lệch sổ | Kế hoạch kiểm kê, sổ tồn, danh sách mã hàng/vị trí | Phiếu kiểm kê, đề nghị điều chỉnh, báo cáo hao hụt/chuyển cấp |
-| S4 | Hỗ trợ | Đăng ký, xác thực OTP & kích hoạt tài khoản thành viên | Khách hàng đăng ký/đăng nhập trên App/Web hoặc tại Store POS | Số điện thoại, OTP, thông tin định danh | Tài khoản kích hoạt, hồ sơ đồng bộ Salesforce CRM ↔ Magento ↔ Retail Pro Prism |
-| S1 | Hỗ trợ | Tuyển dụng & tiếp nhận nhân sự chuỗi bán lẻ/kho vận | Yêu cầu tuyển dụng, CV ứng viên nộp qua ATS đa kênh | Yêu cầu nhân sự, CV, hồ sơ ứng viên | Hợp đồng lao động (sau probation) hoặc thanh lý, gói onboarding (uniform + tài khoản POS/Retail Pro Prism) |
-| K1 | Hỗ trợ | Nhận hàng, QC & nhập kho từ chủ thương hiệu | ASN & xe hàng cập dock DC | ASN/PO, hàng thực nhận, kết quả QC | Tồn đầu vào cập nhật WMS/ERP (→ S3/M3), hoặc yêu cầu cross-dock (→ K2) |
-| K2 | Hỗ trợ | Xuất kho & điều chuyển phân bổ tới chuỗi cửa hàng | Lệnh phân bổ từ M3 | Lệnh phân bổ, tồn khả dụng (ATP), phiếu xuất DO | Kiện hàng giao cửa hàng, tồn cửa hàng cập nhật (→ S3/M3), hàng lỗi (→ K3) |
-| K3 | Hỗ trợ | Thu hồi & xử lý hàng trả về/hàng lỗi (reverse logistics) | Yêu cầu trả hàng từ K2/cửa hàng | Phiếu RMA, hàng trả, kết quả giám định/phân hạng | Hàng nhập lại/tân trang/scrap, tồn & hao hụt cập nhật (→ S3/M3), đề nghị hoàn tiền (→ C4) |
-
-**Luồng liên hệ giữa các quy trình:** kết quả S3 (chênh lệch, hao hụt, nguyên nhân) được phản hồi trực tiếp cho M3 để hiệu chỉnh kế hoạch mùa và hạn mức tồn ở chu kỳ tiếp theo. S4 vận hành ở tuyến khách hàng/tài khoản thành viên: hồ sơ và hạng thẻ do S4 tạo ra là dữ liệu đầu vào cho các quy trình bán hàng đa kênh, gián tiếp cấp nguồn nhu cầu mà M3 lập kế hoạch phân bổ. S1 cấp nguồn lực con người cho toàn chuỗi: nhân sự cửa hàng/kho do S1 tuyển và onboard chính là actor vận hành các bước đếm tồn (S3), bán hàng và hỗ trợ tài khoản (S4); chất lượng và tỷ lệ nghỉ việc (turnover) của S1 tác động trực tiếp tới năng lực thực thi của M3/S3/S4. **Cụm kho K1/K2/K3** tạo thành một vòng vận hành kho khép kín quanh trục tồn của S3/M3: **K1** nhận hàng từ chủ thương hiệu và cấp **tồn đầu vào** cho S3/M3; **K2** nhận **đầu ra phân bổ của M3** để xuất kho tới cửa hàng và cập nhật tồn cửa hàng; **K3** khép vòng bằng thu hồi hàng giao lỗi (nhận từ K2) hoặc hàng khách trả, rồi cập nhật lại **tồn/hao hụt** về S3/M3 và đề nghị hoàn tiền sang C4. Ba quy trình này biến ranh giới "phát hành kế hoạch → nhận/xuất/thu hồi" mà M3 bỏ ngỏ thành chuỗi BPMN vận hành cụ thể, đồng bộ mạch tồn với S3.
-
-## 4. Mô tả quy trình hiện tại (AS-IS)
-
-### 4.1. M3 – Lập kế hoạch mua hàng và phân bổ theo mùa
-
-**Actor kích hoạt:** Hàng hóa/Phân bổ (theo lịch mùa) hoặc hệ thống cảnh báo lệch tỷ lệ bán qua/số tháng tồn kho.
-**Actor hưởng lợi:** Vận hành/cửa hàng (nhận đúng cơ cấu hàng) và Tài chính thương mại (kiểm soát ngân sách) trực tiếp; khách hàng cuối (hàng đúng nhu cầu tại cửa hàng) gián tiếp.
-**Ranh giới:** từ khi bước vào kỳ kế hoạch/phát hiện lệch mục tiêu → đến khi phát hành kế hoạch mua hàng/yêu cầu điều chuyển. Các bước nhận hàng và điều chuyển nội bộ nằm ngoài phạm vi mô tả của M3 trong bản này.
-
-| # | Actor | Bước (Động từ + Danh từ) | Ghi chú/hệ thống |
+| Mã trên sơ đồ | Cấp | Quy trình | Ranh giới |
 |---|---|---|---|
-| 1 | Hàng hóa/Phân bổ | Thu thập dữ liệu bán hàng, tồn kho và dự báo | Hệ thống ERP/báo cáo bán hàng — `C` |
+| M3 | Quản lý | Lập kế hoạch mua hàng và phân bổ theo mùa | Dữ liệu bán hàng/tồn → kế hoạch được duyệt và phát hành |
+| S3 | Hỗ trợ | Kiểm kê và xử lý chênh lệch tồn kho | Lịch kiểm kê/cảnh báo → điều chỉnh hoặc chuyển cấp và phản hồi khâu hoạch định |
+| S4 | Hỗ trợ | Đăng ký, xác thực OTP và kích hoạt tài khoản thành viên | Truy cập App/Web → tài khoản được tạo/kích hoạt hoặc chuyển chăm sóc khách hàng |
+| S1 | Hỗ trợ | Tuyển dụng và tiếp nhận nhân sự chuỗi bán lẻ/kho vận | Yêu cầu tuyển dụng → ký hợp đồng sau thử việc hoặc thanh lý |
+| K1 | Hỗ trợ | Nhận hàng, kiểm tra chất lượng và nhập kho từ chủ thương hiệu | Báo giao hàng/hàng cập bến → nhập kệ và cập nhật tồn đầu vào |
+| K2 | Hỗ trợ | Xuất kho và điều chuyển phân bổ tới chuỗi cửa hàng | Lệnh phân bổ (từ khâu hoạch định) → cửa hàng nhận và cập nhật tồn |
+| K3 | Hỗ trợ | Thu hồi và xử lý hàng trả về / hàng lỗi | Yêu cầu trả hàng → đóng hồ sơ trả hàng và (nếu cần) hoàn tiền |
+
+> **Về mã quy trình:** các mã M3/S3/S4/S1/K1/K2/K3 ở cột đầu chỉ dùng để **đối chiếu với nhãn pool trên sơ đồ BPMN**; toàn bộ phần thân báo cáo gọi theo **tên quy trình** cho dễ đọc.
+
+**Liên hệ giữa các quy trình:** *Lập kế hoạch mua & phân bổ* lập kế hoạch mua và phân bổ theo mùa; *Nhận hàng & nhập kho* nhận hàng từ chủ thương hiệu và cấp **tồn đầu vào**; *Xuất kho & điều chuyển* nhận **đầu ra phân bổ của khâu hoạch định** để xuất kho tới cửa hàng; *Thu hồi & xử lý hàng trả* khép vòng bằng thu hồi hàng lỗi/hàng trả rồi cập nhật lại tồn và hao hụt. *Kiểm kê tồn kho* kiểm soát độ chính xác tồn kho và phản hồi chênh lệch cho khâu hoạch định. *Kích hoạt tài khoản thành viên* tạo tài khoản thành viên — nguồn nhu cầu cho hoạch định. *Tuyển dụng & tiếp nhận nhân sự* cấp nguồn nhân lực vận hành cho toàn chuỗi (đếm tồn ở khâu kiểm kê, bán hàng và hỗ trợ tài khoản, vận hành kho ở cụm kho vận).
+
+### 1.2. Sơ đồ BPMN
+
+Các sơ đồ được vẽ bằng BPMN 2.0 (Pool/Lane, cổng XOR/AND có tách và gộp cùng loại, sự kiện chờ Timer, nhiều sự kiện Kết thúc, luồng thông điệp giữa các pool):
+
+- Năm quy trình **Lập kế hoạch mua & phân bổ, Kiểm kê tồn kho, Nhận hàng & nhập kho, Xuất kho & điều chuyển, Thu hồi & xử lý hàng trả** nằm chung trong một **sơ đồ cộng tác** (collaboration) gồm 5 pool nối bằng luồng thông điệp: [svg/bpmn-kho-van-hanh-k1-k2-k3.drawio.svg](svg/bpmn-kho-van-hanh-k1-k2-k3.drawio.svg) — các pool «Khối hoạch định & phân bổ hàng hóa (M3)», «Quy trình kiểm kê tồn kho nội bộ (S3)», «Nhận hàng, QC & nhập kho (K1)», «Xuất kho & điều chuyển (K2)», «Thu hồi & xử lý hàng trả (K3)» (mã trong ngoặc là nhãn pool để đối chiếu bảng §1.1).
+- **Kích hoạt tài khoản thành viên:** [svg/bpmn-dang-ky-kich-hoat-tai-khoan-s3.drawio.svg](svg/bpmn-dang-ky-kich-hoat-tai-khoan-s3.drawio.svg).
+- **Tuyển dụng & tiếp nhận nhân sự:** [svg/bpmn-tuyen-dung-nhan-su-s1.drawio.svg](svg/bpmn-tuyen-dung-nhan-su-s1.drawio.svg).
+
+Tệp nguồn draw.io: `HỆ SINH THÁI ACFC MEMBER.drawio` (3 trang).
+
+### 1.3. Nguyên tắc số liệu
+
+Hoạt động và quy tắc công khai được lấy từ trang chủ, trang hướng dẫn tài khoản và trang tuyển dụng ACFC. Các ngưỡng, thời hạn, đơn giá và số liệu vận hành nội bộ chưa có nguồn được gắn nhãn `[giả định]` và **không trình bày như số liệu chính thức đã được ACFC xác nhận**. Con số định lượng minh họa dùng để thể hiện *cách tính*; sau phỏng vấn sẽ thay bằng ba mốc thấp – thường gặp – cao từ dữ liệu thật.
+
+Nguồn công khai chính: [trang chủ ACFC](https://www.acfc.com.vn/home); [hướng dẫn tạo tài khoản](https://www.acfc.com.vn/huong-dan-tao-tai-khoan) và [hướng dẫn kích hoạt tài khoản](https://www.acfc.com.vn/huong-dan-kich-hoat-tai-khoan-thanh-vien) (cho quy trình Kích hoạt tài khoản thành viên); [trang tuyển dụng ACFC](https://tuyendung.acfc.com.vn) cùng các mô tả công việc Product Manager, Operations Executive, Store Manager, District Supervisor (cho các quy trình Lập kế hoạch, Kiểm kê tồn kho, Tuyển dụng).
+
+**Đơn giá tham khảo mặt bằng thị trường (2025).** Để phần chi phí sát thực tế, ưu tiên dùng mức lương ACFC công bố (nếu có); khi chưa có thì lấy theo mặt bằng lương phổ biến tại Việt Nam năm 2025, tính thẳng **lương gross tháng ÷ 208 giờ** (26 ngày × 8 giờ) và **không cộng thêm hệ số để tránh thổi cao**; riêng *sản lượng, tỷ lệ và giá trị nội bộ ACFC* vẫn giữ nhãn `[giả định]`:
+
+- **Đơn giá giờ công:** nhân viên **kho / chăm sóc khách hàng ≈ 40.000đ/giờ** (lương ~8 triệu đồng/tháng, không vượt trần ~9 triệu của vị trí này); **chuyên viên nhân sự / tuyển dụng ≈ 55.000đ/giờ** (~11 triệu); **chuyên viên kế hoạch / merchandising ≈ 90.000đ/giờ** (~18–19 triệu). Neo dưới: lương tối thiểu vùng I năm 2025 là 4,96 triệu đồng/tháng.
+- **Đơn giá gửi OTP:** theo bảng giá nhà cung cấp — **ZNS OTP (Zalo) ~300đ/tin** (chưa VAT, kênh chính) và **SMS Brandname OTP ~750đ/tin** (đã VAT, kênh dự phòng khi không gửi được ZNS). Giả định **80% ZNS + 20% SMS** → đơn giá bình quân ≈ **400đ/lượt**.
+
+Các đơn giá trên là *tham chiếu để minh họa cách tính*, không phải hợp đồng/bảng lương thực tế của ACFC; khi phỏng vấn được sẽ thay bằng đơn giá NCC và bảng lương thật.
+
+---
+
+## 2. Lập kế hoạch mua hàng và phân bổ theo mùa
+
+### 2.1. Mô tả hiện trạng (AS-IS)
+
+**Người kích hoạt:** bộ phận Hàng hóa/Phân bổ (theo lịch mùa) hoặc hệ thống cảnh báo lệch tỷ lệ bán qua / số tháng tồn kho.
+**Người hưởng lợi:** Vận hành và cửa hàng (nhận đúng cơ cấu hàng), Tài chính thương mại (kiểm soát ngân sách) — trực tiếp; khách hàng cuối (có hàng đúng nhu cầu) — gián tiếp.
+**Ranh giới:** từ khi bước vào kỳ kế hoạch/phát hiện lệch mục tiêu đến khi phát hành kế hoạch mua hàng/yêu cầu điều chuyển. Các bước nhận và điều chuyển nội bộ nằm ở Nhận hàng & nhập kho/Xuất kho & điều chuyển, ngoài phạm vi mô tả của Lập kế hoạch mua & phân bổ.
+
+| # | Người thực hiện | Bước (Động từ + Danh từ) | Ghi chú/hệ thống |
+|---|---|---|---|
+| 1 | Hàng hóa/Phân bổ | Thu thập dữ liệu bán hàng, tồn kho và dự báo | Từ hệ thống ERP/báo cáo bán hàng |
 | 2 | Hàng hóa/Phân bổ | Chốt dự báo nhu cầu theo mùa | — |
 | 3 | Hàng hóa/Phân bổ | Phân tích tỷ lệ bán qua và số tháng tồn kho | So với mục tiêu theo nhãn hàng/mã hàng |
-| 4 | Hàng hóa/Phân bổ | Lập kế hoạch mua hàng và phân bổ theo cửa hàng/nhãn hàng | Đầu ra: bản nháp kế hoạch |
-| 5 | Tài chính thương mại | Kiểm tra biên lợi nhuận và ngân sách | Cổng điều kiện |
-| 6 | Vận hành | Kiểm tra sức chứa cửa hàng | Cổng điều kiện (chạy song song với Bước 7 qua cặp AND) |
-| 7 | Hàng hóa/Phân bổ | Xác nhận nguồn hàng khả dụng | Có thể cần Message Flow tới Pool Chủ thương hiệu — `C` |
-| 8 | Hàng hóa/Phân bổ | Trình kế hoạch phân bổ để phê duyệt | Cấp duyệt cụ thể — `C – cần xác thực` |
-| 9 | Cấp phê duyệt (`C`) | Phê duyệt kế hoạch phân bổ | Cổng điều kiện |
-| 10 | Hàng hóa/Phân bổ | Phát hành kế hoạch mua hàng/yêu cầu điều chuyển | Kèm cổng XOR kiểm tra đồng bộ WMS — kết thúc phạm vi mô tả |
-| 11 | Hàng hóa/Phân bổ | Theo dõi kết quả thực hiện và tiếp nhận dữ liệu chênh lệch từ S3 | Đầu vào cho chu kỳ lập kế hoạch tiếp theo |
+| 4 | Hàng hóa/Phân bổ | Lập kế hoạch mua hàng và phân bổ theo cửa hàng | Cổng điều kiện: dữ liệu đã đủ và khớp nguồn chưa? |
+| 5 | Tài chính thương mại | Kiểm tra biên lợi nhuận và ngân sách | Cổng điều kiện: nằm trong ngân sách không? |
+| 6 | Vận hành | Kiểm tra sức chứa cửa hàng | Chạy song song với bước 7 qua cặp cổng AND |
+| 7 | Hàng hóa/Phân bổ | Xác nhận nguồn hàng khả dụng | Chạy song song với bước 6 |
+| 8 | Hàng hóa/Phân bổ | Trình kế hoạch phân bổ để phê duyệt | — |
+| 9 | Cấp phê duyệt | Phê duyệt kế hoạch phân bổ | Cổng điều kiện: được duyệt không? |
+| 10 | Hàng hóa/Phân bổ | Phát hành kế hoạch mua hàng/yêu cầu điều chuyển | Cổng điều kiện: đồng bộ WMS thành công không? |
+| 11 | Hàng hóa/Phân bổ | Theo dõi kết quả và tiếp nhận dữ liệu chênh lệch từ Kiểm kê tồn kho | Đầu vào cho chu kỳ kế hoạch tiếp theo |
 
-**Kịch bản thành công:** dữ liệu đầy đủ → dự báo được chốt → tỷ lệ bán qua/số tháng tồn kho xác nhận lệch mục tiêu → kế hoạch nằm trong biên lợi nhuận/ngân sách → (song song) cửa hàng đủ sức chứa **và** hàng nguồn khả dụng → kế hoạch được duyệt ngay lần trình đầu tiên → phát hành lệnh mua và đồng bộ WMS thành công. Trên sơ đồ BPMN, hai bước kiểm tra sức chứa (Bước 6) và xác nhận nguồn hàng (Bước 7) chạy song song qua **cặp cổng AND (split–join)**. **Kết quả:** "Kế hoạch mua hàng và phân bổ đã được duyệt và phát hành."
-
-**Kịch bản thất bại/ngoại lệ:**
-- Dữ liệu bán hàng/tồn kho thiếu hoặc chưa khớp nguồn → trả lại Bước 1 để bổ sung trước khi phân tích.
-- Nhu cầu vượt biên lợi nhuận/ngân sách (Bước 5) → Tài chính thương mại yêu cầu điều chỉnh kế hoạch (quay lại Bước 4) hoặc từ chối nếu vượt quá nhiều.
-- Cửa hàng không đủ sức chứa (Bước 6) → điều chỉnh số lượng phân bổ hoặc giãn lịch giao.
-- Hàng nguồn không khả dụng (Bước 7) → ghi nhận thiếu hàng, tìm nguồn thay thế hoặc lùi kế hoạch; có thể phải chuyển cấp nếu ảnh hưởng mùa vụ.
-- Kế hoạch không được duyệt (Bước 9) → trả về Bước 4 để chỉnh sửa; nếu lặp lại nhiều lần, chuyển cấp phê duyệt cao hơn — ngưỡng số lần/thời hạn `C – cần xác thực`.
-- Sau theo dõi (Bước 11), nếu S3 phát hiện chênh lệch vượt ngưỡng hoặc bộ phận vận hành báo thiếu/dư hàng kéo dài → kích hoạt lập lại kế hoạch ở chu kỳ tiếp theo (không chờ hết mùa).
-
-**Nguồn/trạng thái:** EV02, EV04, EV07; các ngưỡng dự báo, biên lợi nhuận, số tháng tồn kho, cấp/thẩm quyền duyệt cụ thể và số lần lặp trước khi chuyển cấp là `C – cần xác thực`.
-
-### 4.2. S3 – Kiểm kê và xử lý chênh lệch tồn kho
-
-**Actor kích hoạt:** Quản lý/Kiểm soát tồn kho (theo lịch định kỳ) hoặc hệ thống cảnh báo tồn thực tế lệch sổ.
-**Actor hưởng lợi:** Hàng hóa/Vận hành (M3) và Kế toán doanh thu/Tài chính (cần dữ liệu tồn chính xác) trực tiếp; cửa hàng (giảm thất thoát) và khách hàng (đúng hàng sẵn có) gián tiếp.
-**Ranh giới:** từ lịch kiểm kê/cảnh báo chênh lệch → đến khi đóng hồ sơ và phản hồi cho M3. Các bước điều chuyển/bổ sung tiếp theo nằm ngoài phạm vi mô tả của S3 trong bản này.
-
-| # | Actor | Bước (Động từ + Danh từ) | Ghi chú/hệ thống |
-|---|---|---|---|
-| 1 | Quản lý/Kiểm soát tồn kho | Lập lịch kiểm kê | Timer event (định kỳ) hoặc Message event (cảnh báo hệ thống) |
-| 2 | Kiểm soát tồn kho/Vận hành | Xác định phạm vi và mẫu đếm | — |
-| 3 | Quản lý | Duyệt phạm vi kiểm kê | Cổng điều kiện |
-| 4 | Cửa hàng/Kho | Chuẩn bị phiếu kiểm kê | — |
-| 5 | Cửa hàng/Kho | Đếm tồn thực tế | — |
-| 6 | Kiểm soát tồn kho/Vận hành | Đối chiếu tồn thực tế với sổ tồn | Hệ thống ERP/quản lý kho — `C` |
-| 7 | Kiểm soát tồn kho/Vận hành | Xác định điều kiện đếm lại | Cổng điều kiện — nếu có, quay lại Bước 5 |
-| 8 | Cửa hàng/Kho | Kiểm tra giao dịch nhập, xuất, điều chuyển, bán hàng, hủy hoặc hàng lỗi | Đối chiếu chứng từ liên quan |
-| 9 | Kiểm soát tồn kho/Vận hành | Phân loại nguyên nhân chênh lệch | Cổng điều kiện |
-| 10 | Kiểm soát tồn kho/Vận hành | Lập đề nghị điều chỉnh tồn (nếu trong ngưỡng) | Ngưỡng cụ thể — `C` |
-| 11 | Kiểm soát tồn kho/Vận hành | Lập báo cáo hao hụt/sự cố và chuyển cấp (nếu vượt ngưỡng/lặp lại) | Nhánh song song với Bước 10 |
-| 12 | Quản lý/Kế toán doanh thu | Phê duyệt điều chỉnh hoặc bút toán hao hụt | Cổng điều kiện |
-| 13 | Kiểm soát tồn kho/Vận hành | Cập nhật hệ thống tồn kho | — |
-| 14 | Kiểm soát tồn kho/Vận hành | Đóng hồ sơ kiểm kê | Cổng điều kiện: đúng hạn? |
-| 15 | Kiểm soát tồn kho/Vận hành | Gửi kết quả phản hồi cho M3 | Đầu vào chu kỳ lập kế hoạch tiếp theo |
-
-**Kịch bản thành công:** đến kỳ kiểm kê → phạm vi được duyệt → đếm tồn thực tế khớp sổ ngay lần đầu → hồ sơ được ghi nhận và đóng đúng hạn, không phát sinh điều chỉnh. **Kết quả:** "Kiểm kê khớp sổ, hồ sơ đã đóng đúng hạn." Nếu có chênh lệch nhưng trong ngưỡng: xác định đúng nguyên nhân ở lần đếm lại đầu tiên → đề nghị điều chỉnh được phê duyệt → hệ thống cập nhật → hồ sơ đóng đúng hạn → kết quả phản hồi cho M3.
+**Kịch bản thành công:** dữ liệu đầy đủ → dự báo được chốt → xác nhận lệch mục tiêu → kế hoạch nằm trong ngân sách → (song song) cửa hàng đủ sức chứa **và** nguồn hàng khả dụng → được duyệt ngay lần trình đầu → phát hành lệnh mua và đồng bộ WMS thành công. **Kết quả:** "Kế hoạch mua hàng và phân bổ đã được duyệt và phát hành."
 
 **Kịch bản thất bại/ngoại lệ:**
-- Đếm tồn thực tế không khớp sổ (Bước 6) và điều kiện đếm lại được kích hoạt (Bước 7) → quay lại đếm lại; nếu đếm lại vẫn lệch, chuyển sang xác định nguyên nhân sâu hơn.
-- Không xác định được nguyên nhân trong thời hạn quy định (Bước 9) → vẫn phải lập báo cáo tạm với nhãn "nguyên nhân chưa xác định", có thể phải chuyển cấp sớm hơn quy trình thông thường.
-- Chênh lệch vượt ngưỡng điều chỉnh, lặp lại nhiều kỳ hoặc có dấu hiệu hao hụt/mất mát (Bước 11) → lập báo cáo sự cố/hao hụt riêng, chuyển cấp cho Quản lý/Kế toán xác minh trách nhiệm bồi hoàn — ngưỡng, cấp chuyển và trách nhiệm cụ thể là `C – cần xác thực`.
-- Điều chỉnh hoặc bút toán không được phê duyệt (Bước 12) → yêu cầu bổ sung bằng chứng/giải trình, quay lại Bước 9.
-- Hồ sơ không đóng đúng hạn (Bước 14) → gắn cờ quá hạn, báo cáo cho Quản lý; hồ sơ vẫn phải đóng sau khi bổ sung đủ bằng chứng.
+- Dữ liệu thiếu hoặc chưa khớp nguồn → quay lại thu thập/bổ sung trước khi phân tích.
+- Vượt biên lợi nhuận/ngân sách → Tài chính thương mại yêu cầu điều chỉnh kế hoạch (quay lại bước lập kế hoạch) hoặc từ chối nếu vượt quá nhiều.
+- Cửa hàng không đủ sức chứa → điều chỉnh số lượng phân bổ hoặc giãn lịch giao.
+- Nguồn hàng không khả dụng → ghi nhận thiếu hàng, tìm nguồn thay thế hoặc lùi kế hoạch.
+- Kế hoạch không được duyệt → quay lại chỉnh sửa; nếu lặp lại nhiều lần thì chuyển cấp phê duyệt cao hơn — ngưỡng số lần `[giả định]`.
 
-**Nguồn/trạng thái:** EV03, EV05, EV08; lịch kiểm kê, ngưỡng điều chỉnh, thời hạn xác định nguyên nhân, trách nhiệm bồi hoàn và cấp chuyển là `C – cần xác thực`.
+**Cấu trúc BPMN:** pool «Khối hoạch định & phân bổ hàng hóa (Lập kế hoạch mua & phân bổ)» với các lane Hàng hóa/Phân bổ, Tài chính thương mại, Vận hành và Cấp phê duyệt. Các cổng quyết định đều là cổng XOR (dữ liệu đủ chưa; trong ngân sách không; được duyệt không; đồng bộ WMS thành công không), mỗi cổng rẽ thành nhánh loại trừ nhau và nhánh tiêu cực quay lại bước phù hợp hoặc dẫn tới sự kiện Kết thúc riêng. Hai bước kiểm tra sức chứa và xác nhận nguồn hàng chạy song song qua **một cặp cổng AND tách/gộp cùng loại** nên cân bằng, không gây kẹt luồng.
 
-### 4.3. S4 – Đăng ký, xác thực OTP & kích hoạt tài khoản thành viên
+### 2.2. Phân tích định tính
 
-**Actor kích hoạt:** Khách hàng truy cập App/Web ACFC (hoặc Store POS) để đăng ký/đăng nhập.
-**Actor hưởng lợi:** Khách hàng (mua sắm, tích điểm, ưu đãi hạng thẻ) trực tiếp; ACFC (dữ liệu khách hàng, kênh bán trực tuyến) và CSKH (giảm tải hỗ trợ nếu tự phục vụ trơn tru) gián tiếp.
-**Ranh giới:** từ khi khách truy cập App/Web → đến khi tài khoản được tạo/kích hoạt hoặc chuyển CSKH. Không xử lý yêu cầu quyền dữ liệu cá nhân của chủ thể dữ liệu.
+#### a. Phân loại hoạt động VA/BVA/NVA
 
-**Bối cảnh chương trình thành viên (ACFC Member):** tài khoản kích hoạt bởi S4 là cửa ngõ vào chương trình khách hàng thân thiết 5 bậc — **Member → Silver → Gold → Platinum → Diamond** (ưu đãi 5–10% theo hạng, ưu đãi sinh nhật 20–30%), tích điểm lũy tiến theo hạng (100.000đ = 1 điểm với Member/Silver, tăng dần tới 10 điểm với Diamond; 1 điểm = 1.000đ khi đổi thưởng, áp dụng từ hạng Gold, giảm tối đa 50% giá trị hóa đơn). Hệ thống được quản trị tập trung qua **Salesforce CRM** kết hợp POS **Retail Pro Prism** và **Adobe Magento Commerce**. *(Chi tiết bậc hạng/tỷ lệ điểm theo chính sách công khai — mức A; các định mức chi tiêu cụ thể lên hạng là `C – cần xác thực`.)*
+| Hoạt động | Phân loại | Nhận xét |
+|---|---|---|
+| Lập kế hoạch mua hàng và phân bổ | VA | Tạo cơ cấu hàng phù hợp nhu cầu cửa hàng |
+| Thu thập dữ liệu bán hàng, tồn kho, dự báo | BVA | Cần cho quyết định; nên dùng một bộ dữ liệu chuẩn |
+| Phân tích tỷ lệ bán qua và số tháng tồn kho | BVA | Hỗ trợ lập kế hoạch; tự động hóa bảng theo dõi |
+| Kiểm tra biên lợi nhuận và ngân sách | BVA | Kiểm soát tài chính; đặt quy tắc tự động |
+| Chờ dữ liệu hoặc chờ phê duyệt | NVA | Chờ (Hold); đặt thời hạn và cảnh báo quá hạn |
+| Nhập/đối chiếu trùng cùng một báo cáo | NVA | Xử lý dư (Over-processing); dùng một nguồn dữ liệu gốc |
+| Lập lại kế hoạch do dữ liệu sai | NVA | Lỗi (Defects); kiểm tra bắt buộc trước khi trình |
 
-| # | Actor | Bước (Động từ + Danh từ) | Ghi chú/hệ thống |
-|---|---|---|---|
-| 1 | Khách hàng | Truy cập App/Web, đồng ý PDPA và nhập số điện thoại | Cổng điều kiện G1: đồng ý PDPA? |
-| 2 | Salesforce CRM | Kiểm tra trùng lặp số điện thoại (duplicate profile check) | Cổng điều kiện G2: số điện thoại đã tồn tại? |
-| 3 | Cổng ĐK (Frontend) | Khởi tạo hồ sơ tạm trên CRM, gộp dữ liệu Legacy nếu có | — |
-| 4 | OTP Gateway | Gửi OTP qua Zalo ZNS (chính) hoặc SMS (fallback) | Thời hạn hiệu lực OTP — `C` |
-| 5 | Hệ thống | Kiểm tra trạng thái cổng gửi OTP | Cổng điều kiện G4 |
-| 6 | Call Center | Xác minh thủ công qua CSKH 1900 3038 (khi cổng OTP lỗi) | Nhánh ngoại lệ |
-| 7 | Sự kiện Timer | Chờ khách nhập OTP ≤ 120s | Timer event |
-| 8 | Khách hàng | Nhập mã xác thực OTP | — |
-| 9 | Hệ thống | Kiểm tra số lần nhập sai OTP (retry limit) | Cổng điều kiện G6: sai ≥ 3 lần? |
-| 10 | Khách hàng | Điền thông tin cá nhân và tạo mật khẩu | Cổng điều kiện G7: mật khẩu đạt chuẩn + đồng ý điều khoản? |
-| 11 | Salesforce CRM | Tạo User và cấp Member ID | — |
-| 12 | Hệ thống tích hợp | Đồng bộ hồ sơ sang Magento (Web/App) và Retail Pro Prism (POS) | Cổng điều kiện G8: đồng bộ thành công? |
-| 13 | Hệ thống | Kích hoạt tài khoản: Auto-login + Voucher 100k + Auto tier upgrade | Kết thúc thành công |
+#### b. Phân tích lãng phí (Move – Hold – Over-processing – Defects)
 
-**Kịch bản thành công:** đồng ý PDPA → số điện thoại chưa tồn tại → OTP gửi qua Zalo ZNS thành công → khách nhập đúng OTP trong 120s → mật khẩu đạt chuẩn + đồng ý điều khoản → tạo Member ID → đồng bộ Magento + Retail Pro thành công → kích hoạt tài khoản kèm ưu đãi. **Kết quả:** "Tài khoản được tạo và kích hoạt thành công."
-
-**Kịch bản thất bại/ngoại lệ:**
-- Không đồng ý PDPA (G1) → hủy đăng ký.
-- Số điện thoại đã tồn tại (G2) → điều hướng sang đăng nhập/lấy lại mật khẩu.
-- Cổng OTP lỗi (G4) → CSKH xác minh thủ công qua hotline 1900 3038.
-- Nhập sai OTP ≥ 3 lần (G6) → khóa 24h, chuyển CSKH; ngưỡng số lần thử `C – cần xác thực`.
-- Mật khẩu chưa đạt chuẩn/chưa đồng ý điều khoản (G7) → quay lại điền thông tin.
-- Đồng bộ Magento/Retail Pro thất bại (G8) → đưa vào hàng đợi retry và cảnh báo DevOps.
-
-**Cấu trúc BPMN (Hình S4):** 1 Pool "Hệ sinh thái ACFC Member" – 5 Lane (Khách hàng, Cổng ĐK Frontend, Salesforce CRM, OTP Gateway ZNS/SMS, CSKH & Đồng bộ), **8 cổng điều kiện XOR**, **1 sự kiện trung gian Timer** (chờ OTP ≤ 120s) và **4 sự kiện Kết thúc** (Hủy đăng ký / Điều hướng đăng nhập / Khóa 24h→CSKH / Kích hoạt xong).
-
-**Danh sách 8 cổng điều kiện (Gateways) – đồng bộ với Hình S4:**
-
-1. **XOR G1 – Đồng ý PDPA?** Khách có đồng ý chính sách bảo mật dữ liệu PDPA (Nghị định 13/2023/NĐ-CP) không? *(Không → End: Hủy đăng ký.)*
-2. **XOR G2 – SĐT đã tồn tại?** Số điện thoại đã có hồ sơ trên Salesforce CRM chưa (duplicate profile check)? *(Có → End: Điều hướng đăng nhập.)*
-3. **XOR G3 – Kênh gửi OTP (Zalo ZNS ↔ SMS)?** Đây là **cổng Split (XOR)** chọn **một** kênh; hai nhánh **hợp lại tại cổng Join – gộp kênh (XOR merge)** trước khi kiểm tra cổng OTP (Split và Join **cùng loại XOR** để tránh deadlock).
-4. **XOR G4 – Cổng OTP lỗi?** Cổng gửi OTP có lỗi không (→ CSKH 1900 3038 xác minh thủ công); nếu không → sự kiện Timer *Chờ OTP ≤ 120s*.
-5. **XOR G5 – OTP hợp lệ?** Mã OTP khách nhập có hợp lệ và còn hiệu lực (trong 120s) không?
-6. **XOR G6 – Sai ≥ 3 lần?** Số lần nhập sai OTP có vượt giới hạn không? *(Có → End: Khóa 24h → CSKH; Chưa → nhập lại.)*
-7. **XOR G7 – MK chuẩn & đồng ý ĐK?** Mật khẩu đạt chuẩn an toàn và khách đồng ý điều khoản không? *(Không → quay lại điền thông tin.)*
-8. **XOR G8 – Đồng bộ Magento + Retail Pro?** Đồng bộ hồ sơ sang Magento và Retail Pro Prism có thành công không? *(Không → hàng đợi retry & cảnh báo DevOps; Có → End: Kích hoạt xong + Auto tier upgrade.)*
-
-**Nguồn/trạng thái:** EV09, EV10; thời hạn hiệu lực OTP, kênh gửi mật khẩu tạm, ngưỡng khóa tài khoản, chủ quy trình nội bộ và thời gian xử lý CSKH là `C – cần xác thực`.
-
-### 4.4. S1 – Tuyển dụng & tiếp nhận nhân sự chuỗi bán lẻ/kho vận
-
-**Actor kích hoạt:** Phòng Nhân sự (HR Dept) khi có yêu cầu tuyển dụng từ cửa hàng/kho/khối văn phòng.
-**Actor hưởng lợi:** Cửa hàng/Kho/Khối HQ (được bổ sung nhân sự đúng chuẩn) trực tiếp; toàn chuỗi vận hành (M3/S3/S4 có người thực thi) và ứng viên (có việc làm, được onboard) gián tiếp.
-**Ranh giới:** từ khi phát sinh yêu cầu tuyển dụng và đăng tin → đến khi ký hợp đồng lao động sau thử việc (hoặc thanh lý nếu không đạt). Không bao gồm quản trị lương thưởng, đào tạo dài hạn hay đánh giá hiệu suất sau khi đã ký hợp đồng chính thức.
-
-**Phân nhóm đối tượng:** **Store staff** (nhân viên cửa hàng — tuyển số lượng lớn/volume hiring, đặc thù bán lẻ, turnover ~25% `C`) và **HQ/Warehouse staff** (nhân viên văn phòng/kho vận — yêu cầu chuyên môn cao/specialized). Kênh thu hút ứng viên: `tuyendung.acfc.com.vn`, TopCV, LinkedIn, VietnamWorks và các hội nhóm Facebook.
-
-| # | Actor | Bước (Động từ + Danh từ) | Ghi chú/hệ thống |
-|---|---|---|---|
-| 1 | HR Dept | Đăng tải tin tuyển dụng | Cổng G1: vị trí thuộc Store staff (volume) hay HQ/Warehouse (specialized)? |
-| 2 | ATS System | Sàng lọc hồ sơ qua ATS (ATS screening) | Đầu vào CV đa kênh — Cổng G2: ứng viên có fashion retail experience (→ Fast-track)? |
-| 3 | HR Recruiter | Kiểm tra lý lịch (background check) | NDA/Non-compete cho HQ-Warehouse, Criminal record cho Store — Cổng G3: đạt chuẩn? |
-| 4 | Line Manager | Phỏng vấn vòng 1 (V1) | Cổng G4: đạt V1? |
-| 5 | HR Director/Ban GĐ | Phỏng vấn chuyên sâu vòng 2 & 3 (Senior) | Cổng G5: đạt V2/V3? |
-| 6 | HR Dept | Đàm phán và chốt thư mời (Offer Letter) | Cổng G6: ứng viên chấp nhận offer? (Yes/Negotiate/Decline) |
-| 7 | HR/Y tế | Khám sức khỏe trước tuyển dụng (health check) | Cổng G7: đạt khám sức khỏe theo luật định? |
-| 8 | HR & IT Dept | Triển khai onboarding | Cấp Brand uniform, đào tạo product knowledge, tạo tài khoản POS/Retail Pro Prism |
-| 9 | Line Manager | Đánh giá thử việc 2 tháng (probation review) | KPI: Sales target + Customer satisfaction |
-| 10 | HR Dept | Xem xét và ký hợp đồng lao động | Cổng G8: đạt KPI probation? (Đạt → ký HĐ; Không → thanh lý) |
-
-**Kịch bản thành công:** yêu cầu tuyển dụng rõ ràng → ATS lọc được hồ sơ phù hợp (ứng viên có kinh nghiệm bán lẻ → Fast-track) → background check đạt → vượt phỏng vấn V1 và V2/V3 → chấp nhận offer → đạt khám sức khỏe → onboarding đầy đủ → đạt KPI probation 2 tháng → ký hợp đồng chính thức. **Kết quả:** "Tuyển được nhân sự phù hợp và ký hợp đồng sau thử việc."
-
-**Kịch bản thất bại/ngoại lệ:**
-- Không có hồ sơ đạt qua ATS (G2) → đăng lại tin/mở rộng kênh tuyển.
-- Background check không đạt (G3) → loại ứng viên, tránh rủi ro pháp lý/an ninh.
-- Trượt phỏng vấn V1 hoặc V2/V3 (G4/G5) → loại hoặc lưu hồ sơ cho vị trí khác.
-- Ứng viên từ chối/không chốt được offer (G6) → đàm phán lại hoặc chuyển ứng viên dự phòng.
-- Không đạt khám sức khỏe theo luật định (G7) → dừng tiếp nhận.
-- Không đạt KPI probation (G8) → thanh lý hợp đồng thử việc, Exit interview; nếu turnover cao kéo dài → phản hồi lại khâu tuyển chọn/onboarding. Ngưỡng KPI, thời hạn từng vòng và cấp duyệt cụ thể là `C – cần xác thực`.
-
-**Nguồn/trạng thái:** EV13, EV14; turnover ~25%, ngưỡng KPI probation, số vòng phỏng vấn theo cấp bậc, thời hạn từng bước và tiêu chí background check cụ thể là `C – cần xác thực`.
-
-### 4.5. K1 – Nhận hàng, kiểm tra chất lượng (QC) & nhập kho từ chủ thương hiệu
-
-**Bối cảnh mở rộng:** K1/K2/K3 là **cụm ba quy trình kho vận** đào sâu chuỗi vận hành tại Trung tâm phân phối (DC) mà M3 chỉ chạm tới ở ranh giới (M3 phát hành kế hoạch mua/điều chuyển, không mô tả bước nhận–xuất–thu hồi). K1 đứng ở **đầu chuỗi**: nhận hàng từ chủ thương hiệu và tạo tồn đầu vào; K2 nối tiếp đầu ra phân bổ của M3 để xuất kho tới cửa hàng; K3 khép vòng bằng thu hồi hàng trả/lỗi. Cả ba khớp mạch tồn với S3/M3 qua message flow.
-
-**Actor kích hoạt:** Chủ thương hiệu gửi ASN (Advance Shipping Notice) & lịch giao; xe hàng cập dock DC.
-**Actor hưởng lợi:** S3 (tồn đầu vào chính xác để kiểm kê) và M3 (dữ liệu nguồn hàng khả dụng cho hoạch định) trực tiếp; cửa hàng và khách cuối (có hàng đạt chuẩn) gián tiếp.
-**Ranh giới:** từ khi nhận ASN/hàng cập dock → đến khi hàng lên kệ và cập nhật sổ tồn đầu vào (hoặc tạo yêu cầu cross-dock chuyển thẳng sang K2). Sơ đồ: `diagrams/bpmn-nhap-kho-qc-k1.svg` (1 Pool DC – 4 Lane, 9 cổng, có cặp AND split–join).
-
-| # | Actor (lane) | Bước (Động từ + Danh từ) | Ghi chú/hệ thống |
-|---|---|---|---|
-| 1 | Kho nhận hàng/Dock | Tiếp nhận xe & dỡ hàng tại dock | Start: nhận ASN & lịch giao từ chủ thương hiệu |
-| 2 | Chứng từ & Ngoại lệ | Kiểm tra chứng từ khớp PO/ASN | Cổng G1 |
-| 3 | Kho nhận hàng/Dock | Đếm & đối chiếu số lượng thực nhận | — |
-| 4 | Kho nhận hàng/Dock | Kiểm tra số lượng thực nhận khớp chứng từ | Cổng G2 → Gm gộp |
-| 5 | QC/Kiểm định | Lấy mẫu & kiểm tra chất lượng (QC) | Sau cổng gộp Gm |
-| 6 | QC/Kiểm định | Đánh giá kết quả QC & mức lỗi | Cổng G3 (đạt?) và G4 (mức lỗi: toàn bộ/một phần) |
-| 7 | Thủ kho/WMS | Tách lô, nhập phần đạt QC | Nhánh "một phần" → Gm3 gộp |
-| 8 | Thủ kho/WMS | Dán nhãn SKU & định vị (slotting) | Cổng Ga AND-split (song song với bước 9) |
-| 9 | Thủ kho/WMS | Cập nhật dữ liệu tồn WMS/ERP | Chạy song song bước 8 |
-| 10 | Thủ kho/WMS | Cất hàng lên vị trí (putaway) | Cổng Gj AND-join |
-| 11 | Thủ kho/WMS | Kiểm tra nhu cầu cross-dock tới cửa hàng | Cổng G5 |
-| 12 | Thủ kho/WMS | Cập nhật sổ tồn đầu vào (inbound) | Message tồn đầu vào → S3/M3 (hoặc tạo yêu cầu cross-dock → K2) |
-
-**Kịch bản thành công:** ASN & xe hàng cập dock → chứng từ khớp PO/ASN → số lượng thực nhận khớp → mẫu QC đạt toàn bộ → (song song qua **cặp AND**) dán nhãn/định vị **và** cập nhật tồn WMS/ERP → cất hàng lên kệ (putaway) → không cần cross-dock → cập nhật sổ tồn đầu vào và bắn message tồn sang S3/M3. **Kết quả:** "Lô hàng đạt chuẩn được nhập kho và tồn đầu vào đã cập nhật cho S3/M3."
-
-**Kịch bản thất bại/ngoại lệ:**
-- Chứng từ không khớp PO/ASN (G1) → lập biên bản sai lệch chứng từ → End "Từ chối nhận lô".
-- Số lượng thực nhận thiếu/thừa (G2) → ghi nhận thiếu/thừa & thông báo NCC, sau đó nhập tiếp phần khớp qua cổng gộp Gm.
-- QC không đạt toàn bộ (G3/G4) → End "Trả lại NCC"; nếu chỉ lỗi một phần → tách lô, chỉ nhập phần đạt QC, phần lỗi trả NCC.
-- Có nhu cầu cross-dock (G5) → tạo yêu cầu cross-dock, chuyển thẳng cửa hàng (message sang K2) thay vì lưu kho.
-
-**Nguồn/trạng thái:** quy trình tham chiếu thông lệ inbound logistics ngành bán lẻ thời trang; ngưỡng chấp nhận QC (AQL), tỷ lệ lấy mẫu, chính sách cross-dock và cấp duyệt ngoại lệ cụ thể của ACFC là `C – cần xác thực`.
-
-### 4.6. K2 – Xuất kho & điều chuyển phân bổ tới chuỗi cửa hàng (DC-to-Store Fulfillment)
-
-**Actor kích hoạt:** Điều phối phân bổ nhận **lệnh phân bổ từ M3** (nối tiếp ngay sau đầu ra của quy trình M3).
-**Actor hưởng lợi:** Cửa hàng (nhận đúng cơ cấu hàng đúng hạn) trực tiếp; M3 (đóng vòng thực thi kế hoạch phân bổ) và khách cuối gián tiếp.
-**Ranh giới:** từ khi nhận lệnh phân bổ → đến khi cửa hàng nhận, kiểm đếm khớp và cập nhật tồn cửa hàng. Sơ đồ: `diagrams/bpmn-xuat-kho-dieu-chuyen-k2.svg` (1 Pool DC – 4 Lane, 9 cổng, có cặp AND split–join).
-
-| # | Actor (lane) | Bước (Động từ + Danh từ) | Ghi chú/hệ thống |
-|---|---|---|---|
-| 1 | Điều phối phân bổ | Kiểm tra tồn khả dụng (ATP) | Start: nhận lệnh phân bổ ← M3 |
-| 2 | Điều phối phân bổ | Xác định tồn có đủ cho lệnh phân bổ | Cổng G1; nếu không đủ → G1b (cho giao một phần?) |
-| 3 | Cửa hàng & Ngoại lệ | Giao một phần + backorder | Nhánh G1b "Có" → quay lại Gm1 gộp |
-| 4 | Điều phối phân bổ | Lập phiếu xuất kho (DO) | Sau cổng gộp Gm1 |
-| 5 | Kho xuất – Picking | Soạn hàng (picking) | — |
-| 6 | Kho xuất – Picking | Kiểm tra soạn hàng khớp DO | Cổng G2; không khớp → soạn lại (loop) |
-| 7 | Kho xuất – Packing | Đóng gói & dán nhãn kiện | Cổng Ga AND-split (song song với bước 8) |
-| 8 | Kho xuất – Packing | Lập chứng từ xuất & kế hoạch tuyến | Chạy song song bước 7 → Gj AND-join |
-| 9 | Vận chuyển/3PL | Bàn giao đơn vị vận chuyển 3PL | Sau cổng Gj AND-join |
-| 10 | Vận chuyển/3PL | Vận chuyển tới cửa hàng | — |
-| 11 | Vận chuyển/3PL | Xác nhận giao thành công | Cổng G3 |
-| 12 | Cửa hàng & Ngoại lệ | Cửa hàng nhận & kiểm đếm | Cổng G4 (xác nhận khớp?) → Gm2 gộp |
-| 13 | Cửa hàng & Ngoại lệ | Cập nhật tồn cửa hàng & đóng lệnh | Message tồn cửa hàng → S3/M3 |
-
-**Kịch bản thành công:** nhận lệnh phân bổ → tồn khả dụng (ATP) đủ → lập phiếu xuất (DO) → soạn hàng khớp → (song song qua **cặp AND**) đóng gói/dán nhãn **và** lập chứng từ xuất/kế hoạch tuyến → bàn giao 3PL → giao thành công → cửa hàng nhận, kiểm đếm khớp → cập nhật tồn cửa hàng và bắn message sang S3/M3. **Kết quả:** "Hàng được điều chuyển và cửa hàng đã nhận đủ, tồn cửa hàng cập nhật cho S3/M3."
-
-**Kịch bản thất bại/ngoại lệ:**
-- Tồn không đủ (G1) → hỏi có cho giao một phần (G1b): nếu có → giao một phần + tạo backorder rồi quay lại lập DO; nếu không → End "Hoãn dòng phân bổ" (message hoãn → M3).
-- Soạn hàng không khớp DO (G2) → soạn lại (vòng lặp picking) trước khi đóng gói.
-- Giao không thành công (G3) → trả kiện về DC & lập biên bản → End "Chuyển K3 thu hồi" (message hàng lỗi → K3).
-- Cửa hàng kiểm đếm không khớp (G4) → ghi nhận thiếu/thừa & mở khiếu nại, sau đó vẫn hợp nhất về Gm2 để cập nhật tồn và đóng lệnh.
-
-**Nguồn/trạng thái:** tham chiếu thông lệ DC-to-store fulfillment; chính sách giao một phần/backorder, SLA 3PL, ngưỡng sai lệch kiểm đếm cho phép của ACFC là `C – cần xác thực`.
-
-### 4.7. K3 – Thu hồi & xử lý hàng trả về / hàng lỗi (Reverse Logistics)
-
-**Actor kích hoạt:** Tiếp nhận & Phân loại (RMA) nhận **yêu cầu trả hàng từ K2/cửa hàng** (hàng giao lỗi trả về, hoặc hàng khách trả tại cửa hàng).
-**Actor hưởng lợi:** S3/M3 (tồn & hao hụt được cập nhật đúng), C4/Tài chính (cơ sở hoàn tiền), NCC/chủ thương hiệu (nhận lại hàng bảo hành) trực tiếp; khách cuối (được xử lý trả hàng) gián tiếp.
-**Ranh giới:** từ khi nhận yêu cầu trả hàng → đến khi đóng phiếu RMA và (nếu cần) lập đề nghị hoàn tiền chuyển C4. Sơ đồ: `diagrams/bpmn-thu-hoi-hang-tra-k3.svg` (1 Pool DC – 4 Lane, 9 cổng, có cặp AND split–join).
-
-| # | Actor (lane) | Bước (Động từ + Danh từ) | Ghi chú/hệ thống |
-|---|---|---|---|
-| 1 | Tiếp nhận & RMA | Tiếp nhận & lập phiếu RMA | Start: nhận yêu cầu trả hàng ← K2/cửa hàng |
-| 2 | Tiếp nhận & RMA | Kiểm tra đúng chính sách & thời hạn trả | Cổng G1; không đạt → từ chối & phản hồi khách → End "Đóng (từ chối)" |
-| 3 | Giám định & Phân hạng | Giám định tình trạng hàng | Vào chuỗi phân hạng G2→G3→G4 |
-| 4 | Giám định & Phân hạng | Phân hạng khả năng bán lại nguyên trạng | Cổng G2 (bán lại nguyên trạng?) |
-| 5 | Giám định & Phân hạng | Kiểm tra còn bảo hành NCC | Cổng G3 |
-| 6 | Giám định & Phân hạng | Đánh giá khả năng tân trang | Cổng G4 |
-| 7 | Xử lý (Disposition) | Gửi trả/đổi với NCC | Nhánh G3 "Có" → End "Đã chuyển NCC" (message chuyển NCC) |
-| 8 | Xử lý (Disposition) | Tân trang (refurbish) | Nhánh G4 "Có" → Cổng G4b (đạt sau tân trang?) |
-| 9 | Xử lý (Disposition) | Loại bỏ / hủy (scrap) | Nhánh G4 "Không"/G4b "Không" → End "Ghi nhận hao hụt" (message hao hụt → S3/M3) |
-| 10 | Kế toán & Cập nhật tồn | Cất lên kệ (putaway) | Sau Gm gộp → cổng Ga AND-split (song song với bước 11) |
-| 11 | Kế toán & Cập nhật tồn | Cập nhật tồn kho (S3/M3) | Chạy song song bước 10; message cập nhật tồn → S3/M3 |
-| 12 | Kế toán & Cập nhật tồn | Đóng phiếu RMA | Sau cổng Gj AND-join |
-| 13 | Kế toán & Cập nhật tồn | Lập đề nghị hoàn tiền → C4/Tài chính | Cổng G5 (cần hoàn tiền?); message đề nghị hoàn tiền → C4 |
-
-**Kịch bản thành công:** nhận yêu cầu trả hàng đúng chính sách & thời hạn → giám định → hàng còn bán lại nguyên trạng (hoặc tân trang đạt) → hợp nhất tại Gm → (song song qua **cặp AND**) cất lên kệ **và** cập nhật tồn kho S3/M3 → đóng phiếu RMA → nếu cần thì lập đề nghị hoàn tiền chuyển C4. **Kết quả:** "Hàng trả được nhập lại/tân trang, tồn cập nhật cho S3/M3 và (nếu có) đề nghị hoàn tiền chuyển C4."
-
-**Kịch bản thất bại/ngoại lệ:**
-- Yêu cầu trả sai chính sách/quá thời hạn (G1) → từ chối & phản hồi khách → End "Đóng (từ chối)".
-- Không bán lại nguyên trạng (G2) nhưng còn bảo hành NCC (G3) → gửi trả/đổi với NCC → End "Đã chuyển NCC".
-- Không còn bảo hành và không tân trang được (G4 "Không"), hoặc tân trang không đạt (G4b "Không") → loại bỏ/hủy (scrap) → End "Ghi nhận hao hụt" (message hao hụt → S3/M3).
-- Không cần hoàn tiền (G5 "Không") → đóng phiếu và kết thúc tại End "Hoàn tất xử lý trả hàng".
-
-**Nguồn/trạng thái:** tham chiếu thông lệ reverse logistics & RMA ngành bán lẻ; chính sách/thời hạn đổi trả, tiêu chí phân hạng (bán lại/tân trang/scrap), điều khoản bảo hành NCC và quy trình hoàn tiền C4 cụ thể của ACFC là `C – cần xác thực`.
-
-## 5. Phương pháp thu thập và xác thực
-
-Nguyên tắc bằng chứng theo 3 mức A/B/C như mục 1.3. Mỗi hoạt động, gateway và KPI đều ghi mã nguồn hoặc nhãn `C – cần xác thực`; không điền số ACFC nếu chưa có nguồn hoặc người có thẩm quyền xác nhận.
-
-**Nhật ký bằng chứng (EV01–EV10):**
-
-| Mã | Nguồn | Nội dung hỗ trợ | Mức | Áp dụng |
+| Bước | Loại lãng phí | Biểu hiện | Tác động | Khắc phục |
 |---|---|---|---|---|
-| EV01 | [ACFC Home](https://www.acfc.com.vn/home) | ACFC là nhà phân phối chính hãng nhiều thương hiệu, vận hành hệ thống cửa hàng/kênh mua sắm | A | Nền |
-| EV02 | [Senior Product Executive](https://tuyendung.acfc.com.vn/job/detail?id=648) | Lập kế hoạch phân bổ hàng; nhận thông tin lô; theo dõi lịch đến; lập danh sách điều chuyển/bổ sung; xử lý giao trễ/mất/lỗi | B | M3 |
-| EV03 | [Operations Executive](https://tuyendung.acfc.com.vn/job/detail?id=341) | Quản lý hàng trong kho; theo dõi kế hoạch điều chuyển; kiểm soát tồn; phối hợp nhận/giao sản phẩm | B | S3 |
-| EV04 | [District Supervisor](https://tuyendung.acfc.com.vn/job/detail?id=318) | Theo dõi tồn, đề xuất bổ sung hoặc hợp nhất kho theo kế hoạch và hiệu suất | B | M3 |
-| EV05 | [Store Manager – Nike](https://tuyendung.acfc.com.vn/job/detail?id=631) | Kiểm đếm hàng ngày/tuần/tháng; nhập/xuất hàng trong chuỗi; báo cáo bán chậm/bán chạy | B | S3 |
-| EV06 | [Khai trương kho ACFC](https://tuyendung.acfc.com.vn/news/acfc-warehouse-opening-post73) | Bối cảnh vận hành kho và dòng nhận hàng | B | Nền |
-| EV07 | [Product Manager](https://tuyendung.acfc.com.vn/job/detail?id=333) | Lập kế hoạch mua, dự báo, theo dõi bán hàng/tồn kho và kế hoạch tồn | B | M3 |
-| EV08 | [Revenue Accountant](https://tuyendung.acfc.com.vn/job/detail?id=267) | Theo dõi tồn kho trực tuyến, đối soát doanh thu/hóa đơn và báo cáo | B | S3 |
-| EV09 | [Hướng dẫn tạo tài khoản – ACFC](https://www.acfc.com.vn/huong-dan-tao-tai-khoan) | Các bước đăng ký: nhập số điện thoại, nhận/xác nhận OTP, điền thông tin cá nhân, hoàn tất đăng ký | A | S4 |
-| EV10 | [Hướng dẫn kích hoạt tài khoản thành viên – ACFC](https://www.acfc.com.vn/huong-dan-kich-hoat-tai-khoan-thanh-vien) | Các bước đăng nhập/kích hoạt tài khoản đã đăng ký, xử lý quên mật khẩu, truy cập thông tin thành viên | A | S4 |
-| EV13 | [Trang tuyển dụng ACFC](https://tuyendung.acfc.com.vn) | Danh sách vị trí tuyển dụng Store và HQ/Warehouse, mô tả công việc và yêu cầu | A | S1 |
-| EV14 | TopCV, LinkedIn, VietnamWorks | Các kênh đăng tuyển đa nền tảng và bước sàng lọc hồ sơ (ATS screening) | B | S1 |
+| Luân chuyển kế hoạch/báo cáo | Di chuyển (Move) | Bản kế hoạch chuyển qua nhiều kênh rời (email, chat, bảng tính) | Khó truy vết, dễ dùng nhầm phiên bản | Gộp về một nơi lưu trữ dùng chung, một mã kế hoạch theo mùa |
+| Chờ phê duyệt/ngân sách | Chờ (Hold) | Chờ báo cáo, ngân sách, phê duyệt không có hạn xử lý | Kéo dài chu kỳ lập kế hoạch, lỡ thời điểm mùa vụ | Đặt thời hạn từng bước duyệt, gắn người phụ trách, cảnh báo quá hạn |
+| Đối chiếu dữ liệu nhiều nguồn | Xử lý dư (Over-processing) | Nhập/đối chiếu trùng dữ liệu bán hàng – tồn kho từ nhiều nguồn | Tốn công, dễ sai lệch giữa các bản | Chuẩn hóa một nguồn dữ liệu gốc, tự động hóa bảng theo dõi |
+| Lập lại kế hoạch | Lỗi (Defects) | Dự báo/mã hàng sai khiến phải lập lại | Tốn thêm giờ công, chậm phát hành | Kiểm tra dữ liệu gốc và khóa phiên bản trước khi trình |
 
-**Đối tượng ưu tiên phỏng vấn và mục tiêu xác thực:**
+#### c. Phân tích các bên liên quan
 
-| Quy trình | Đối tượng ưu tiên | Mục tiêu xác thực |
+| Bên liên quan | Vai trò trong quy trình này | Mối quan tâm chính | Vấn đề tác động |
+|---|---|---|---|
+| Hàng hóa/Phân bổ | Chủ quy trình, lập và phát hành kế hoạch | Kế hoạch đúng nhu cầu, phát hành kịp mùa | Dữ liệu chưa đồng nhất, phải lập lại |
+| Tài chính thương mại | Kiểm soát biên lợi nhuận và ngân sách | Không vượt ngân sách | Chờ phản hồi, vòng lặp điều chỉnh |
+| Vận hành/cửa hàng | Nhận cơ cấu hàng theo kế hoạch | Đúng hàng, đủ sức chứa | Phân bổ lệch nhu cầu gây đọng vốn hoặc thiếu hàng |
+| Cấp phê duyệt | Duyệt kế hoạch phân bổ | Kế hoạch hợp lý, đúng thẩm quyền | Thiếu tiêu chí/thời hạn duyệt thống nhất |
+| Kiểm kê tồn kho | Cấp dữ liệu chênh lệch/hao hụt phản hồi | Tồn chính xác để hiệu chỉnh kế hoạch | Chênh lệch phát hiện muộn |
+
+#### d. Vấn đề nổi bật (Issue register)
+
+Cấu trúc: **Nguyên nhân** (xác định bằng 5 Why ở mục 2.4, khác với vấn đề tự suy ra từ mô tả) → **Tác động** → **Giải pháp**.
+
+| Vấn đề | Nguyên nhân | Tác động | Giải pháp |
+|---|---|---|---|
+| Chờ phê duyệt kéo dài | Thiếu thời hạn và tiêu chí duyệt thống nhất giữa các cấp | Lỡ thời điểm mùa vụ, chu kỳ lập kế hoạch dài | Đặt thời hạn từng bước duyệt, hàng đợi quá hạn, tự động chuyển cấp |
+| Phân bổ lệch nhu cầu | Số tháng tồn, tỷ lệ bán qua, sức chứa chưa đồng bộ trên một bảng theo dõi | Đọng vốn tồn dư ở nơi này, thiếu hàng ở nơi khác | Bảng theo dõi chung, quy tắc phân bổ theo dữ liệu bán và sức chứa |
+| Phải lập lại kế hoạch | Dữ liệu dự báo/tồn/gốc chưa đồng nhất | Tốn giờ công, phát hành trễ | Khóa phiên bản dữ liệu, kiểm tra bắt buộc trước khi trình |
+
+### 2.3. Phân tích định lượng
+
+> Số dưới đây là **số minh họa cách tính** `[giả định]`, chưa phải số vận hành thật của ACFC.
+
+#### a. Phân tích thời gian
+
+| Chỉ số | Công thức | Số minh họa `[giả định]` | Kết quả |
+|---|---|---|---|
+| Thời gian chu kỳ lập kế hoạch | Thời điểm phát hành − thời điểm bắt đầu | 09:00 ngày 1 → 17:00 ngày 5 | 40 giờ |
+| Thời gian xử lý thực (VA+BVA) | Tổng thời gian các bước tạo/kiểm/duyệt | ≈ 14 giờ | 14 giờ |
+| Thời gian chờ (NVA) | Chu kỳ − thời gian xử lý | 40 − 14 | 26 giờ |
+| Hiệu suất chu kỳ (PCE) | Thời gian xử lý / chu kỳ | 14 / 40 | ≈ 35% |
+
+PCE ≈ 35% nghĩa là gần hai phần ba thời gian là chờ (NVA), khớp với lãng phí "Chờ (Hold)" ở mục 2.2.b.
+
+#### b. Phân tích chi phí
+
+| Chỉ số | Công thức | Số minh họa `[giả định]` | Kết quả |
+|---|---|---|---|
+| Chi phí chờ phê duyệt | Số kế hoạch × giờ chờ × đơn giá giờ | 4 × 26 giờ × 90.000đ | 9.360.000đ / mùa |
+| Chi phí đọng vốn tồn dư | Giá trị tồn dư × chi phí giữ hàng/tháng × số tháng | 200 sp × 300.000đ × 2% × 4 | 4.800.000đ / mùa |
+| Chi phí lập lại kế hoạch | Số lần lập lại × giờ công × đơn giá giờ | 2 × 8 giờ × 90.000đ | 1.440.000đ / mùa |
+
+### 2.4. Phân tích nguyên nhân gốc
+
+#### Ưu tiên vấn đề bằng Pareto
+
+Ba vấn đề ở mục 2.2.d được quy về **cùng đơn vị** — chi phí kỳ vọng mỗi mùa (nghìn đồng) — để xếp thứ tự ưu tiên. Toàn bộ số liệu là `[giả định]` từ mục 2.3.
+
+| Vấn đề | Chi phí kỳ vọng (nghìn đồng) `[giả định]` | Tỷ trọng | Lũy kế |
+|---|---|---|---|
+| Chờ phê duyệt kéo dài | 9.360 | 60,0% | 60,0% |
+| Phân bổ lệch nhu cầu (đọng vốn tồn dư) | 4.800 | 30,8% | 90,8% |
+| Phải lập lại kế hoạch | 1.440 | 9,2% | 100,0% |
+| **Tổng** | **15.600** | 100% | — |
+
+Theo nguyên tắc 80/20, hai vấn đề đầu chiếm 90,8% tổng thiệt hại kỳ vọng — là nhóm "số ít quan trọng" cần ưu tiên; riêng **chờ phê duyệt** đã chiếm 60,0% nên xử lý trước.
+
+#### Phân tích 5 Why (cho vấn đề ưu tiên: chờ phê duyệt kéo dài)
+
+1. **Vì sao phê duyệt kéo dài?** → Vì kế hoạch nằm chờ ở từng cấp mà không có hạn xử lý.
+2. **Vì sao không có hạn xử lý?** → Vì chưa đặt thời hạn và tiêu chí duyệt thống nhất giữa các cấp.
+3. **Vì sao chưa có thời hạn/tiêu chí thống nhất?** → Vì việc trình duyệt qua nhiều kênh rời rạc, không có hàng đợi và trạng thái tập trung.
+4. **Vì sao qua nhiều kênh rời rạc?** → Vì chưa có một nơi quản lý luồng duyệt chung, mỗi cấp dùng công cụ riêng.
+5. **Vì sao chưa có nơi quản lý chung?** → Vì chưa đo thời gian chờ ở từng cấp để thấy tác động và đặt yêu cầu số hóa luồng duyệt.
+
+**Nguyên nhân gốc:** thiếu cơ chế đo thời gian chờ theo cấp và thiếu một luồng duyệt tập trung có thời hạn → dẫn tới chuỗi hệ quả kết thúc ở chu kỳ lập kế hoạch bị kéo dài.
+
+### 2.5. Phỏng vấn bổ sung
+
+1. Độ chính xác dự báo và tỷ lệ bán qua thực tế theo mùa là bao nhiêu?
+2. Số tháng tồn kho bình quân mục tiêu và thực tế là bao nhiêu?
+3. Thời gian lập kế hoạch và thời gian phê duyệt trung bình là bao lâu?
+4. Cấp nào phê duyệt kế hoạch và điều kiện/thời hạn duyệt là gì?
+5. Đơn giá giờ công lập kế hoạch và chi phí giữ hàng/tháng thực tế là bao nhiêu?
+
+### 2.6. Đề xuất cải tiến (TO-BE)
+
+Theo thứ tự ưu tiên Pareto ở mục 2.4:
+
+1. **Chờ phê duyệt (ưu tiên cao nhất)** — đưa luồng trình duyệt lên một nơi tập trung có thời hạn từng cấp, hàng đợi quá hạn và tự động chuyển cấp; đo thời gian chờ theo cấp để cải tiến liên tục.
+2. **Phân bổ lệch nhu cầu** — chuẩn hóa một bảng theo dõi chung tỷ lệ bán qua / số tháng tồn / sức chứa, áp quy tắc phân bổ dựa trên dữ liệu bán và sức chứa cửa hàng.
+3. **Lập lại kế hoạch** — khóa phiên bản dữ liệu gốc và bắt buộc kiểm tra trước khi trình để giảm sai sót phải làm lại.
+
+---
+
+## 3. Kiểm kê và xử lý chênh lệch tồn kho
+
+### 3.1. Mô tả hiện trạng (AS-IS)
+
+**Người kích hoạt:** Quản lý/Kiểm soát tồn kho (theo lịch định kỳ) hoặc hệ thống cảnh báo tồn thực tế lệch sổ.
+**Người hưởng lợi:** Hàng hóa/Vận hành (Lập kế hoạch mua & phân bổ) và Kế toán doanh thu/Tài chính (cần tồn chính xác) — trực tiếp; cửa hàng (giảm thất thoát) và khách hàng (đúng hàng sẵn có) — gián tiếp.
+**Ranh giới:** từ lịch kiểm kê/cảnh báo chênh lệch đến khi đóng hồ sơ và phản hồi cho Lập kế hoạch mua & phân bổ.
+
+| # | Người thực hiện | Bước (Động từ + Danh từ) | Ghi chú/hệ thống |
+|---|---|---|---|
+| 1 | Quản lý/Kiểm soát tồn kho | Lập lịch kiểm kê | Sự kiện định kỳ hoặc cảnh báo hệ thống |
+| 2 | Kiểm soát tồn kho/Vận hành | Xác định phạm vi và mẫu đếm | — |
+| 3 | Quản lý | Duyệt phạm vi kiểm kê | Cổng điều kiện: phạm vi được duyệt không? |
+| 4 | Cửa hàng/Kho | Chuẩn bị phiếu kiểm kê và đếm tồn thực tế | — |
+| 5 | Kiểm soát tồn kho/Vận hành | Đối chiếu tồn thực tế với sổ tồn | Từ hệ thống ERP/quản lý kho |
+| 6 | Kiểm soát tồn kho/Vận hành | Xác định điều kiện đếm lại | Cổng điều kiện: cần đếm lại không? |
+| 7 | Kiểm soát tồn kho/Vận hành | Phân loại nguyên nhân chênh lệch | Cổng điều kiện: trong ngưỡng điều chỉnh hay vượt ngưỡng? |
+| 8 | Kiểm soát tồn kho/Vận hành | Lập đề nghị điều chỉnh tồn (nếu trong ngưỡng) | Chạy song song với bước 9 qua cặp cổng AND |
+| 9 | Kiểm soát tồn kho/Vận hành | Lập báo cáo hao hụt/sự cố và chuyển cấp (nếu vượt ngưỡng) | Chạy song song với bước 8 |
+| 10 | Quản lý/Kế toán doanh thu | Phê duyệt điều chỉnh hoặc bút toán hao hụt | Cổng điều kiện: được duyệt không? |
+| 11 | Kiểm soát tồn kho/Vận hành | Cập nhật hệ thống tồn kho và đóng hồ sơ | Cổng điều kiện: đóng đúng hạn không? |
+| 12 | Kiểm soát tồn kho/Vận hành | Gửi kết quả phản hồi cho Lập kế hoạch mua & phân bổ | Đầu vào chu kỳ lập kế hoạch tiếp theo |
+
+**Kịch bản thành công:** đến kỳ kiểm kê → phạm vi được duyệt → đếm khớp sổ ngay lần đầu → hồ sơ được đóng đúng hạn, không phát sinh điều chỉnh. **Kết quả:** "Kiểm kê khớp sổ, hồ sơ đã đóng đúng hạn." Nếu có chênh lệch trong ngưỡng: xác định đúng nguyên nhân → đề nghị điều chỉnh được duyệt → cập nhật hệ thống → đóng hồ sơ → phản hồi Lập kế hoạch mua & phân bổ.
+
+**Kịch bản thất bại/ngoại lệ:**
+- Đếm không khớp sổ và điều kiện đếm lại được kích hoạt → quay lại đếm lại; nếu vẫn lệch thì xác định nguyên nhân sâu hơn.
+- Không xác định được nguyên nhân trong thời hạn → lập báo cáo tạm với nhãn "nguyên nhân chưa xác định", có thể chuyển cấp sớm.
+- Chênh lệch vượt ngưỡng hoặc có dấu hiệu hao hụt → lập báo cáo sự cố riêng, chuyển cấp xác minh trách nhiệm — ngưỡng và cấp chuyển `[giả định]`.
+- Điều chỉnh không được duyệt → yêu cầu bổ sung bằng chứng, quay lại phân loại nguyên nhân.
+- Hồ sơ không đóng đúng hạn → gắn cờ quá hạn, báo cáo cho Quản lý.
+
+**Cấu trúc BPMN:** pool «Quy trình kiểm kê tồn kho nội bộ (Kiểm kê tồn kho)» với các lane Quản lý, Kiểm soát tồn kho/Vận hành, Cửa hàng/Kho và Kế toán kho. Các cổng quyết định đều là cổng XOR (duyệt phạm vi; cần đếm lại; trong/vượt ngưỡng; được duyệt; đóng đúng hạn) với nhánh loại trừ nhau và nhánh tiêu cực quay lại hoặc dẫn tới sự kiện Kết thúc riêng. Bước lập đề nghị điều chỉnh và lập báo cáo hao hụt chạy song song qua **một cặp cổng AND tách/gộp cùng loại** nên cân bằng.
+
+### 3.2. Phân tích định tính
+
+#### a. Phân loại hoạt động VA/BVA/NVA
+
+| Hoạt động | Phân loại | Nhận xét |
 |---|---|---|
-| M3 | Hàng hóa/Phân bổ, Quản lý nhãn hàng, Tài chính thương mại, Vận hành | Dự báo, số tháng tồn kho, tỷ lệ bán qua, biên lợi nhuận, cấp duyệt và kế hoạch phân bổ |
-| S3 | Quản lý cửa hàng, Kiểm soát tồn kho/Vận hành, Kế toán doanh thu/Tài chính | Chu kỳ kiểm kê, đếm lại, ngưỡng điều chỉnh, hao hụt, phê duyệt và tuổi chênh lệch |
-| S4 | Digital/E-commerce, CSKH, IT vận hành website/app, Marketing khách hàng thành viên | Luồng đăng ký/kích hoạt, OTP, tỷ lệ bỏ dở, xử lý lỗi đăng nhập, khối lượng và chi phí hỗ trợ CSKH |
-| S1 | HR tuyển dụng, Line Manager cửa hàng/kho, HR Director, IT onboarding | Kênh tuyển, bước ATS, số vòng phỏng vấn, tỷ lệ đạt/loại mỗi vòng, time-to-hire, cost-per-hire, turnover và tỷ lệ đạt probation |
-
-**Quy tắc tổng hợp:** ghi nguyên ý câu trả lời, nguồn và thời điểm phỏng vấn; phân loại `Đã xác nhận` / `Xác nhận một phần` / `Giả định` / `Bác bỏ`; cập nhật lại AS-IS, phân tích và BPMN; gửi lại chủ quy trình xác nhận trước khi đưa vào báo cáo chung. Nếu không tiếp cận được nhân sự ACFC, giữ trạng thái `C – giả định cần xác thực` và **không dùng số minh họa như số thật**.
-
-## 6. Bộ câu hỏi thu thập dữ liệu
-
-Mỗi quy trình có **10 câu định tính + 10 câu định lượng** (đủ ≥20 câu theo rubric tiêu chí 4). Câu định lượng ánh xạ trực tiếp tới các KPI ở mục 9 để thay số minh họa bằng số thật sau phỏng vấn.
-
-### 6.1. M3 – Lập kế hoạch mua hàng và phân bổ theo mùa
-
-**Định tính:** (1) Dữ liệu tỷ lệ bán qua/số tháng tồn kho được chốt ở thời điểm nào? (2) Dự báo do ai lập và ai kiểm tra? (3) Mã hàng/cửa hàng được xếp hạng theo tiêu chí nào? (4) Biên lợi nhuận và ngân sách được kiểm tra ở bước nào? (5) Thiếu hoặc dư hàng được xử lý thế nào? (6) Ai duyệt phân bổ và điều kiện duyệt là gì? (7) Khi nào phải lập lại kế hoạch? (8) Kết quả S3 được phản hồi vào kế hoạch ra sao? (9) Kế hoạch được lưu trên hệ thống nào? (10) Điểm nghẽn lớn nhất là gì?
-
-**Định lượng:** (1) Độ chính xác dự báo là bao nhiêu phần trăm? (2) Tỷ lệ bán qua được tính theo công thức và kỳ nào? (3) Số tháng tồn kho bình quân là bao nhiêu? (4) Mỗi kỳ có bao nhiêu mã hàng/cửa hàng? (5) Thời gian lập kế hoạch là bao lâu? (6) Thời gian phê duyệt là bao lâu? (7) Tỷ lệ phân bổ thay đổi là bao nhiêu phần trăm? (8) Tỷ lệ giảm giá xả hàng là bao nhiêu phần trăm? (9) Tỷ lệ hết hàng/dư hàng là bao nhiêu phần trăm? (10) Chi phí lập lại kế hoạch là bao nhiêu?
-
-### 6.2. S3 – Kiểm kê và xử lý chênh lệch tồn kho
-
-**Định tính:** (1) Kích hoạt kiểm kê là lịch hay cảnh báo? (2) Phạm vi và mẫu đếm được xác định thế nào? (3) Tồn thực tế/sổ được so sánh trên hệ thống nào? (4) Điều kiện nào bắt buộc đếm lại? (5) Ngưỡng điều chỉnh là bao nhiêu và ai đặt ngưỡng? (6) Nguyên nhân chênh lệch được xác định bằng cách nào? (7) Hồ sơ bồi hoàn/thất thoát gồm những gì? (8) Cấp nào phê duyệt điều chỉnh? (9) Vụ việc được đóng theo điều kiện nào? (10) Kết quả được dùng cho M3 ra sao?
-
-**Định lượng:** (1) Có bao nhiêu đợt kiểm kê mỗi tháng? (2) Độ chính xác tồn kho là bao nhiêu phần trăm? (3) Hao hụt là bao nhiêu phần trăm hoặc giá trị? (4) Thời gian kiểm kê trung bình là bao lâu? (5) Tỷ lệ đếm lại là bao nhiêu phần trăm? (6) Tỷ lệ điều chỉnh là bao nhiêu phần trăm? (7) Có bao nhiêu vụ quá hạn? (8) Tuổi chênh lệch trung bình là bao nhiêu ngày? (9) Chi phí mỗi đợt kiểm kê là bao nhiêu? (10) Tỷ lệ đóng đúng hạn là bao nhiêu phần trăm?
-
-### 6.3. S4 – Đăng ký và kích hoạt tài khoản thành viên
-
-**Định tính:** (1) Khách hàng bắt đầu đăng ký từ những kênh nào (website, app, tại quầy)? (2) Những thông tin bắt buộc để tạo tài khoản gồm những gì? (3) OTP được gửi qua kênh nào và hiệu lực bao lâu? (4) Khi OTP sai/hết hạn thì luồng xử lý ra sao (nhập lại hay đăng ký lại từ đầu)? (5) Số điện thoại đã tồn tại được xử lý và thông báo thế nào? (6) Khách quên mật khẩu được cấp lại theo cách nào? (7) Khi nào một yêu cầu được chuyển sang CSKH? (8) CSKH hỗ trợ qua những kênh nào và có đầu mối tập trung không? (9) Quyền lợi thành viên được kích hoạt ngay khi tạo tài khoản hay sau bước nào? (10) Điểm nghẽn lớn nhất khiến khách bỏ dở đăng ký là gì?
-
-**Định lượng:** (1) Tỷ lệ đăng ký thành công là bao nhiêu phần trăm? (2) Tỷ lệ bỏ dở đăng ký là bao nhiêu phần trăm? (3) Thời gian hoàn tất đăng ký trung bình là bao lâu? (4) Thời gian chờ nhận OTP trung bình là bao lâu? (5) Tỷ lệ OTP xác nhận đúng lần đầu là bao nhiêu phần trăm? (6) Tỷ lệ quên mật khẩu trên tổng lượt đăng nhập là bao nhiêu? (7) Tỷ lệ khách cần CSKH hỗ trợ hoàn tất đăng ký/kích hoạt là bao nhiêu? (8) Mỗi ngày/tháng có bao nhiêu lượt đăng ký mới? (9) Chi phí gửi OTP (đơn giá SMS × số lượt) là bao nhiêu? (10) Chi phí xử lý mỗi yêu cầu CSKH liên quan tài khoản là bao nhiêu?
-
-### 6.4. S1 – Tuyển dụng & tiếp nhận nhân sự
-
-**Định tính:** (1) Yêu cầu tuyển dụng phát sinh và được phê duyệt như thế nào? (2) Store staff và HQ/Warehouse staff khác nhau ra sao về kênh tuyển và tiêu chí? (3) ATS sàng lọc hồ sơ theo tiêu chí nào và ai cấu hình? (4) Điều kiện nào để một ứng viên vào luồng Fast-track? (5) Background check gồm những kiểm tra gì cho từng nhóm vị trí? (6) Có bao nhiêu vòng phỏng vấn và ai tham gia mỗi vòng theo cấp bậc? (7) Offer được đàm phán và chốt theo quy tắc nào? (8) Onboarding gồm những hạng mục gì (uniform, đào tạo, cấp tài khoản POS)? (9) KPI probation 2 tháng được đo bằng gì và ai đánh giá? (10) Nguyên nhân turnover cao nhất ở nhóm nào và được xử lý ra sao?
-
-**Định lượng:** (1) Time-to-hire trung bình (từ đăng tin đến ký offer) là bao nhiêu ngày? (2) Mỗi vị trí nhận trung bình bao nhiêu hồ sơ? (3) Tỷ lệ hồ sơ vượt qua sàng lọc ATS là bao nhiêu phần trăm? (4) Tỷ lệ đạt ở mỗi vòng phỏng vấn (V1, V2/V3) là bao nhiêu? (5) Tỷ lệ ứng viên chấp nhận offer (offer acceptance rate) là bao nhiêu? (6) Tỷ lệ đạt khám sức khỏe là bao nhiêu phần trăm? (7) Tỷ lệ vượt qua probation 2 tháng là bao nhiêu? (8) Turnover rate của Store staff và HQ/Warehouse là bao nhiêu phần trăm/năm? (9) Cost-per-hire trung bình (chi phí tuyển trên mỗi nhân sự) là bao nhiêu? (10) Mỗi tháng tuyển được bao nhiêu nhân sự mới trên tổng nhu cầu (fill rate)?
-
-## 7. Kế hoạch làm việc (mốc cá nhân)
-
-| Giai đoạn | Thời gian | Nội dung |
-|---|---|---|
-| Khóa phạm vi/bằng chứng | 06–09/08 | Rà soát bằng chứng, chốt phạm vi M3/S3/S4 |
-| Hoàn thiện AS-IS + phân tích | 10–13/08 | Hoàn thiện discovery, AS-IS, phân tích M3/S3/S4; hoàn thành bản nháp báo cáo cá nhân |
-| Xác thực + BPMN | 14–17/08 | Đã vẽ BPMN M3/S3/S4/S1 (`diagrams/`); gộp toàn bộ discovery + AS-IS + phân tích của cả bốn quy trình vào một báo cáo tổng; còn lại: phỏng vấn xác thực (nếu tiếp cận được nhân sự ACFC), cập nhật gateway/số liệu thật và TO-BE |
-
-## 8. Phân tích định tính
-
-### 8.1. VA/BVA/NVA – M3
-
-| Hoạt động | Phân loại | Lý do/khắc phục |
-|---|---|---|
-| Thu thập dữ liệu bán hàng, tồn kho và dự báo | BVA | Cần cho quyết định; dùng một bộ dữ liệu chuẩn |
-| Phân tích tỷ lệ bán và số tháng tồn kho | BVA | Hỗ trợ lập kế hoạch; tự động hóa bảng theo dõi |
-| Lập kế hoạch phân bổ | VA | Tạo cơ cấu hàng phù hợp nhu cầu cửa hàng |
-| Kiểm tra biên lợi nhuận/ngân sách | BVA | Kiểm soát tài chính; đặt quy tắc tự động |
-| Chờ dữ liệu hoặc phê duyệt | NVA | Chờ (Hold); đặt thời hạn và cảnh báo quá hạn |
-| Nhập lại cùng một báo cáo | NVA | Xử lý dư (Over-processing); dùng một nguồn dữ liệu gốc |
-| Lập lại kế hoạch do dữ liệu sai | NVA | Lỗi (Defects); kiểm tra bắt buộc trước khi gửi |
-
-### 8.2. VA/BVA/NVA – S3
-
-| Hoạt động | Phân loại | Lý do/khắc phục |
-|---|---|---|
-| Lập kế hoạch kiểm kê | BVA | Kiểm soát tài sản và độ chính xác dữ liệu |
-| Đếm tồn thực tế | BVA | Bằng chứng tồn thực tế |
-| So sánh với sổ tồn | BVA | Phát hiện sai lệch |
+| Điều chỉnh tồn được phê duyệt | VA | Đưa sổ sách về đúng thực tế — cơ sở cho quản trị và tài chính |
+| Đếm tồn thực tế | BVA | Bằng chứng tồn thực tế; nên quét mã để giảm sai |
+| Đối chiếu với sổ tồn | BVA | Phát hiện sai lệch |
 | Đếm lại khi có chênh lệch | BVA | Cần xác minh trước điều chỉnh |
-| Điều chỉnh tồn được phê duyệt | BVA | Cần cho sổ sách và quản trị rủi ro |
 | Chờ phê duyệt hoặc bằng chứng | NVA | Chờ (Hold); đặt thời hạn và chuyển cấp |
-| Đếm lại do bàn giao không đủ | NVA | Lỗi (Defects); chuẩn hóa biên bản và quét mã |
-| Nhập cùng điều chỉnh ở nhiều nơi | NVA | Xử lý dư (Over-processing); dùng một hồ sơ điều chỉnh |
+| Đếm lại do bàn giao không đủ chứng từ | NVA | Lỗi (Defects); chuẩn hóa biên bản và quét mã |
+| Nhập cùng điều chỉnh ở nhiều nơi | NVA | Xử lý dư (Over-processing); dùng một hồ sơ điều chỉnh gốc |
 
-### 8.3. VA/BVA/NVA – S4
+#### b. Phân tích lãng phí (Move – Hold – Over-processing – Defects)
 
-| Hoạt động | Phân loại | Lý do/khắc phục |
+| Bước | Loại lãng phí | Biểu hiện | Tác động | Khắc phục |
+|---|---|---|---|---|
+| Luân chuyển phiếu/biên bản | Di chuyển (Move) | Phiếu kiểm kê/biên bản chuyển qua nhiều đầu mối giấy tờ | Chậm, dễ thất lạc chứng từ | Chuyển sang hồ sơ điện tử, một mã vụ việc mỗi đợt |
+| Chờ đếm lại/giải trình/duyệt | Chờ (Hold) | Chờ phê duyệt điều chỉnh không có hạn rõ ràng | Chênh lệch quá hạn, tồn sai kéo dài | Đặt thời hạn, hàng đợi quá hạn, người phụ trách từng bước |
+| Đếm/đối chiếu trùng | Xử lý dư (Over-processing) | Đếm/nhập/đối chiếu trùng dữ liệu tồn ở nhiều nơi | Tốn công, dễ sai lệch | Kiểm kê theo mức rủi ro, dùng một hồ sơ điều chỉnh gốc |
+| Chênh lệch lặp lại | Lỗi (Defects) | Chênh lệch lặp lại, thiếu bằng chứng, sai giao dịch | Hao hụt không giải thích được, mất độ tin cậy tồn | Quét mã khi đếm, nhật ký kiểm tra, mã nguyên nhân chuẩn |
+
+#### c. Phân tích các bên liên quan
+
+| Bên liên quan | Vai trò trong quy trình này | Mối quan tâm chính | Vấn đề tác động |
+|---|---|---|---|
+| Kiểm soát tồn kho/Vận hành | Chủ quy trình, đếm và đối chiếu | Tồn chính xác, đóng đúng hạn | Chênh lệch lặp lại, phải đếm lại |
+| Quản lý | Duyệt phạm vi và điều chỉnh | Kiểm soát rủi ro thất thoát | Chờ phê duyệt, chênh lệch quá hạn |
+| Cửa hàng/Kho | Đếm tồn thực tế | Ít gián đoạn bán hàng | Chuẩn bị chứng từ chưa đủ |
+| Kế toán doanh thu/Tài chính | Duyệt bút toán hao hụt | Sổ sách khớp thực tế | Hao hụt không giải thích được |
+| Lập kế hoạch mua & phân bổ | Nhận phản hồi chênh lệch | Tồn chính xác để hoạch định | Chênh lệch phát hiện muộn |
+
+#### d. Vấn đề nổi bật (Issue register)
+
+Cấu trúc: **Nguyên nhân** (xác định bằng 5 Why ở mục 3.4) → **Tác động** → **Giải pháp**.
+
+| Vấn đề | Nguyên nhân | Tác động | Giải pháp |
+|---|---|---|---|
+| Hao hụt không giải thích được | Giao dịch nhập/xuất chưa cập nhật kịp và đếm thủ công dễ sai | Xóa sổ/bồi thường giá trị thiếu, giảm độ tin cậy tồn | Quét mã khi đếm, khóa thời điểm kiểm kê, đối chiếu giao dịch trước điều chỉnh |
+| Chênh lệch quá hạn chưa đóng | Chờ đếm lại/giải trình/phê duyệt không có thời hạn | Tồn sai kéo dài, ảnh hưởng hoạch định Lập kế hoạch mua & phân bổ | Đặt thời hạn từng bước, hàng đợi quá hạn, chuyển cấp theo rủi ro |
+| Điều chỉnh lặp lại nhiều kỳ | Chưa phân loại và xử lý nguyên nhân gốc | Lặp lại công kiểm kê, chi phí đếm lại | Mã nguyên nhân chuẩn, nhật ký kiểm tra, phản hồi về Lập kế hoạch mua & phân bổ |
+
+### 3.3. Phân tích định lượng
+
+> Số dưới đây là **số minh họa cách tính** `[giả định]`.
+
+#### a. Phân tích thời gian
+
+| Chỉ số | Công thức | Số minh họa `[giả định]` | Kết quả |
+|---|---|---|---|
+| Thời gian chu kỳ kiểm kê | Thời điểm đóng hồ sơ − thời điểm bắt đầu | 20:00 → 08:00 hôm sau | 12 giờ |
+| Thời gian đếm thực tế (VA+BVA) | Tổng thời gian đếm + đối chiếu | ≈ 4 giờ | 4 giờ |
+| Thời gian chờ (NVA) | Chờ duyệt phạm vi + chờ duyệt điều chỉnh | ≈ 6 giờ | 6 giờ |
+| Hiệu suất chu kỳ (PCE) | Thời gian đếm / chu kỳ | 4 / 12 | ≈ 33% |
+
+#### b. Phân tích chi phí
+
+| Chỉ số | Công thức | Số minh họa `[giả định]` | Kết quả |
+|---|---|---|---|
+| Chi phí hao hụt phải xóa sổ/bồi thường | Giá trị thiếu không thu hồi được | Theo đợt kiểm kê | 3.000.000đ / đợt |
+| Chi phí chờ & chênh lệch quá hạn | Số hồ sơ quá hạn × giờ chờ × đơn giá giờ | 2 × 6 giờ × 40.000đ | 480.000đ / đợt |
+| Chi phí đếm lại | Số giờ đếm lại × đơn giá giờ | 6 giờ × 40.000đ | 240.000đ / đợt |
+
+### 3.4. Phân tích nguyên nhân gốc
+
+#### Ưu tiên vấn đề bằng Pareto
+
+Ba vấn đề ở mục 3.2.d được quy về **cùng đơn vị** — chi phí kỳ vọng mỗi đợt kiểm kê (nghìn đồng). Toàn bộ số liệu là `[giả định]` từ mục 3.3.
+
+| Vấn đề | Chi phí kỳ vọng (nghìn đồng) `[giả định]` | Tỷ trọng | Lũy kế |
+|---|---|---|---|
+| Hao hụt không giải thích được | 3.000 | 80,6% | 80,6% |
+| Chênh lệch quá hạn (chi phí chờ) | 480 | 12,9% | 93,5% |
+| Điều chỉnh lặp lại (chi phí đếm lại) | 240 | 6,5% | 100,0% |
+| **Tổng** | **3.720** | 100% | — |
+
+Theo nguyên tắc 80/20, riêng **hao hụt** đã chiếm 80,6% tổng thiệt hại kỳ vọng — tự nó vượt ngưỡng 80% nên là vấn đề phải ưu tiên xử lý trước; hai vấn đề đầu chiếm 93,5%.
+
+#### Phân tích 5 Why (cho vấn đề ưu tiên: hao hụt không giải thích được)
+
+1. **Vì sao có hao hụt không giải thích được?** → Vì tồn thực tế lệch sổ mà không truy được giao dịch tương ứng.
+2. **Vì sao không truy được giao dịch?** → Vì giao dịch nhập/xuất/điều chuyển chưa được cập nhật kịp thời vào hệ thống khi đếm.
+3. **Vì sao cập nhật chưa kịp thời?** → Vì thời điểm kiểm kê không được "khóa" và đếm thủ công không quét mã nên khó đối chiếu.
+4. **Vì sao chưa khóa thời điểm và chưa quét mã?** → Vì quy trình kiểm kê chưa chuẩn hóa công cụ đếm và mốc đóng băng giao dịch.
+5. **Vì sao chưa chuẩn hóa?** → Vì chưa đo tỷ lệ chênh lệch/hao hụt theo nguyên nhân để đặt yêu cầu chuẩn hóa công cụ.
+
+**Nguyên nhân gốc:** thiếu mốc khóa giao dịch khi kiểm kê và thiếu công cụ đếm quét mã kèm mã nguyên nhân → chênh lệch không truy được, kết lại thành hao hụt phải xóa sổ.
+
+### 3.5. Phỏng vấn bổ sung
+
+1. Độ chính xác tồn kho và tỷ lệ hao hụt thực tế mỗi đợt là bao nhiêu?
+2. Tỷ lệ đếm lại và tỷ lệ điều chỉnh thực tế là bao nhiêu?
+3. Ngưỡng điều chỉnh tồn và cấp phê duyệt tương ứng là gì?
+4. Thời gian kiểm kê trung bình và tỷ lệ đóng hồ sơ đúng hạn là bao nhiêu?
+5. Đơn giá giờ công kiểm kê thực tế là bao nhiêu?
+
+### 3.6. Đề xuất cải tiến (TO-BE)
+
+Theo thứ tự ưu tiên Pareto ở mục 3.4:
+
+1. **Hao hụt (ưu tiên cao nhất)** — khóa thời điểm kiểm kê (đóng băng giao dịch), quét mã khi đếm, đối chiếu giao dịch trước khi điều chỉnh, gắn mã nguyên nhân cho mỗi chênh lệch.
+2. **Chênh lệch quá hạn** — đặt thời hạn xử lý từng bước, hàng đợi quá hạn và chuyển cấp theo rủi ro.
+3. **Điều chỉnh lặp lại** — dùng mã nguyên nhân chuẩn và nhật ký kiểm tra, phản hồi về Lập kế hoạch mua & phân bổ để xử lý nguyên nhân gốc ở chu kỳ sau.
+
+---
+
+## 4. Đăng ký, xác thực OTP và kích hoạt tài khoản thành viên
+
+### 4.1. Mô tả hiện trạng (AS-IS)
+
+**Người kích hoạt:** khách hàng truy cập App/Web ACFC (hoặc quầy POS) để đăng ký/đăng nhập.
+**Người hưởng lợi:** khách hàng (mua sắm, tích điểm, ưu đãi theo hạng thẻ) — trực tiếp; ACFC (dữ liệu khách hàng, kênh bán trực tuyến) và bộ phận chăm sóc khách hàng (giảm tải khi khách tự phục vụ trơn tru) — gián tiếp.
+**Ranh giới:** từ khi khách truy cập App/Web đến khi tài khoản được tạo/kích hoạt hoặc chuyển sang chăm sóc khách hàng. Không xử lý yêu cầu về quyền dữ liệu cá nhân của chủ thể dữ liệu.
+
+Tài khoản do quy trình này kích hoạt là cửa ngõ vào chương trình khách hàng thân thiết 5 bậc (Member → Silver → Gold → Platinum → Diamond), quản trị tập trung trên Salesforce CRM kết hợp POS Retail Pro Prism và nền tảng thương mại điện tử Magento. *(Bậc hạng và tỷ lệ tích điểm theo chính sách công khai; các định mức chi tiêu để lên hạng là `[giả định]`.)*
+
+| # | Người thực hiện | Bước (Động từ + Danh từ) | Ghi chú/hệ thống |
+|---|---|---|---|
+| 1 | Khách hàng | Truy cập App/Web, đồng ý PDPA và nhập số điện thoại | Cổng điều kiện: khách có đồng ý PDPA không? |
+| 2 | Salesforce CRM | Kiểm tra trùng số điện thoại | Cổng điều kiện: số điện thoại đã tồn tại chưa? |
+| 3 | Cổng đăng ký (Frontend) | Khởi tạo hồ sơ tạm trên CRM, gộp dữ liệu cũ nếu có | — |
+| 4 | Cổng gửi OTP | Gửi OTP qua Zalo ZNS (kênh chính) hoặc SMS (kênh dự phòng) | Thời hạn hiệu lực OTP `[giả định]` |
+| 5 | Hệ thống | Kiểm tra trạng thái cổng gửi OTP | Cổng điều kiện: cổng gửi OTP có lỗi không? |
+| 6 | Chăm sóc khách hàng | Xác minh thủ công qua tổng đài 1900 3038 (khi cổng OTP lỗi) | Nhánh ngoại lệ |
+| 7 | Sự kiện chờ (Timer) | Chờ khách nhập OTP trong thời hạn hiệu lực | Sự kiện trung gian Timer |
+| 8 | Khách hàng | Nhập mã xác thực OTP | Cổng điều kiện: OTP hợp lệ và còn hiệu lực không? |
+| 9 | Hệ thống | Kiểm tra số lần nhập sai OTP | Cổng điều kiện: sai quá giới hạn cho phép chưa? |
+| 10 | Khách hàng | Điền thông tin cá nhân và tạo mật khẩu | Cổng điều kiện: mật khẩu đạt chuẩn và đồng ý điều khoản chưa? |
+| 11 | Salesforce CRM | Tạo tài khoản và cấp mã thành viên | — |
+| 12 | Hệ thống tích hợp | Đồng bộ hồ sơ sang Magento (Web/App) và Retail Pro Prism (POS) | Cổng điều kiện: đồng bộ có thành công không? |
+| 13 | Hệ thống | Kích hoạt tài khoản: tự động đăng nhập, tặng ưu đãi chào mừng, cập nhật hạng thẻ | Kết thúc thành công |
+
+**Kịch bản thành công:** đồng ý PDPA → số điện thoại chưa tồn tại → OTP gửi qua Zalo ZNS thành công → khách nhập đúng OTP trong thời hạn → mật khẩu đạt chuẩn và đồng ý điều khoản → tạo mã thành viên → đồng bộ Magento và Retail Pro thành công → kích hoạt tài khoản kèm ưu đãi. **Kết quả:** "Tài khoản được tạo và kích hoạt thành công."
+
+**Kịch bản thất bại/ngoại lệ:**
+- Không đồng ý PDPA → hủy đăng ký (kết thúc).
+- Số điện thoại đã tồn tại → điều hướng sang đăng nhập/lấy lại mật khẩu (kết thúc).
+- Cổng OTP lỗi → chăm sóc khách hàng xác minh thủ công qua tổng đài 1900 3038.
+- Nhập sai OTP quá giới hạn → khóa tạm và chuyển chăm sóc khách hàng; ngưỡng số lần và thời gian khóa `[giả định]`.
+- Mật khẩu chưa đạt chuẩn/chưa đồng ý điều khoản → quay lại bước điền thông tin.
+- Đồng bộ Magento/Retail Pro thất bại → đưa vào hàng đợi gửi lại và cảnh báo bộ phận kỹ thuật.
+
+**Cấu trúc BPMN:** 1 Pool "Hệ sinh thái ACFC Member" với 5 Lane (Khách hàng; Cổng đăng ký – Frontend; Salesforce CRM; Cổng gửi OTP – ZNS/SMS; Chăm sóc khách hàng & Đồng bộ), 8 cổng điều kiện, 1 sự kiện chờ (Timer) và nhiều sự kiện Kết thúc (hủy đăng ký / điều hướng đăng nhập / khóa tạm → chăm sóc khách hàng / kích hoạt xong).
+
+Về logic cổng: các cổng quyết định là cổng XOR — mỗi cổng rẽ thành các nhánh loại trừ nhau, nhánh tiêu cực dẫn thẳng tới một sự kiện Kết thúc riêng nên không cần gộp lại. Riêng bước chọn kênh gửi OTP là **một cổng XOR tách nhánh** (Zalo ZNS hoặc SMS); hai nhánh này **hợp lại tại một cổng XOR gộp** trước khi kiểm tra trạng thái cổng OTP — cổng tách và cổng gộp **cùng loại XOR** nên cân bằng, không gây kẹt luồng (deadlock).
+
+### 4.2. Phân tích định tính
+
+#### a. Phân loại hoạt động VA/BVA/NVA
+
+| Hoạt động | Phân loại | Nhận xét |
 |---|---|---|
-| Nhập số điện thoại/thông tin cá nhân | BVA | Cần để tạo hồ sơ khách hàng và định danh tài khoản |
+| Nhập số điện thoại/thông tin cá nhân | BVA | Cần để tạo hồ sơ và định danh tài khoản |
 | Nhận và xác nhận mã OTP | BVA | Xác thực bảo mật trước khi tạo tài khoản |
-| Tạo và kích hoạt tài khoản | VA | Giá trị trực tiếp — khách hàng mua sắm và hưởng ưu đãi thành viên |
+| Tạo và kích hoạt tài khoản | VA | Giá trị trực tiếp — khách mua sắm và hưởng ưu đãi thành viên |
 | Đăng nhập bằng mật khẩu đã lưu | VA | Truy cập ngay quyền lợi thành viên |
 | Chờ nhận OTP/mật khẩu tạm | NVA | Chờ (Hold); rút ngắn thời gian gửi và có kênh dự phòng |
-| Nhập lại OTP do sai/hết hạn | NVA | Lỗi (Defects); cho gửi lại OTP không cần nhập lại toàn bộ thông tin |
+| Nhập lại OTP do sai/hết hạn | NVA | Lỗi (Defects); cho gửi lại OTP mà không phải nhập lại toàn bộ thông tin |
 | Đăng ký lại từ đầu khi OTP hết hạn | NVA | Xử lý dư (Over-processing); lưu tạm dữ liệu đã nhập trong phiên |
-| Liên hệ CSKH qua nhiều kênh không đầu mối rõ | NVA | Di chuyển (Move); hợp nhất kênh hỗ trợ ngay trên trang đăng ký/đăng nhập |
+| Liên hệ chăm sóc khách hàng qua nhiều kênh rời rạc | NVA | Di chuyển (Move); hợp nhất đầu mối hỗ trợ ngay trên trang đăng ký/đăng nhập |
 
-### 8.4. VA/BVA/NVA – S1
+Quy trình này có 2 hoạt động VA, 2 hoạt động BVA và 4 hoạt động NVA. Đây là quy trình tự phục vụ nên tỷ trọng NVA cao hơn các quy trình có nhân sự trực tiếp phục vụ — phần lớn NVA gắn với thời gian chờ và các bước phát sinh khi có lỗi (OTP sai/hết hạn, phải đăng ký lại, phải liên hệ chăm sóc khách hàng).
 
-| Hoạt động | Phân loại | Lý do/khắc phục |
-|---|---|---|
-| Đăng tin và sàng lọc ATS | BVA | Cần để lọc hồ sơ đạt chuẩn; tối ưu tiêu chí lọc để giảm sót ứng viên tốt |
-| Phỏng vấn V1 và V2/V3 | VA | Trực tiếp chọn đúng người phù hợp vị trí |
-| Background check/khám sức khỏe | BVA | Tuân thủ pháp lý và kiểm soát rủi ro |
-| Onboarding (uniform, đào tạo, cấp tài khoản) | VA | Biến ứng viên thành nhân sự vận hành được ngay |
-| Chờ phản hồi giữa các vòng phỏng vấn | NVA | Chờ (Hold); đặt SLA phản hồi cho từng vòng |
-| Ứng viên/HR trao đổi offer qua nhiều kênh rời rạc | NVA | Di chuyển (Move); tập trung liên lạc trên một hệ ATS/email chuẩn |
-| Nhập lại thông tin ứng viên ở nhiều biểu mẫu | NVA | Xử lý dư (Over-processing); dùng một hồ sơ ứng viên xuyên suốt ATS |
-| Tuyển lại do nghỉ việc sớm (turnover cao) | NVA | Lỗi (Defects); cải thiện chọn lọc và onboarding để giảm nghỉ việc |
+#### b. Phân tích lãng phí (Move – Hold – Over-processing – Defects)
 
-### 8.5. Bốn loại lãng phí (Move – Hold – Over-processing – Defects)
-
-| Loại | M3 | S3 | S4 | S1 |
+| Bước | Loại lãng phí | Biểu hiện | Tác động | Khắc phục |
 |---|---|---|---|---|
-| Di chuyển (Move) | Chuyển tệp qua nhiều kênh → một nơi lưu trữ, một mã kế hoạch | Chuyển phiếu/biên bản qua nhiều đầu mối → hồ sơ điện tử, một mã vụ việc | Khách tự tìm hotline/fanpage/Zalo/email khi lỗi → nút hỗ trợ/chatbot ngay trên trang đăng ký/đăng nhập | Trao đổi offer/hồ sơ qua nhiều kênh rời rạc → tập trung trên một hệ ATS |
-| Chờ (Hold) | Chờ báo cáo/ngân sách/phê duyệt → thời hạn, người phụ trách, cảnh báo | Chờ đếm lại/giải trình/duyệt → thời hạn, hàng đợi quá hạn, người phụ trách | Chờ nhận OTP/mật khẩu tạm → rút ngắn thời gian gửi, thêm kênh dự phòng, đếm ngược hiệu lực | Chờ phản hồi giữa các vòng phỏng vấn → SLA phản hồi từng vòng, cảnh báo quá hạn |
-| Xử lý dư (Over-processing) | Nhập/đối chiếu trùng dữ liệu → bảng theo dõi, quy tắc tự động | Đếm/nhập/đối chiếu trùng → kiểm kê theo rủi ro, dùng dữ liệu gốc | Nhập lại toàn bộ thông tin khi OTP hết hạn → lưu tạm dữ liệu phiên, chỉ gửi lại OTP | Nhập lại thông tin ứng viên ở nhiều biểu mẫu → một hồ sơ ứng viên xuyên suốt |
-| Lỗi (Defects) | Dự báo/mã hàng sai → kiểm tra dữ liệu gốc, khóa phiên bản | Chênh lệch lặp lại, thiếu bằng chứng, sai giao dịch → mã vạch, nhật ký kiểm tra, mã nguyên nhân | OTP sai/hết hạn, SĐT đã tồn tại không có thông báo rõ → thông báo lỗi cụ thể kèm hướng dẫn bước tiếp theo | Tuyển lại do nghỉ việc sớm/turnover cao → cải thiện chọn lọc và onboarding |
+| Liên hệ hỗ trợ khi gặp lỗi | Di chuyển (Move) | Khách tự tìm tổng đài/fanpage/Zalo/email khi gặp lỗi, không có đầu mối tại chỗ | Khách rời khỏi luồng đăng ký để tìm kênh hỗ trợ, dễ bỏ dở | Thêm nút hỗ trợ/chatbot ngay trên trang đăng ký/đăng nhập |
+| Gửi và xác thực OTP | Chờ (Hold) | Chờ nhận OTP/mật khẩu tạm qua Zalo ZNS/SMS | Kéo dài thời gian hoàn tất, tăng nguy cơ bỏ dở khi chờ lâu | Rút ngắn thời gian gửi, thêm kênh dự phòng, hiển thị đếm ngược hiệu lực OTP |
+| Đăng ký lại khi OTP hết hạn | Xử lý dư (Over-processing) | Khách nhập lại toàn bộ thông tin thay vì chỉ gửi lại OTP | Tăng thao tác thừa, tăng khả năng bỏ dở giữa chừng | Lưu tạm dữ liệu đã nhập trong phiên, chỉ yêu cầu gửi lại OTP |
+| Nhập lại OTP / số điện thoại đã tồn tại | Lỗi (Defects) | OTP sai/hết hạn, số điện thoại đã tồn tại nhưng thông báo lỗi chung chung | Khách không biết bước tiếp theo, phải tự đoán hoặc gọi hỗ trợ | Thông báo lỗi cụ thể theo từng nguyên nhân kèm hướng dẫn bước tiếp theo |
 
-### 8.6. Phân tích nguyên nhân gốc (Vấn đề – Nguyên nhân – Khắc phục)
+#### c. Phân tích các bên liên quan
 
-| Quy trình | Vấn đề cần kiểm chứng | Nguyên nhân giả định | Khắc phục đề xuất |
+| Bên liên quan | Vai trò trong quy trình này | Mối quan tâm chính | Vấn đề tác động |
 |---|---|---|---|
-| M3 | Kế hoạch phải lập lại | Dữ liệu dự báo/tồn/gốc chưa đồng nhất | Khóa phiên bản, kiểm tra trước khi gửi, ghi rõ người phụ trách |
-| M3 | Phê duyệt chậm | Thiếu thời hạn và tiêu chí duyệt thống nhất | Thiết lập hạn duyệt, hàng đợi quá hạn, chuyển cấp |
-| M3 | Phân bổ lệch nhu cầu | Số tháng tồn, tỷ lệ bán, sức chứa chưa đồng bộ | Bảng theo dõi chung, quy tắc phân bổ cần xác thực |
-| S3 | Độ chính xác tồn kho giảm | Giao dịch chưa cập nhật hoặc đếm sai | Khóa thời điểm kiểm kê, quét mã, đối chiếu sổ trước điều chỉnh |
-| S3 | Chênh lệch quá hạn | Đếm lại/giải trình/phê duyệt bị chờ | Đặt thời hạn, hàng đợi quá hạn, chuyển cấp theo rủi ro |
-| S3 | Điều chỉnh lặp lại | Chưa phân loại nguyên nhân gốc | Mã nguyên nhân, nhật ký kiểm tra, phản hồi về M3 |
-| S4 | Tỷ lệ bỏ dở đăng ký cao | OTP đến chậm/hết hạn, phải nhập lại toàn bộ thông tin | Lưu tạm dữ liệu phiên, điều chỉnh hợp lý thời gian hiệu lực OTP theo dữ liệu thực |
-| S4 | Khách không tự xử lý được lỗi đăng nhập | Thông báo lỗi chung chung, thiếu hướng dẫn bước kế tiếp | Chuẩn hóa thông báo lỗi theo từng nguyên nhân (OTP sai, SĐT đã tồn tại, tài khoản khóa) |
-| S4 | Khối lượng yêu cầu CSKH về tài khoản tăng | Thiếu kênh tự phục vụ rõ ràng trên trang đăng ký/đăng nhập | Tích hợp chatbot/hướng dẫn tự khắc phục tại bước phát sinh lỗi trước khi chuyển CSKH |
-| S1 | Thời gian tuyển (time-to-hire) kéo dài | Chờ phản hồi giữa các vòng phỏng vấn, thiếu SLA từng vòng | Đặt SLA phản hồi cho mỗi vòng, hàng đợi ứng viên quá hạn, nhắc tự động |
-| S1 | Ứng viên từ chối offer / nhận việc rồi bỏ | Quy trình phỏng vấn dài, trao đổi offer rời rạc, chậm ra quyết định | Rút gọn vòng cho vị trí cửa hàng (fast-track), tập trung trao đổi offer trên một hệ ATS |
-| S1 | Nghỉ việc sớm (turnover cao ở nhân sự cửa hàng) | Chọn lọc chưa sát yêu cầu vị trí, onboarding chưa đủ | Chuẩn hóa tiêu chí sàng lọc theo vị trí, hoàn thiện onboarding (uniform, đào tạo, cấp tài khoản POS) |
+| Khách hàng | Người đăng ký, nhập OTP, tạo tài khoản | Đăng ký nhanh, ít lỗi, nhận ưu đãi ngay | Chờ OTP lâu/hết hạn, thông báo lỗi khó hiểu → bỏ dở |
+| Cổng đăng ký (Frontend) | Giao diện đăng ký, khởi tạo hồ sơ tạm | Tỷ lệ hoàn tất cao, ít bước rơi rụng | Chưa lưu tạm dữ liệu phiên, thông báo lỗi chưa chuẩn hóa |
+| Salesforce CRM | Kiểm tra trùng, tạo tài khoản, cấp mã thành viên | Hồ sơ sạch, không trùng lặp | Gộp dữ liệu cũ chưa rõ quy tắc `[giả định]` |
+| Cổng gửi OTP (Zalo ZNS/SMS) | Gửi OTP qua kênh chính/dự phòng | Gửi đúng hạn, chi phí hợp lý | Nghẽn/độ trễ kênh chính, chưa tự chuyển kênh dự phòng kịp |
+| Chăm sóc khách hàng & Đồng bộ | Hỗ trợ khi lỗi, xử lý đồng bộ thất bại | Ít yêu cầu phát sinh, xử lý nhanh | Khối lượng yêu cầu tăng do khách không tự khắc phục được |
 
-## 9. Phân tích định lượng (Thời gian – Chất lượng – Chi phí)
+*(Có thể còn bộ phận Marketing chương trình thành viên và bộ phận kỹ thuật vận hành hệ thống liên quan; xác nhận qua phỏng vấn — xem mục 4.5.)*
 
-Rubric yêu cầu **tính toán** trên ba nhóm chỉ số: Thời gian, Chất lượng, Chi phí. Do chưa tiếp cận được số nội bộ ACFC, phần dưới trình bày **công thức + một ví dụ tính toán minh họa** để thể hiện phương pháp.
+#### d. Vấn đề nổi bật (Issue register)
 
-> ⚠️ **Lưu ý liêm chính học thuật:** mọi con số ở cột "Dữ liệu giả định" và "Kết quả tính" bên dưới là **số nhóm tự đặt để minh họa cách tính — KHÔNG phải số liệu thực của ACFC**. Sau phỏng vấn/workshop sẽ thay bằng ba mốc *thấp nhất – thường gặp – cao nhất* từ dữ liệu thật rồi áp lại đúng công thức ở cột "Công thức". Các đơn giá giờ công (120k–150k), đơn giá SMS (300đ) và đơn giá giờ CSKH (100k) đều là giả định minh họa.
+Cấu trúc: **Nguyên nhân** (xác định bằng 5 Why ở mục 4.4, khác với vấn đề tự suy ra từ mô tả) → **Tác động** → **Giải pháp**.
 
-### 9.1. M3 – Lập kế hoạch mua hàng và phân bổ
-
-**a) Nhóm Thời gian (Time)**
-
-| KPI | Công thức | Dữ liệu giả định (minh họa) | Kết quả tính |
+| Vấn đề | Nguyên nhân | Tác động | Giải pháp |
 |---|---|---|---|
-| Thời gian chu kỳ lập kế hoạch (Cycle time) | Thời điểm phát hành − thời điểm bắt đầu | Bắt đầu 09:00 ngày 1 → phát hành 17:00 ngày 5 | **40 giờ** |
-| Thời gian xử lý thực (Processing/VA+BVA) | Σ thời gian các bước tạo/kiểm/duyệt (B1–B10) | ≈ 14 giờ | **14 giờ** |
-| Thời gian chờ (Waiting/NVA) | Cycle − Processing | 40 − 14 | **26 giờ** |
-| Hiệu suất chu kỳ (PCE) | Processing / Cycle time | 14 / 40 | **35%** |
-| Thời gian phê duyệt | Thời điểm duyệt − thời điểm trình | Trình 14:00 ngày 3 → duyệt 10:00 ngày 5 | **≈ 44 giờ** |
+| Tỷ lệ bỏ dở đăng ký cao | OTP đến chậm hoặc hết hạn, khách phải nhập lại toàn bộ thông tin | Mất khách tiềm năng và doanh thu cơ hội ngay ở cửa ngõ thành viên | Lưu tạm dữ liệu phiên; giám sát độ trễ để tự chuyển kênh dự phòng; điều chỉnh thời hạn hiệu lực OTP theo dữ liệu thực |
+| Khách không tự xử lý được lỗi đăng nhập | Thông báo lỗi chung chung, thiếu hướng dẫn bước kế tiếp | Khách bế tắc, hoặc bỏ dở hoặc dồn sang chăm sóc khách hàng | Chuẩn hóa thông báo lỗi theo từng nguyên nhân (OTP sai, số điện thoại đã tồn tại, tài khoản bị khóa) kèm hướng dẫn |
+| Khối lượng yêu cầu chăm sóc khách hàng tăng | Thiếu kênh tự phục vụ rõ ràng trên trang đăng ký/đăng nhập | Tăng chi phí nhân công hỗ trợ, thời gian xử lý kéo dài | Tích hợp chatbot/hướng dẫn tự khắc phục ngay tại bước phát sinh lỗi trước khi chuyển chăm sóc khách hàng |
 
-*Nhận xét: PCE 35% nghĩa là gần 2/3 thời gian là chờ (NVA) — khớp với lãng phí "Chờ (Hold)" ở mục 8.5.*
+### 4.3. Phân tích định lượng
 
-**b) Nhóm Chất lượng (Quality)**
+> Số dưới đây là **số minh họa cách tính** `[giả định]`, sẽ thay bằng ba mốc thấp – thường gặp – cao sau phỏng vấn.
 
-| KPI | Công thức | Dữ liệu giả định (minh họa) | Kết quả tính |
+#### a. Phân tích thời gian
+
+| Chỉ số | Công thức | Số minh họa `[giả định]` | Kết quả |
 |---|---|---|---|
-| Độ chính xác dự báo | 1 − abs(dự báo − thực tế) / thực tế | Dự báo 1.000, thực tế 1.200 | **83,3%** |
-| Tỷ lệ bán qua (Sell-through) | Số bán / số khả dụng | 750 / 1.000 | **75%** |
-| Số tháng tồn kho (WoS) | Tồn cuối kỳ / tốc độ bán bình quân tháng | 600 / 250 | **2,4 tháng** |
-| Tỷ lệ thay đổi phân bổ | Kế hoạch sửa / kế hoạch phát hành | 15 / 100 | **15%** |
+| Thời gian hoàn tất đăng ký (chu kỳ) | Thời điểm kích hoạt − thời điểm bắt đầu | 0 → 90 giây | 90 giây |
+| Thời gian chờ nhận OTP | Thời điểm nhận OTP − thời điểm gửi | ≈ 20 giây | 20 giây |
+| Hiệu suất chu kỳ (PCE) | (Chu kỳ − thời gian chờ) / Chu kỳ | (90 − 20) / 90 | ≈ 78% |
+| Thời gian xử lý một yêu cầu chăm sóc khách hàng | Thời điểm đóng − thời điểm khách liên hệ | 09:00 → 11:00 | 2 giờ |
 
-**c) Nhóm Chi phí (Cost)**
+#### b. Phân tích chi phí
 
-| KPI | Công thức | Dữ liệu giả định (minh họa) | Kết quả tính |
+| Chỉ số | Công thức | Số minh họa `[giả định]` | Kết quả |
 |---|---|---|---|
-| Chi phí lập lại kế hoạch (Defects) | Số lần lập lại × giờ công × đơn giá giờ | 2 lần × 8 giờ × 150.000đ | **2.400.000đ / mùa** |
-| Chi phí đọng vốn tồn dư (Over-stock) | Giá trị tồn dư × chi phí giữ hàng/tháng | 200 sp × 300.000đ × 2% | **1.200.000đ / tháng** |
-| Chi phí chờ phê duyệt (Hold) | Số kế hoạch × giờ chờ × đơn giá giờ | 4 × 26 giờ × 150.000đ | **15.600.000đ / mùa** |
+| Chi phí gửi OTP | Tổng lượt gửi × đơn giá bình quân ZNS/SMS | 1.000 × 400đ | 400.000đ / 1.000 lượt |
+| Chi phí xử lý chăm sóc khách hàng | Số lượt × thời gian trung bình × đơn giá giờ công | 60 × 0,25 giờ × 40.000đ | 600.000đ |
+| Doanh thu cơ hội mất do bỏ dở đăng ký | Số lượt bỏ dở × giá trị đơn bình quân × tỷ lệ chuyển đổi kỳ vọng | 180 × 500.000đ × 10% | 9.000.000đ |
 
-### 9.2. S3 – Kiểm kê và xử lý chênh lệch tồn kho
+> **Đơn giá gửi OTP (tham khảo NCC 2025):** ZNS OTP (Zalo) ~300đ/tin (chưa VAT, kênh chính); SMS Brandname OTP ~750đ/tin (đã VAT, kênh dự phòng khi không gửi được ZNS). Giả định 80% ZNS + 20% SMS → đơn giá bình quân ≈ **400đ/lượt** (xem §1.3). Số *lượt gửi* (1.000) là `[giả định]` sản lượng của ACFC.
 
-**a) Nhóm Thời gian (Time)**
+### 4.4. Phân tích nguyên nhân gốc
 
-| KPI | Công thức | Dữ liệu giả định (minh họa) | Kết quả tính |
+#### Ưu tiên vấn đề bằng Pareto
+
+Ba vấn đề ở mục 4.2.d được quy về **cùng đơn vị** — chi phí/doanh thu mất kỳ vọng trên 1.000 lượt đăng ký (nghìn đồng). Toàn bộ số liệu là `[giả định]` từ mục 4.3.
+
+| Vấn đề | Chi phí kỳ vọng (nghìn đồng) `[giả định]` | Tỷ trọng | Lũy kế |
 |---|---|---|---|
-| Thời gian chu kỳ kiểm kê (Cycle time) | Thời điểm đóng hồ sơ − thời điểm bắt đầu (freeze) | Freeze 20:00 → đóng hồ sơ 08:00 hôm sau | **12 giờ** |
-| Thời gian đếm thực tế (Processing/VA+BVA) | Σ thời gian đếm + đối chiếu (B5–B6) | ≈ 4 giờ | **4 giờ** |
-| Thời gian chờ (Waiting/NVA) | Chờ duyệt phạm vi + chờ phê duyệt điều chỉnh (B3, B12) | ≈ 6 giờ | **6 giờ** |
-| Hiệu suất chu kỳ (PCE) | Processing / Cycle time | 4 / 12 | **33%** |
-| Tuổi chênh lệch chưa đóng | Ngày hiện tại − ngày mở hồ sơ | Mở 01/08 → xét 06/08 | **5 ngày** |
+| Bỏ dở đăng ký (doanh thu cơ hội mất) | 9.000 | 90,0% | 90,0% |
+| Yêu cầu chăm sóc khách hàng tăng (chi phí nhân công) | 600 | 6,0% | 96,0% |
+| Lỗi đăng nhập khách không tự xử lý (gửi lại OTP + thao tác dư) | 400 | 4,0% | 100,0% |
+| **Tổng** | **10.000** | 100% | — |
 
-**b) Nhóm Chất lượng (Quality)**
+Theo nguyên tắc 80/20, riêng **"bỏ dở đăng ký"** đã chiếm 90,0% tổng thiệt hại kỳ vọng — vượt xa ngưỡng 80% — nên là vấn đề phải ưu tiên xử lý trước; cộng thêm "yêu cầu chăm sóc khách hàng tăng" thì hai vấn đề đầu chiếm 96,0%. Đây là nhóm "số ít quan trọng" cần tập trung nguồn lực. (Hai dòng nhân công CSKH và lỗi đăng nhập tính lại theo đơn giá giờ 40.000đ và đơn giá OTP 400đ ở §1.3.)
 
-| KPI | Công thức | Dữ liệu giả định (minh họa) | Kết quả tính |
+#### Phân tích 5 Why (cho vấn đề ưu tiên: bỏ dở đăng ký)
+
+1. **Vì sao khách bỏ dở đăng ký?** → Vì phải chờ OTP lâu hoặc OTP hết hạn trước khi kịp nhập.
+2. **Vì sao OTP đến chậm/hết hạn?** → Vì chủ yếu gửi qua một kênh chính (Zalo ZNS); khi kênh nghẽn không tự chuyển kênh dự phòng kịp, và thời hạn hiệu lực đặt cố định, không theo độ trễ thực tế.
+3. **Vì sao không tự chuyển kênh dự phòng và để hiệu lực cố định?** → Vì luồng gửi OTP chưa giám sát độ trễ theo thời gian thực để chủ động chuyển SMS, và chưa hiển thị đếm ngược hiệu lực cho khách.
+4. **Vì sao chưa giám sát độ trễ và chưa có đếm ngược?** → Vì thiết kế đăng ký tối ưu cho luồng thuận lợi, chưa xử lý kỹ trường hợp gửi OTP trễ.
+5. **Vì sao thiết kế chưa xử lý trường hợp trễ OTP?** → Vì chưa đo tỷ lệ hết hạn/độ trễ OTP thực tế để đặt yêu cầu thiết kế; thiếu vòng đo lường – cải tiến dựa trên dữ liệu vận hành.
+
+**Nguyên nhân gốc:** thiếu cơ chế đo lường độ trễ/tỷ lệ hết hạn OTP và thiếu kênh dự phòng tự động kèm lưu tạm dữ liệu phiên → dẫn tới chuỗi hệ quả kết thúc ở việc khách bỏ dở.
+
+### 4.5. Phỏng vấn bổ sung
+
+1. Tỷ lệ đăng ký thành công và tỷ lệ bỏ dở thực tế là bao nhiêu?
+2. Tỷ lệ OTP xác nhận đúng ngay lần đầu và tỷ lệ khách cần hỗ trợ thực tế là bao nhiêu?
+3. Thời gian hoàn tất đăng ký và thời gian chờ OTP trung bình thực tế là bao lâu?
+4. Đơn giá SMS/ZNS và đơn giá giờ công chăm sóc khách hàng thực tế là bao nhiêu? Tỷ lệ gửi qua ZNS so với SMS thực tế khoảng bao nhiêu?
+5. Ngoài 5 bên đã nêu ở mục 4.2.c, còn bộ phận nào (Marketing chương trình thành viên, kỹ thuật vận hành hệ thống…) có mối quan tâm hoặc bị ảnh hưởng bởi quy trình này?
+
+### 4.6. Đề xuất cải tiến (TO-BE)
+
+Theo thứ tự ưu tiên Pareto ở mục 4.4:
+
+1. **Bỏ dở đăng ký (ưu tiên cao nhất)** — lưu tạm dữ liệu đã nhập trong phiên để khi OTP hết hạn chỉ cần gửi lại OTP; giám sát độ trễ để tự chuyển kênh dự phòng (SMS) khi kênh chính nghẽn; hiển thị đếm ngược hiệu lực OTP; theo dõi tỷ lệ hết hạn OTP để điều chỉnh thời hạn hiệu lực hợp lý thay vì cố định.
+2. **Yêu cầu chăm sóc khách hàng tăng** — tích hợp chatbot/hướng dẫn tự khắc phục ngay tại bước phát sinh lỗi, hợp nhất đầu mối hỗ trợ trên trang đăng ký/đăng nhập trước khi khách phải chuyển sang tổng đài.
+3. **Lỗi đăng nhập khách không tự xử lý** — chuẩn hóa thông báo lỗi theo từng nguyên nhân cụ thể (OTP sai, số điện thoại đã tồn tại, tài khoản bị khóa) kèm hướng dẫn bước tiếp theo.
+
+---
+
+## 5. Tuyển dụng và tiếp nhận nhân sự chuỗi bán lẻ/kho vận
+
+### 5.1. Mô tả hiện trạng (AS-IS)
+
+**Người kích hoạt:** phòng Nhân sự khi có yêu cầu tuyển dụng từ cửa hàng/kho/khối văn phòng.
+**Người hưởng lợi:** cửa hàng/kho/khối văn phòng (được bổ sung nhân sự đúng chuẩn) — trực tiếp; toàn chuỗi vận hành (khâu hoạch định, kiểm kê, tài khoản và kho có người thực thi) và ứng viên (có việc làm, được tiếp nhận) — gián tiếp.
+**Ranh giới:** từ khi phát sinh yêu cầu tuyển dụng và đăng tin đến khi ký hợp đồng lao động sau thử việc (hoặc thanh lý nếu không đạt). Không bao gồm quản trị lương thưởng, đào tạo dài hạn hay đánh giá hiệu suất định kỳ sau khi đã ký hợp đồng chính thức.
+
+**Phân nhóm đối tượng:** nhân viên cửa hàng (tuyển số lượng lớn, đặc thù bán lẻ, tỷ lệ nghỉ việc cao) và nhân viên văn phòng/kho vận (yêu cầu chuyên môn cao). Kênh thu hút ứng viên: trang tuyển dụng ACFC, TopCV, LinkedIn, VietnamWorks và các hội nhóm mạng xã hội.
+
+| # | Người thực hiện | Bước (Động từ + Danh từ) | Ghi chú/hệ thống |
 |---|---|---|---|
-| Độ chính xác tồn kho (IRA) | 1 − Σ abs(chênh lệch) / tổng tồn kho | 1 − 30 / 10.000 | **99,7%** |
-| Tỷ lệ hao hụt (Shrinkage) | Giá trị thiếu không giải thích / giá trị tồn | 3.000.000đ / 2.000.000.000đ | **0,15%** |
-| Tỷ lệ đếm lại | Số mã phải đếm lại / tổng mã đếm | 40 / 500 | **8%** |
-| Tỷ lệ điều chỉnh | Kiểm kê có điều chỉnh / tổng kiểm kê | 3 / 20 | **15%** |
-| Tỷ lệ đóng đúng hạn | Hồ sơ đóng đúng hạn / tổng hồ sơ | 18 / 20 | **90%** |
+| 1 | Phòng Nhân sự | Đăng tải tin tuyển dụng | Cổng điều kiện: vị trí là nhân viên cửa hàng hay văn phòng/kho? |
+| 2 | Hệ thống sàng lọc hồ sơ | Sàng lọc hồ sơ ứng viên | Cổng điều kiện: ứng viên có kinh nghiệm bán lẻ (vào luồng ưu tiên) không? |
+| 3 | Chuyên viên tuyển dụng | Kiểm tra lý lịch | Cổng điều kiện: lý lịch đạt chuẩn không? |
+| 4 | Quản lý trực tiếp | Phỏng vấn vòng 1 | Cổng điều kiện: đạt vòng 1 không? |
+| 5 | Giám đốc Nhân sự/Ban Giám đốc | Phỏng vấn chuyên sâu vòng 2 và 3 (vị trí cấp cao) | Cổng điều kiện: đạt vòng 2/3 không? |
+| 6 | Phòng Nhân sự | Đàm phán và chốt thư mời nhận việc | Cổng điều kiện: ứng viên chấp nhận thư mời không? |
+| 7 | Nhân sự/Y tế | Khám sức khỏe trước tuyển dụng | Cổng điều kiện: đạt khám sức khỏe theo luật định không? |
+| 8 | Nhân sự & Công nghệ thông tin | Triển khai tiếp nhận (đồng phục, đào tạo, cấp tài khoản POS/Retail Pro Prism) | — |
+| 9 | Quản lý trực tiếp | Đánh giá thử việc 2 tháng | Chỉ tiêu: doanh số và mức hài lòng khách hàng |
+| 10 | Phòng Nhân sự | Xem xét và ký hợp đồng lao động | Cổng điều kiện: đạt chỉ tiêu thử việc không? (đạt → ký; không → thanh lý) |
 
-**c) Nhóm Chi phí (Cost)**
+**Kịch bản thành công:** yêu cầu tuyển dụng rõ ràng → hệ thống lọc được hồ sơ phù hợp (ứng viên có kinh nghiệm bán lẻ → luồng ưu tiên) → kiểm tra lý lịch đạt → vượt phỏng vấn vòng 1 và vòng 2/3 → chấp nhận thư mời → đạt khám sức khỏe → tiếp nhận đầy đủ → đạt chỉ tiêu thử việc 2 tháng → ký hợp đồng chính thức. **Kết quả:** "Tuyển được nhân sự phù hợp và ký hợp đồng sau thử việc."
 
-| KPI | Công thức | Dữ liệu giả định (minh họa) | Kết quả tính |
+**Kịch bản thất bại/ngoại lệ:**
+- Không có hồ sơ đạt qua sàng lọc → đăng lại tin/mở rộng kênh tuyển.
+- Kiểm tra lý lịch không đạt → loại ứng viên, tránh rủi ro pháp lý/an ninh.
+- Trượt phỏng vấn vòng 1 hoặc vòng 2/3 → loại hoặc lưu hồ sơ cho vị trí khác.
+- Ứng viên từ chối/không chốt được thư mời → đàm phán lại hoặc chuyển ứng viên dự phòng.
+- Không đạt khám sức khỏe theo luật định → dừng tiếp nhận.
+- Không đạt chỉ tiêu thử việc → thanh lý hợp đồng thử việc, phỏng vấn thôi việc; nếu tỷ lệ nghỉ việc cao kéo dài → phản hồi lại khâu tuyển chọn/tiếp nhận. Ngưỡng chỉ tiêu, thời hạn từng vòng và cấp duyệt cụ thể `[giả định]`.
+
+**Cấu trúc BPMN:** pool tuyển dụng nhân sự với các lane Phòng Nhân sự, Hệ thống sàng lọc hồ sơ, Quản lý trực tiếp/Ban Giám đốc và Y tế/Công nghệ thông tin. Các cổng quyết định đều là cổng XOR theo luồng tuyển dụng (phân loại vị trí; qua sàng lọc; lý lịch đạt; đạt từng vòng phỏng vấn; chấp nhận thư mời; đạt khám sức khỏe; đạt chỉ tiêu thử việc). Mỗi cổng rẽ thành nhánh loại trừ nhau: nhánh đạt đi tiếp, nhánh không đạt quay lại bước phù hợp (đăng lại tin, đàm phán lại) hoặc dẫn tới sự kiện Kết thúc riêng (loại ứng viên / thanh lý hợp đồng thử việc).
+
+> **Ghi chú kỹ thuật:** mỗi cổng XOR trên sơ đồ đều thể hiện đủ hai nhánh loại trừ nhau — nhánh đạt (có nhãn: Có / Đạt / ≥70đ / Duyệt / Duyệt lại) đi tiếp, nhánh không đạt (có nhãn: Không / Trượt / <70đ) dẫn tới một sự kiện Kết thúc riêng (Đóng yêu cầu tuyển dụng, Loại hồ sơ, Loại sơ vấn, Loại vòng 1, Loại bài test, Loại vòng 2, Dừng do chưa đạt thoả thuận lương). Nhờ đó luồng cân bằng, không còn cổng thiếu nhánh hay treo (deadlock).
+
+### 5.2. Phân tích định tính
+
+#### a. Phân loại hoạt động VA/BVA/NVA
+
+| Hoạt động | Phân loại | Nhận xét |
+|---|---|---|
+| Phỏng vấn vòng 1 và vòng 2/3 | VA | Trực tiếp chọn đúng người phù hợp vị trí |
+| Tiếp nhận (đồng phục, đào tạo, cấp tài khoản) | VA | Biến ứng viên thành nhân sự vận hành được ngay |
+| Đăng tin và sàng lọc hồ sơ | BVA | Cần để lọc hồ sơ đạt chuẩn; tối ưu tiêu chí để giảm sót ứng viên tốt |
+| Kiểm tra lý lịch/khám sức khỏe | BVA | Tuân thủ pháp lý và kiểm soát rủi ro |
+| Chờ phản hồi giữa các vòng phỏng vấn | NVA | Chờ (Hold); đặt thời hạn phản hồi cho từng vòng |
+| Trao đổi thư mời/hồ sơ qua nhiều kênh rời rạc | NVA | Di chuyển (Move); tập trung liên lạc trên một hệ thống chuẩn |
+| Nhập lại thông tin ứng viên ở nhiều biểu mẫu | NVA | Xử lý dư (Over-processing); dùng một hồ sơ ứng viên xuyên suốt |
+| Tuyển lại do nghỉ việc sớm | NVA | Lỗi (Defects); cải thiện chọn lọc và tiếp nhận để giảm nghỉ việc |
+
+#### b. Phân tích lãng phí (Move – Hold – Over-processing – Defects)
+
+| Bước | Loại lãng phí | Biểu hiện | Tác động | Khắc phục |
+|---|---|---|---|---|
+| Trao đổi thư mời/hồ sơ | Di chuyển (Move) | Trao đổi qua nhiều kênh rời rạc (email, điện thoại, tin nhắn) | Thất lạc thông tin, chậm ra quyết định | Tập trung liên lạc và trạng thái ứng viên trên một hệ thống |
+| Chờ giữa các vòng phỏng vấn | Chờ (Hold) | Chờ phản hồi kết quả từng vòng không có thời hạn | Kéo dài thời gian tuyển, mất ứng viên tốt | Đặt thời hạn phản hồi từng vòng, hàng đợi quá hạn, nhắc tự động |
+| Nhập lại hồ sơ ứng viên | Xử lý dư (Over-processing) | Nhập lại thông tin ứng viên ở nhiều biểu mẫu qua các vòng | Tốn công, dễ sai lệch dữ liệu | Dùng một hồ sơ ứng viên xuyên suốt, kế thừa dữ liệu giữa các vòng |
+| Nghỉ việc sớm phải tuyển lại | Lỗi (Defects) | Nghỉ việc sớm/tỷ lệ nghỉ cao ở nhân viên cửa hàng | Tốn chi phí tuyển lại, gián đoạn vận hành cửa hàng | Chuẩn hóa tiêu chí sàng lọc theo vị trí, hoàn thiện tiếp nhận |
+
+#### c. Phân tích các bên liên quan
+
+| Bên liên quan | Vai trò trong quy trình này | Mối quan tâm chính | Vấn đề tác động |
 |---|---|---|---|
-| Chi phí mỗi đợt kiểm kê | Số người × số giờ × đơn giá giờ | 5 người × 4 giờ × 120.000đ | **2.400.000đ / đợt** |
-| Chi phí đếm lại (Defects) | Số giờ đếm lại × đơn giá giờ | 6 giờ × 120.000đ | **720.000đ / đợt** |
-| Chi phí hao hụt phải bồi thường/xóa sổ | Giá trị thiếu không thu hồi được | Theo ví dụ trên | **3.000.000đ / đợt** |
+| Phòng Nhân sự | Chủ quy trình, đăng tin, chốt thư mời | Tuyển đủ, đúng hạn, chi phí hợp lý | Thời gian tuyển kéo dài, ứng viên từ chối |
+| Ứng viên | Nộp hồ sơ, phỏng vấn, nhận việc | Quy trình nhanh, minh bạch | Chờ phản hồi lâu, trao đổi rời rạc |
+| Quản lý trực tiếp/Ban Giám đốc | Phỏng vấn, đánh giá thử việc | Chọn đúng người, giữ được người | Chọn lọc chưa sát yêu cầu vị trí |
+| Cửa hàng/Kho/Khối văn phòng | Nơi tiếp nhận nhân sự | Có người vận hành đúng chuẩn, ổn định | Nghỉ việc sớm gây thiếu người |
+| Công nghệ thông tin/Y tế | Cấp tài khoản, khám sức khỏe | Tiếp nhận đầy đủ, đúng luật | Chậm cấp tài khoản/đồng phục làm chậm hòa nhập |
 
-### 9.3. S4 – Đăng ký và kích hoạt tài khoản thành viên
+#### d. Vấn đề nổi bật (Issue register)
 
-**a) Nhóm Thời gian (Time)**
+Cấu trúc: **Nguyên nhân** (xác định bằng 5 Why ở mục 5.4) → **Tác động** → **Giải pháp**.
 
-| KPI | Công thức | Dữ liệu giả định (minh họa) | Kết quả tính |
+| Vấn đề | Nguyên nhân | Tác động | Giải pháp |
 |---|---|---|---|
-| Thời gian hoàn tất đăng ký (Cycle time) | Thời điểm kích hoạt − thời điểm bắt đầu | Bắt đầu 0s → kích hoạt 90s | **90 giây** |
-| Thời gian chờ nhận OTP (Waiting/NVA) | Thời điểm nhận OTP − thời điểm gửi | ≈ 20 giây | **20 giây** |
-| Hiệu suất chu kỳ (PCE) | (Cycle − Waiting) / Cycle | (90 − 20) / 90 | **≈ 78%** |
-| Thời gian xử lý yêu cầu CSKH | Thời điểm đóng − thời điểm khách liên hệ | Liên hệ 09:00 → đóng 11:00 | **2 giờ** |
+| Nghỉ việc sớm (tỷ lệ nghỉ cao ở nhân viên cửa hàng) | Chọn lọc chưa sát yêu cầu vị trí và tiếp nhận chưa đủ | Phải tuyển lại tốn kém, gián đoạn vận hành cửa hàng | Chuẩn hóa tiêu chí sàng lọc theo vị trí, hoàn thiện tiếp nhận (đồng phục, đào tạo, cấp tài khoản POS) |
+| Thời gian tuyển kéo dài | Chờ phản hồi giữa các vòng phỏng vấn, thiếu thời hạn từng vòng | Mất ứng viên tốt, vị trí trống lâu | Đặt thời hạn phản hồi từng vòng, hàng đợi quá hạn, nhắc tự động; áp luồng ưu tiên cho vị trí cửa hàng |
+| Ứng viên từ chối thư mời | Quy trình phỏng vấn dài, trao đổi thư mời rời rạc, chậm quyết định | Phải tuyển lại từ vòng trước, tăng chi phí | Rút gọn vòng cho vị trí cửa hàng, tập trung trao đổi thư mời trên một hệ thống |
 
-**b) Nhóm Chất lượng (Quality)**
+### 5.3. Phân tích định lượng
 
-| KPI | Công thức | Dữ liệu giả định (minh họa) | Kết quả tính |
+> Số dưới đây là **số minh họa cách tính** `[giả định]`.
+
+#### a. Phân tích thời gian
+
+| Chỉ số | Công thức | Số minh họa `[giả định]` | Kết quả |
 |---|---|---|---|
-| Tỷ lệ đăng ký thành công | Tài khoản tạo thành công / tổng lượt bắt đầu | 820 / 1.000 | **82%** |
-| Tỷ lệ bỏ dở đăng ký | 1 − tỷ lệ đăng ký thành công | 1 − 0,82 | **18%** |
-| Tỷ lệ OTP xác nhận đúng lần đầu | Lượt đúng lần đầu / tổng lượt gửi OTP | 880 / 1.000 | **88%** |
-| Tỷ lệ cần CSKH hỗ trợ | Lượt chuyển CSKH / tổng lượt đăng ký-đăng nhập | 60 / 1.000 | **6%** |
+| Thời gian tuyển (từ đăng tin đến nhận thư mời) | Ngày nhận thư mời − ngày mở tin | 05/08 → 25/08 | 20 ngày |
+| Thời gian lấp đầy vị trí (từ phát sinh nhu cầu đến khi đi làm) | Ngày nhân sự đi làm − ngày phát sinh nhu cầu | 01/08 → 08/09 | 38 ngày |
+| Thời gian chờ giữa các vòng | Tổng thời gian chờ phản hồi các vòng | ≈ 9 ngày | 9 ngày |
+| Hiệu suất chu kỳ (PCE) | (Thời gian tuyển − thời gian chờ) / thời gian tuyển | (20 − 9) / 20 | 55% |
 
-**c) Nhóm Chi phí (Cost)**
+Mốc thời gian minh họa (cùng một đợt tuyển): **phát sinh nhu cầu 01/08 → mở tin 05/08 → nhận thư mời 25/08 → nhân sự đi làm 08/09**. "Thời gian tuyển" (20 ngày) đo từ *mở tin* đến *nhận thư mời*; "thời gian lấp đầy" (38 ngày) đo từ *phát sinh nhu cầu* đến *đi làm* — bao trọn cả khâu chờ mở tin đầu kỳ và tiếp nhận cuối kỳ, nên dài hơn.
 
-| KPI | Công thức | Dữ liệu giả định (minh họa) | Kết quả tính |
+#### b. Phân tích chi phí
+
+| Chỉ số | Công thức | Số minh họa `[giả định]` | Kết quả |
 |---|---|---|---|
-| Chi phí gửi OTP | Tổng lượt gửi OTP × đơn giá SMS | 1.000 × 300đ | **300.000đ / 1.000 lượt** |
-| Chi phí xử lý CSKH (Defects/Move) | Số lượt CSKH × thời gian × đơn giá giờ | 60 × 0,25 giờ × 100.000đ | **1.500.000đ** |
-| Chi phí doanh thu mất do bỏ dở (cơ hội) | Số lượt bỏ dở × giá trị đơn bình quân × tỷ lệ chuyển đổi | 180 × 500.000đ × 10% | **9.000.000đ** |
+| Chi phí trên mỗi tuyển dụng | Tổng chi phí tuyển / số nhân sự tuyển được | 40.000.000đ / 20 | 2.000.000đ / người |
+| Chi phí tuyển lại do nghỉ sớm | Số nghỉ sớm × chi phí trên mỗi tuyển dụng | 5 × 2.000.000đ | 10.000.000đ |
+| Chi phí năng suất mất do vị trí trống kéo dài | Số vị trí × số ngày trống vượt chuẩn × chi phí cơ hội/ngày | 4 × 10 × 100.000đ | 4.000.000đ |
+| Chi phí phỏng vấn lại do ứng viên từ chối thư mời | Số lượt từ chối × giờ phỏng vấn lại × đơn giá giờ | 5 × 3 giờ × 55.000đ | 825.000đ |
 
-### 9.4. S1 – Tuyển dụng & tiếp nhận nhân sự
+### 5.4. Phân tích nguyên nhân gốc
 
-**a) Nhóm Thời gian (Time)**
+#### Ưu tiên vấn đề bằng Pareto
 
-| KPI | Công thức | Dữ liệu giả định (minh họa) | Kết quả tính |
+Ba vấn đề ở mục 5.2.d được quy về **cùng đơn vị** — chi phí kỳ vọng mỗi kỳ tuyển (nghìn đồng). Toàn bộ số liệu là `[giả định]` từ mục 5.3.
+
+| Vấn đề | Chi phí kỳ vọng (nghìn đồng) `[giả định]` | Tỷ trọng | Lũy kế |
 |---|---|---|---|
-| Thời gian tuyển (Time-to-hire) | Ngày ứng viên nhận offer − ngày mở tin tuyển | Mở tin 01/08 → nhận offer 21/08 | **20 ngày** |
-| Thời gian lấp đầy vị trí (Time-to-fill) | Ngày nhân sự đi làm − ngày phát sinh nhu cầu | Nhu cầu 28/07 → đi làm 04/09 | **38 ngày** |
-| Thời gian chờ giữa các vòng (Waiting/NVA) | Σ thời gian chờ phản hồi các vòng phỏng vấn | ≈ 9 ngày | **9 ngày** |
-| Hiệu suất chu kỳ (PCE) | (Time-to-hire − Waiting) / Time-to-hire | (20 − 9) / 20 | **55%** |
+| Nghỉ việc sớm (tuyển lại) | 10.000 | 67,5% | 67,5% |
+| Thời gian tuyển kéo dài (vị trí trống) | 4.000 | 27,0% | 94,5% |
+| Ứng viên từ chối thư mời (phỏng vấn lại) | 825 | 5,5% | 100,0% |
+| **Tổng** | **14.825** | 100% | — |
 
-**b) Nhóm Chất lượng (Quality)**
+Theo nguyên tắc 80/20, hai vấn đề đầu chiếm 94,5% tổng thiệt hại kỳ vọng; riêng **nghỉ việc sớm** chiếm 67,5% nên ưu tiên trước.
 
-| KPI | Công thức | Dữ liệu giả định (minh họa) | Kết quả tính |
+#### Phân tích 5 Why (cho vấn đề ưu tiên: nghỉ việc sớm)
+
+1. **Vì sao nhân viên cửa hàng nghỉ việc sớm?** → Vì kỳ vọng công việc không khớp thực tế và chưa hòa nhập tốt trong thời gian đầu.
+2. **Vì sao kỳ vọng không khớp và chưa hòa nhập?** → Vì sàng lọc chưa sát yêu cầu vị trí và tiếp nhận (đào tạo/đồng phục/tài khoản) chưa đầy đủ.
+3. **Vì sao sàng lọc chưa sát và tiếp nhận chưa đủ?** → Vì tiêu chí sàng lọc chung cho nhiều vị trí và checklist tiếp nhận chưa chuẩn hóa theo vị trí.
+4. **Vì sao chưa chuẩn hóa theo vị trí?** → Vì áp lực tuyển số lượng lớn khiến ưu tiên tốc độ lấp đầy hơn chất lượng chọn lọc.
+5. **Vì sao ưu tiên tốc độ hơn chất lượng?** → Vì chưa đo chi phí tuyển lại do nghỉ sớm để thấy nó lớn hơn chi phí chọn lọc kỹ; thiếu vòng đo lường – cải tiến theo dữ liệu nghỉ việc.
+
+**Nguyên nhân gốc:** tiêu chí sàng lọc và checklist tiếp nhận chưa chuẩn hóa theo vị trí, cộng với việc chưa đo chi phí tuyển lại → dẫn tới chọn lọc/hòa nhập chưa đạt và nghỉ việc sớm.
+
+### 5.5. Phỏng vấn bổ sung
+
+1. Thời gian tuyển và thời gian lấp đầy vị trí trung bình thực tế là bao nhiêu?
+2. Tỷ lệ hồ sơ qua sàng lọc, tỷ lệ đạt từng vòng và tỷ lệ chấp nhận thư mời thực tế là bao nhiêu?
+3. Tỷ lệ nghỉ việc sớm của nhân viên cửa hàng và văn phòng/kho là bao nhiêu?
+4. Chi phí trên mỗi tuyển dụng và chi phí đăng tin theo kênh thực tế là bao nhiêu?
+5. Chỉ tiêu đánh giá thử việc, số vòng phỏng vấn theo vị trí và cấp duyệt thư mời được quy định thế nào?
+
+### 5.6. Đề xuất cải tiến (TO-BE)
+
+Theo thứ tự ưu tiên Pareto ở mục 5.4:
+
+1. **Nghỉ việc sớm (ưu tiên cao nhất)** — chuẩn hóa tiêu chí sàng lọc theo từng vị trí và checklist tiếp nhận (đồng phục, đào tạo kiến thức sản phẩm, cấp tài khoản POS/Retail Pro Prism); đo chi phí tuyển lại theo nhóm vị trí để điều chỉnh mức độ chọn lọc.
+2. **Thời gian tuyển kéo dài** — quản lý ứng viên trên một hệ thống với thời hạn phản hồi từng vòng, hàng đợi quá hạn và nhắc tự động; áp luồng ưu tiên cho các vị trí cửa hàng phổ thông.
+3. **Ứng viên từ chối thư mời** — tập trung trao đổi thư mời trên một hệ thống, rút gọn vòng cho vị trí cửa hàng để ra quyết định nhanh.
+
+---
+
+## 6. Nhận hàng, kiểm tra chất lượng và nhập kho
+
+### 6.1. Mô tả hiện trạng (AS-IS)
+
+Nhận hàng, Xuất kho và Thu hồi hàng trả là **cụm ba quy trình kho vận** tại Trung tâm phân phối (DC) đào sâu chuỗi vận hành mà Lập kế hoạch mua & phân bổ chỉ chạm ở ranh giới. Nhận hàng & nhập kho đứng ở **đầu chuỗi**: nhận hàng từ chủ thương hiệu và tạo tồn đầu vào.
+
+**Người kích hoạt:** chủ thương hiệu gửi báo giao hàng (ASN) và lịch giao; xe hàng cập bến DC.
+**Người hưởng lợi:** Kiểm kê tồn kho (tồn đầu vào chính xác để kiểm kê) và Lập kế hoạch mua & phân bổ (dữ liệu nguồn hàng khả dụng) — trực tiếp; cửa hàng và khách cuối (có hàng đạt chuẩn) — gián tiếp.
+**Ranh giới:** từ khi nhận báo giao hàng/hàng cập bến đến khi hàng lên kệ và cập nhật sổ tồn đầu vào (hoặc tạo yêu cầu trung chuyển thẳng sang Xuất kho & điều chuyển).
+
+| # | Người thực hiện (lane) | Bước (Động từ + Danh từ) | Ghi chú/hệ thống |
 |---|---|---|---|
-| Tỷ lệ hồ sơ qua sàng lọc ATS | Hồ sơ đạt / tổng hồ sơ nhận | 120 / 500 | **24%** |
-| Tỷ lệ chấp nhận offer (Offer acceptance) | Số nhận offer / số offer gửi | 18 / 25 | **72%** |
-| Tỷ lệ lấp đầy đúng hạn (Fill rate) | Vị trí lấp đầy đúng hạn / tổng vị trí cần | 8 / 10 | **80%** |
-| Tỷ lệ nghỉ việc sớm (Early turnover ≤ 3 tháng) | Số nghỉ trong 3 tháng / số tuyển | 5 / 20 | **25%** |
+| 1 | Kho nhận hàng/Bến | Tiếp nhận xe và dỡ hàng tại bến | Bắt đầu: nhận báo giao hàng và lịch giao |
+| 2 | Chứng từ & Ngoại lệ | Kiểm tra chứng từ khớp đơn đặt hàng/báo giao | Cổng điều kiện: chứng từ khớp không? |
+| 3 | Kho nhận hàng/Bến | Đếm và đối chiếu số lượng thực nhận | Cổng điều kiện: số lượng khớp không? → cổng gộp |
+| 4 | Kiểm định chất lượng | Lấy mẫu và kiểm tra chất lượng | Sau cổng gộp |
+| 5 | Kiểm định chất lượng | Đánh giá kết quả và mức lỗi | Cổng điều kiện: đạt không? và lỗi toàn bộ hay một phần? |
+| 6 | Thủ kho/WMS | Tách lô, nhập phần đạt chất lượng | Nhánh "một phần" → cổng gộp |
+| 7 | Thủ kho/WMS | Dán nhãn mã hàng và định vị | Chạy song song với bước 8 qua cổng AND tách |
+| 8 | Thủ kho/WMS | Cập nhật dữ liệu tồn WMS/ERP | Chạy song song với bước 7 |
+| 9 | Thủ kho/WMS | Cất hàng lên vị trí | Cổng AND gộp |
+| 10 | Thủ kho/WMS | Kiểm tra nhu cầu trung chuyển thẳng tới cửa hàng | Cổng điều kiện: cần trung chuyển thẳng không? |
+| 11 | Thủ kho/WMS | Cập nhật sổ tồn đầu vào | Thông điệp tồn đầu vào → khâu kiểm kê & hoạch định (hoặc yêu cầu trung chuyển → Xuất kho & điều chuyển) |
 
-**c) Nhóm Chi phí (Cost)**
+**Kịch bản thành công:** hàng cập bến → chứng từ khớp → số lượng thực nhận khớp → mẫu kiểm tra đạt toàn bộ → (song song qua **cặp AND**) dán nhãn/định vị **và** cập nhật tồn WMS/ERP → cất hàng lên kệ → không cần trung chuyển thẳng → cập nhật sổ tồn đầu vào và gửi thông điệp tồn sang khâu kiểm kê & hoạch định. **Kết quả:** "Lô hàng đạt chuẩn được nhập kho và tồn đầu vào đã cập nhật cho khâu kiểm kê & hoạch định."
 
-| KPI | Công thức | Dữ liệu giả định (minh họa) | Kết quả tính |
+**Kịch bản thất bại/ngoại lệ:**
+- Chứng từ không khớp → lập biên bản sai lệch → Kết thúc "Từ chối nhận lô".
+- Số lượng thiếu/thừa → ghi nhận và thông báo nhà cung cấp, sau đó nhập tiếp phần khớp qua cổng gộp.
+- Kiểm tra chất lượng không đạt toàn bộ → Kết thúc "Trả lại nhà cung cấp"; nếu chỉ lỗi một phần → tách lô, chỉ nhập phần đạt, phần lỗi trả nhà cung cấp.
+- Có nhu cầu trung chuyển thẳng → tạo yêu cầu chuyển thẳng cửa hàng (thông điệp sang Xuất kho & điều chuyển) thay vì lưu kho.
+
+**Cấu trúc BPMN:** pool «Trung tâm phân phối – Nhận hàng, QC & nhập kho (Nhận hàng & nhập kho)» với 4 lane (Kho nhận hàng/Bến; Chứng từ & Ngoại lệ; Kiểm định chất lượng; Thủ kho/WMS). Các cổng quyết định là cổng XOR (chứng từ khớp; số lượng khớp; đạt chất lượng; mức lỗi; cần trung chuyển thẳng) với nhánh loại trừ nhau; các nhánh sai lệch có cổng gộp XOR để hợp lại phần hợp lệ. Bước dán nhãn/định vị và cập nhật tồn chạy song song qua **một cặp cổng AND tách/gộp cùng loại** nên cân bằng, không kẹt luồng.
+
+### 6.2. Phân tích định tính
+
+#### a. Phân loại hoạt động VA/BVA/NVA
+
+| Hoạt động `[giả định]` phân loại theo thông lệ ngành | Phân loại | Nhận xét |
+|---|---|---|
+| Cất hàng đạt chuẩn lên kệ và cập nhật tồn đầu vào | VA | Tạo tồn khả dụng — giá trị cho khâu kiểm kê & hoạch định và bán hàng |
+| Kiểm tra chất lượng (lấy mẫu) | BVA | Ngăn hàng lỗi vào kho; đặt ngưỡng chấp nhận theo rủi ro |
+| Kiểm tra chứng từ và đối chiếu số lượng | BVA | Kiểm soát đầu vào, tránh sai lệch tồn |
+| Chờ kiểm tra chất lượng/chờ cất kho | NVA | Chờ (Hold); bố trí nguồn lực kiểm định theo lịch giao |
+| Đếm/nhập lại do sai lệch số lượng | NVA | Lỗi (Defects); dùng quét mã và đối chiếu điện tử |
+| Di chuyển hàng nhiều chặng trong kho | NVA | Di chuyển (Move); bố trí vị trí định vị hợp lý |
+
+#### b. Phân tích lãng phí (Move – Hold – Over-processing – Defects)
+
+| Bước | Loại lãng phí | Biểu hiện `[giả định]` | Tác động | Khắc phục |
+|---|---|---|---|---|
+| Di chuyển hàng trong kho | Di chuyển (Move) | Hàng đi nhiều chặng từ bến đến vị trí cất | Tốn thời gian và nhân công | Bố trí vị trí định vị theo tần suất, tối ưu tuyến putaway |
+| Chờ kiểm tra chất lượng | Chờ (Hold) | Lô hàng chờ lấy mẫu/kiểm định khi thiếu nhân lực | Kéo dài thời gian nhập kho, chậm cập nhật tồn | Bố trí lịch kiểm định theo lịch giao, ưu tiên lô gấp |
+| Nhập/đối chiếu chứng từ thủ công | Xử lý dư (Over-processing) | Đối chiếu số lượng bằng tay nhiều lần | Tốn công, dễ sai | Quét mã và đối chiếu điện tử với đơn đặt hàng/báo giao |
+| Hàng lỗi/sai lệch số lượng | Lỗi (Defects) | Lô lỗi phải trả, số lượng thiếu/thừa | Chi phí xử lý lô lỗi, sai lệch tồn | Ngưỡng chấp nhận rõ ràng, phản hồi nhà cung cấp sớm |
+
+#### c. Phân tích các bên liên quan
+
+| Bên liên quan | Vai trò trong quy trình này | Mối quan tâm chính | Vấn đề tác động |
 |---|---|---|---|
-| Chi phí trên mỗi tuyển dụng (Cost-per-hire) | Tổng chi phí tuyển / số nhân sự tuyển được | 40.000.000đ / 20 | **2.000.000đ / người** |
-| Chi phí đăng tin & nền tảng tuyển | Σ phí đăng tin các kênh / kỳ | Theo hợp đồng kênh | **cần xác thực** |
-| Chi phí tuyển lại do nghỉ sớm (Defects) | Số nghỉ sớm × chi phí trên mỗi tuyển dụng | 5 × 2.000.000đ | **10.000.000đ** |
+| Kho nhận hàng/Bến | Tiếp nhận, dỡ và đếm hàng | Nhận nhanh, đúng số lượng | Sai lệch chứng từ/số lượng gây chậm |
+| Kiểm định chất lượng | Lấy mẫu, đánh giá lỗi | Chặn hàng lỗi, đúng ngưỡng | Chờ kiểm định khi thiếu nhân lực |
+| Thủ kho/WMS | Định vị, cất kho, cập nhật tồn | Tồn chính xác, cất đúng vị trí | Di chuyển nhiều chặng, cập nhật trễ |
+| Nhà cung cấp/chủ thương hiệu | Giao hàng theo báo giao | Nhận hàng đúng hẹn, ít trả | Bị trả lô lỗi, phản hồi chậm |
+| khâu kiểm kê & hoạch định | Nhận tồn đầu vào | Tồn đầu vào chính xác, kịp thời | Cập nhật tồn trễ ảnh hưởng hoạch định |
 
-*Nhận xét: PCE 55% và tỷ lệ nghỉ sớm 25% (số minh họa) cùng chỉ ra hai điểm nghẽn — chờ giữa các vòng (Hold) và chất lượng chọn lọc/onboarding (Defects) — khớp với mục 8.4 và 8.6.*
+#### d. Vấn đề nổi bật (Issue register)
 
-## 10. Đề xuất khắc phục theo lãng phí và TO-BE
+Cấu trúc: **Nguyên nhân** (xác định bằng 5 Why ở mục 6.4) → **Tác động** → **Giải pháp**.
 
-### 10.1. Bảng đề xuất khắc phục theo lãng phí
+| Vấn đề | Nguyên nhân | Tác động | Giải pháp |
+|---|---|---|---|
+| Hàng không đạt chất lượng phải trả nhà cung cấp | Chất lượng đầu vào không ổn định và ngưỡng chấp nhận chưa rõ | Chi phí xử lý lô lỗi, thiếu hàng theo kế hoạch | Đặt ngưỡng chấp nhận theo rủi ro, phản hồi nhà cung cấp và theo dõi tỷ lệ lỗi theo nguồn |
+| Sai lệch chứng từ/số lượng | Đối chiếu thủ công, chứng từ và hàng thực nhận lệch nhau | Xử lý lại, sai lệch tồn đầu vào | Quét mã và đối chiếu điện tử với đơn đặt hàng/báo giao ngay tại bến |
+| Chờ kiểm định và cất kho kéo dài | Nhân lực kiểm định bố trí chưa theo lịch giao | Chậm cập nhật tồn, đọng hàng ở bến | Bố trí lịch kiểm định theo lịch giao, ưu tiên lô gấp |
 
-| Quy trình | Loại lãng phí | Vấn đề | Đề xuất khắc phục | Người phụ trách đề xuất | Thời hạn đề xuất |
-|---|---|---|---|---|---|
-| M3 | Di chuyển | Bản kế hoạch/báo cáo bị chuyển qua nhiều kênh (email, chat, bảng tính rời) | Gộp về một nơi lưu trữ dùng chung và một mã kế hoạch duy nhất theo mùa | Hàng hóa/Phân bổ | Ngắn hạn |
-| M3 | Chờ | Chờ báo cáo, ngân sách hoặc phê duyệt không có hạn xử lý rõ ràng | Đặt SLA cho từng bước duyệt, gắn người phụ trách và cảnh báo tự động khi quá hạn | Quản lý Hàng hóa/Phân bổ | Ngắn hạn |
-| M3 | Xử lý dư | Nhập/đối chiếu trùng dữ liệu bán hàng – tồn kho từ nhiều nguồn | Chuẩn hóa một nguồn dữ liệu gốc, tự động hóa bảng theo dõi tỷ lệ bán qua/số tháng tồn | Hàng hóa/Phân bổ + IT | Trung hạn |
-| M3 | Lỗi | Dự báo hoặc mã hàng sai khiến phải lập lại kế hoạch | Bắt buộc kiểm tra dữ liệu gốc và khóa phiên bản trước khi trình duyệt | Hàng hóa/Phân bổ | Ngắn hạn |
-| S3 | Di chuyển | Phiếu kiểm kê/biên bản chuyển qua nhiều đầu mối giấy tờ | Chuyển sang hồ sơ điện tử và một mã vụ việc duy nhất cho mỗi đợt kiểm kê | Kiểm soát tồn kho/Vận hành | Ngắn hạn |
-| S3 | Chờ | Chờ đếm lại, giải trình hoặc duyệt điều chỉnh không có hạn rõ ràng | Đặt thời hạn xử lý, hàng đợi quá hạn và người phụ trách theo từng bước | Quản lý cửa hàng/Kiểm soát tồn kho | Ngắn hạn |
-| S3 | Xử lý dư | Đếm/nhập/đối chiếu trùng dữ liệu tồn ở nhiều nơi | Kiểm kê theo mức rủi ro (không đếm dàn đều), dùng một hồ sơ điều chỉnh gốc | Kiểm soát tồn kho/Vận hành + IT | Trung hạn |
-| S3 | Lỗi | Chênh lệch lặp lại, thiếu bằng chứng bàn giao, sai giao dịch | Quét mã vạch khi đếm, nhật ký kiểm tra và mã nguyên nhân chuẩn hóa | Kiểm soát tồn kho/Vận hành | Trung hạn |
-| S4 | Di chuyển | Khách phải tự tìm kênh hỗ trợ (hotline/fanpage/Zalo/email) khi gặp lỗi tài khoản | Đặt nút hỗ trợ/chatbot ngay trên trang đăng ký/đăng nhập | CSKH + Digital-Ecommerce/IT | Ngắn hạn |
-| S4 | Chờ | Chờ nhận OTP hoặc mật khẩu tạm không có kênh dự phòng | Thêm kênh gửi dự phòng, hiển thị đếm ngược hiệu lực OTP | IT vận hành website/app | Ngắn hạn |
-| S4 | Xử lý dư | Phải nhập lại toàn bộ thông tin khi OTP hết hạn hoặc đăng ký thất bại | Lưu tạm dữ liệu phiên đăng ký, chỉ yêu cầu gửi lại OTP | IT vận hành website/app | Trung hạn |
-| S4 | Lỗi | Thông báo lỗi chung chung khi OTP sai/hết hạn hoặc số điện thoại đã tồn tại | Chuẩn hóa thông báo lỗi cụ thể theo từng nguyên nhân, kèm hướng dẫn bước kế tiếp | CSKH + Digital-Ecommerce/IT | Trung hạn |
-| S1 | Di chuyển | Trao đổi offer/hồ sơ ứng viên qua nhiều kênh rời rạc (email, điện thoại, tin nhắn) | Tập trung liên lạc và trạng thái ứng viên trên một hệ ATS | HR Tuyển dụng + IT | Trung hạn |
-| S1 | Chờ | Chờ phản hồi giữa các vòng phỏng vấn kéo dài time-to-hire | Đặt SLA phản hồi từng vòng, hàng đợi ứng viên quá hạn, nhắc tự động | HR Tuyển dụng + Trưởng bộ phận tuyển | Ngắn hạn |
-| S1 | Xử lý dư | Nhập lại thông tin ứng viên ở nhiều biểu mẫu qua các vòng | Dùng một hồ sơ ứng viên xuyên suốt ATS, kế thừa dữ liệu giữa các vòng | HR Tuyển dụng + IT | Trung hạn |
-| S1 | Lỗi | Nghỉ việc sớm/turnover cao ở nhân sự cửa hàng khiến phải tuyển lại | Chuẩn hóa tiêu chí sàng lọc theo vị trí, hoàn thiện onboarding (uniform, đào tạo, cấp tài khoản POS) | HR Tuyển dụng + Quản lý cửa hàng | Trung hạn |
+### 6.3. Phân tích định lượng
 
-*Ghi chú: người phụ trách và thời hạn ở trên là đề xuất của nhóm dựa trên phân tích lãng phí, chưa phải cam kết chính thức của ACFC; cần xác nhận lại nếu có phỏng vấn/workshop với chủ quy trình.*
+> Số dưới đây là **số minh họa cách tính** `[giả định]`.
 
-### 10.2. TO-BE sơ bộ
+#### a. Phân tích thời gian
 
-- **M3:** chuẩn hóa một bộ dữ liệu bán hàng–tồn kho–dự báo, tự động kiểm tra biên lợi nhuận/số tháng tồn, gắn người phụ trách và thời hạn, lưu một phiên bản kế hoạch và cảnh báo khi cần lập lại.
-- **S3:** đặt lịch kiểm kê và phạm vi trên một hệ thống, quét mã khi đếm, tự động tạo đếm lại theo ngưỡng, dùng mã nguyên nhân chuẩn, phê duyệt điều chỉnh theo hạn mức và theo dõi hồ sơ quá hạn.
-- **S4:** lưu tạm dữ liệu đã nhập trong phiên đăng ký để chỉ cần gửi lại OTP khi hết hạn, chuẩn hóa thông báo lỗi theo từng nguyên nhân kèm hướng dẫn bước kế tiếp, hợp nhất đầu mối hỗ trợ tài khoản (chatbot/CSKH) ngay trên trang đăng ký/đăng nhập, và theo dõi tỷ lệ hết hạn OTP để điều chỉnh thời gian hiệu lực hợp lý.
-- **S1:** quản lý ứng viên và trạng thái tuyển trên một hệ ATS duy nhất (một hồ sơ ứng viên xuyên suốt các vòng), đặt SLA phản hồi cho từng vòng phỏng vấn kèm cảnh báo quá hạn, áp fast-track cho các vị trí cửa hàng phổ thông để rút ngắn time-to-hire, chuẩn hóa tiêu chí sàng lọc theo vị trí và hoàn thiện onboarding (uniform, đào tạo, cấp tài khoản POS/Retail Pro Prism) nhằm giảm tỷ lệ nghỉ việc sớm.
+| Chỉ số | Công thức | Số minh họa `[giả định]` | Kết quả |
+|---|---|---|---|
+| Thời gian chu kỳ nhập kho một lô | Thời điểm cập nhật tồn − thời điểm cập bến | 08:00 → 14:00 | 6 giờ |
+| Thời gian xử lý thực (VA+BVA) | Tổng thời gian đếm + kiểm định + cất kho | ≈ 3,5 giờ | 3,5 giờ |
+| Thời gian chờ (NVA) | Chu kỳ − thời gian xử lý | 6 − 3,5 | 2,5 giờ |
+| Hiệu suất chu kỳ (PCE) | Thời gian xử lý / chu kỳ | 3,5 / 6 | ≈ 58% |
 
-## 11. Kết luận và nội dung cần xác thực
+#### b. Phân tích chi phí
 
-M3, S3, S4 và S1 đã có đủ mô tả bước–actor–kịch bản thành/bại (rubric tiêu chí 2), sơ đồ BPMN (rubric tiêu chí 3 — cả bốn quy trình đều đạt 8 cổng điều kiện gồm XOR và AND, có đầy đủ Split & Join cùng loại), bộ câu hỏi 10+10 mỗi quy trình và phân tích VA/BVA/NVA + 4 loại lãng phí + phân tích nguyên nhân gốc + phân tích định lượng ba nhóm chỉ số có ví dụ tính toán + đề xuất khắc phục (rubric tiêu chí 4), dựa trên bằng chứng công khai (mức A/B) và giả định cần xác thực (mức C). Khoảng trống còn lại:
+| Chỉ số | Công thức | Số minh họa `[giả định]` | Kết quả |
+|---|---|---|---|
+| Chi phí xử lý lô hàng lỗi | Giá trị lô lỗi × tỷ lệ lỗi + chi phí trả hàng | 100.000.000đ × 5% + 1.000.000đ | 6.000.000đ / kỳ |
+| Chi phí xử lý sai lệch chứng từ/số lượng | Số lô sai lệch × giờ xử lý × đơn giá giờ | 20 × 1 giờ × 40.000đ | 800.000đ / kỳ |
+| Chi phí chờ kiểm định & cất kho | Số lô chờ × giờ chờ × đơn giá giờ | 10 × 1 giờ × 40.000đ | 400.000đ / kỳ |
 
-1. **Số liệu định lượng thật:** các con số ở mục 9 hiện là **ví dụ minh họa** để trình bày cách tính, chưa phải số ACFC; cần phỏng vấn theo bộ câu hỏi ở mục 6 để thay bằng số thật (ba mốc thấp nhất – thường gặp – cao nhất).
-2. **Xác nhận cấp duyệt/ngưỡng/tham số:** thẩm quyền duyệt kế hoạch M3, ngưỡng điều chỉnh S3, thời hạn xử lý và trách nhiệm bồi hoàn; với S4 là thời hạn hiệu lực OTP, kênh gửi mật khẩu tạm, ngưỡng số lần sai trước khi khóa tài khoản; và với S1 là số vòng phỏng vấn theo vị trí, thẩm quyền duyệt offer, ngưỡng thời gian thử việc và tiêu chí đánh giá KPI thử việc — tất cả vẫn ở mức `C – cần xác thực`.
-3. **Đối chiếu mã sơ đồ nhóm:** file BPMN trong `diagrams/` dùng hậu tố nhóm khác với mã workspace (M3, S3, S4) — cần thống nhất bảng ánh xạ mã khi gộp vào báo cáo chung để tránh nhầm S3 (kiểm kê) với S4 (kích hoạt tài khoản). Ánh xạ hiện tại: M3 & S3 (kiểm kê) đã gộp vào sơ đồ collaboration `bpmn-kho-van-hanh-m3-s3.svg`, S4 (kích hoạt tài khoản) ↔ `...-s3`, S1 (tuyển dụng) ↔ `...-s1`.
-4. **Chắt lọc vào báo cáo chung:** sau khi xác thực, nhóm quyết định phần nội dung M3/S3/S4 nào được đưa vào các file báo cáo Word dùng chung; đây vẫn là báo cáo cấp cá nhân, không tự ý chỉnh sửa file docx chung khi chưa thống nhất.
+### 6.4. Phân tích nguyên nhân gốc
+
+#### Ưu tiên vấn đề bằng Pareto
+
+Ba vấn đề ở mục 6.2.d được quy về **cùng đơn vị** — chi phí kỳ vọng mỗi kỳ (nghìn đồng). Toàn bộ số liệu là `[giả định]` từ mục 6.3.
+
+| Vấn đề | Chi phí kỳ vọng (nghìn đồng) `[giả định]` | Tỷ trọng | Lũy kế |
+|---|---|---|---|
+| Hàng lỗi phải trả nhà cung cấp | 6.000 | 83,3% | 83,3% |
+| Sai lệch chứng từ/số lượng | 800 | 11,1% | 94,4% |
+| Chờ kiểm định và cất kho | 400 | 5,6% | 100,0% |
+| **Tổng** | **7.200** | 100% | — |
+
+Theo nguyên tắc 80/20, riêng **hàng lỗi** đã chiếm 83,3% tổng thiệt hại kỳ vọng — tự nó vượt ngưỡng 80% nên ưu tiên trước; hai vấn đề đầu chiếm 94,4%.
+
+#### Phân tích 5 Why (cho vấn đề ưu tiên: hàng lỗi phải trả nhà cung cấp)
+
+1. **Vì sao phải trả lô hàng?** → Vì kiểm tra chất lượng phát hiện lỗi vượt ngưỡng chấp nhận.
+2. **Vì sao lỗi vượt ngưỡng?** → Vì chất lượng đầu vào từ nhà cung cấp không ổn định giữa các lô.
+3. **Vì sao chất lượng không ổn định mà vẫn nhận?** → Vì chưa theo dõi tỷ lệ lỗi theo từng nguồn để cảnh báo sớm.
+4. **Vì sao chưa theo dõi theo nguồn?** → Vì kết quả kiểm tra chất lượng chưa gắn mã nhà cung cấp/lô để tổng hợp.
+5. **Vì sao chưa gắn mã theo nguồn?** → Vì quy trình nhập kho tập trung vào thông qua lô hiện tại, chưa có vòng phản hồi chất lượng theo nhà cung cấp.
+
+**Nguyên nhân gốc:** thiếu vòng theo dõi tỷ lệ lỗi theo nhà cung cấp/lô để phản hồi và điều chỉnh sớm → hàng lỗi lặp lại và phải trả.
+
+### 6.5. Phỏng vấn bổ sung
+
+1. Tỷ lệ lô đạt/không đạt kiểm tra chất lượng và ngưỡng chấp nhận thực tế là bao nhiêu?
+2. Tỷ lệ sai lệch chứng từ/số lượng khi nhận hàng là bao nhiêu?
+3. Thời gian chu kỳ nhập kho một lô trung bình thực tế là bao lâu?
+4. Chính sách trung chuyển thẳng được áp dụng trong trường hợp nào?
+5. Kết quả kiểm tra chất lượng có được tổng hợp theo nhà cung cấp/lô để phản hồi không?
+
+### 6.6. Đề xuất cải tiến (TO-BE)
+
+Theo thứ tự ưu tiên Pareto ở mục 6.4:
+
+1. **Hàng lỗi phải trả nhà cung cấp (ưu tiên cao nhất)** — gắn mã nhà cung cấp/lô cho kết quả kiểm tra chất lượng, theo dõi tỷ lệ lỗi theo nguồn và phản hồi sớm; đặt ngưỡng chấp nhận theo rủi ro từng nhóm hàng.
+2. **Sai lệch chứng từ/số lượng** — quét mã và đối chiếu điện tử với đơn đặt hàng/báo giao ngay tại bến để giảm sai lệch tồn đầu vào.
+3. **Chờ kiểm định và cất kho** — bố trí lịch kiểm định theo lịch giao, ưu tiên lô gấp và tối ưu tuyến cất hàng.
+
+---
+
+## 7. Xuất kho và điều chuyển phân bổ tới chuỗi cửa hàng
+
+### 7.1. Mô tả hiện trạng (AS-IS)
+
+Xuất kho & điều chuyển nối tiếp đầu ra phân bổ của Lập kế hoạch mua & phân bổ: xuất kho và điều chuyển hàng tới chuỗi cửa hàng.
+
+**Người kích hoạt:** Điều phối phân bổ nhận **lệnh phân bổ từ Lập kế hoạch mua & phân bổ**.
+**Người hưởng lợi:** cửa hàng (nhận đúng cơ cấu hàng đúng hạn) — trực tiếp; Lập kế hoạch mua & phân bổ (đóng vòng thực thi kế hoạch phân bổ) và khách cuối — gián tiếp.
+**Ranh giới:** từ khi nhận lệnh phân bổ đến khi cửa hàng nhận, kiểm đếm khớp và cập nhật tồn cửa hàng.
+
+| # | Người thực hiện (lane) | Bước (Động từ + Danh từ) | Ghi chú/hệ thống |
+|---|---|---|---|
+| 1 | Điều phối phân bổ | Kiểm tra tồn khả dụng | Bắt đầu: nhận lệnh phân bổ ← Lập kế hoạch mua & phân bổ |
+| 2 | Điều phối phân bổ | Xác định tồn có đủ cho lệnh phân bổ | Cổng điều kiện: đủ tồn không? Nếu không → có cho giao một phần không? |
+| 3 | Cửa hàng & Ngoại lệ | Giao một phần và tạo đơn chờ hàng | Nhánh "có giao một phần" → cổng gộp |
+| 4 | Điều phối phân bổ | Lập phiếu xuất kho | Sau cổng gộp |
+| 5 | Kho xuất – Soạn hàng | Soạn hàng theo phiếu xuất | Cổng điều kiện: soạn hàng khớp phiếu không? (không → soạn lại) |
+| 6 | Kho xuất – Đóng gói | Đóng gói và dán nhãn kiện | Chạy song song với bước 7 qua cổng AND tách |
+| 7 | Kho xuất – Đóng gói | Lập chứng từ xuất và kế hoạch tuyến | Chạy song song với bước 6 → cổng AND gộp |
+| 8 | Vận chuyển | Bàn giao đơn vị vận chuyển | Sau cổng AND gộp |
+| 9 | Vận chuyển | Vận chuyển tới cửa hàng và xác nhận giao | Cổng điều kiện: giao thành công không? |
+| 10 | Cửa hàng & Ngoại lệ | Cửa hàng nhận và kiểm đếm | Cổng điều kiện: kiểm đếm khớp không? → cổng gộp |
+| 11 | Cửa hàng & Ngoại lệ | Cập nhật tồn cửa hàng và đóng lệnh | Thông điệp tồn cửa hàng → khâu kiểm kê & hoạch định |
+
+**Kịch bản thành công:** nhận lệnh phân bổ → tồn khả dụng đủ → lập phiếu xuất → soạn hàng khớp → (song song qua **cặp AND**) đóng gói/dán nhãn **và** lập chứng từ xuất/kế hoạch tuyến → bàn giao vận chuyển → giao thành công → cửa hàng nhận, kiểm đếm khớp → cập nhật tồn cửa hàng và gửi thông điệp sang khâu kiểm kê & hoạch định. **Kết quả:** "Hàng được điều chuyển và cửa hàng đã nhận đủ, tồn cửa hàng cập nhật cho khâu kiểm kê & hoạch định."
+
+**Kịch bản thất bại/ngoại lệ:**
+- Tồn không đủ → hỏi có cho giao một phần: nếu có → giao một phần và tạo đơn chờ hàng rồi quay lại lập phiếu xuất; nếu không → Kết thúc "Hoãn dòng phân bổ" (thông điệp hoãn → Lập kế hoạch mua & phân bổ).
+- Soạn hàng không khớp phiếu → soạn lại trước khi đóng gói.
+- Giao không thành công → trả kiện về DC và lập biên bản → Kết thúc "Chuyển Thu hồi & xử lý hàng trả thu hồi" (thông điệp hàng lỗi → Thu hồi & xử lý hàng trả).
+- Cửa hàng kiểm đếm không khớp → ghi nhận thiếu/thừa và mở khiếu nại, sau đó vẫn hợp nhất về cổng gộp để cập nhật tồn và đóng lệnh.
+
+**Cấu trúc BPMN:** pool «Trung tâm phân phối – Xuất kho & điều chuyển (Xuất kho & điều chuyển)» với 4 lane (Điều phối phân bổ; Kho xuất – Soạn hàng & Đóng gói; Vận chuyển; Cửa hàng & Ngoại lệ). Các cổng quyết định là cổng XOR (đủ tồn; cho giao một phần; soạn hàng khớp; giao thành công; kiểm đếm khớp) với nhánh loại trừ nhau; nhánh ngoại lệ có cổng gộp XOR hợp lại. Bước đóng gói và lập chứng từ xuất chạy song song qua **một cặp cổng AND tách/gộp cùng loại** nên cân bằng.
+
+### 7.2. Phân tích định tính
+
+#### a. Phân loại hoạt động VA/BVA/NVA
+
+| Hoạt động `[giả định]` phân loại theo thông lệ ngành | Phân loại | Nhận xét |
+|---|---|---|
+| Giao hàng đúng cơ cấu tới cửa hàng | VA | Đưa hàng tới điểm bán — giá trị cho cửa hàng và khách |
+| Soạn hàng và đóng gói theo phiếu xuất | BVA | Cần để giao đúng, đủ; nên quét mã khi soạn |
+| Lập chứng từ xuất và kế hoạch tuyến | BVA | Kiểm soát và tối ưu vận chuyển |
+| Chờ vận chuyển/chờ xác nhận giao | NVA | Chờ (Hold); đặt thời hạn giao và theo dõi tuyến |
+| Soạn lại do không khớp phiếu | NVA | Lỗi (Defects); quét mã khi soạn để giảm sai |
+| Trả kiện và xử lý lại khi giao lỗi | NVA | Lỗi (Defects); cải thiện đóng gói và chọn đơn vị vận chuyển |
+
+#### b. Phân tích lãng phí (Move – Hold – Over-processing – Defects)
+
+| Bước | Loại lãng phí | Biểu hiện `[giả định]` | Tác động | Khắc phục |
+|---|---|---|---|---|
+| Vận chuyển nhiều tuyến rời | Di chuyển (Move) | Giao lẻ nhiều chuyến không gộp tuyến | Tốn chi phí vận chuyển | Gộp tuyến theo khu vực, tối ưu kế hoạch tuyến |
+| Chờ vận chuyển/xác nhận giao | Chờ (Hold) | Kiện chờ bàn giao hoặc chờ xác nhận giao | Kéo dài thời gian tới cửa hàng | Đặt thời hạn giao, theo dõi trạng thái tuyến |
+| Lập chứng từ trùng lặp | Xử lý dư (Over-processing) | Nhập chứng từ xuất nhiều nơi | Tốn công, dễ sai | Một bộ chứng từ điện tử liên thông |
+| Giao lỗi/soạn sai | Lỗi (Defects) | Giao không thành công phải thu hồi, soạn sai phiếu | Chi phí thu hồi, chậm giao | Quét mã khi soạn, cải thiện đóng gói và chọn đơn vị vận chuyển |
+
+#### c. Phân tích các bên liên quan
+
+| Bên liên quan | Vai trò trong quy trình này | Mối quan tâm chính | Vấn đề tác động |
+|---|---|---|---|
+| Điều phối phân bổ | Kiểm tra tồn, lập phiếu xuất | Giao đủ theo lệnh phân bổ | Thiếu tồn phải hoãn/giao một phần |
+| Kho xuất (soạn/đóng gói) | Soạn hàng, đóng gói, lập chứng từ | Soạn đúng, đóng gói chắc | Soạn sai phiếu phải làm lại |
+| Vận chuyển | Giao hàng tới cửa hàng | Giao đúng hạn, ít hỏng | Giao không thành công phải thu hồi |
+| Cửa hàng | Nhận và kiểm đếm hàng | Nhận đủ, đúng cơ cấu | Kiểm đếm không khớp, khiếu nại |
+| khâu hoạch định & kiểm kê | Nhận thông điệp tồn/hoãn | Đóng vòng thực thi kế hoạch, tồn chính xác | Hoãn phân bổ ảnh hưởng kế hoạch |
+
+#### d. Vấn đề nổi bật (Issue register)
+
+Cấu trúc: **Nguyên nhân** (xác định bằng 5 Why ở mục 7.4) → **Tác động** → **Giải pháp**.
+
+| Vấn đề | Nguyên nhân | Tác động | Giải pháp |
+|---|---|---|---|
+| Giao không thành công phải thu hồi | Đóng gói chưa chắc hoặc đơn vị vận chuyển chưa đạt | Chi phí thu hồi, chậm giao, chuyển Thu hồi & xử lý hàng trả | Cải thiện tiêu chuẩn đóng gói, đánh giá đơn vị vận chuyển theo tỷ lệ giao thành công |
+| Thiếu tồn phải hoãn/giao một phần | Tồn khả dụng lệch so với lệnh phân bổ | Cửa hàng thiếu hàng, mất doanh thu cơ hội | Đồng bộ tồn khả dụng theo thời gian thực với Lập kế hoạch mua & phân bổ, chính sách giao một phần rõ ràng |
+| Soạn hàng không khớp phiếu | Soạn thủ công, không quét mã | Soạn lại tốn công, chậm giao | Quét mã khi soạn và đối chiếu điện tử với phiếu xuất |
+
+### 7.3. Phân tích định lượng
+
+> Số dưới đây là **số minh họa cách tính** `[giả định]`.
+
+#### a. Phân tích thời gian
+
+| Chỉ số | Công thức | Số minh họa `[giả định]` | Kết quả |
+|---|---|---|---|
+| Thời gian chu kỳ xuất – giao một lệnh | Thời điểm cửa hàng nhận − thời điểm nhận lệnh | Ngày 1 08:00 → ngày 2 16:00 | 32 giờ |
+| Thời gian xử lý thực (VA+BVA) | Tổng thời gian soạn + đóng gói + giao | ≈ 12 giờ | 12 giờ |
+| Thời gian chờ (NVA) | Chu kỳ − thời gian xử lý | 32 − 12 | 20 giờ |
+| Hiệu suất chu kỳ (PCE) | Thời gian xử lý / chu kỳ | 12 / 32 | ≈ 38% |
+
+#### b. Phân tích chi phí
+
+| Chỉ số | Công thức | Số minh họa `[giả định]` | Kết quả |
+|---|---|---|---|
+| Chi phí thu hồi do giao lỗi | Số lệnh giao lỗi × chi phí thu hồi/lệnh | 10 × 500.000đ | 5.000.000đ / kỳ |
+| Chi phí cơ hội do hoãn/giao thiếu | Số lệnh hoãn × giá trị đơn × tỷ lệ mất doanh thu | 10 × 5.000.000đ × 5% | 2.500.000đ / kỳ |
+| Chi phí soạn lại do sai phiếu | Số lần soạn lại × giờ × đơn giá giờ | 10 × 1 giờ × 40.000đ | 400.000đ / kỳ |
+
+### 7.4. Phân tích nguyên nhân gốc
+
+#### Ưu tiên vấn đề bằng Pareto
+
+Ba vấn đề ở mục 7.2.d được quy về **cùng đơn vị** — chi phí kỳ vọng mỗi kỳ (nghìn đồng). Toàn bộ số liệu là `[giả định]` từ mục 7.3.
+
+| Vấn đề | Chi phí kỳ vọng (nghìn đồng) `[giả định]` | Tỷ trọng | Lũy kế |
+|---|---|---|---|
+| Giao không thành công phải thu hồi | 5.000 | 63,3% | 63,3% |
+| Thiếu tồn phải hoãn/giao một phần | 2.500 | 31,6% | 94,9% |
+| Soạn hàng không khớp phiếu | 400 | 5,1% | 100,0% |
+| **Tổng** | **7.900** | 100% | — |
+
+Theo nguyên tắc 80/20, hai vấn đề đầu chiếm 94,9%; riêng **giao không thành công** chiếm 63,3% nên ưu tiên trước.
+
+#### Phân tích 5 Why (cho vấn đề ưu tiên: giao không thành công phải thu hồi)
+
+1. **Vì sao giao không thành công?** → Vì kiện hàng hư hỏng trên đường hoặc cửa hàng không nhận được đúng hẹn.
+2. **Vì sao hư hỏng/không đúng hẹn?** → Vì đóng gói chưa đủ chắc và tuyến giao chưa được theo dõi sát.
+3. **Vì sao đóng gói chưa chắc và tuyến chưa theo dõi sát?** → Vì tiêu chuẩn đóng gói chưa thống nhất và đơn vị vận chuyển chưa được đánh giá theo tỷ lệ giao thành công.
+4. **Vì sao chưa đánh giá đơn vị vận chuyển?** → Vì chưa thu thập tỷ lệ giao thành công theo đơn vị và theo tuyến.
+5. **Vì sao chưa thu thập?** → Vì quy trình tập trung vào xuất hàng, chưa có vòng đo lường chất lượng giao để phản hồi.
+
+**Nguyên nhân gốc:** thiếu tiêu chuẩn đóng gói thống nhất và vòng đo lường tỷ lệ giao thành công theo đơn vị vận chuyển/tuyến → giao lỗi lặp lại và phải thu hồi.
+
+### 7.5. Phỏng vấn bổ sung
+
+1. Tỷ lệ giao thành công và tỷ lệ thu hồi do giao lỗi thực tế là bao nhiêu?
+2. Tỷ lệ lệnh phân bổ phải hoãn/giao một phần do thiếu tồn là bao nhiêu?
+3. Thời gian chu kỳ xuất – giao một lệnh trung bình thực tế là bao lâu?
+4. Chính sách giao một phần/đơn chờ hàng và cam kết dịch vụ với đơn vị vận chuyển là gì?
+5. Tồn khả dụng có được đồng bộ theo thời gian thực với Lập kế hoạch mua & phân bổ khi lập lệnh phân bổ không?
+
+### 7.6. Đề xuất cải tiến (TO-BE)
+
+Theo thứ tự ưu tiên Pareto ở mục 7.4:
+
+1. **Giao không thành công (ưu tiên cao nhất)** — thống nhất tiêu chuẩn đóng gói, thu thập tỷ lệ giao thành công theo đơn vị vận chuyển/tuyến và đánh giá định kỳ để chọn đơn vị tốt.
+2. **Thiếu tồn phải hoãn/giao một phần** — đồng bộ tồn khả dụng theo thời gian thực với Lập kế hoạch mua & phân bổ khi lập lệnh, chuẩn hóa chính sách giao một phần và đơn chờ hàng.
+3. **Soạn hàng không khớp phiếu** — quét mã khi soạn và đối chiếu điện tử với phiếu xuất để giảm soạn lại.
+
+---
+
+## 8. Thu hồi và xử lý hàng trả về / hàng lỗi
+
+### 8.1. Mô tả hiện trạng (AS-IS)
+
+Thu hồi & xử lý hàng trả khép vòng vận hành kho: thu hồi hàng giao lỗi (từ Xuất kho & điều chuyển) hoặc hàng khách trả tại cửa hàng, rồi cập nhật lại tồn và hao hụt.
+
+**Người kích hoạt:** bộ phận Tiếp nhận & Phân loại nhận **yêu cầu trả hàng từ khâu xuất kho hoặc cửa hàng**.
+**Người hưởng lợi:** khâu kiểm kê & hoạch định (tồn và hao hụt được cập nhật đúng), Tài chính (cơ sở hoàn tiền), nhà cung cấp/chủ thương hiệu (nhận lại hàng bảo hành) — trực tiếp; khách cuối (được xử lý trả hàng) — gián tiếp.
+**Ranh giới:** từ khi nhận yêu cầu trả hàng đến khi đóng hồ sơ trả hàng và (nếu cần) lập đề nghị hoàn tiền chuyển Tài chính.
+
+| # | Người thực hiện (lane) | Bước (Động từ + Danh từ) | Ghi chú/hệ thống |
+|---|---|---|---|
+| 1 | Tiếp nhận & Phân loại | Tiếp nhận và lập hồ sơ trả hàng | Bắt đầu: nhận yêu cầu trả hàng ← khâu xuất kho hoặc cửa hàng |
+| 2 | Tiếp nhận & Phân loại | Kiểm tra đúng chính sách và thời hạn trả | Cổng điều kiện: đạt chính sách không? (không → từ chối → Kết thúc) |
+| 3 | Giám định & Phân hạng | Giám định tình trạng hàng | — |
+| 4 | Giám định & Phân hạng | Phân hạng khả năng bán lại nguyên trạng | Cổng điều kiện: bán lại nguyên trạng được không? |
+| 5 | Giám định & Phân hạng | Kiểm tra còn bảo hành nhà cung cấp | Cổng điều kiện: còn bảo hành không? |
+| 6 | Giám định & Phân hạng | Đánh giá khả năng tân trang | Cổng điều kiện: tân trang được không? và sau tân trang có đạt không? |
+| 7 | Xử lý | Gửi trả/đổi với nhà cung cấp | Nhánh còn bảo hành → Kết thúc "Đã chuyển nhà cung cấp" |
+| 8 | Xử lý | Tân trang hàng | Nhánh tân trang được → kiểm tra đạt sau tân trang |
+| 9 | Xử lý | Loại bỏ/hủy hàng | Nhánh không tân trang được → Kết thúc "Ghi nhận hao hụt" (thông điệp hao hụt → khâu kiểm kê & hoạch định) |
+| 10 | Kế toán & Cập nhật tồn | Cất hàng lên kệ | Sau cổng gộp → cổng AND tách (song song với bước 11) |
+| 11 | Kế toán & Cập nhật tồn | Cập nhật tồn kho | Chạy song song với bước 10; thông điệp cập nhật tồn → khâu kiểm kê & hoạch định |
+| 12 | Kế toán & Cập nhật tồn | Đóng hồ sơ trả hàng | Sau cổng AND gộp |
+| 13 | Kế toán & Cập nhật tồn | Lập đề nghị hoàn tiền → Tài chính | Cổng điều kiện: cần hoàn tiền không? Thông điệp đề nghị hoàn tiền → Tài chính |
+
+**Kịch bản thành công:** nhận yêu cầu trả hàng đúng chính sách và thời hạn → giám định → hàng còn bán lại nguyên trạng (hoặc tân trang đạt) → hợp nhất tại cổng gộp → (song song qua **cặp AND**) cất lên kệ **và** cập nhật tồn kho khâu kiểm kê & hoạch định → đóng hồ sơ trả hàng → nếu cần thì lập đề nghị hoàn tiền chuyển Tài chính. **Kết quả:** "Hàng trả được nhập lại/tân trang, tồn cập nhật cho khâu kiểm kê & hoạch định và (nếu có) đề nghị hoàn tiền chuyển Tài chính."
+
+**Kịch bản thất bại/ngoại lệ:**
+- Yêu cầu trả sai chính sách/quá thời hạn → từ chối và phản hồi khách → Kết thúc "Đóng (từ chối)".
+- Không bán lại nguyên trạng nhưng còn bảo hành nhà cung cấp → gửi trả/đổi với nhà cung cấp → Kết thúc "Đã chuyển nhà cung cấp".
+- Không còn bảo hành và không tân trang được, hoặc tân trang không đạt → loại bỏ/hủy → Kết thúc "Ghi nhận hao hụt" (thông điệp hao hụt → khâu kiểm kê & hoạch định).
+- Không cần hoàn tiền → đóng hồ sơ và kết thúc tại "Hoàn tất xử lý trả hàng".
+
+**Cấu trúc BPMN:** pool «Trung tâm phân phối – Thu hồi & xử lý hàng trả (Thu hồi & xử lý hàng trả)» với 4 lane (Tiếp nhận & Phân loại; Giám định & Phân hạng; Xử lý; Kế toán & Cập nhật tồn). Các cổng quyết định là cổng XOR (đạt chính sách; bán lại nguyên trạng; còn bảo hành; tân trang được; đạt sau tân trang; cần hoàn tiền) với nhánh loại trừ nhau dẫn tới nhiều sự kiện Kết thúc riêng. Bước cất lên kệ và cập nhật tồn chạy song song qua **một cặp cổng AND tách/gộp cùng loại** nên cân bằng.
+
+### 8.2. Phân tích định tính
+
+#### a. Phân loại hoạt động VA/BVA/NVA
+
+| Hoạt động `[giả định]` phân loại theo thông lệ ngành | Phân loại | Nhận xét |
+|---|---|---|
+| Nhập lại/tân trang hàng để bán lại | VA | Thu hồi giá trị hàng trả |
+| Giám định và phân hạng hàng trả | BVA | Cần để quyết định hướng xử lý đúng |
+| Kiểm tra chính sách và thời hạn trả | BVA | Kiểm soát rủi ro và tuân thủ chính sách |
+| Chờ giám định/chờ xử lý | NVA | Chờ (Hold); bố trí giám định theo hàng đợi |
+| Tân trang lại do lần đầu không đạt | NVA | Lỗi (Defects); chuẩn hóa tiêu chí tân trang |
+| Loại bỏ/hủy hàng | NVA | Lỗi (Defects); hao hụt cần giảm qua giám định sớm |
+
+#### b. Phân tích lãng phí (Move – Hold – Over-processing – Defects)
+
+| Bước | Loại lãng phí | Biểu hiện `[giả định]` | Tác động | Khắc phục |
+|---|---|---|---|---|
+| Luân chuyển hàng trả nhiều chặng | Di chuyển (Move) | Hàng trả đi qua nhiều khu vực chờ xử lý | Tốn thời gian, dễ thất lạc | Bố trí khu vực xử lý trả hàng tập trung |
+| Chờ giám định và xử lý | Chờ (Hold) | Hàng trả đọng chờ giám định/phân hạng | Đọng vốn hàng trả, chậm cập nhật tồn | Bố trí giám định theo hàng đợi ưu tiên |
+| Nhập hồ sơ trả hàng trùng lặp | Xử lý dư (Over-processing) | Ghi nhận thông tin trả hàng ở nhiều nơi | Tốn công, dễ sai | Một hồ sơ trả hàng điện tử liên thông |
+| Hủy hàng (hao hụt) | Lỗi (Defects) | Hàng không bán lại/tân trang được phải hủy | Hao hụt giá trị | Giám định sớm, tăng tỷ lệ tân trang/bán lại |
+
+#### c. Phân tích các bên liên quan
+
+| Bên liên quan | Vai trò trong quy trình này | Mối quan tâm chính | Vấn đề tác động |
+|---|---|---|---|
+| Tiếp nhận & Phân loại | Nhận và lập hồ sơ trả hàng | Nhận đúng chính sách, nhanh | Yêu cầu sai chính sách gây tranh cãi |
+| Giám định & Phân hạng | Giám định, quyết hướng xử lý | Phân hạng đúng, giảm hủy | Chờ giám định, phân hạng thiếu nhất quán |
+| Xử lý | Trả nhà cung cấp/tân trang/hủy | Thu hồi tối đa giá trị | Tân trang không đạt phải làm lại |
+| Kế toán & Cập nhật tồn | Cập nhật tồn, hoàn tiền | Tồn/hao hụt chính xác | Cập nhật tồn trễ ảnh hưởng khâu kiểm kê & hoạch định |
+| Tài chính/nhà cung cấp | Hoàn tiền/nhận hàng bảo hành | Chứng từ đúng, xử lý nhanh | Đề nghị hoàn tiền chậm |
+
+#### d. Vấn đề nổi bật (Issue register)
+
+Cấu trúc: **Nguyên nhân** (xác định bằng 5 Why ở mục 8.4) → **Tác động** → **Giải pháp**.
+
+| Vấn đề | Nguyên nhân | Tác động | Giải pháp |
+|---|---|---|---|
+| Hàng phải hủy (hao hụt cao) | Giám định muộn và tiêu chí phân hạng thiếu nhất quán | Hao hụt giá trị hàng trả | Giám định sớm, chuẩn hóa tiêu chí phân hạng để tăng tỷ lệ tân trang/bán lại |
+| Chờ giám định và xử lý kéo dài | Giám định bố trí chưa theo hàng đợi ưu tiên | Đọng vốn hàng trả, cập nhật tồn trễ | Bố trí giám định theo hàng đợi ưu tiên, đặt thời hạn xử lý |
+| Tân trang không đạt phải làm lại | Tiêu chí và tay nghề tân trang chưa chuẩn hóa | Tốn công, kéo dài xử lý | Chuẩn hóa tiêu chí và hướng dẫn tân trang |
+
+### 8.3. Phân tích định lượng
+
+> Số dưới đây là **số minh họa cách tính** `[giả định]`.
+
+#### a. Phân tích thời gian
+
+| Chỉ số | Công thức | Số minh họa `[giả định]` | Kết quả |
+|---|---|---|---|
+| Thời gian chu kỳ xử lý một hồ sơ trả hàng | Thời điểm đóng hồ sơ − thời điểm tiếp nhận | Ngày 1 → ngày 4 | 3 ngày |
+| Thời gian xử lý thực (VA+BVA) | Tổng thời gian giám định + xử lý + cập nhật | ≈ 1 ngày | 1 ngày |
+| Thời gian chờ (NVA) | Chu kỳ − thời gian xử lý | 3 − 1 | 2 ngày |
+| Hiệu suất chu kỳ (PCE) | Thời gian xử lý / chu kỳ | 1 / 3 | ≈ 33% |
+
+#### b. Phân tích chi phí
+
+| Chỉ số | Công thức | Số minh họa `[giả định]` | Kết quả |
+|---|---|---|---|
+| Chi phí hao hụt do hủy hàng | Số hàng hủy × giá trị bình quân | 40 × 100.000đ | 4.000.000đ / kỳ |
+| Chi phí đọng vốn hàng trả chờ xử lý | Giá trị hàng trả tồn đọng × chi phí vốn × thời gian | 200.000.000đ × 1% × 1 tháng | 2.000.000đ / kỳ |
+| Chi phí tân trang lại | Số lần tân trang lại × giờ × đơn giá giờ | 10 × 1 giờ × 40.000đ | 400.000đ / kỳ |
+
+### 8.4. Phân tích nguyên nhân gốc
+
+#### Ưu tiên vấn đề bằng Pareto
+
+Ba vấn đề ở mục 8.2.d được quy về **cùng đơn vị** — chi phí kỳ vọng mỗi kỳ (nghìn đồng). Toàn bộ số liệu là `[giả định]` từ mục 8.3.
+
+| Vấn đề | Chi phí kỳ vọng (nghìn đồng) `[giả định]` | Tỷ trọng | Lũy kế |
+|---|---|---|---|
+| Hàng phải hủy (hao hụt) | 4.000 | 62,5% | 62,5% |
+| Chờ giám định và xử lý kéo dài | 2.000 | 31,2% | 93,7% |
+| Tân trang không đạt phải làm lại | 400 | 6,3% | 100,0% |
+| **Tổng** | **6.400** | 100% | — |
+
+Theo nguyên tắc 80/20, hai vấn đề đầu chiếm 93,7%; riêng **hàng phải hủy** chiếm 62,5% nên ưu tiên trước.
+
+#### Phân tích 5 Why (cho vấn đề ưu tiên: hàng phải hủy)
+
+1. **Vì sao nhiều hàng trả phải hủy?** → Vì hàng không còn bán lại nguyên trạng và không tân trang được.
+2. **Vì sao không tân trang được?** → Vì tình trạng hàng xuống cấp thêm trong thời gian chờ và phân hạng thiếu nhất quán.
+3. **Vì sao xuống cấp thêm và phân hạng thiếu nhất quán?** → Vì giám định muộn và tiêu chí phân hạng chưa chuẩn hóa.
+4. **Vì sao giám định muộn và tiêu chí chưa chuẩn?** → Vì giám định chưa bố trí theo hàng đợi ưu tiên và chưa có hướng dẫn phân hạng thống nhất.
+5. **Vì sao chưa có hàng đợi ưu tiên và hướng dẫn thống nhất?** → Vì chưa đo tỷ lệ hủy theo nguyên nhân để thấy tác động và đặt yêu cầu cải tiến.
+
+**Nguyên nhân gốc:** giám định muộn và tiêu chí phân hạng chưa chuẩn hóa (thiếu hàng đợi ưu tiên và hướng dẫn), cộng với chưa đo tỷ lệ hủy theo nguyên nhân → tỷ lệ hủy cao.
+
+### 8.5. Phỏng vấn bổ sung
+
+1. Tỷ lệ hàng trả được bán lại/tân trang/hủy thực tế là bao nhiêu?
+2. Thời gian xử lý một hồ sơ trả hàng trung bình thực tế là bao lâu?
+3. Chính sách và thời hạn đổi trả áp dụng cho từng nhóm hàng là gì?
+4. Tiêu chí phân hạng (bán lại/tân trang/hủy) và điều khoản bảo hành nhà cung cấp được quy định thế nào?
+5. Quy trình và thời hạn hoàn tiền phối hợp với Tài chính ra sao?
+
+### 8.6. Đề xuất cải tiến (TO-BE)
+
+Theo thứ tự ưu tiên Pareto ở mục 8.4:
+
+1. **Hàng phải hủy (ưu tiên cao nhất)** — giám định sớm theo hàng đợi ưu tiên, chuẩn hóa tiêu chí phân hạng để tăng tỷ lệ tân trang/bán lại; đo tỷ lệ hủy theo nguyên nhân để cải tiến liên tục.
+2. **Chờ giám định và xử lý** — bố trí giám định theo hàng đợi ưu tiên và đặt thời hạn xử lý từng bước để giảm đọng vốn hàng trả.
+3. **Tân trang không đạt** — chuẩn hóa tiêu chí và hướng dẫn tân trang để giảm làm lại.
