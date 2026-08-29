@@ -16,7 +16,7 @@
         <mxCell id="M2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3D68B3;strokeColor=#2F528F;fontColor=#FFFFFF;fontSize=11;arcSize=20;" value="Quản lý doanh số và kế hoạch thương mại chuỗi cửa hàng" vertex="1">
           <mxGeometry height="32" width="200" x="161" y="142" as="geometry" />
         </mxCell>
-        <mxCell id="M3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3D68B3;strokeColor=#2F528F;fontColor=#FFFFFF;fontSize=11;arcSize=20;" value="Lập kế hoạch mua hàng và phân bổ hàng hóa theo mùa" vertex="1">
+        <mxCell id="M3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3D68B3;strokeColor=#2F528F;fontColor=#FFFFFF;fontSize=11;arcSize=20;" value="Quản lý lập kế hoạch mua hàng và phân bổ hàng hóa theo mùa" vertex="1">
           <mxGeometry height="32" width="200" x="161" y="188" as="geometry" />
         </mxCell>
         <mxCell id="coreRect" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#7EA6E0;strokeWidth=2;" value="" vertex="1">
@@ -28,8 +28,8 @@
         <mxCell id="C1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3D68B3;strokeColor=#2F528F;fontColor=#FFFFFF;fontSize=11;arcSize=20;" value="Bán hàng tại cửa hàng" vertex="1">
           <mxGeometry height="30" width="190" x="166" y="268" as="geometry" />
         </mxCell>
-        <mxCell id="C2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3D68B3;strokeColor=#2F528F;fontColor=#FFFFFF;fontSize=11;arcSize=20;" value="Xử lý đơn hàng trực tuyến" vertex="1">
-          <mxGeometry height="30" width="190" x="166" y="308" as="geometry" />
+        <mxCell id="C2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3D68B3;strokeColor=#2F528F;fontColor=#FFFFFF;fontSize=11;arcSize=20;" value="Xử lý đơn hàng trực tuyến và giao hàng" vertex="1">
+          <mxGeometry height="30" width="216" x="153" y="308" as="geometry" />
         </mxCell>
         <mxCell id="C3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3D68B3;strokeColor=#2F528F;fontColor=#FFFFFF;fontSize=11;arcSize=20;" value="Tổ chức sự kiện truyền thông sản phẩm" vertex="1">
           <mxGeometry height="30" width="210" x="156" y="348" as="geometry" />
@@ -40,16 +40,16 @@
         <mxCell id="labelHT" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=1;fontSize=12;" value="QUY TRÌNH HỖ TRỢ" vertex="1">
           <mxGeometry height="20" width="121" x="200.5" y="518" as="geometry" />
         </mxCell>
-        <mxCell id="S1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3D68B3;strokeColor=#2F528F;fontColor=#FFFFFF;fontSize=11;arcSize=20;" value="Đổi hàng, bảo hành, khiếu nại" vertex="1">
+        <mxCell id="S1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3D68B3;strokeColor=#2F528F;fontColor=#FFFFFF;fontSize=11;arcSize=20;" value="Đổi hàng, bảo hành và xử lý khiếu nại" vertex="1">
           <mxGeometry height="30" width="190" x="66" y="440" as="geometry" />
         </mxCell>
-        <mxCell id="S2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3D68B3;strokeColor=#2F528F;fontColor=#FFFFFF;fontSize=11;arcSize=20;" value="Xử lý yêu cầu quyền dữ liệu cá nhân" vertex="1">
+        <mxCell id="S2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3D68B3;strokeColor=#2F528F;fontColor=#FFFFFF;fontSize=11;arcSize=20;" value="Tuyển dụng nhân sự chuỗi bán lẻ" vertex="1">
           <mxGeometry height="30" width="190" x="276" y="440" as="geometry" />
         </mxCell>
         <mxCell id="S3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3D68B3;strokeColor=#2F528F;fontColor=#FFFFFF;fontSize=11;arcSize=20;" value="Kiểm kê và xử lý chênh lệch tồn kho" vertex="1">
           <mxGeometry height="30" width="190" x="66" y="480" as="geometry" />
         </mxCell>
-        <mxCell id="S4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3D68B3;strokeColor=#2F528F;fontColor=#FFFFFF;fontSize=11;arcSize=20;" value="Đăng ký, OTP và kích hoạt tài khoản" vertex="1">
+        <mxCell id="S4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3D68B3;strokeColor=#2F528F;fontColor=#FFFFFF;fontSize=11;arcSize=20;" value="Đăng ký, xác thực và kích hoạt&lt;div&gt;tài khoản thành viên&lt;/div&gt;" vertex="1">
           <mxGeometry height="30" width="190" x="276" y="480" as="geometry" />
         </mxCell>
       </root>
