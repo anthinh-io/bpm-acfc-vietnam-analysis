@@ -8,7 +8,12 @@ Phân tích định lượng S1 tập trung vào ba nhóm chỉ số chính theo
 - **Chất lượng**
 - **Chi phí**
 
-Hiện chưa có dữ liệu vận hành nội bộ thực tế của ACFC để tính ra giá trị cuối cùng. Vì vậy, phần này xác định **chỉ số cần đo, cách tính và dữ liệu cần thu thập**, không tự tạo số liệu giả.
+Hiện nhóm chưa tiếp cận được dữ liệu vận hành nội bộ thực tế của ACFC. Vì vậy, phần phân tích định lượng gồm hai nội dung:
+
+- Xác định các chỉ số, công thức và dữ liệu cần thu thập khi triển khai đo lường thực tế.
+- Sử dụng một bộ dữ liệu giả lập để minh họa cách tính và cách phân tích các chỉ số.
+
+**Lưu ý:** Các số liệu giả lập trong phần này chỉ phục vụ mục đích minh họa phương pháp, không phải số liệu vận hành thực tế của ACFC.
 
 ---
 
@@ -267,28 +272,194 @@ Không nên mặc định mọi case đều tạo ra chi phí sản phẩm thay 
 ---
 
 ## 7. Mẫu bảng thu thập dữ liệu
+**“giả lập minh họa”**
+| Case  | Loại yêu cầu | Hồ sơ đủ lần đầu? | Số lần bổ sung | Thời gian chờ bổ sung (phút) | Thời gian kiểm tra SP (phút) | Chuyển cấp? | Kết quả    | Cycle Time (phút) | Rework? |
+| ----- | ------------ | ----------------- | -------------: | ---------------------------: | ---------------------------: | ----------- | ---------- | ----------------: | ------- |
+| S1-01 | Đổi hàng     | Có                |              0 |                            0 |                           18 | Không       | Được xử lý |                55 | Không   |
+| S1-02 | Bảo hành     | Không             |              1 |                           25 |                           30 | Không       | Được xử lý |                95 | Có      |
+| S1-03 | Khiếu nại    | Có                |              0 |                            0 |                           25 | Có          | Được xử lý |               120 | Không   |
+| S1-04 | Đổi hàng     | Không             |              1 |                           20 |                           20 | Không       | Được xử lý |                80 | Có      |
+| S1-05 | Bảo hành     | Có                |              0 |                            0 |                           35 | Có          | Được xử lý |               135 | Không   |
+| S1-06 | Khiếu nại    | Không             |              2 |                           45 |                           28 | Có          | Được xử lý |               160 | Có      |
+| S1-07 | Đổi hàng     | Có                |              0 |                            0 |                           15 | Không       | Được xử lý |                50 | Không   |
+| S1-08 | Bảo hành     | Không             |              1 |                           30 |                           32 | Không       | Từ chối    |               100 | Có      |
+| S1-09 | Khiếu nại    | Có                |              0 |                            0 |                           22 | Không       | Được xử lý |                70 | Không   |
+| S1-10 | Đổi hàng     | Không             |              1 |                           25 |                           24 | Không       | Từ chối    |                85 | Có      |
 
-| Case ID | Loại yêu cầu | Hồ sơ đủ lần đầu? | Số lần bổ sung | Thời gian kiểm tra | Chuyển cấp? | Kết quả | Cycle Time | Rework? |
-|---|---|---|---:|---:|---|---|---:|---|
-| ... | ... | ... | ... | ... | ... | ... | ... | ... |
+### 7.1. Phân tích thời gian
+Cycle Time trung bình
 
-Nên thu thập dữ liệu trong nhiều case trước khi đưa ra kết luận.
+Tổng Cycle Time:
 
----
+55 + 95 + 120 + 80 + 135 + 160 + 50 + 100 + 70 + 85 = 950 phút
 
-## 8. Nguyên tắc sử dụng số liệu
+Cycle Time trung bình:
 
-- Không tự tạo số liệu nếu chưa có dữ liệu thực tế.
-- Nếu dùng số giả định để minh họa công thức, phải ghi rõ **“Ví dụ minh họa”**.
-- Khi có dữ liệu thật, nên tính:
-  - trung bình;
-  - trung vị nếu cần;
-  - lớn nhất;
-  - nhỏ nhất;
-  - tỷ lệ phần trăm;
-  - số lượng case.
-- Nên phân tách dữ liệu theo loại yêu cầu:
-  - đổi hàng;
-  - bảo hành;
-  - khiếu nại.
-- Nếu có nhiều kênh tiếp nhận, nên so sánh theo từng kênh để xác định kênh nào có cycle time hoặc tỷ lệ rework cao hơn.
+950 / 10 = 95 phút/case
+
+Thời gian kiểm tra sản phẩm trung bình
+
+(18 + 30 + 25 + 20 + 35 + 28 + 15 + 32 + 22 + 24) / 10
+
+= 249 / 10
+
+= 24,9 phút/case
+
+Thời gian chờ bổ sung hồ sơ
+
+Có 5 case phải bổ sung hồ sơ:
+
+25 + 20 + 45 + 30 + 25 = 145 phút
+
+Thời gian chờ bổ sung trung bình:
+
+145 / 5 = 29 phút/case cần bổ sung
+
+Điều này minh họa rằng việc hồ sơ không đầy đủ ngay từ đầu có thể làm tăng đáng kể Cycle Time.
+
+### 7.2. So sánh Cycle Time theo loại yêu cầu
+Đổi hàng
+
+Các case S1-01, S1-04, S1-07, S1-10:
+
+(55 + 80 + 50 + 85) / 4
+
+= 270 / 4
+
+= 67,5 phút/case
+
+Bảo hành
+
+(95 + 135 + 100) / 3
+
+= 110 phút/case
+
+Khiếu nại
+
+(120 + 160 + 70) / 3
+
+≈ 116,7 phút/case
+
+Loại yêu cầu	Cycle Time trung bình giả lập
+Đổi hàng	67,5 phút
+Bảo hành	110 phút
+Khiếu nại	116,7 phút
+
+Trong dữ liệu giả lập, khiếu nại có Cycle Time cao nhất, tiếp theo là bảo hành và cuối cùng là đổi hàng.
+
+### 7.3. Phân tích chất lượng
+First-Time-Complete
+
+Có 5/10 case có hồ sơ đầy đủ ngay từ lần đầu.
+
+First-Time-Complete = 5 / 10 × 100% = 50%
+
+Tỷ lệ phải bổ sung hồ sơ
+
+Có 5 case phải bổ sung.
+
+5 / 10 × 100% = 50%
+
+Tỷ lệ yêu cầu được xử lý
+
+Có 8 case được xử lý.
+
+8 / 10 × 100% = 80%
+
+Tỷ lệ từ chối
+
+Có 2 case bị từ chối.
+
+2 / 10 × 100% = 20%
+
+Tỷ lệ chuyển cấp
+
+Có 3 case phải chuyển cấp.
+
+3 / 10 × 100% = 30%
+
+Tỷ lệ rework
+
+Có 5 case phát sinh rework.
+
+5 / 10 × 100% = 50%
+
+### 7.4. Ví dụ giả lập chi phí rework
+
+Giả sử để minh họa:
+
+Chi phí nhân công trung bình: 60.000 đồng/giờ
+Có 5 case rework
+Mỗi case phát sinh trung bình 15 phút thao tác làm lại
+
+Tổng thời gian rework:
+
+5 × 15 = 75 phút
+
+Quy đổi:
+
+75 / 60 = 1,25 giờ
+
+Chi phí rework giả lập:
+
+1,25 × 60.000 = 75.000 đồng
+
+Đây chỉ là ví dụ minh họa. Khi có dữ liệu thật cần tính thời gian thực tế của từng actor tham gia xử lý.
+
+### 7.5. Tổng hợp kết quả giả lập
+| Chỉ số                           |                      Kết quả |
+| -------------------------------- | ---------------------------: |
+| Cycle Time trung bình            |             **95 phút/case** |
+| Thời gian kiểm tra SP trung bình |           **24,9 phút/case** |
+| Thời gian chờ bổ sung trung bình | **29 phút/case cần bổ sung** |
+| First-Time-Complete              |                      **50%** |
+| Tỷ lệ phải bổ sung hồ sơ         |                      **50%** |
+| Tỷ lệ được xử lý                 |                      **80%** |
+| Tỷ lệ từ chối                    |                      **20%** |
+| Tỷ lệ chuyển cấp                 |                      **30%** |
+| Tỷ lệ rework                     |                      **50%** |
+| Chi phí rework minh họa          |      **75.000 đồng/10 case** |
+
+
+## 8. Câu hỏi
+1. Trung bình một yêu cầu đổi hàng, bảo hành hoặc khiếu nại mất bao lâu từ lúc tiếp nhận đến khi hoàn tất?
+Trả lời: Cycle Time trung bình là 95 phút/case.
+
+2. Trung bình mất bao nhiêu phút để kiểm tra sản phẩm và bằng chứng của một case?
+Trả lời: Trung bình khoảng 24,9 phút/case.
+
+3. Trong 10 case gần nhất, có bao nhiêu case có hồ sơ đầy đủ ngay từ lần tiếp nhận đầu tiên?
+Trả lời: Có 5/10 case, tương đương 50% First-Time-Complete.
+
+4. Có bao nhiêu case phải yêu cầu khách hàng bổ sung hồ sơ hoặc bằng chứng?
+Trả lời: Có 5/10 case, tương đương 50%.
+
+5. Với những case phải bổ sung hồ sơ, thời gian chờ bổ sung trung bình là bao lâu?
+Trả lời: Tổng thời gian chờ là 145 phút cho 5 case, trung bình 29 phút/case cần bổ sung.
+
+6. Có bao nhiêu yêu cầu được xử lý và bao nhiêu yêu cầu bị từ chối?
+Trả lời: Có 8/10 case được xử lý, tương đương 80%; và 2/10 case bị từ chối, tương đương 20%.
+
+7. Có bao nhiêu case phải chuyển cấp cho Quản lý hoặc đơn vị khác?
+Trả lời: Có 3/10 case phải chuyển cấp, tương đương 30%.
+
+8. Có bao nhiêu case phát sinh rework?
+Trả lời: Có 5/10 case phát sinh rework, tương đương 50%.
+
+9. Loại yêu cầu nào có Cycle Time trung bình cao nhất?
+Trả lời:
+
+Đổi hàng: 67,5 phút/case
+Bảo hành: 110 phút/case
+Khiếu nại: 116,7 phút/case
+
+Trong bộ dữ liệu minh họa, khiếu nại có Cycle Time cao nhất.
+
+10. Chi phí rework ước tính trong 10 case là bao nhiêu?
+Trả lời: Giả sử có 5 case rework, mỗi case mất trung bình 15 phút và chi phí nhân công là 60.000 đồng/giờ:
+
+5 × 15 = 75 phút = 1,25 giờ
+
+1,25 × 60.000 = 75.000 đồng
+
+→ Chi phí rework giả lập khoảng 75.000 đồng/10 case.

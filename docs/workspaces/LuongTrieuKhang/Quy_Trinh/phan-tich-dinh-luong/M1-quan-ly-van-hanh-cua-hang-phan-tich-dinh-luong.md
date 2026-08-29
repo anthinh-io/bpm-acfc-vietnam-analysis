@@ -8,7 +8,12 @@ Phân tích định lượng M1 tập trung vào ba nhóm chỉ số chính theo
 - **Chất lượng**
 - **Chi phí**
 
-Hiện chưa có dữ liệu vận hành nội bộ thực tế của ACFC để tính ra giá trị cuối cùng. Vì vậy, phần này xác định **chỉ số cần đo, cách tính và dữ liệu cần thu thập**, không tự tạo số liệu giả.
+Hiện nhóm chưa tiếp cận được dữ liệu vận hành nội bộ thực tế của ACFC. Vì vậy, phần phân tích định lượng gồm hai nội dung:
+
+- Xác định các chỉ số, công thức và dữ liệu cần thu thập khi triển khai đo lường thực tế.
+- Sử dụng một bộ dữ liệu giả lập để minh họa cách tính và cách phân tích các chỉ số.
+
+**Lưu ý:** Các số liệu giả lập trong phần này chỉ phục vụ mục đích minh họa phương pháp, không phải số liệu vận hành thực tế của ACFC.
 
 ---
 
@@ -265,23 +270,145 @@ Chỉ áp dụng khi chứng minh được thời gian chờ thực sự làm ph
 ---
 
 ## 7. Mẫu bảng thu thập dữ liệu
+**“giả lập minh họa”**
+| Ca    | Thời gian chuẩn bị (phút) | Số sự cố | Sự cố chuyển cấp | Có chênh lệch? | Thời gian xử lý chênh lệch (phút) | Thời gian đóng ca (phút) | Rework? |
+| ----- | ------------------------: | -------: | ---------------: | -------------- | --------------------------------: | -----------------------: | ------- |
+| Ca 1  |                        22 |        1 |                0 | Không          |                                 0 |                       28 | Không   |
+| Ca 2  |                        25 |        2 |                1 | Có             |                                18 |                       42 | Có      |
+| Ca 3  |                        20 |        0 |                0 | Không          |                                 0 |                       26 | Không   |
+| Ca 4  |                        27 |        1 |                0 | Có             |                                12 |                       36 | Có      |
+| Ca 5  |                        24 |        1 |                1 | Không          |                                 0 |                       31 | Không   |
+| Ca 6  |                        21 |        0 |                0 | Không          |                                 0 |                       25 | Không   |
+| Ca 7  |                        29 |        3 |                1 | Có             |                                25 |                       49 | Có      |
+| Ca 8  |                        23 |        1 |                0 | Không          |                                 0 |                       29 | Không   |
+| Ca 9  |                        26 |        2 |                1 | Có             |                                15 |                       40 | Có      |
+| Ca 10 |                        22 |        1 |                0 | Không          |                                 0 |                       27 | Không   |
 
-| Ngày/Ca | Thời gian chuẩn bị | Số sự cố | Số sự cố chuyển cấp | Có chênh lệch? | Thời gian xử lý chênh lệch | Thời gian đóng ca | Rework? |
-|---|---:|---:|---:|---|---:|---:|---|
-| ... | ... | ... | ... | ... | ... | ... | ... |
+### 7.1. Phân tích thời gian từ dữ liệu
 
-Nên thu thập dữ liệu trong nhiều ca trước khi tính trung bình hoặc đưa ra kết luận.
+Thời gian chuẩn bị đầu ca trung bình:
 
----
+(22 + 25 + 20 + 27 + 24 + 21 + 29 + 23 + 26 + 22) / 10
 
-## 8. Nguyên tắc sử dụng số liệu
+= 239 / 10 = 23,9 phút/ca
 
-- Không tự tạo số liệu khi chưa có dữ liệu thực tế.
-- Nếu dùng số giả định để minh họa công thức, phải ghi rõ **“Ví dụ minh họa”**.
-- Khi có dữ liệu thật, nên tính ít nhất:
-  - trung bình;
-  - lớn nhất;
-  - nhỏ nhất;
-  - tỷ lệ phần trăm;
-  - số lượng case.
-- Nếu dữ liệu giữa các cửa hàng khác nhau nhiều, nên phân tích riêng theo cửa hàng thay vì gộp toàn bộ.
+Thời gian đóng ca trung bình:
+
+(28 + 42 + 26 + 36 + 31 + 25 + 49 + 29 + 40 + 27) / 10
+
+= 333 / 10 = 33,3 phút/ca
+
+Đối với 4 ca có chênh lệch:
+
+Thời gian xử lý chênh lệch trung bình
+
+= (18 + 12 + 25 + 15) / 4
+
+= 70 / 4 = 17,5 phút/case
+
+Như vậy, trong dữ liệu giả lập, ca có chênh lệch thường cần nhiều thời gian đóng ca hơn.
+
+### 7.2. Phân tích chất lượng
+
+Tổng số ca:
+
+10 ca
+
+Số ca không có chênh lệch:
+
+6 ca
+
+Tỷ lệ ca không chênh lệch:
+
+6 / 10 × 100% = 60%
+
+Số ca có chênh lệch:
+
+4 ca
+
+Tỷ lệ ca có chênh lệch:
+
+4 / 10 × 100% = 40%
+
+Tổng số sự cố:
+
+1 + 2 + 0 + 1 + 1 + 0 + 3 + 1 + 2 + 1 = 12 sự cố
+
+Số sự cố phải chuyển cấp:
+
+4 sự cố
+
+Tỷ lệ sự cố chuyển cấp:
+
+4 / 12 × 100% ≈ 33,3%
+
+Số ca phát sinh rework:
+
+4 ca
+
+Tỷ lệ rework:
+
+4 / 10 × 100% = 40%
+
+### 7.3. Ví dụ giả lập chi phí rework
+
+Giả sử để minh họa:
+
+Chi phí nhân công trung bình: 60.000 đồng/giờ/người
+Mỗi case chênh lệch tạm tính có 1 nhân sự trực tiếp xử lý.
+Tổng thời gian xử lý chênh lệch: 70 phút.
+
+Quy đổi:
+
+70 phút = 70 / 60 = 1,17 giờ
+
+Chi phí rework giả lập:
+
+1,17 × 60.000 ≈ 70.000 đồng
+
+Nếu thực tế có nhiều nhân sự cùng tham gia thì cần tính riêng thời gian và chi phí của từng người.
+
+### 7.4. Kết quả tổng hợp giả lập
+| Chỉ số                                |         Kết quả giả lập |
+| ------------------------------------- | ----------------------: |
+| Thời gian chuẩn bị trung bình         |        **23,9 phút/ca** |
+| Thời gian đóng ca trung bình          |        **33,3 phút/ca** |
+| Thời gian xử lý chênh lệch trung bình |      **17,5 phút/case** |
+| Tổng số sự cố                         |                  **12** |
+| Tỷ lệ sự cố chuyển cấp                |               **33,3%** |
+| Tỷ lệ ca không chênh lệch             |                 **60%** |
+| Tỷ lệ ca có chênh lệch                |                 **40%** |
+| Tỷ lệ rework                          |                 **40%** |
+| Chi phí rework minh họa               | **≈ 70.000 đồng/10 ca** |
+
+## 8. Câu hỏi định lượng
+
+1. Trung bình một ca mất bao nhiêu phút để hoàn tất công tác chuẩn bị đầu ca?
+Trả lời : Khoảng 23,9 phút/ca.
+
+2. Trung bình một ca mất bao nhiêu phút để hoàn tất đối soát và đóng ca?
+Trả lời : Khoảng 33,3 phút/ca.
+
+3. Trong một tuần hoặc một tháng, cửa hàng có tổng cộng bao nhiêu ca vận hành?
+Trả lời : Trong bộ dữ liệu minh họa, nhóm sử dụng 10 ca vận hành để phân tích.
+
+4. Trong khoảng thời gian đó, có bao nhiêu sự cố phát sinh trong quá trình vận hành?
+Trả lời : Có 12 sự cố phát sinh trong 10 ca.
+
+5. Trong số các sự cố phát sinh, có bao nhiêu sự cố cửa hàng tự xử lý được?
+Trả lời : Có 8/12 sự cố được xử lý tại cửa hàng, tương đương khoảng 66,7%.
+
+6. Có bao nhiêu sự cố phải chuyển cho Bộ phận Vận hành bán lẻ?
+Trả lời : Có 4/12 sự cố, tương đương khoảng 33,3%.
+
+7. Trong 10 ca gần nhất, có bao nhiêu ca phát sinh chênh lệch tiền, hóa đơn hoặc hàng hóa?
+Trả lời : Có 4/10 ca phát sinh chênh lệch, tương đương 40%; 6 ca không phát sinh chênh lệch, tương đương 60%.
+
+8. Một trường hợp chênh lệch cuối ca trung bình mất bao nhiêu phút để kiểm tra và xử lý?
+Trả lời : Trung bình khoảng 17,5 phút/trường hợp.
+
+9. Một trường hợp chuyển cấp trung bình mất bao nhiêu phút hoặc bao nhiêu giờ để nhận được phản hồi?
+Trả lời : Chưa có dữ liệu cụ thể để tính chính xác chỉ số này. Khi thu thập thực tế cần ghi lại thời điểm chuyển cấp và thời điểm nhận phản hồi.
+
+10. Trong các ca phát sinh chênh lệch, có bao nhiêu trường hợp phải kiểm tra hoặc thực hiện lại công việc?
+Trả lời : Có 4/10 ca phát sinh rework, tương đương 40% tổng số ca trong bộ dữ liệu minh họa.
