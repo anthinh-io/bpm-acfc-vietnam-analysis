@@ -228,3 +228,35 @@ Kết quả cho thấy các vấn đề tập trung nhiều ở **giai đoạn t
 6. Quy định **SLA** cho từng giai đoạn xử lý.
 7. Cho phép CSKH/Cửa hàng theo dõi trạng thái để khách hàng không phải liên hệ nhiều lần.
 8. Theo dõi nguyên nhân từ chối và nguyên nhân chậm xử lý để xác định vấn đề lặp lại.
+
+## 7. Câu hỏi
+
+1. Những loại yêu cầu sau bán hàng nào thường được khách hàng gửi đến cửa hàng hoặc CSKH?
+Trả lời: Các yêu cầu chủ yếu gồm đổi hàng, bảo hành và khiếu nại liên quan đến sản phẩm hoặc giao dịch đã thực hiện.
+
+2. Khi tiếp nhận yêu cầu, những thông tin nào thường cần kiểm tra đầu tiên?
+Trả lời: Các thông tin cần kiểm tra gồm mã đơn hàng hoặc giao dịch, hóa đơn/chứng từ mua hàng, sản phẩm liên quan, lý do yêu cầu và thông tin khách hàng cần thiết để xác định giao dịch.
+
+3. Những nguyên nhân nào khiến khách hàng thường phải bổ sung hồ sơ hoặc bằng chứng?
+Trả lời: Nguyên nhân có thể là thiếu hóa đơn hoặc chứng từ giao dịch, thiếu hình ảnh/bằng chứng về tình trạng sản phẩm, thông tin giao dịch chưa đầy đủ hoặc chưa xác định được chính xác sản phẩm liên quan.
+
+4. Bước nào trong quy trình thường dễ làm kéo dài thời gian xử lý nhất?
+Trả lời: Các bước dễ kéo dài thời gian gồm chờ khách hàng bổ sung hồ sơ, kiểm tra sản phẩm và chờ phản hồi đối với các trường hợp phải chuyển cấp hoặc cần phê duyệt ngoại lệ.
+
+5. Những nguyên nhân phổ biến nào khiến yêu cầu của khách hàng bị từ chối?
+Trả lời: Yêu cầu có thể bị từ chối do quá thời hạn áp dụng, thiếu chứng từ cần thiết, tình trạng sản phẩm không đáp ứng điều kiện hỗ trợ hoặc trường hợp không thuộc phạm vi chính sách.
+
+6. Khi khách hàng đủ điều kiện hỗ trợ, việc lựa chọn phương án xử lý được thực hiện như thế nào?
+Trả lời: Đơn vị xử lý sẽ căn cứ vào tình trạng sản phẩm và chính sách áp dụng để xác định phương án như đổi hàng, bảo hành hoặc một phương án hỗ trợ khác.
+
+7. Trường hợp nào cần chuyển cho Quản lý hoặc đơn vị có thẩm quyền?
+Trả lời: Các trường hợp không thể xử lý theo quy tắc thông thường, cần phê duyệt ngoại lệ hoặc vượt phạm vi xử lý của CSKH/Cửa hàng sẽ được chuyển cấp. Điều kiện cụ thể cần được ACFC xác nhận.
+
+8. Nếu không có sản phẩm thay thế phù hợp thì quy trình nên xử lý như thế nào?
+Trả lời: Yêu cầu không nên tự động được xem là trường hợp ngoại lệ. Trước tiên cần xem xét bảo hành hoặc phương án hỗ trợ khác theo chính sách; chỉ chuyển cấp khi thực sự cần phê duyệt ngoại lệ.
+
+9. Những hoạt động nào trong quy trình có thể phát sinh rework?
+Trả lời: Rework có thể xảy ra khi phải yêu cầu khách hàng bổ sung lại thông tin, kiểm tra lại hồ sơ, kiểm tra lại sản phẩm hoặc điều chỉnh phương án xử lý do thông tin ban đầu chưa đầy đủ.
+
+10. Theo anh/chị, bước nào cần được ưu tiên cải thiện nhất trong S1? Vì sao?
+Trả lời: Nên ưu tiên cải thiện khâu tiếp nhận và kiểm tra hồ sơ ban đầu vì nếu thông tin được thu thập đầy đủ ngay từ đầu thì có thể giảm thời gian chờ, giảm số lần bổ sung và hạn chế rework ở các bước phía sau.

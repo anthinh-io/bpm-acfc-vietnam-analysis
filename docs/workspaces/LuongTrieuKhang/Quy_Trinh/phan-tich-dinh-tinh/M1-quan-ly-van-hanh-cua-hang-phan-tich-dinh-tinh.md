@@ -219,3 +219,33 @@ Do đó, các hoạt động đối soát cuối ca, kiểm soát hàng hóa và
 6. Thiết lập cảnh báo sớm cho các chênh lệch có thể phát hiện trước cuối ca.
 7. Theo dõi nguyên nhân chênh lệch theo nhóm để xác định vấn đề lặp lại.
 
+## 7. Câu hỏi
+1. Trong quá trình vận hành cửa hàng, những sự cố hoặc vấn đề nào thường phát sinh nhất?
+Trả lời: Các vấn đề thường gặp gồm chênh lệch tiền hoặc hóa đơn, chênh lệch hàng hóa, thiếu hoặc chậm cập nhật thông tin, sự cố hệ thống/POS và một số trường hợp phân công nhân sự chưa phù hợp.
+
+2. Những sự cố nào cửa hàng có thể tự xử lý và trường hợp nào phải chuyển cho Bộ phận Vận hành bán lẻ?
+Trả lời: Các sự cố nhỏ trong phạm vi vận hành thông thường có thể được Quản lý cửa hàng và nhân sự liên quan xử lý trực tiếp. Những trường hợp vượt thẩm quyền, ảnh hưởng nhiều bộ phận hoặc không xác định được nguyên nhân thì cần chuyển cho Bộ phận Vận hành bán lẻ.
+
+3. Khi bắt đầu ca, bước chuẩn bị nào thường gặp khó khăn hoặc mất nhiều thời gian nhất?
+Trả lời: Các bước dễ mất thời gian là kiểm tra tình trạng hàng hóa, xác nhận thông tin còn thiếu và điều chỉnh phân công nhân sự khi có thay đổi so với kế hoạch ban đầu.
+
+4. Khi đối soát cuối ca, những loại chênh lệch nào thường xuất hiện?
+Trả lời: Chênh lệch có thể xuất hiện ở tiền mặt, phương thức thanh toán, hóa đơn, hàng hóa hoặc dữ liệu giao dịch.
+
+5. Nguyên nhân phổ biến dẫn đến chênh lệch tiền, hóa đơn hoặc hàng hóa là gì?
+Trả lời: Nguyên nhân có thể do ghi nhận giao dịch chưa chính xác, cập nhật dữ liệu chưa kịp thời, phải đối chiếu từ nhiều nguồn hoặc có thao tác nhập và tổng hợp lại dữ liệu.
+
+6. Có bước nào trong quy trình thường phải chờ, kiểm tra lại hoặc thực hiện lại nhiều lần không? Vì sao?
+Trả lời: Có. Các bước thường phát sinh chờ hoặc rework gồm bổ sung thông tin đầu ca, chờ phản hồi khi chuyển cấp và kiểm tra lại chênh lệch cuối ca. Nguyên nhân chủ yếu là thông tin chưa đầy đủ hoặc dữ liệu chưa đồng nhất.
+
+7. Việc phối hợp giữa Quản lý cửa hàng, Thu ngân, Nhân viên bán hàng và Nhân sự phụ trách hàng hóa/kho có điểm nào chưa thuận lợi?
+Trả lời: Một số trường hợp trách nhiệm kiểm tra hoặc cập nhật dữ liệu chưa được phân định rõ, dẫn đến phải trao đổi lại hoặc kiểm tra nhiều lần khi có chênh lệch.
+
+8. Dữ liệu bán hàng, thanh toán, hóa đơn và hàng hóa hiện được quản lý tập trung hay phải đối chiếu từ nhiều nguồn?
+Trả lời: Theo giả định phân tích của nhóm, dữ liệu có thể được lấy từ nhiều nguồn khác nhau nên vẫn phát sinh việc đối chiếu và tổng hợp lại. Điểm này cần xác nhận bằng dữ liệu thực tế của ACFC.
+
+9. Khi một vấn đề được chuyển cấp, khó khăn thường gặp trong quá trình phối hợp với Bộ phận Vận hành bán lẻ là gì?
+Trả lời: Khó khăn thường nằm ở thời gian chờ phản hồi, thiếu thông tin khi chuyển cấp hoặc chưa xác định rõ SLA và người chịu trách nhiệm tiếp theo.
+
+10. Bước nào trong quy trình Quản lý vận hành cửa hàng cần được ưu tiên cải thiện nhất? Vì sao?
+Trả lời: Nên ưu tiên khâu đối soát và xử lý chênh lệch cuối ca vì đây là bước dễ phát sinh rework, kéo dài thời gian đóng ca và liên quan đồng thời đến tiền, hóa đơn, hàng hóa và dữ liệu.
