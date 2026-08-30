@@ -99,15 +99,26 @@ Các đơn giá trên là *tham chiếu để minh họa cách tính*, không ph
 
 #### a. Phân loại hoạt động VA/BVA/NVA
 
-| Hoạt động | Phân loại | Nhận xét |
-|---|---|---|
-| Lập kế hoạch mua hàng và phân bổ | VA | Tạo cơ cấu hàng phù hợp nhu cầu cửa hàng |
-| Thu thập dữ liệu bán hàng, tồn kho, dự báo | BVA | Cần cho quyết định; nên dùng một bộ dữ liệu chuẩn |
-| Phân tích tỷ lệ bán qua và số tháng tồn kho | BVA | Hỗ trợ lập kế hoạch; tự động hóa bảng theo dõi |
-| Kiểm tra biên lợi nhuận và ngân sách | BVA | Kiểm soát tài chính; đặt quy tắc tự động |
-| Chờ dữ liệu hoặc chờ phê duyệt | NVA | Chờ (Hold); đặt thời hạn và cảnh báo quá hạn |
-| Nhập/đối chiếu trùng cùng một báo cáo | NVA | Xử lý dư (Over-processing); dùng một nguồn dữ liệu gốc |
-| Lập lại kế hoạch do dữ liệu sai | NVA | Lỗi (Defects); kiểm tra bắt buộc trước khi trình |
+Bảng dưới phân loại **đủ cả 11 bước** đã đánh số ở mục 2.1 (không gộp theo chủ đề như bản trước):
+
+| # (theo 2.1) | Bước | Phân loại | Lý do |
+|---|---|---|---|
+| 1 | Thu thập dữ liệu bán hàng, tồn kho và dự báo | BVA | Đầu vào bắt buộc cho quyết định phân bổ, chưa trực tiếp tạo giá trị |
+| 2 | Chốt dự báo nhu cầu theo mùa | BVA | Quyết định nghiệp vụ bắt buộc trước khi lập kế hoạch |
+| 3 | Phân tích tỷ lệ bán qua và số tháng tồn kho | BVA | Hỗ trợ ra quyết định phân bổ, kiểm soát rủi ro tồn |
+| 4 | Lập kế hoạch mua hàng và phân bổ theo cửa hàng | VA | Giá trị trực tiếp — tạo ra cơ cấu hàng đúng nhu cầu cửa hàng |
+| 5 | Kiểm tra biên lợi nhuận và ngân sách | BVA | Kiểm soát tài chính bắt buộc, không tạo giá trị cho khách |
+| 6 | Kiểm tra sức chứa cửa hàng (song song với bước 7) | BVA | Kiểm soát vận hành bắt buộc trước khi phân bổ |
+| 7 | Xác nhận nguồn hàng khả dụng (song song với bước 6) | BVA | Kiểm soát nguồn cung bắt buộc trước khi phân bổ |
+| 8 | Trình kế hoạch phân bổ để phê duyệt | BVA | Thủ tục kiểm soát/governance bắt buộc |
+| 9 | Phê duyệt kế hoạch phân bổ | BVA | Kiểm soát bắt buộc, không tạo giá trị trực tiếp cho khách |
+| 10 | Phát hành kế hoạch mua hàng/yêu cầu điều chuyển | VA | Giá trị trực tiếp — kết quả vận hành/cửa hàng cần để nhận đúng hàng |
+| 11 | Theo dõi kết quả và tiếp nhận dữ liệu chênh lệch | BVA | Kiểm soát vòng lặp tiếp theo, đầu vào cho kỳ kế hoạch sau |
+| — | Chờ dữ liệu hoặc chờ phê duyệt (nhánh ngoại lệ) | NVA – Chờ (Hold) | Thời gian chờ không tạo giá trị; xem mục 2.2.b |
+| — | Nhập/đối chiếu trùng cùng một báo cáo (nhánh ngoại lệ) | NVA – Xử lý dư (Over-processing) | Xử lý lại do nhiều nguồn dữ liệu rời rạc |
+| — | Lập lại kế hoạch do dữ liệu sai (nhánh ngoại lệ) | NVA – Lỗi (Defects) | Phát sinh do dữ liệu gốc/dự báo chưa đồng nhất |
+
+Tổng hợp: **2 hoạt động VA** (bước 4, 10), **9 hoạt động BVA** (bước 1–3, 5–9, 11) và **3 hoạt động NVA** (các nhánh ngoại lệ chờ/đối chiếu trùng/lập lại). Đây là quy trình hoạch định nên phần lớn các bước là BVA (thu thập dữ liệu, kiểm soát ngân sách/sức chứa/nguồn hàng, phê duyệt — đều bắt buộc theo quy trình dù không trực tiếp tạo giá trị); NVA chỉ nằm ở các nhánh ngoại lệ ngoài luồng chính.
 
 #### b. Phân tích lãng phí (Move – Hold – Over-processing – Defects)
 
@@ -242,15 +253,27 @@ Theo thứ tự ưu tiên Pareto ở mục 2.4:
 
 #### a. Phân loại hoạt động VA/BVA/NVA
 
-| Hoạt động | Phân loại | Nhận xét |
-|---|---|---|
-| Điều chỉnh tồn được phê duyệt | VA | Đưa sổ sách về đúng thực tế — cơ sở cho quản trị và tài chính |
-| Đếm tồn thực tế | BVA | Bằng chứng tồn thực tế; nên quét mã để giảm sai |
-| Đối chiếu với sổ tồn | BVA | Phát hiện sai lệch |
-| Đếm lại khi có chênh lệch | BVA | Cần xác minh trước điều chỉnh |
-| Chờ phê duyệt hoặc bằng chứng | NVA | Chờ (Hold); đặt thời hạn và chuyển cấp |
-| Đếm lại do bàn giao không đủ chứng từ | NVA | Lỗi (Defects); chuẩn hóa biên bản và quét mã |
-| Nhập cùng điều chỉnh ở nhiều nơi | NVA | Xử lý dư (Over-processing); dùng một hồ sơ điều chỉnh gốc |
+Bảng dưới phân loại **đủ cả 12 bước** đã đánh số ở mục 3.1 (không gộp theo chủ đề như bản trước):
+
+| # (theo 3.1) | Bước | Phân loại | Lý do |
+|---|---|---|---|
+| 1 | Lập lịch kiểm kê | BVA | Kiểm soát/lập lịch bắt buộc, chưa tạo giá trị |
+| 2 | Xác định phạm vi và mẫu đếm | BVA | Chuẩn bị nghiệp vụ bắt buộc trước khi đếm |
+| 3 | Duyệt phạm vi kiểm kê | BVA | Kiểm soát/governance bắt buộc |
+| 4 | Chuẩn bị phiếu kiểm kê và đếm tồn thực tế | BVA | Thu thập bằng chứng tồn thực tế, bắt buộc để đối chiếu |
+| 5 | Đối chiếu tồn thực tế với sổ tồn | BVA | Kiểm soát phát hiện sai lệch |
+| 6 | Xác định điều kiện đếm lại | BVA | Kiểm soát chất lượng số liệu trước khi phân loại nguyên nhân |
+| 7 | Phân loại nguyên nhân chênh lệch | BVA | Cơ sở bắt buộc để chọn hướng xử lý (điều chỉnh hay báo cáo hao hụt) |
+| 8 | Lập đề nghị điều chỉnh tồn (song song với bước 9) | BVA | Chuẩn bị hồ sơ bắt buộc trước khi phê duyệt |
+| 9 | Lập báo cáo hao hụt/sự cố (song song với bước 8) | BVA | Chuẩn bị hồ sơ bắt buộc trước khi phê duyệt |
+| 10 | Phê duyệt điều chỉnh hoặc bút toán hao hụt | BVA | Kiểm soát/governance bắt buộc |
+| 11 | Cập nhật hệ thống tồn kho và đóng hồ sơ | VA | Giá trị trực tiếp — đưa sổ sách về đúng thực tế, cơ sở cho quản trị và tài chính |
+| 12 | Gửi kết quả phản hồi cho Lập kế hoạch mua & phân bổ | BVA | Đầu vào kiểm soát cho chu kỳ kế hoạch tiếp theo |
+| — | Chờ phê duyệt hoặc bằng chứng (nhánh ngoại lệ) | NVA – Chờ (Hold) | Thời gian chờ không tạo giá trị; xem mục 3.2.b |
+| — | Đếm lại do bàn giao không đủ chứng từ (nhánh ngoại lệ) | NVA – Lỗi (Defects) | Phát sinh do biên bản/chứng từ chưa chuẩn hóa |
+| — | Nhập cùng điều chỉnh ở nhiều nơi (nhánh ngoại lệ) | NVA – Xử lý dư (Over-processing) | Trùng lặp do chưa dùng một hồ sơ điều chỉnh gốc |
+
+Tổng hợp: **1 hoạt động VA** (bước 11), **11 hoạt động BVA** (bước 1–10, 12) và **3 hoạt động NVA** (các nhánh ngoại lệ chờ/đếm lại do thiếu chứng từ/nhập trùng). Quy trình kiểm kê là chuỗi kiểm soát và đối chiếu nên phần lớn các bước là BVA bắt buộc; VA chỉ nằm ở bước cập nhật sổ sách cuối cùng, còn NVA tập trung ở các nhánh ngoại lệ ngoài luồng chính.
 
 #### b. Phân tích lãng phí (Move – Hold – Over-processing – Defects)
 
@@ -389,18 +412,26 @@ Về logic cổng: các cổng quyết định là cổng XOR — mỗi cổng r
 
 #### a. Phân loại hoạt động VA/BVA/NVA
 
-| Hoạt động | Phân loại | Nhận xét |
-|---|---|---|
-| Nhập số điện thoại/thông tin cá nhân | BVA | Cần để tạo hồ sơ và định danh tài khoản |
-| Nhận và xác nhận mã OTP | BVA | Xác thực bảo mật trước khi tạo tài khoản |
-| Tạo và kích hoạt tài khoản | VA | Giá trị trực tiếp — khách mua sắm và hưởng ưu đãi thành viên |
-| Đăng nhập bằng mật khẩu đã lưu | VA | Truy cập ngay quyền lợi thành viên |
-| Chờ nhận OTP/mật khẩu tạm | NVA | Chờ (Hold); rút ngắn thời gian gửi và có kênh dự phòng |
-| Nhập lại OTP do sai/hết hạn | NVA | Lỗi (Defects); cho gửi lại OTP mà không phải nhập lại toàn bộ thông tin |
-| Đăng ký lại từ đầu khi OTP hết hạn | NVA | Xử lý dư (Over-processing); lưu tạm dữ liệu đã nhập trong phiên |
-| Liên hệ chăm sóc khách hàng qua nhiều kênh rời rạc | NVA | Di chuyển (Move); hợp nhất đầu mối hỗ trợ ngay trên trang đăng ký/đăng nhập |
+Bảng dưới phân loại **đủ cả 13 bước** đã đánh số ở mục 4.1 (không gộp theo chủ đề như bản trước), khớp với các nhãn `[VA]/[BVA]/[NVA]` đã chú thích trực tiếp trên sơ đồ `svg/bpmn.drawio` (trang 1):
 
-Quy trình này có 2 hoạt động VA, 2 hoạt động BVA và 4 hoạt động NVA. Đây là quy trình tự phục vụ nên tỷ trọng NVA cao hơn các quy trình có nhân sự trực tiếp phục vụ — phần lớn NVA gắn với thời gian chờ và các bước phát sinh khi có lỗi (OTP sai/hết hạn, phải đăng ký lại, phải liên hệ chăm sóc khách hàng).
+| # (theo 4.1) | Bước | Phân loại | Lý do |
+|---|---|---|---|
+| 1 | Truy cập App/Web, đồng ý PDPA và nhập số điện thoại | BVA | Bắt buộc theo tuân thủ pháp lý (PDPA) và để định danh tài khoản |
+| 2 | Kiểm tra trùng số điện thoại | BVA | Kiểm soát chất lượng hồ sơ, tránh trùng lặp tài khoản |
+| 3 | Khởi tạo hồ sơ tạm trên CRM | BVA | Bước nghiệp vụ cần thiết để chuẩn bị dữ liệu trước khi xác thực |
+| 4 | Gửi OTP qua Zalo ZNS/SMS | BVA | Kiểm soát bảo mật — điều kiện bắt buộc trước khi tạo tài khoản |
+| 5 | Kiểm tra trạng thái cổng gửi OTP | BVA | Kiểm soát vận hành để định tuyến sang xác minh thủ công khi cần |
+| 6 | CSKH xác minh thủ công qua tổng đài (nhánh ngoại lệ của bước 5) | NVA – Di chuyển (Move) | Khách bị đẩy sang kênh khác ngoài luồng tự phục vụ; xem mục 4.2.b |
+| 7 | Chờ khách nhập OTP trong thời hạn hiệu lực (Timer) | NVA – Chờ (Hold) | Thời gian chờ không tạo giá trị, chiếm 22% cycle time (mục 4.3.a) |
+| 8 | Nhập mã xác thực OTP | BVA | Xác thực bảo mật trước khi tạo tài khoản |
+| 9 | Kiểm tra số lần nhập sai OTP | BVA | Kiểm soát bảo mật, ngăn dò mã OTP |
+| 10 | Điền thông tin cá nhân và tạo mật khẩu | VA | Giá trị trực tiếp — dữ liệu và mật khẩu khách trực tiếp sử dụng |
+| 11 | Tạo tài khoản và cấp mã thành viên | VA | Giá trị trực tiếp — kết quả khách hàng cần để tham gia chương trình thành viên |
+| 12 | Đồng bộ hồ sơ sang Magento và Retail Pro Prism | BVA | Kiểm soát vận hành để dữ liệu nhất quán giữa các kênh bán |
+| 13 | Kích hoạt tài khoản, tặng ưu đãi chào mừng | VA | Giá trị trực tiếp — khách nhận được lợi ích ngay lập tức |
+| — | Hàng đợi gửi lại & cảnh báo kỹ thuật (nhánh ngoại lệ của bước 12) | NVA – Xử lý dư (Over-processing) | Xử lý lại do đồng bộ thất bại, không phát sinh giá trị mới cho khách |
+
+Tổng hợp: **3 hoạt động VA** (bước 10, 11, 13), **8 hoạt động BVA** (bước 1–5, 8, 9, 12) và **3 hoạt động NVA** (bước 6, 7 và nhánh ngoại lệ đồng bộ thất bại). Đây là quy trình tự phục vụ nên phần lớn các bước chính là BVA (kiểm soát định danh/bảo mật/đồng bộ dữ liệu bắt buộc); NVA tập trung ở các nhánh ngoại lệ và thời gian chờ, không nằm trên luồng chính (happy path) — phù hợp với mục tiêu tối ưu là rút ngắn các nhánh ngoại lệ này (mục 4.6) chứ không phải cắt bớt bước kiểm soát bắt buộc.
 
 #### b. Phân tích lãng phí (Move – Hold – Over-processing – Defects)
 
@@ -445,6 +476,24 @@ Cấu trúc: **Nguyên nhân** (xác định bằng 5 Why ở mục 4.4, khác v
 | Thời gian chờ nhận OTP | Thời điểm nhận OTP − thời điểm gửi | ≈ 20 giây | 20 giây |
 | Hiệu suất chu kỳ (PCE) | (Chu kỳ − thời gian chờ) / Chu kỳ | (90 − 20) / 90 | ≈ 78% |
 | Thời gian xử lý một yêu cầu chăm sóc khách hàng | Thời điểm đóng − thời điểm khách liên hệ | 09:00 → 11:00 | 2 giờ |
+
+**Phân bổ 90 giây chu kỳ theo từng bước (Pareto thời gian — xem `svg/pareto-cycle-time-dang-ky.png`)**
+
+Bảng dưới decompose chỉ số "chu kỳ 90 giây" ở trên theo 8 bước chính của AS-IS (mục 4.1), sắp xếp giảm dần để lộ ra các bước chiếm tỷ trọng thời gian lớn nhất theo nguyên tắc 80/20 — đây chính là cách suy ra từng con số hiển thị trên biểu đồ, không chỉ đưa thẳng con số cuối:
+
+| Bước (theo mục 4.1) | Thời gian minh họa `[giả định]` | Tỷ trọng | Lũy kế | Cơ sở giả định |
+|---|---|---|---|---|
+| Chờ nhận OTP (chờ kênh gửi) | 20s | 22% | 22% | Lấy đúng bằng "Thời gian chờ nhận OTP" ở bảng trên |
+| Điền thông tin & tạo mật khẩu | 18s | 20% | 42% | Ước lượng thao tác gõ tay (họ tên, mật khẩu, xác nhận mật khẩu) theo tốc độ nhập liệu trung bình trên di động |
+| Nhập lại OTP do sai/hết hạn | 15s | 17% | 59% | Giả định khách rơi vào nhánh lỗi (mục 4.1): gõ lại 6 số OTP + thời gian chờ xác nhận lần 2 |
+| Nhập & xác thực OTP (lần đầu) | 12s | 13% | 72% | Thời gian gõ 6 số OTP + xử lý xác thực phía hệ thống |
+| Đồng ý PDPA & nhập số điện thoại | 10s | 11% | 83% | Thao tác chạm đồng ý PDPA + gõ 10 số điện thoại |
+| Đồng bộ CRM/Magento/RetailPro | 8s | 9% | 92% | Thời gian xử lý nền (backend) khi đồng bộ dữ liệu sang các hệ thống khác, không phải thao tác của khách |
+| Tạo User & cấp Member ID | 4s | 4% | 97% | Thời gian xử lý backend tạo tài khoản và sinh mã thành viên |
+| Truy cập App/Web (khởi động) | 3s | 3% | 100% | Thời gian tải trang/màn hình ban đầu trước khi hiện form đăng ký |
+| **Tổng** | **90s** | 100% | — | Khớp với "Thời gian hoàn tất đăng ký (chu kỳ)" ở bảng trên |
+
+Ba bước đầu (chờ OTP, điền thông tin & tạo mật khẩu, nhập lại OTP do lỗi) đã chiếm 59% cycle time và vượt ngưỡng 80% khi cộng thêm bước nhập & xác thực OTP (72%) rồi PDPA/SĐT (83%) — đây là nhóm bước cần ưu tiên rút ngắn trước khi tối ưu các bước xử lý nền (đồng bộ hệ thống, tạo User) vốn đã chiếm tỷ trọng nhỏ.
 
 #### b. Phân tích chi phí
 
@@ -540,15 +589,25 @@ Theo thứ tự ưu tiên Pareto ở mục 4.4:
 
 #### a. Phân loại hoạt động VA/BVA/NVA
 
-| Hoạt động | Phân loại | Nhận xét |
-|---|---|---|
-| Phỏng vấn vòng 1 và vòng 2/3 | VA | Trực tiếp chọn đúng người phù hợp vị trí |
-| Tiếp nhận (đồng phục, đào tạo, cấp tài khoản) | VA | Biến ứng viên thành nhân sự vận hành được ngay |
-| Đăng tin và sàng lọc hồ sơ | BVA | Cần để lọc hồ sơ đạt chuẩn; tối ưu tiêu chí để giảm sót ứng viên tốt |
-| Kiểm tra lý lịch/khám sức khỏe | BVA | Tuân thủ pháp lý và kiểm soát rủi ro |
-| Chờ phản hồi giữa các vòng phỏng vấn | NVA | Chờ (Hold); đặt thời hạn phản hồi cho từng vòng |
-| Trao đổi thư mời/hồ sơ qua nhiều kênh rời rạc | NVA | Di chuyển (Move); tập trung liên lạc trên một hệ thống chuẩn |
-| Nhập lại thông tin ứng viên ở nhiều biểu mẫu | NVA | Xử lý dư (Over-processing); dùng một hồ sơ ứng viên xuyên suốt |
+Bảng dưới phân loại **đủ cả 10 bước** đã đánh số ở mục 5.1 (không gộp theo chủ đề như bản trước):
+
+| # (theo 5.1) | Bước | Phân loại | Lý do |
+|---|---|---|---|
+| 1 | Đăng tải tin tuyển dụng | BVA | Cần để thu hút ứng viên, chưa trực tiếp tạo giá trị tuyển dụng |
+| 2 | Sàng lọc hồ sơ ứng viên | BVA | Kiểm soát chất lượng đầu vào bắt buộc trước phỏng vấn |
+| 3 | Kiểm tra lý lịch | BVA | Tuân thủ pháp lý và kiểm soát rủi ro an ninh |
+| 4 | Phỏng vấn vòng 1 | VA | Giá trị trực tiếp — trực tiếp chọn đúng người phù hợp vị trí |
+| 5 | Phỏng vấn chuyên sâu vòng 2 và 3 | VA | Giá trị trực tiếp — thẩm định sâu năng lực trước khi chốt |
+| 6 | Đàm phán và chốt thư mời nhận việc | VA | Giá trị trực tiếp — kết quả trực tiếp là ứng viên chấp nhận vào làm |
+| 7 | Khám sức khỏe trước tuyển dụng | BVA | Tuân thủ pháp lý bắt buộc, không tạo giá trị tuyển dụng |
+| 8 | Triển khai tiếp nhận (đồng phục, đào tạo, cấp tài khoản) | VA | Giá trị trực tiếp — biến ứng viên thành nhân sự vận hành được ngay |
+| 9 | Đánh giá thử việc 2 tháng | BVA | Kiểm soát chất lượng bắt buộc trước khi ký chính thức |
+| 10 | Xem xét và ký hợp đồng lao động | VA | Giá trị trực tiếp — kết quả cuối cùng của cả quy trình |
+| — | Chờ phản hồi giữa các vòng phỏng vấn (nhánh ngoại lệ) | NVA – Chờ (Hold) | Thời gian chờ không tạo giá trị; xem mục 5.2.b |
+| — | Trao đổi thư mời/hồ sơ qua nhiều kênh rời rạc (nhánh ngoại lệ) | NVA – Di chuyển (Move) | Chưa tập trung liên lạc trên một hệ thống chuẩn |
+| — | Nhập lại thông tin ứng viên ở nhiều biểu mẫu (nhánh ngoại lệ) | NVA – Xử lý dư (Over-processing) | Trùng lặp do chưa dùng một hồ sơ ứng viên xuyên suốt |
+
+Tổng hợp: **5 hoạt động VA** (bước 4, 5, 6, 8, 10), **5 hoạt động BVA** (bước 1, 2, 3, 7, 9) và **3 hoạt động NVA** (các nhánh ngoại lệ chờ/trao đổi rời rạc/nhập lại). Đây là quy trình tuyển dụng — nhiều bước phỏng vấn/tiếp nhận/ký hợp đồng trực tiếp tạo giá trị (VA) hơn các quy trình kiểm soát/hoạch định khác trong phạm vi; NVA vẫn tập trung ở các nhánh ngoại lệ ngoài luồng chính.
 | Tuyển lại do nghỉ việc sớm | NVA | Lỗi (Defects); cải thiện chọn lọc và tiếp nhận để giảm nghỉ việc |
 
 #### b. Phân tích lãng phí (Move – Hold – Over-processing – Defects)
@@ -685,14 +744,26 @@ Nhận hàng, Xuất kho và Thu hồi hàng trả là **cụm ba quy trình kho
 
 #### a. Phân loại hoạt động VA/BVA/NVA
 
-| Hoạt động `[giả định]` phân loại theo thông lệ ngành | Phân loại | Nhận xét |
-|---|---|---|
-| Cất hàng đạt chuẩn lên kệ và cập nhật tồn đầu vào | VA | Tạo tồn khả dụng — giá trị cho khâu kiểm kê & hoạch định và bán hàng |
-| Kiểm tra chất lượng (lấy mẫu) | BVA | Ngăn hàng lỗi vào kho; đặt ngưỡng chấp nhận theo rủi ro |
-| Kiểm tra chứng từ và đối chiếu số lượng | BVA | Kiểm soát đầu vào, tránh sai lệch tồn |
-| Chờ kiểm tra chất lượng/chờ cất kho | NVA | Chờ (Hold); bố trí nguồn lực kiểm định theo lịch giao |
-| Đếm/nhập lại do sai lệch số lượng | NVA | Lỗi (Defects); dùng quét mã và đối chiếu điện tử |
-| Di chuyển hàng nhiều chặng trong kho | NVA | Di chuyển (Move); bố trí vị trí định vị hợp lý |
+Bảng dưới phân loại **đủ cả 11 bước** đã đánh số ở mục 6.1 (không gộp theo chủ đề như bản trước), phân loại `[giả định]` theo thông lệ ngành:
+
+| # (theo 6.1) | Bước | Phân loại | Lý do |
+|---|---|---|---|
+| 1 | Tiếp nhận xe và dỡ hàng tại bến | BVA | Thao tác logistics bắt buộc, chưa tạo giá trị trực tiếp |
+| 2 | Kiểm tra chứng từ khớp đơn đặt hàng/báo giao | BVA | Kiểm soát đầu vào, tránh sai lệch tồn |
+| 3 | Đếm và đối chiếu số lượng thực nhận | BVA | Kiểm soát đầu vào bắt buộc trước khi kiểm định chất lượng |
+| 4 | Lấy mẫu và kiểm tra chất lượng | BVA | Ngăn hàng lỗi vào kho; đặt ngưỡng chấp nhận theo rủi ro |
+| 5 | Đánh giá kết quả và mức lỗi | BVA | Kiểm soát quyết định trước khi tách lô/nhập kho |
+| 6 | Tách lô, nhập phần đạt chất lượng (nhánh "một phần") | BVA | Xử lý ngoại lệ khi lỗi một phần, không nằm trên luồng chính |
+| 7 | Dán nhãn mã hàng và định vị (song song với bước 8) | BVA | Chuẩn bị bắt buộc trước khi cất hàng |
+| 8 | Cập nhật dữ liệu tồn WMS/ERP (song song với bước 7) | BVA | Kiểm soát dữ liệu tạm trong quá trình putaway |
+| 9 | Cất hàng lên vị trí | VA | Giá trị trực tiếp — tạo tồn khả dụng, sẵn sàng cho bán hàng/xuất kho |
+| 10 | Kiểm tra nhu cầu trung chuyển thẳng tới cửa hàng | BVA | Kiểm soát định tuyến, không tạo giá trị mới |
+| 11 | Cập nhật sổ tồn đầu vào | VA | Giá trị trực tiếp — đầu ra chính của quy trình cho khâu kiểm kê & hoạch định |
+| — | Chờ kiểm tra chất lượng/chờ cất kho (nhánh ngoại lệ) | NVA – Chờ (Hold) | Thời gian chờ không tạo giá trị; xem mục 6.2.b |
+| — | Đếm/nhập lại do sai lệch số lượng (nhánh ngoại lệ) | NVA – Lỗi (Defects) | Phát sinh do đối chiếu thủ công thiếu chính xác |
+| — | Di chuyển hàng nhiều chặng trong kho (nhánh ngoại lệ) | NVA – Di chuyển (Move) | Phát sinh do vị trí định vị chưa tối ưu |
+
+Tổng hợp: **2 hoạt động VA** (bước 9, 11), **9 hoạt động BVA** (bước 1–8, 10) và **3 hoạt động NVA** (các nhánh ngoại lệ chờ/đếm lại/di chuyển nhiều chặng). Đây là quy trình nhận hàng & QC nên phần lớn các bước là BVA kiểm soát bắt buộc (đối chiếu chứng từ, kiểm định chất lượng, cập nhật dữ liệu tạm); VA chỉ nằm ở hai bước tạo tồn khả dụng cuối chuỗi.
 
 #### b. Phân tích lãng phí (Move – Hold – Over-processing – Defects)
 
@@ -825,14 +896,26 @@ Xuất kho & điều chuyển nối tiếp đầu ra phân bổ của Lập kế
 
 #### a. Phân loại hoạt động VA/BVA/NVA
 
-| Hoạt động `[giả định]` phân loại theo thông lệ ngành | Phân loại | Nhận xét |
-|---|---|---|
-| Giao hàng đúng cơ cấu tới cửa hàng | VA | Đưa hàng tới điểm bán — giá trị cho cửa hàng và khách |
-| Soạn hàng và đóng gói theo phiếu xuất | BVA | Cần để giao đúng, đủ; nên quét mã khi soạn |
-| Lập chứng từ xuất và kế hoạch tuyến | BVA | Kiểm soát và tối ưu vận chuyển |
-| Chờ vận chuyển/chờ xác nhận giao | NVA | Chờ (Hold); đặt thời hạn giao và theo dõi tuyến |
-| Soạn lại do không khớp phiếu | NVA | Lỗi (Defects); quét mã khi soạn để giảm sai |
-| Trả kiện và xử lý lại khi giao lỗi | NVA | Lỗi (Defects); cải thiện đóng gói và chọn đơn vị vận chuyển |
+Bảng dưới phân loại **đủ cả 11 bước** đã đánh số ở mục 7.1 (không gộp theo chủ đề như bản trước), phân loại `[giả định]` theo thông lệ ngành:
+
+| # (theo 7.1) | Bước | Phân loại | Lý do |
+|---|---|---|---|
+| 1 | Kiểm tra tồn khả dụng | BVA | Kiểm soát bắt buộc trước khi xuất, chưa tạo giá trị |
+| 2 | Xác định tồn có đủ cho lệnh phân bổ | BVA | Kiểm soát/quyết định định tuyến, không tạo giá trị mới |
+| 3 | Giao một phần và tạo đơn chờ hàng (nhánh "có giao một phần") | BVA | Xử lý ngoại lệ để giảm thiệt hại khi thiếu tồn |
+| 4 | Lập phiếu xuất kho | BVA | Chuẩn bị thủ tục bắt buộc trước khi soạn hàng |
+| 5 | Soạn hàng theo phiếu xuất | BVA | Chuẩn bị bắt buộc, chưa phải giá trị cuối cùng cho cửa hàng |
+| 6 | Đóng gói và dán nhãn kiện (song song với bước 7) | BVA | Chuẩn bị bắt buộc trước khi bàn giao vận chuyển |
+| 7 | Lập chứng từ xuất và kế hoạch tuyến (song song với bước 6) | BVA | Kiểm soát và tối ưu vận chuyển |
+| 8 | Bàn giao đơn vị vận chuyển | BVA | Thủ tục bàn giao bắt buộc, chưa tạo giá trị cho cửa hàng |
+| 9 | Vận chuyển tới cửa hàng và xác nhận giao | VA | Giá trị trực tiếp — đưa hàng tới điểm bán cho cửa hàng và khách |
+| 10 | Cửa hàng nhận và kiểm đếm | BVA | Kiểm soát xác nhận, không tự nó tạo giá trị mới |
+| 11 | Cập nhật tồn cửa hàng và đóng lệnh | VA | Giá trị trực tiếp — đầu ra chính của quy trình cho khâu kiểm kê & hoạch định |
+| — | Chờ vận chuyển/chờ xác nhận giao (nhánh ngoại lệ) | NVA – Chờ (Hold) | Thời gian chờ không tạo giá trị; xem mục 7.2.b |
+| — | Soạn lại do không khớp phiếu (nhánh ngoại lệ) | NVA – Lỗi (Defects) | Phát sinh do soạn hàng chưa quét mã đối chiếu |
+| — | Trả kiện và xử lý lại khi giao lỗi (nhánh ngoại lệ) | NVA – Lỗi (Defects) | Phát sinh do đóng gói/chọn đơn vị vận chuyển chưa tối ưu |
+
+Tổng hợp: **2 hoạt động VA** (bước 9, 11), **9 hoạt động BVA** (bước 1–8, 10) và **3 hoạt động NVA** (các nhánh ngoại lệ chờ/soạn lại/trả kiện). Đây là quy trình xuất kho & điều chuyển nên phần lớn các bước là BVA kiểm soát/chuẩn bị bắt buộc (kiểm tra tồn, lập phiếu, soạn hàng, đóng gói, chứng từ); VA chỉ nằm ở bước giao hàng thực tế và cập nhật tồn cửa hàng cuối chuỗi.
 
 #### b. Phân tích lãng phí (Move – Hold – Over-processing – Defects)
 
@@ -967,14 +1050,27 @@ Thu hồi & xử lý hàng trả khép vòng vận hành kho: thu hồi hàng gi
 
 #### a. Phân loại hoạt động VA/BVA/NVA
 
-| Hoạt động `[giả định]` phân loại theo thông lệ ngành | Phân loại | Nhận xét |
-|---|---|---|
-| Nhập lại/tân trang hàng để bán lại | VA | Thu hồi giá trị hàng trả |
-| Giám định và phân hạng hàng trả | BVA | Cần để quyết định hướng xử lý đúng |
-| Kiểm tra chính sách và thời hạn trả | BVA | Kiểm soát rủi ro và tuân thủ chính sách |
-| Chờ giám định/chờ xử lý | NVA | Chờ (Hold); bố trí giám định theo hàng đợi |
-| Tân trang lại do lần đầu không đạt | NVA | Lỗi (Defects); chuẩn hóa tiêu chí tân trang |
-| Loại bỏ/hủy hàng | NVA | Lỗi (Defects); hao hụt cần giảm qua giám định sớm |
+Bảng dưới phân loại **đủ cả 13 bước** đã đánh số ở mục 8.1 (không gộp theo chủ đề như bản trước), phân loại `[giả định]` theo thông lệ ngành:
+
+| # (theo 8.1) | Bước | Phân loại | Lý do |
+|---|---|---|---|
+| 1 | Tiếp nhận và lập hồ sơ trả hàng | BVA | Thủ tục bắt buộc để mở hồ sơ xử lý |
+| 2 | Kiểm tra đúng chính sách và thời hạn trả | BVA | Kiểm soát rủi ro và tuân thủ chính sách |
+| 3 | Giám định tình trạng hàng | BVA | Cần để quyết định hướng xử lý đúng |
+| 4 | Phân hạng khả năng bán lại nguyên trạng | BVA | Kiểm soát/quyết định hướng xử lý |
+| 5 | Kiểm tra còn bảo hành nhà cung cấp | BVA | Kiểm soát/quyết định hướng xử lý |
+| 6 | Đánh giá khả năng tân trang | BVA | Kiểm soát/quyết định hướng xử lý |
+| 7 | Gửi trả/đổi với nhà cung cấp (nhánh còn bảo hành) | BVA | Thủ tục bàn giao cho nhà cung cấp, không tự thu hồi giá trị nội bộ |
+| 8 | Tân trang hàng | VA | Giá trị trực tiếp — thu hồi giá trị hàng trả để bán lại được |
+| 9 | Loại bỏ/hủy hàng (nhánh không tân trang được) | NVA – Lỗi (Defects) | Hao hụt giá trị; xem mục 8.2.b |
+| 10 | Cất hàng lên kệ (song song với bước 11) | VA | Giá trị trực tiếp — đưa hàng trở lại tồn khả dụng để bán |
+| 11 | Cập nhật tồn kho (song song với bước 10) | BVA | Kiểm soát dữ liệu tồn, hỗ trợ cho bước 10 |
+| 12 | Đóng hồ sơ trả hàng | BVA | Thủ tục kiểm soát/khép hồ sơ bắt buộc |
+| 13 | Lập đề nghị hoàn tiền → Tài chính | VA | Giá trị trực tiếp — kết quả tài chính cho khách/ghi nhận truy thu |
+| — | Chờ giám định/chờ xử lý (nhánh ngoại lệ) | NVA – Chờ (Hold) | Thời gian chờ không tạo giá trị; xem mục 8.2.b |
+| — | Tân trang lại do lần đầu không đạt (nhánh ngoại lệ của bước 8) | NVA – Lỗi (Defects) | Phát sinh do tiêu chí tân trang chưa chuẩn hóa |
+
+Tổng hợp: **3 hoạt động VA** (bước 8, 10, 13), **9 hoạt động BVA** (bước 1–7, 11, 12) và **3 hoạt động NVA** (bước 9 và các nhánh ngoại lệ chờ/tân trang lại). Đây là quy trình thu hồi & xử lý hàng trả nên phần lớn các bước là BVA kiểm soát/quyết định hướng xử lý bắt buộc; VA nằm ở các bước thu hồi giá trị (tân trang, cất lên kệ, đề nghị hoàn tiền), còn NVA gồm cả hao hụt trên luồng chính (bước 9) lẫn các nhánh ngoại lệ.
 
 #### b. Phân tích lãng phí (Move – Hold – Over-processing – Defects)
 
