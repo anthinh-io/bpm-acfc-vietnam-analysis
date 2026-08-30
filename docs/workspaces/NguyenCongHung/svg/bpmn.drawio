@@ -2996,247 +2996,128 @@
     </mxGraphModel>
   </diagram>
   <diagram name="chevron-m3" id="chevronM3">
-    <mxGraphModel dx="1377" dy="927" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1432" pageHeight="260" math="0" shadow="0">
+    <mxGraphModel dx="1134" dy="764" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="840" pageHeight="300" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="chevronM3-title" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=18;fontStyle=1;fontColor=#000000;" value="QUY TRÌNH LẬP KẾ HOẠCH MUA HÀNG &amp; PHÂN BỔ THEO MÙA (M3)" vertex="1">
-          <mxGeometry height="40" width="1352" x="40" y="20" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronM3-c0" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2E75B6;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" value="1. Thu thập dữ liệu bán hàng &amp; tồn kho" vertex="1">
-          <mxGeometry height="110" width="190" x="40" y="90" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronM3-c1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;shape=step;perimeter=stepPerimeter;fixedSize=1;size=24;fillColor=#31859C;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" value="&amp;nbsp; &amp;nbsp;2. Chốt dự báo nhu cầu theo mùa" vertex="1">
-          <mxGeometry height="110" width="190" x="206" y="90" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronM3-c2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;shape=step;perimeter=stepPerimeter;fixedSize=1;size=24;fillColor=#4EA72E;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" value="&amp;nbsp; &amp;nbsp; &amp;nbsp;3. Phân tích tỷ lệ bán qua &amp;amp; tồn kho" vertex="1">
-          <mxGeometry height="110" width="190" x="372" y="90" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronM3-c3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;shape=step;perimeter=stepPerimeter;fixedSize=1;size=24;fillColor=#92D050;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" value="&amp;nbsp; &amp;nbsp; 4. Lập kế hoạch mua hàng &amp;amp; phân bổ" vertex="1">
-          <mxGeometry height="110" width="190" x="538" y="90" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronM3-c4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;shape=step;perimeter=stepPerimeter;fixedSize=1;size=24;fillColor=#FFC000;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" value="&amp;nbsp; 5. Kiểm tra ngân sách, sức chứa &amp;amp; nguồn hàng" vertex="1">
-          <mxGeometry height="110" width="190" x="704" y="90" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronM3-c5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;shape=step;perimeter=stepPerimeter;fixedSize=1;size=24;fillColor=#ED7D31;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" value="&amp;nbsp; &amp;nbsp;6. Trình duyệt kế hoạch phân bổ" vertex="1">
-          <mxGeometry height="110" width="190" x="870" y="90" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronM3-c6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;shape=step;perimeter=stepPerimeter;fixedSize=1;size=24;fillColor=#C00000;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" value="&amp;nbsp; 7. Phát hành kế hoạch mua hàng" vertex="1">
-          <mxGeometry height="110" width="190" x="1036" y="90" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronM3-c7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;shape=step;perimeter=stepPerimeter;fixedSize=1;size=24;fillColor=#632423;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" value="&amp;nbsp; &amp;nbsp; 8. Theo dõi kết quả &amp;amp; chênh lệch" vertex="1">
-          <mxGeometry height="110" width="190" x="1202" y="90" as="geometry" />
-        </mxCell>
+          <mxCell id="chevronM3-titlebar" value="QUY TRÌNH LẬP KẾ HOẠCH MUA HÀNG &amp; PHÂN BỔ THEO MÙA (M3)" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=16;fontStyle=1;fontColor=#000000;" vertex="1" parent="1"><mxGeometry x="0" y="0" width="840" height="70" as="geometry" /></mxCell>
+          <mxCell id="chevronM3-bg" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="0" y="70" width="840" height="210" as="geometry" /></mxCell>
+          <mxCell id="chevronM3-c0" value="1. Thu thập&lt;br&gt;dữ liệu bán&lt;br&gt;hàng &amp; tồn&lt;br&gt;kho" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#2E75B6;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="90.0" y="90" width="100" height="170" as="geometry" /></mxCell>
+          <mxCell id="chevronM3-c1" value="2. Chốt dự&lt;br&gt;báo nhu cầu&lt;br&gt;theo mùa" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#31859C;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="170.0" y="90" width="100" height="170" as="geometry" /></mxCell>
+          <mxCell id="chevronM3-c2" value="3. Phân tích&lt;br&gt;tỷ lệ bán&lt;br&gt;qua &amp; tồn&lt;br&gt;kho" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#4EA72E;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="250.0" y="90" width="100" height="170" as="geometry" /></mxCell>
+          <mxCell id="chevronM3-c3" value="4. Lập kế&lt;br&gt;hoạch mua&lt;br&gt;hàng &amp; phân&lt;br&gt;bổ" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#92D050;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="330.0" y="90" width="100" height="170" as="geometry" /></mxCell>
+          <mxCell id="chevronM3-c4" value="5. Kiểm tra&lt;br&gt;ngân sách,&lt;br&gt;sức chứa &amp;&lt;br&gt;nguồn hàng" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#FFC000;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="410.0" y="90" width="100" height="170" as="geometry" /></mxCell>
+          <mxCell id="chevronM3-c5" value="6. Trình&lt;br&gt;duyệt kế&lt;br&gt;hoạch phân&lt;br&gt;bổ" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#ED7D31;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="490.0" y="90" width="100" height="170" as="geometry" /></mxCell>
+          <mxCell id="chevronM3-c6" value="7. Phát hành&lt;br&gt;kế hoạch mua&lt;br&gt;hàng" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#C00000;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="570.0" y="90" width="100" height="170" as="geometry" /></mxCell>
+          <mxCell id="chevronM3-c7" value="8. Theo dõi&lt;br&gt;kết quả &amp;&lt;br&gt;chênh lệch" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#632423;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="650.0" y="90" width="100" height="170" as="geometry" /></mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram name="chevron-s3" id="chevronS3">
-    <mxGraphModel dx="1377" dy="927" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1432" pageHeight="260" math="0" shadow="0">
+    <mxGraphModel dx="1134" dy="764" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="840" pageHeight="300" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="chevronS3-title" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=18;fontStyle=1;fontColor=#000000;" value="QUY TRÌNH KIỂM KÊ &amp; XỬ LÝ CHÊNH LỆCH TỒN KHO (S3)" vertex="1">
-          <mxGeometry height="40" width="1352" x="40" y="20" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronS3-c0" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2E75B6;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" value="1. Lập lịch kiểm kê" vertex="1">
-          <mxGeometry height="110" width="190" x="40" y="90" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronS3-c1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;shape=step;perimeter=stepPerimeter;fixedSize=1;size=24;fillColor=#31859C;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" value="&amp;nbsp; &amp;nbsp;2. Xác định phạm vi &amp;amp; mẫu đếm" vertex="1">
-          <mxGeometry height="110" width="190" x="206" y="90" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronS3-c2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;shape=step;perimeter=stepPerimeter;fixedSize=1;size=24;fillColor=#4EA72E;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" value="3. Duyệt phạm vi kiểm kê" vertex="1">
-          <mxGeometry height="110" width="190" x="372" y="90" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronS3-c3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;shape=step;perimeter=stepPerimeter;fixedSize=1;size=24;fillColor=#92D050;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" value="4. Đếm tồn thực tế &amp; đối chiếu sổ" vertex="1">
-          <mxGeometry height="110" width="190" x="538" y="90" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronS3-c4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;shape=step;perimeter=stepPerimeter;fixedSize=1;size=24;fillColor=#FFC000;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" value="&amp;nbsp; &amp;nbsp;5. Xác định đếm lại &amp;amp; phân loại nguyên nhân" vertex="1">
-          <mxGeometry height="110" width="190" x="704" y="90" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronS3-c5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;shape=step;perimeter=stepPerimeter;fixedSize=1;size=24;fillColor=#ED7D31;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" value="&amp;nbsp; &amp;nbsp;6. Lập đề nghị điều chỉnh / báo cáo hao hụt" vertex="1">
-          <mxGeometry height="110" width="190" x="870" y="90" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronS3-c6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;shape=step;perimeter=stepPerimeter;fixedSize=1;size=24;fillColor=#C00000;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" value="7. Phê duyệt điều chỉnh" vertex="1">
-          <mxGeometry height="110" width="190" x="1036" y="90" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronS3-c7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;shape=step;perimeter=stepPerimeter;fixedSize=1;size=24;fillColor=#632423;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" value="&amp;nbsp; &amp;nbsp;8. Cập nhật hệ thống &amp;amp; phản hồi kết quả" vertex="1">
-          <mxGeometry height="110" width="190" x="1202" y="90" as="geometry" />
-        </mxCell>
+          <mxCell id="chevronS3-titlebar" value="QUY TRÌNH KIỂM KÊ &amp; XỬ LÝ CHÊNH LỆCH TỒN KHO (S3)" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=16;fontStyle=1;fontColor=#000000;" vertex="1" parent="1"><mxGeometry x="0" y="0" width="840" height="70" as="geometry" /></mxCell>
+          <mxCell id="chevronS3-bg" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="0" y="70" width="840" height="210" as="geometry" /></mxCell>
+          <mxCell id="chevronS3-c0" value="1. Lập lịch&lt;br&gt;kiểm kê" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#2E75B6;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="90.0" y="90" width="100" height="170" as="geometry" /></mxCell>
+          <mxCell id="chevronS3-c1" value="2. Xác định&lt;br&gt;phạm vi &amp;&lt;br&gt;mẫu đếm" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#31859C;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="170.0" y="90" width="100" height="170" as="geometry" /></mxCell>
+          <mxCell id="chevronS3-c2" value="3. Duyệt&lt;br&gt;phạm vi kiểm&lt;br&gt;kê" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#4EA72E;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="250.0" y="90" width="100" height="170" as="geometry" /></mxCell>
+          <mxCell id="chevronS3-c3" value="4. Đếm tồn&lt;br&gt;thực tế &amp;&lt;br&gt;đối chiếu sổ" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#92D050;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="330.0" y="90" width="100" height="170" as="geometry" /></mxCell>
+          <mxCell id="chevronS3-c4" value="5. Xác định&lt;br&gt;đếm lại &amp;&lt;br&gt;phân loại&lt;br&gt;nguyên nhân" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#FFC000;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="410.0" y="90" width="100" height="170" as="geometry" /></mxCell>
+          <mxCell id="chevronS3-c5" value="6. Lập đề&lt;br&gt;nghị điều&lt;br&gt;chỉnh / báo&lt;br&gt;cáo hao hụt" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#ED7D31;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="490.0" y="90" width="100" height="170" as="geometry" /></mxCell>
+          <mxCell id="chevronS3-c6" value="7. Phê duyệt&lt;br&gt;điều chỉnh" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#C00000;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="570.0" y="90" width="100" height="170" as="geometry" /></mxCell>
+          <mxCell id="chevronS3-c7" value="8. Cập nhật&lt;br&gt;hệ thống &amp;&lt;br&gt;phản hồi kết&lt;br&gt;quả" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#632423;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="650.0" y="90" width="100" height="170" as="geometry" /></mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram name="chevron-s4" id="chevronS4">
-    <mxGraphModel dx="1134" dy="764" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1432" pageHeight="260" math="0" shadow="0">
+    <mxGraphModel dx="1134" dy="764" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="840" pageHeight="300" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="chevronS4-title" value="QUY TRÌNH ĐĂNG KÝ, XÁC THỰC OTP &amp; KÍCH HOẠT TÀI KHOẢN (S4)" style="text;html=1;align=center;verticalAlign=middle;fontSize=18;fontStyle=1;fontColor=#000000;" vertex="1" parent="1">
-          <mxGeometry x="40" y="20" width="1352" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronS4-c0" value="1. Truy cập &amp; đồng ý PDPA" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2E75B6;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" vertex="1" parent="1">
-          <mxGeometry x="40" y="90" width="190" height="110" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronS4-c1" value="2. Kiểm tra trùng số điện thoại" style="rounded=0;whiteSpace=wrap;html=1;shape=step;perimeter=stepPerimeter;fixedSize=1;size=24;fillColor=#31859C;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" vertex="1" parent="1">
-          <mxGeometry x="206" y="90" width="190" height="110" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronS4-c2" value="3. Khởi tạo hồ sơ tạm" style="rounded=0;whiteSpace=wrap;html=1;shape=step;perimeter=stepPerimeter;fixedSize=1;size=24;fillColor=#4EA72E;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" vertex="1" parent="1">
-          <mxGeometry x="372" y="90" width="190" height="110" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronS4-c3" value="4. Gửi OTP qua Zalo ZNS / SMS" style="rounded=0;whiteSpace=wrap;html=1;shape=step;perimeter=stepPerimeter;fixedSize=1;size=24;fillColor=#92D050;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" vertex="1" parent="1">
-          <mxGeometry x="538" y="90" width="190" height="110" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronS4-c4" value="5. Chờ &amp; xác thực mã OTP" style="rounded=0;whiteSpace=wrap;html=1;shape=step;perimeter=stepPerimeter;fixedSize=1;size=24;fillColor=#FFC000;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" vertex="1" parent="1">
-          <mxGeometry x="704" y="90" width="190" height="110" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronS4-c5" value="6. Điền thông tin &amp; tạo mật khẩu" style="rounded=0;whiteSpace=wrap;html=1;shape=step;perimeter=stepPerimeter;fixedSize=1;size=24;fillColor=#ED7D31;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" vertex="1" parent="1">
-          <mxGeometry x="870" y="90" width="190" height="110" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronS4-c6" value="7. Tạo tài khoản &amp; đồng bộ hệ thống" style="rounded=0;whiteSpace=wrap;html=1;shape=step;perimeter=stepPerimeter;fixedSize=1;size=24;fillColor=#C00000;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" vertex="1" parent="1">
-          <mxGeometry x="1036" y="90" width="190" height="110" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronS4-c7" value="8. Kích hoạt tài khoản &amp; ưu đãi chào mừng" style="rounded=0;whiteSpace=wrap;html=1;shape=step;perimeter=stepPerimeter;fixedSize=1;size=24;fillColor=#632423;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" vertex="1" parent="1">
-          <mxGeometry x="1202" y="90" width="190" height="110" as="geometry" />
-        </mxCell>
+          <mxCell id="chevronS4-titlebar" value="QUY TRÌNH ĐĂNG KÝ, XÁC THỰC OTP &amp; KÍCH HOẠT TÀI KHOẢN (S4)" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=16;fontStyle=1;fontColor=#000000;" vertex="1" parent="1"><mxGeometry x="0" y="0" width="840" height="70" as="geometry" /></mxCell>
+          <mxCell id="chevronS4-bg" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="0" y="70" width="840" height="210" as="geometry" /></mxCell>
+          <mxCell id="chevronS4-c0" value="1. Truy cập&lt;br&gt;&amp; đồng ý&lt;br&gt;PDPA" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#2E75B6;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="90.0" y="90" width="100" height="170" as="geometry" /></mxCell>
+          <mxCell id="chevronS4-c1" value="2. Kiểm tra&lt;br&gt;trùng số&lt;br&gt;điện thoại" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#31859C;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="170.0" y="90" width="100" height="170" as="geometry" /></mxCell>
+          <mxCell id="chevronS4-c2" value="3. Khởi tạo&lt;br&gt;hồ sơ tạm" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#4EA72E;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="250.0" y="90" width="100" height="170" as="geometry" /></mxCell>
+          <mxCell id="chevronS4-c3" value="4. Gửi OTP&lt;br&gt;qua Zalo ZNS&lt;br&gt;/ SMS" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#92D050;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="330.0" y="90" width="100" height="170" as="geometry" /></mxCell>
+          <mxCell id="chevronS4-c4" value="5. Chờ &amp; xác&lt;br&gt;thực mã OTP" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#FFC000;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="410.0" y="90" width="100" height="170" as="geometry" /></mxCell>
+          <mxCell id="chevronS4-c5" value="6. Điền&lt;br&gt;thông tin &amp;&lt;br&gt;tạo mật khẩu" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#ED7D31;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="490.0" y="90" width="100" height="170" as="geometry" /></mxCell>
+          <mxCell id="chevronS4-c6" value="7. Tạo tài&lt;br&gt;khoản &amp; đồng&lt;br&gt;bộ hệ thống" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#C00000;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="570.0" y="90" width="100" height="170" as="geometry" /></mxCell>
+          <mxCell id="chevronS4-c7" value="8. Kích hoạt&lt;br&gt;tài khoản &amp;&lt;br&gt;ưu đãi chào&lt;br&gt;mừng" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#632423;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="650.0" y="90" width="100" height="170" as="geometry" /></mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram name="chevron-s1" id="chevronS1">
-    <mxGraphModel dx="1377" dy="927" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1432" pageHeight="260" math="0" shadow="0">
+    <mxGraphModel dx="1134" dy="764" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="840" pageHeight="300" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="chevronS1-title" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=18;fontStyle=1;fontColor=#000000;" value="QUY TRÌNH TUYỂN DỤNG &amp; TIẾP NHẬN NHÂN SỰ (S1)" vertex="1">
-          <mxGeometry height="40" width="1352" x="40" y="20" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronS1-c0" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2E75B6;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" value="1. Đăng tin tuyển dụng" vertex="1">
-          <mxGeometry height="110" width="190" x="40" y="90" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronS1-c1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;shape=step;perimeter=stepPerimeter;fixedSize=1;size=24;fillColor=#31859C;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" value="2. Sàng lọc hồ sơ ứng viên" vertex="1">
-          <mxGeometry height="110" width="190" x="206" y="90" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronS1-c2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;shape=step;perimeter=stepPerimeter;fixedSize=1;size=24;fillColor=#4EA72E;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" value="3. Kiểm tra lý lịch" vertex="1">
-          <mxGeometry height="110" width="190" x="372" y="90" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronS1-c3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;shape=step;perimeter=stepPerimeter;fixedSize=1;size=24;fillColor=#92D050;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" value="4. Phỏng vấn vòng 1" vertex="1">
-          <mxGeometry height="110" width="190" x="538" y="90" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronS1-c4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;shape=step;perimeter=stepPerimeter;fixedSize=1;size=24;fillColor=#FFC000;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" value="5. Phỏng vấn chuyên sâu vòng 2/3" vertex="1">
-          <mxGeometry height="110" width="190" x="704" y="90" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronS1-c5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;shape=step;perimeter=stepPerimeter;fixedSize=1;size=24;fillColor=#ED7D31;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" value="&amp;nbsp; &amp;nbsp;6. Đàm phán &amp;amp; chốt thư mời nhận việc" vertex="1">
-          <mxGeometry height="110" width="190" x="870" y="90" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronS1-c6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;shape=step;perimeter=stepPerimeter;fixedSize=1;size=24;fillColor=#C00000;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" value="7. Khám sức khỏe &amp; triển khai tiếp nhận" vertex="1">
-          <mxGeometry height="110" width="190" x="1036" y="90" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronS1-c7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;shape=step;perimeter=stepPerimeter;fixedSize=1;size=24;fillColor=#632423;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" value="8. Đánh giá thử việc &amp; ký hợp đồng" vertex="1">
-          <mxGeometry height="110" width="190" x="1202" y="90" as="geometry" />
-        </mxCell>
+          <mxCell id="chevronS1-titlebar" value="QUY TRÌNH TUYỂN DỤNG &amp; TIẾP NHẬN NHÂN SỰ (S1)" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=16;fontStyle=1;fontColor=#000000;" vertex="1" parent="1"><mxGeometry x="0" y="0" width="840" height="70" as="geometry" /></mxCell>
+          <mxCell id="chevronS1-bg" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="0" y="70" width="840" height="210" as="geometry" /></mxCell>
+          <mxCell id="chevronS1-c0" value="1. Đăng tin&lt;br&gt;tuyển dụng" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#2E75B6;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="90.0" y="90" width="100" height="170" as="geometry" /></mxCell>
+          <mxCell id="chevronS1-c1" value="2. Sàng lọc&lt;br&gt;hồ sơ ứng&lt;br&gt;viên" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#31859C;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="170.0" y="90" width="100" height="170" as="geometry" /></mxCell>
+          <mxCell id="chevronS1-c2" value="3. Kiểm tra&lt;br&gt;lý lịch" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#4EA72E;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="250.0" y="90" width="100" height="170" as="geometry" /></mxCell>
+          <mxCell id="chevronS1-c3" value="4. Phỏng vấn&lt;br&gt;vòng 1" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#92D050;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="330.0" y="90" width="100" height="170" as="geometry" /></mxCell>
+          <mxCell id="chevronS1-c4" value="5. Phỏng vấn&lt;br&gt;chuyên sâu&lt;br&gt;vòng 2/3" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#FFC000;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="410.0" y="90" width="100" height="170" as="geometry" /></mxCell>
+          <mxCell id="chevronS1-c5" value="6. Đàm phán&lt;br&gt;&amp; chốt thư&lt;br&gt;mời nhận&lt;br&gt;việc" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#ED7D31;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="490.0" y="90" width="100" height="170" as="geometry" /></mxCell>
+          <mxCell id="chevronS1-c6" value="7. Khám sức&lt;br&gt;khỏe &amp; triển&lt;br&gt;khai tiếp&lt;br&gt;nhận" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#C00000;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="570.0" y="90" width="100" height="170" as="geometry" /></mxCell>
+          <mxCell id="chevronS1-c7" value="8. Đánh giá&lt;br&gt;thử việc &amp;&lt;br&gt;ký hợp đồng" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#632423;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="650.0" y="90" width="100" height="170" as="geometry" /></mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram name="chevron-k1" id="chevronK1">
-    <mxGraphModel dx="1377" dy="927" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1432" pageHeight="260" math="0" shadow="0">
+    <mxGraphModel dx="1134" dy="764" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="840" pageHeight="300" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="chevronK1-title" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=18;fontStyle=1;fontColor=#000000;" value="QUY TRÌNH NHẬN HÀNG, KIỂM TRA CHẤT LƯỢNG &amp; NHẬP KHO (K1)" vertex="1">
-          <mxGeometry height="40" width="1352" x="40" y="20" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronK1-c0" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2E75B6;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" value="1. Tiếp nhận xe &amp; dỡ hàng tại bến" vertex="1">
-          <mxGeometry height="110" width="190" x="40" y="90" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronK1-c1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;shape=step;perimeter=stepPerimeter;fixedSize=1;size=24;fillColor=#31859C;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" value="&amp;nbsp; &amp;nbsp; 2. Kiểm tra chứng từ khớp đơn đặt hàng" vertex="1">
-          <mxGeometry height="110" width="190" x="206" y="90" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronK1-c2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;shape=step;perimeter=stepPerimeter;fixedSize=1;size=24;fillColor=#4EA72E;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" value="&amp;nbsp; &amp;nbsp;3. Đếm &amp;amp; đối chiếu số lượng thực nhận" vertex="1">
-          <mxGeometry height="110" width="190" x="372" y="90" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronK1-c3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;shape=step;perimeter=stepPerimeter;fixedSize=1;size=24;fillColor=#92D050;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" value="&amp;nbsp; &amp;nbsp;4. Lấy mẫu &amp;amp; kiểm tra chất lượng" vertex="1">
-          <mxGeometry height="110" width="190" x="538" y="90" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronK1-c4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;shape=step;perimeter=stepPerimeter;fixedSize=1;size=24;fillColor=#FFC000;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" value="&amp;nbsp; &amp;nbsp; 5. Đánh giá kết quả &amp;amp; tách lô" vertex="1">
-          <mxGeometry height="110" width="190" x="704" y="90" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronK1-c5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;shape=step;perimeter=stepPerimeter;fixedSize=1;size=24;fillColor=#ED7D31;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" value="&amp;nbsp; &amp;nbsp; 6. Dán nhãn &amp;amp; cập nhật tồn WMS (song song)" vertex="1">
-          <mxGeometry height="110" width="190" x="870" y="90" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronK1-c6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;shape=step;perimeter=stepPerimeter;fixedSize=1;size=24;fillColor=#C00000;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" value="&amp;nbsp; &amp;nbsp; 7. Cất hàng lên vị trí &amp;amp; kiểm tra trung chuyển" vertex="1">
-          <mxGeometry height="110" width="190" x="1036" y="90" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronK1-c7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;shape=step;perimeter=stepPerimeter;fixedSize=1;size=24;fillColor=#632423;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" value="&amp;nbsp; &amp;nbsp;8. Cập nhật sổ tồn đầu vào" vertex="1">
-          <mxGeometry height="110" width="190" x="1202" y="90" as="geometry" />
-        </mxCell>
+          <mxCell id="chevronK1-titlebar" value="QUY TRÌNH NHẬN HÀNG, KIỂM TRA CHẤT LƯỢNG &amp; NHẬP KHO (K1)" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=16;fontStyle=1;fontColor=#000000;" vertex="1" parent="1"><mxGeometry x="0" y="0" width="840" height="70" as="geometry" /></mxCell>
+          <mxCell id="chevronK1-bg" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="0" y="70" width="840" height="210" as="geometry" /></mxCell>
+          <mxCell id="chevronK1-c0" value="1. Tiếp nhận&lt;br&gt;xe &amp; dỡ hàng&lt;br&gt;tại bến" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#2E75B6;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="90.0" y="90" width="100" height="170" as="geometry" /></mxCell>
+          <mxCell id="chevronK1-c1" value="2. Kiểm tra&lt;br&gt;chứng từ&lt;br&gt;khớp đơn đặt&lt;br&gt;hàng" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#31859C;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="170.0" y="90" width="100" height="170" as="geometry" /></mxCell>
+          <mxCell id="chevronK1-c2" value="3. Đếm &amp; đối&lt;br&gt;chiếu số&lt;br&gt;lượng thực&lt;br&gt;nhận" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#4EA72E;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="250.0" y="90" width="100" height="170" as="geometry" /></mxCell>
+          <mxCell id="chevronK1-c3" value="4. Lấy mẫu &amp;&lt;br&gt;kiểm tra&lt;br&gt;chất lượng" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#92D050;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="330.0" y="90" width="100" height="170" as="geometry" /></mxCell>
+          <mxCell id="chevronK1-c4" value="5. Đánh giá&lt;br&gt;kết quả &amp;&lt;br&gt;tách lô" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#FFC000;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="410.0" y="90" width="100" height="170" as="geometry" /></mxCell>
+          <mxCell id="chevronK1-c5" value="6. Dán nhãn&lt;br&gt;&amp; cập nhật&lt;br&gt;tồn WMS&lt;br&gt;(song song)" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#ED7D31;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="490.0" y="90" width="100" height="170" as="geometry" /></mxCell>
+          <mxCell id="chevronK1-c6" value="7. Cất hàng&lt;br&gt;lên vị trí &amp;&lt;br&gt;kiểm tra&lt;br&gt;trung chuyển" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#C00000;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="570.0" y="90" width="100" height="170" as="geometry" /></mxCell>
+          <mxCell id="chevronK1-c7" value="8. Cập nhật&lt;br&gt;sổ tồn đầu&lt;br&gt;vào" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#632423;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="650.0" y="90" width="100" height="170" as="geometry" /></mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram name="chevron-k2" id="chevronK2">
-    <mxGraphModel dx="1377" dy="927" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1432" pageHeight="260" math="0" shadow="0">
+    <mxGraphModel dx="1134" dy="764" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="840" pageHeight="300" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="chevronK2-title" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=18;fontStyle=1;fontColor=#000000;" value="QUY TRÌNH XUẤT KHO &amp; ĐIỀU CHUYỂN TỚI CHUỖI CỬA HÀNG (K2)" vertex="1">
-          <mxGeometry height="40" width="1352" x="40" y="20" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronK2-c0" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2E75B6;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" value="1. Kiểm tra tồn khả dụng" vertex="1">
-          <mxGeometry height="110" width="190" x="40" y="90" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronK2-c1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;shape=step;perimeter=stepPerimeter;fixedSize=1;size=24;fillColor=#31859C;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" value="&amp;nbsp; &amp;nbsp; 2. Xác định đủ tồn / giao một phần" vertex="1">
-          <mxGeometry height="110" width="190" x="206" y="90" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronK2-c2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;shape=step;perimeter=stepPerimeter;fixedSize=1;size=24;fillColor=#4EA72E;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" value="3. Lập phiếu xuất kho" vertex="1">
-          <mxGeometry height="110" width="190" x="372" y="90" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronK2-c3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;shape=step;perimeter=stepPerimeter;fixedSize=1;size=24;fillColor=#92D050;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" value="&amp;nbsp; 4. Soạn hàng theo phiếu xuất" vertex="1">
-          <mxGeometry height="110" width="190" x="538" y="90" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronK2-c4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;shape=step;perimeter=stepPerimeter;fixedSize=1;size=24;fillColor=#FFC000;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" value="&amp;nbsp; &amp;nbsp; 5. Đóng gói &amp;amp; lập chứng từ xuất (song song)" vertex="1">
-          <mxGeometry height="110" width="190" x="704" y="90" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronK2-c5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;shape=step;perimeter=stepPerimeter;fixedSize=1;size=24;fillColor=#ED7D31;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" value="6. Bàn giao đơn vị vận chuyển" vertex="1">
-          <mxGeometry height="110" width="190" x="870" y="90" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronK2-c6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;shape=step;perimeter=stepPerimeter;fixedSize=1;size=24;fillColor=#C00000;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" value="&amp;nbsp; 7. Vận chuyển &amp;amp; xác nhận giao" vertex="1">
-          <mxGeometry height="110" width="190" x="1036" y="90" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronK2-c7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;shape=step;perimeter=stepPerimeter;fixedSize=1;size=24;fillColor=#632423;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" value="&amp;nbsp; &amp;nbsp;8. Cửa hàng nhận, kiểm đếm &amp;amp; cập nhật tồn" vertex="1">
-          <mxGeometry height="110" width="190" x="1202" y="90" as="geometry" />
-        </mxCell>
+          <mxCell id="chevronK2-titlebar" value="QUY TRÌNH XUẤT KHO &amp; ĐIỀU CHUYỂN TỚI CHUỖI CỬA HÀNG (K2)" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=16;fontStyle=1;fontColor=#000000;" vertex="1" parent="1"><mxGeometry x="0" y="0" width="840" height="70" as="geometry" /></mxCell>
+          <mxCell id="chevronK2-bg" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="0" y="70" width="840" height="210" as="geometry" /></mxCell>
+          <mxCell id="chevronK2-c0" value="1. Kiểm tra&lt;br&gt;tồn khả dụng" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#2E75B6;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="90.0" y="90" width="100" height="170" as="geometry" /></mxCell>
+          <mxCell id="chevronK2-c1" value="2. Xác định&lt;br&gt;đủ tồn /&lt;br&gt;giao một&lt;br&gt;phần" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#31859C;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="170.0" y="90" width="100" height="170" as="geometry" /></mxCell>
+          <mxCell id="chevronK2-c2" value="3. Lập phiếu&lt;br&gt;xuất kho" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#4EA72E;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="250.0" y="90" width="100" height="170" as="geometry" /></mxCell>
+          <mxCell id="chevronK2-c3" value="4. Soạn hàng&lt;br&gt;theo phiếu&lt;br&gt;xuất" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#92D050;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="330.0" y="90" width="100" height="170" as="geometry" /></mxCell>
+          <mxCell id="chevronK2-c4" value="5. Đóng gói&lt;br&gt;&amp; lập chứng&lt;br&gt;từ xuất&lt;br&gt;(song song)" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#FFC000;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="410.0" y="90" width="100" height="170" as="geometry" /></mxCell>
+          <mxCell id="chevronK2-c5" value="6. Bàn giao&lt;br&gt;đơn vị vận&lt;br&gt;chuyển" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#ED7D31;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="490.0" y="90" width="100" height="170" as="geometry" /></mxCell>
+          <mxCell id="chevronK2-c6" value="7. Vận&lt;br&gt;chuyển &amp; xác&lt;br&gt;nhận giao" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#C00000;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="570.0" y="90" width="100" height="170" as="geometry" /></mxCell>
+          <mxCell id="chevronK2-c7" value="8. Cửa hàng&lt;br&gt;nhận, kiểm&lt;br&gt;đếm &amp; cập&lt;br&gt;nhật tồn" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#632423;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="650.0" y="90" width="100" height="170" as="geometry" /></mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram name="chevron-k3" id="chevronK3">
-    <mxGraphModel dx="1377" dy="927" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1432" pageHeight="260" math="0" shadow="0">
+    <mxGraphModel dx="1134" dy="764" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="840" pageHeight="300" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="chevronK3-title" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=18;fontStyle=1;fontColor=#000000;" value="QUY TRÌNH THU HỒI &amp; XỬ LÝ HÀNG TRẢ VỀ / HÀNG LỖI (K3)" vertex="1">
-          <mxGeometry height="40" width="1352" x="40" y="20" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronK3-c0" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2E75B6;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" value="1. Tiếp nhận &amp; lập hồ sơ trả hàng" vertex="1">
-          <mxGeometry height="110" width="190" x="40" y="90" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronK3-c1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;shape=step;perimeter=stepPerimeter;fixedSize=1;size=24;fillColor=#31859C;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" value="&amp;nbsp; 2. Kiểm tra chính sách &amp;amp; thời hạn trả" vertex="1">
-          <mxGeometry height="110" width="190" x="206" y="90" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronK3-c2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;shape=step;perimeter=stepPerimeter;fixedSize=1;size=24;fillColor=#4EA72E;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" value="&amp;nbsp; &amp;nbsp;3. Giám định tình trạng hàng" vertex="1">
-          <mxGeometry height="110" width="190" x="372" y="90" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronK3-c3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;shape=step;perimeter=stepPerimeter;fixedSize=1;size=24;fillColor=#92D050;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" value="&amp;nbsp; &amp;nbsp;4. Phân hạng bán lại / bảo hành / tân trang" vertex="1">
-          <mxGeometry height="110" width="190" x="538" y="90" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronK3-c4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;shape=step;perimeter=stepPerimeter;fixedSize=1;size=24;fillColor=#FFC000;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" value="&amp;nbsp; &amp;nbsp;5. Gửi trả nhà cung cấp / tân trang hàng" vertex="1">
-          <mxGeometry height="110" width="190" x="704" y="90" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronK3-c5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;shape=step;perimeter=stepPerimeter;fixedSize=1;size=24;fillColor=#ED7D31;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" value="&amp;nbsp; &amp;nbsp;6. Loại bỏ hàng không tân trang được" vertex="1">
-          <mxGeometry height="110" width="190" x="870" y="90" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronK3-c6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;shape=step;perimeter=stepPerimeter;fixedSize=1;size=24;fillColor=#C00000;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" value="&amp;nbsp; &amp;nbsp;7. Cất hàng lên kệ &amp;amp; cập nhật tồn (song song)" vertex="1">
-          <mxGeometry height="110" width="190" x="1036" y="90" as="geometry" />
-        </mxCell>
-        <mxCell id="chevronK3-c7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;shape=step;perimeter=stepPerimeter;fixedSize=1;size=24;fillColor=#632423;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;spacing=18;" value="8. Đóng hồ sơ &amp; đề nghị hoàn tiền" vertex="1">
-          <mxGeometry height="110" width="190" x="1202" y="90" as="geometry" />
-        </mxCell>
+          <mxCell id="chevronK3-titlebar" value="QUY TRÌNH THU HỒI &amp; XỬ LÝ HÀNG TRẢ VỀ / HÀNG LỖI (K3)" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=16;fontStyle=1;fontColor=#000000;" vertex="1" parent="1"><mxGeometry x="0" y="0" width="840" height="70" as="geometry" /></mxCell>
+          <mxCell id="chevronK3-bg" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="0" y="70" width="840" height="210" as="geometry" /></mxCell>
+          <mxCell id="chevronK3-c0" value="1. Tiếp nhận&lt;br&gt;&amp; lập hồ sơ&lt;br&gt;trả hàng" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#2E75B6;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="90.0" y="90" width="100" height="170" as="geometry" /></mxCell>
+          <mxCell id="chevronK3-c1" value="2. Kiểm tra&lt;br&gt;chính sách &amp;&lt;br&gt;thời hạn trả" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#31859C;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="170.0" y="90" width="100" height="170" as="geometry" /></mxCell>
+          <mxCell id="chevronK3-c2" value="3. Giám định&lt;br&gt;tình trạng&lt;br&gt;hàng" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#4EA72E;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="250.0" y="90" width="100" height="170" as="geometry" /></mxCell>
+          <mxCell id="chevronK3-c3" value="4. Phân hạng&lt;br&gt;bán lại /&lt;br&gt;bảo hành /&lt;br&gt;tân trang" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#92D050;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="330.0" y="90" width="100" height="170" as="geometry" /></mxCell>
+          <mxCell id="chevronK3-c4" value="5. Gửi trả&lt;br&gt;nhà cung cấp&lt;br&gt;/ tân trang&lt;br&gt;hàng" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#FFC000;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="410.0" y="90" width="100" height="170" as="geometry" /></mxCell>
+          <mxCell id="chevronK3-c5" value="6. Loại bỏ&lt;br&gt;hàng không&lt;br&gt;tân trang&lt;br&gt;được" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#ED7D31;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="490.0" y="90" width="100" height="170" as="geometry" /></mxCell>
+          <mxCell id="chevronK3-c6" value="7. Cất hàng&lt;br&gt;lên kệ &amp; cập&lt;br&gt;nhật tồn&lt;br&gt;(song song)" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#C00000;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="570.0" y="90" width="100" height="170" as="geometry" /></mxCell>
+          <mxCell id="chevronK3-c7" value="8. Đóng hồ&lt;br&gt;sơ &amp; đề nghị&lt;br&gt;hoàn tiền" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;whiteSpace=wrap;spacingLeft=22;fillColor=#632423;strokeColor=#000000;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="650.0" y="90" width="100" height="170" as="geometry" /></mxCell>
       </root>
     </mxGraphModel>
   </diagram>
