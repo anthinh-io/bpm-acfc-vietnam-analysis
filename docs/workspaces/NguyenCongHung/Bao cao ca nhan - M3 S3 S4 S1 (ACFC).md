@@ -23,17 +23,15 @@
 
 Phạm vi cá nhân thuộc mảng **hàng hóa, kho, tồn kho, tài khoản thành viên và tuyển dụng nhân sự** của ACFC, gồm bảy quy trình:
 
-| Mã trên sơ đồ | Cấp | Quy trình | Ranh giới |
-|---|---|---|---|
-| M3 | Quản lý | Lập kế hoạch mua hàng và phân bổ theo mùa | Dữ liệu bán hàng/tồn → kế hoạch được duyệt và phát hành |
-| S3 | Hỗ trợ | Kiểm kê và xử lý chênh lệch tồn kho | Lịch kiểm kê/cảnh báo → điều chỉnh hoặc chuyển cấp và phản hồi khâu hoạch định |
-| S4 | Hỗ trợ | Đăng ký, xác thực OTP và kích hoạt tài khoản thành viên | Truy cập App/Web → tài khoản được tạo/kích hoạt hoặc chuyển chăm sóc khách hàng |
-| S1 | Hỗ trợ | Tuyển dụng và tiếp nhận nhân sự chuỗi bán lẻ/kho vận | Yêu cầu tuyển dụng → ký hợp đồng sau thử việc hoặc thanh lý |
-| K1 | Hỗ trợ | Nhận hàng, kiểm tra chất lượng và nhập kho từ chủ thương hiệu | Báo giao hàng/hàng cập bến → nhập kệ và cập nhật tồn đầu vào |
-| K2 | Hỗ trợ | Xuất kho và điều chuyển phân bổ tới chuỗi cửa hàng | Lệnh phân bổ (từ khâu hoạch định) → cửa hàng nhận và cập nhật tồn |
-| K3 | Hỗ trợ | Thu hồi và xử lý hàng trả về / hàng lỗi | Yêu cầu trả hàng → đóng hồ sơ trả hàng và (nếu cần) hoàn tiền |
-
-> **Về mã quy trình:** các mã M3/S3/S4/S1/K1/K2/K3 ở cột đầu chỉ dùng để **đối chiếu với nhãn pool trên sơ đồ BPMN**; toàn bộ phần thân báo cáo gọi theo **tên quy trình** cho dễ đọc.
+| Cấp | Quy trình | Ranh giới |
+|---|---|---|
+| Quản lý | Lập kế hoạch mua hàng và phân bổ theo mùa | Dữ liệu bán hàng/tồn → kế hoạch được duyệt và phát hành |
+| Hỗ trợ | Kiểm kê và xử lý chênh lệch tồn kho | Lịch kiểm kê/cảnh báo → điều chỉnh hoặc chuyển cấp và phản hồi khâu hoạch định |
+| Hỗ trợ | Đăng ký, xác thực OTP và kích hoạt tài khoản thành viên | Truy cập App/Web → tài khoản được tạo/kích hoạt hoặc chuyển chăm sóc khách hàng |
+| Hỗ trợ | Tuyển dụng và tiếp nhận nhân sự chuỗi bán lẻ/kho vận | Yêu cầu tuyển dụng → ký hợp đồng sau thử việc hoặc thanh lý |
+| Hỗ trợ | Nhận hàng, kiểm tra chất lượng và nhập kho từ chủ thương hiệu | Báo giao hàng/hàng cập bến → nhập kệ và cập nhật tồn đầu vào |
+| Hỗ trợ | Xuất kho và điều chuyển phân bổ tới chuỗi cửa hàng | Lệnh phân bổ (từ khâu hoạch định) → cửa hàng nhận và cập nhật tồn |
+| Hỗ trợ | Thu hồi và xử lý hàng trả về / hàng lỗi | Yêu cầu trả hàng → đóng hồ sơ trả hàng và (nếu cần) hoàn tiền |
 
 **Liên hệ giữa các quy trình:** *Lập kế hoạch mua & phân bổ* lập kế hoạch mua và phân bổ theo mùa; *Nhận hàng & nhập kho* nhận hàng từ chủ thương hiệu và cấp **tồn đầu vào**; *Xuất kho & điều chuyển* nhận **đầu ra phân bổ của khâu hoạch định** để xuất kho tới cửa hàng; *Thu hồi & xử lý hàng trả* khép vòng bằng thu hồi hàng lỗi/hàng trả rồi cập nhật lại tồn và hao hụt. *Kiểm kê tồn kho* kiểm soát độ chính xác tồn kho và phản hồi chênh lệch cho khâu hoạch định. *Kích hoạt tài khoản thành viên* tạo tài khoản thành viên — nguồn nhu cầu cho hoạch định. *Tuyển dụng & tiếp nhận nhân sự* cấp nguồn nhân lực vận hành cho toàn chuỗi (đếm tồn ở khâu kiểm kê, bán hàng và hỗ trợ tài khoản, vận hành kho ở cụm kho vận).
 
@@ -41,7 +39,7 @@ Phạm vi cá nhân thuộc mảng **hàng hóa, kho, tồn kho, tài khoản th
 
 Các sơ đồ được vẽ bằng BPMN 2.0 (Pool/Lane, cổng XOR/AND có tách và gộp cùng loại, sự kiện chờ Timer, nhiều sự kiện Kết thúc, luồng thông điệp giữa các pool):
 
-- Năm quy trình **Lập kế hoạch mua & phân bổ, Kiểm kê tồn kho, Nhận hàng & nhập kho, Xuất kho & điều chuyển, Thu hồi & xử lý hàng trả** nằm chung trong một **sơ đồ cộng tác** (collaboration) gồm 5 pool nối bằng luồng thông điệp: [svg/bpmn-kho-van-hanh-k1-k2-k3.drawio.svg](svg/bpmn-kho-van-hanh-k1-k2-k3.drawio.svg) — các pool «Khối hoạch định & phân bổ hàng hóa (M3)», «Quy trình kiểm kê tồn kho nội bộ (S3)», «Nhận hàng, QC & nhập kho (K1)», «Xuất kho & điều chuyển (K2)», «Thu hồi & xử lý hàng trả (K3)» (mã trong ngoặc là nhãn pool để đối chiếu bảng §1.1).
+- Năm quy trình **Lập kế hoạch mua & phân bổ, Kiểm kê tồn kho, Nhận hàng & nhập kho, Xuất kho & điều chuyển, Thu hồi & xử lý hàng trả** nằm chung trong một **sơ đồ cộng tác** (collaboration) gồm 5 pool nối bằng luồng thông điệp: [svg/bpmn-kho-van-hanh-k1-k2-k3.drawio.svg](svg/bpmn-kho-van-hanh-k1-k2-k3.drawio.svg) — các pool «Khối hoạch định & phân bổ hàng hóa», «Quy trình kiểm kê tồn kho nội bộ», «Nhận hàng, QC & nhập kho», «Xuất kho & điều chuyển», «Thu hồi & xử lý hàng trả».
 - **Kích hoạt tài khoản thành viên:** [svg/bpmn-dang-ky-kich-hoat-tai-khoan-s3.drawio.svg](svg/bpmn-dang-ky-kich-hoat-tai-khoan-s3.drawio.svg).
 - **Tuyển dụng & tiếp nhận nhân sự:** [svg/bpmn-tuyen-dung-nhan-su-s1.drawio.svg](svg/bpmn-tuyen-dung-nhan-su-s1.drawio.svg).
 
